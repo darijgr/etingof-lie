@@ -311,6 +311,11 @@ $a\rightharpoonup m$. (One day, I will probably come to an agreement with
 myself and decide which of these notations to use, but for now expect to see
 all of them used synonymously in this text. Some authors also use the notation
 $a\circ m$ for the image of $m$ under the action of $a$, but we won't use this notation.)
+
+\item If $V$ is a vector space, then the tensor algebra of $V$ will be
+denoted by $T\left(V\right)$; the symmetric algebra of $V$ will be
+denoted by $S\left(V\right)$; the exterior algebra of $V$ will be denoted
+by $\wedge V$.
 \end{itemize}
 
 \section{The main examples}
@@ -5433,7 +5438,7 @@ down what happens to elements of $\mathfrak{d}$, $\mathfrak{a}\cap
 \mathfrak{b}$ and $\mathfrak{b}$ under this isomorphism, we notice that they
 just get sent to themselves, so this isomorphism must coincide with $\sigma$
 (because if two algebra homomorphisms from the same algebra coincide on a set
-of generators of said algebra, then these two algebra homomorphism must be
+of generators of said algebra, then these two algebra homomorphisms must be
 identical). Thus, $\sigma$ is an algebra isomorphism, qed.
 \par
 \textit{Second proof that }$\sigma$\textit{ is an algebra isomorphism:} Define
@@ -32093,7 +32098,14 @@ When $V$ is a finite-dimensional $\mathbb{C}$-vector space, there is a way to
 define the structure of a projective variety on the Grassmannian
 $\operatorname*{Gr}\left(  k,V\right)  $. While we won't ever need the
 existence of this structure, we will need the so-called Pl\"{u}cker embedding
-which is the main ingredient in defining this structure:
+which is the main ingredient in defining this structure:\footnote{In the
+following definition (and further below), we use the notation
+$\mathbb{P}\left(W\right)$ for the projective space of a
+$\mathbb{C}$-vector space $W$. This projective space is defined to be the
+quotient set $\left(W \setminus \left\{0\right\}\right) / \sim$, where
+$\sim$ is the proportionality relation (i.e., two vectors $w_1$ and $w_2$
+in $W \setminus \left\{0\right\}$ satisfy $w_1 \sim w_2$ if and only if
+they are linearly dependent).}
 
 \begin{definition}
 Let $k$ and $n$ be integers satisfying $0\leq k\leq n$. Let $V$ be the
