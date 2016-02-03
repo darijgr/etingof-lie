@@ -24,7 +24,7 @@
 \setcounter{MaxMatrixCols}{30}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Tuesday, January 15, 2013 22:34:01}
+%TCIDATA{LastRevised=Saturday, January 19, 2013 21:40:00}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
 %TCIDATA{BibliographyScheme=Manual}
@@ -840,14 +840,21 @@ In the following, a $2$\textit{-cocycle on }$L$ will mean a skew-symmetric
 bilinear form $\omega:L\times L\rightarrow\mathbb{C}$ (not necessarily
 obtained from a central extension!) which satisfies the equation
 (\ref{def.2-cocyc.eq}). (The name "$2$-cocycle" comes from Lie algebra
-cohomology, where $2$-cocycles are indeed the cocycles in the $2$nd degree.)
+cohomology, where $2$-cocycles are indeed the cocycles in the $2$-nd degree.)
 Thus, we have assigned a $2$-cocycle on $L$ to every $1$-dimensional central
 extension of $L$ (although the assignment depended on the splitting).
 
 Conversely, if $\omega$ is any $2$-cocycle on $L$, then we can define a
-central extension $\widehat{L}_{\omega}=L\oplus\mathbb{C}$ (whose Lie bracket
-is defined by (\ref{def.2-cocyc.form})). Thus, every $2$-cocycle on $L$
-canonically determines a $1$-dimensional central extension of $L$.
+$1$-dimensional central extension $\widehat{L}_{\omega}$ of $L$ such that the
+$2$-cocycle corresponding to this extension is $\omega$. In fact, we can
+construct such a central extension $\widehat{L}_{\omega}$ by setting
+$\widehat{L}_{\omega}=L\oplus\mathbb{C}$ as a vector space, and defining the
+Lie bracket on this vector space by (\ref{def.2-cocyc.form}). (The maps
+$\mathbb{C}\rightarrow\widehat{L}_{\omega}$ and $\widehat{L}_{\omega
+}\rightarrow L$ are the canonical ones coming from the direct sum
+decomposition $\widehat{L}_{\omega}=L\oplus\mathbb{C}$.) Thus, every
+$2$-cocycle on $L$ canonically determines a $1$-dimensional central extension
+of $L$.
 
 However, our assignment of the $2$-cocycle $\omega$ to the central extension
 $\widehat{L}$ was not canonical, but depended on the splitting of the exact
@@ -861,7 +868,7 @@ d\xi\left(  a,b\right)  =\xi\left(  \left[  a,b\right]  \right)
 \]
 The $2$-cocycle $d\xi$ is called a $2$\textit{-coboundary}. As a conclusion,
 $1$-dimensional central extensions of $L$ are parametrized up to isomorphism
-by%
+by the vector space%
 \[
 \left(  2\text{-cocycles}\right)  \diagup\left(  2\text{-coboundaries}\right)
 =H^{2}\left(  L\right)  .
@@ -873,8 +880,9 @@ cohomology) of the Lie algebra $L$.
 \end{definition}
 
 \begin{theorem}
-\label{thm.H^2(W)}The space $H^{2}\left(  W\right)  $ is $1$-dimensional and
-is spanned by the residue class of the $2$-cocycle $\omega$ given by%
+\label{thm.H^2(W)}The vector space $H^{2}\left(  W\right)  $ is $1$%
+-dimensional and is spanned by the residue class of the $2$-cocycle $\omega$
+given by%
 \[
 \omega\left(  L_{n},L_{m}\right)  =\dfrac{n^{3}-n}{6}\delta_{n,-m}%
 \ \ \ \ \ \ \ \ \ \ \text{for all }n,m\in\mathbb{Z}.
@@ -884,8 +892,8 @@ is spanned by the residue class of the $2$-cocycle $\omega$ given by%
 
 Note that in this theorem, we could have replaced the factor $\dfrac{n^{3}%
 -n}{6}$ by $n^{3}-n$ (since the vector space spanned by a vector obviously
-doesn't change if we rescale the vector by a scalar factor), or even by
-$n^{3}$ (since the $2$-cocycle $\left(  L_{n},L_{m}\right)  \mapsto
+doesn't change if we rescale the vector by a nonzero scalar factor), or even
+by $n^{3}$ (since the $2$-cocycle $\left(  L_{n},L_{m}\right)  \mapsto
 n\delta_{n,-m}$ is a coboundary, and two $2$-cocycles which differ by a
 coboundary give the same residue class in $H^{2}\left(  W\right)  $). But we
 prefer $\dfrac{n^{3}-n}{6}$ since this is closer to how this class appears in
@@ -933,13 +941,15 @@ for all $n\in\mathbb{Z}$ and $m\in\mathbb{Z}$. Thus,%
 }_{=nL_{n}},L_{m}\right)  +\underbrace{\beta\left(  \left[  L_{m}%
 ,L_{n}\right]  ,L_{0}\right)  }_{=0\text{ (since }\beta\left(  X,L_{0}\right)
 =0\text{ for every }X\in W\text{)}}\\
-&  =-m\beta\left(  L_{m},L_{n}\right)  +n\underbrace{\beta\left(  L_{n}%
-,L_{m}\right)  }_{=-\beta\left(  L_{m},L_{n}\right)  }=-\left(  m+n\right)
-\beta\left(  L_{m},L_{n}\right)
+&  =-m\underbrace{\beta\left(  L_{m},L_{n}\right)  }_{\substack{=-\beta\left(
+L_{n},L_{m}\right)  \\\text{(since }\beta\text{ is skew-symmetric)}}%
+}+n\beta\left(  L_{n},L_{m}\right)  =m\beta\left(  L_{n},L_{m}\right)
++n\beta\left(  L_{n},L_{m}\right) \\
+&  =\left(  n+m\right)  \beta\left(  L_{n},L_{m}\right)
 \end{align*}
 for all $n\in\mathbb{Z}$ and $m\in\mathbb{Z}$. Hence, for all $n\in\mathbb{Z}$
-and $m\in\mathbb{Z}$ with $n+m\neq0$, we have $\beta\left(  L_{m}%
-,L_{n}\right)  =0$. In other words, there exists some sequence $\left(
+and $m\in\mathbb{Z}$ with $n+m\neq0$, we have $\beta\left(  L_{n}%
+,L_{m}\right)  =0$. In other words, there exists some sequence $\left(
 b_{n}\right)  _{n\in\mathbb{Z}}\in\mathbb{C}^{\mathbb{Z}}$ such that
 \begin{equation}
 \beta\left(  L_{n},L_{m}\right)  =b_{n}\delta_{n,-m}%
@@ -1033,22 +1043,23 @@ W\right)  $ is indeed $1$-dimensional (and not $0$-dimensional), i. e., that
 the $2$-cocycle $\omega$ is \textit{not} a $2$-coboundary. But this is
 easy\footnote{\textit{Proof.} Assume the contrary. Then, the $2$-cocycle
 $\omega$ is a $2$-coboundary. This means that there exists a linear map
-$\xi:W\rightarrow\mathbb{C}$ such that $\omega=d\xi$. Pick such a $\xi$. Then,%
+$\eta:W\rightarrow\mathbb{C}$ such that $\omega=d\eta$. Pick such a $\eta$.
+Then,%
 \[
-\omega\left(  L_{2},L_{-2}\right)  =\left(  d\xi\right)  \left(  L_{2}%
-,L_{-2}\right)  =\xi\left(  \underbrace{\left[  L_{2},L_{-2}\right]
-}_{=4L_{0}}\right)  =4\xi\left(  L_{0}\right)
+\omega\left(  L_{2},L_{-2}\right)  =\left(  d\eta\right)  \left(  L_{2}%
+,L_{-2}\right)  =\eta\left(  \underbrace{\left[  L_{2},L_{-2}\right]
+}_{=4L_{0}}\right)  =4\eta\left(  L_{0}\right)
 \]
 and%
 \[
-\omega\left(  L_{1},L_{-1}\right)  =\left(  d\xi\right)  \left(  L_{1}%
-,L_{-1}\right)  =\xi\left(  \underbrace{\left[  L_{1},L_{-1}\right]
-}_{=2L_{0}}\right)  =2\xi\left(  L_{0}\right)  .
+\omega\left(  L_{1},L_{-1}\right)  =\left(  d\eta\right)  \left(  L_{1}%
+,L_{-1}\right)  =\eta\left(  \underbrace{\left[  L_{1},L_{-1}\right]
+}_{=2L_{0}}\right)  =2\eta\left(  L_{0}\right)  .
 \]
 Hence,%
 \[
-2\underbrace{\omega\left(  L_{1},L_{-1}\right)  }_{=2\xi\left(  L_{0}\right)
-}=4\xi\left(  L_{0}\right)  =\omega\left(  L_{2},L_{-2}\right)  .
+2\underbrace{\omega\left(  L_{1},L_{-1}\right)  }_{=2\eta\left(  L_{0}\right)
+}=4\eta\left(  L_{0}\right)  =\omega\left(  L_{2},L_{-2}\right)  .
 \]
 But this contradicts with the equalities $\omega\left(  L_{1},L_{-1}\right)
 =0$ and $\omega\left(  L_{2},L_{-2}\right)  =1$ (which easily follow from the
@@ -1084,20 +1095,22 @@ extension of $W$.
 
 \subsection{Affine Lie algebras}
 
-We now define the notion
-
 Now let us talk about affine Lie algebras:
 
 \begin{definition}
 \label{def.loop}Let $\mathfrak{g}$ be a Lie algebra.
 
 \textbf{(a)} The $\mathbb{C}$-Lie algebra $\mathfrak{g}$ induces (by extension
-of scalars) a $\mathbb{C}\left[  t,t^{-1}\right]  $-Lie algebra $\mathbb{C}%
-\left[  t,t^{-1}\right]  \otimes\mathfrak{g}=\left\{  \sum\limits_{i}%
-a_{i}t^{i}\ \mid\ a_{i}\in\mathfrak{g}\right\}  $. This Lie algebra
-$\mathbb{C}\left[  t,t^{-1}\right]  \otimes\mathfrak{g}$, considered as a
-$\mathbb{C}$-Lie algebra, will be called the \textit{loop algebra} of
-$\mathfrak{g}$, and denoted by $\mathfrak{g}\left[  t,t^{-1}\right]  $.
+of scalars) a $\mathbb{C}\left[  t,t^{-1}\right]  $-Lie algebra%
+\[
+\mathbb{C}\left[  t,t^{-1}\right]  \otimes\mathfrak{g}=\left\{  \sum
+\limits_{i\in\mathbb{Z}}a_{i}t^{i}\ \mid\ a_{i}\in\mathfrak{g}\text{; all but
+finitely many }i\in\mathbb{Z}\text{ satisfy }a_{i}=0\right\}  .
+\]
+This Lie algebra $\mathbb{C}\left[  t,t^{-1}\right]  \otimes\mathfrak{g}$,
+considered as a $\mathbb{C}$-Lie algebra, will be called the \textit{loop
+algebra} of $\mathfrak{g}$, and denoted by $\mathfrak{g}\left[  t,t^{-1}%
+\right]  $.
 
 \textbf{(b)} Let $\left(  \cdot,\cdot\right)  $ be a symmetric bilinear form
 on $\mathfrak{g}$ (that is, a bilinear map $\mathfrak{g}\times\mathfrak{g}%
@@ -1145,7 +1158,7 @@ Also, for every $f\in\mathfrak{g}\left[  t,t^{-1}\right]  $, define the
 "derivative" $f^{\prime}$ of $f$ to be the element $\sum\limits_{i\in
 \mathbb{Z}}if_{i}t^{i-1}$ of $\mathfrak{g}\left[  t,t^{-1}\right]  $ (where we
 write $f$ in the form $f=\sum\limits_{i\in\mathbb{Z}}f_{i}t^{i}$ with
-$f_{i}\in\mathfrak{g}$). In analogy to the notation $dg=gdt$ which we
+$f_{i}\in\mathfrak{g}$). In analogy to the notation $dg=g^{\prime}dt$ which we
 introduced in Definition \ref{def.diffform}, set $\left(  df,g\right)  $ to
 mean the polynomial differential form $\left(  f^{\prime},g\right)  dt$ for
 any $f\in\mathfrak{g}\left[  t,t^{-1}\right]  $ and $g\in\mathfrak{g}\left[
@@ -13920,9 +13933,9 @@ taking $n\rightarrow\infty$, we show $c\geq0$. By taking $n=1$, we get
 $h\geq0$. This proves Proposition \ref{prop.Lhc.unitary.triv}.
 
 \begin{definition}
-Let $\delta\in\left\{  0,\dfrac{1}{2}\right\}  $. Let $C_{\delta}$ be the
-$\mathbb{C}$-algebra with generators $\left\{  \psi_{j}\ \mid\ j\in
-\delta+\mathbb{Z}\right\}  $ and relations%
+\label{def.Cdelta}Let $\delta\in\left\{  0,\dfrac{1}{2}\right\}  $. Let
+$C_{\delta}$ be the $\mathbb{C}$-algebra with generators $\left\{  \psi
+_{j}\ \mid\ j\in\delta+\mathbb{Z}\right\}  $ and relations%
 \[
 \psi_{j}\psi_{k}+\psi_{k}\psi_{j}=\delta_{k,-j}\ \ \ \ \ \ \ \ \ \ \text{for
 all }j,k\in\delta+\mathbb{Z}.
@@ -13963,7 +13976,7 @@ $j_{\ell}=u$. (Note the $\left(  -1\right)  ^{\ell-1}$ sign, which
 distinguishes this "differentiation" from differentiation in the commutative
 case. This is a particular case of the Koszul sign rule.)
 
-Define an action of $V_{\delta}$ on $C_{\delta}$ by%
+Define an action of $C_{\delta}$ on $V_{\delta}$ by%
 \begin{align*}
 \psi_{-n}  &  \mapsto\xi_{n}\ \ \ \ \ \ \ \ \ \ \text{for }n<0;\\
 \psi_{n}  &  \mapsto\dfrac{\partial}{\partial\xi_{n}}%
@@ -13982,14 +13995,15 @@ Clifford algebras.
 From Homework Set 2 problem 2, we know:
 
 \begin{proposition}
-\label{prop.ramond.rep}Let%
+\label{prop.ramond.rep}Let $\delta\in\left\{  0,\dfrac{1}{2}\right\}  $. For
+every $k\in\mathbb{Z}$, define an endomorphism $L_{k}$ of $V_{\delta}$ by%
 \[
 L_{k}=\delta_{k,0}\dfrac{1-2\delta}{16}+\dfrac{1}{2}\sum\limits_{j\in
-\mathbb{Z}+\delta}j:\psi_{-j}\psi_{j+k}:,
+\delta+\mathbb{Z}}j\left.  :\psi_{-j}\psi_{j+k}:\right.  ,
 \]
-where the normal ordering is defined as follows:%
+where the normal ordered product is defined as follows:%
 \[
-:\psi_{n}\psi_{m}:\ =\ \left\{
+\left.  :\psi_{n}\psi_{m}:\right.  \ =\ \left\{
 \begin{array}
 [c]{c}%
 -\psi_{m}\psi_{n},\ \ \ \ \ \ \ \ \ \ \text{if }m\leq n;\\
@@ -13999,11 +14013,13 @@ where the normal ordering is defined as follows:%
 \]
 Then:
 
-\textbf{(a)} $\left[  \psi_{m},L_{k}\right]  =\left(  m+\dfrac{k}{2}\right)
-\psi_{m+k}$.
+\textbf{(a)} Every $m\in\delta+\mathbb{Z}$ and $k\in\mathbb{Z}$ satisfy
+$\left[  \psi_{m},L_{k}\right]  =\left(  m+\dfrac{k}{2}\right)  \psi_{m+k}$.
 
-\textbf{(b)} $\left[  L_{n},L_{m}\right]  =\left(  n-m\right)  L_{n+m}%
-+\delta_{n,-m}\dfrac{m^{3}-m}{24}$ (so $c=\dfrac{1}{2}$).
+\textbf{(b)} Every $n\in\mathbb{Z}$ and $m\in\mathbb{Z}$ satisfy $\left[
+L_{n},L_{m}\right]  =\left(  n-m\right)  L_{n+m}+\delta_{n,-m}\dfrac{m^{3}%
+-m}{24}$. (Hence, $V_{\delta}$ is a representation of $\operatorname*{Vir}$
+with central charge $c=\dfrac{1}{2}$).
 \end{proposition}
 
 Now this representation $V_{\delta}$ of $\operatorname*{Vir}$ is unitary. In
@@ -14011,16 +14027,23 @@ fact, consider the Hermitian form under which all monomials in $\psi_{i}$ are
 orthonormal (positive definite). Then it is easy to see that $\psi_{j}^{\dag
 }=\psi_{-j}$. Thus, $L_{n}^{\dag}=L_{-n}$.
 
-But these $V_{\delta}$ are reducible, since the $L_{n}$ preserve parity:
-$V_{\delta}=V_{\delta}^{+}\oplus V_{\delta}^{-}$.
+But these representations $V_{\delta}$ are reducible. In fact, we can define a
+$\left(  \mathbb{Z}\diagup2\mathbb{Z}\right)  $-grading on $V_{\delta}$ by
+giving each $\xi_{n}$ the degree $\overline{1}$, and then the operators
+$L_{n}$ preserve parity (i. e., degree under this grading), so that the
+representation $V_{\delta}$ can be decomposed as a direct sum $V_{\delta
+}=V_{\delta}^{+}\oplus V_{\delta}^{-}$, where $V_{\delta}^{+}$ is the set of
+the even elements of $V_{\delta}$, and $V_{\delta}^{-}$ is the set of the odd
+elements of $V_{\delta}$.
 
 \begin{theorem}
-$V_{\delta}^{+}$ and $V_{\delta}^{-}$ are irreducible Virasoro modules.
+These subrepresentations $V_{\delta}^{+}$ and $V_{\delta}^{-}$ are irreducible
+Virasoro modules.
 \end{theorem}
 
 We will not prove this.
 
-What are the highest weights?
+What are the highest weights of $V_{\delta}^{+}$ and $V_{\delta}^{-}$ ?
 
 First consider the case $\delta=0$. The highest-weight vector of $V_{\delta
 }^{+}$ is $1$, with weight $\left(  \dfrac{1}{16},\dfrac{1}{2}\right)  $. That
@@ -14090,7 +14113,15 @@ the integer part of the product $\prod\limits_{n\in\dfrac{1}{2}+\mathbb{N}%
 {2},\dfrac{1}{2}}}\left(  q\right)  $ is the half-integer part of the product
 $\prod\limits_{n\in\dfrac{1}{2}+\mathbb{N}}\left(  1+q^{n}\right)  $.
 
-\subsection{Representations of $\mathfrak{gl}_{\infty}$}
+With this, we conclude our study of $V_{\delta}$.
+
+\begin{Convention}
+The notation $\psi_{j}$ for the generators of $C_{\delta}$ introduced in
+Definition \ref{def.Cdelta} will not be used in the following. (Instead, we
+will use the notation $\psi_{j}$ for some completely different objects.)
+\end{Convention}
+
+\subsection{The Lie algebra $\mathfrak{gl}_{\infty}$ and its representations}
 
 For every $n\in\mathbb{N}$, we can define a Lie algebra $\mathfrak{gl}_{n}$ of
 $n\times n$-matrices over $\mathbb{C}$. One can wonder how this can be
@@ -14511,36 +14542,36 @@ semiinfinite wedges anymore. We must find a reasonable definition for such
 wedge products. What properties should a wedge product (infinite as it is)
 satisfy? It should be multilinear\footnote{i. e., it should satisfy
 \begin{align*}
-&  a_{0}\wedge a_{1}\wedge...\wedge a_{k-1}\wedge\left(  \lambda
-a+\lambda^{\prime}a^{\prime}\right)  \wedge a_{k+1}\wedge a_{k+2}\wedge...\\
-&  =\lambda a_{0}\wedge a_{1}\wedge...\wedge a_{k-1}\wedge a\wedge
-a_{k+1}\wedge a_{k+2}\wedge...+\lambda^{\prime}a_{0}\wedge a_{1}%
-\wedge...\wedge a_{k-1}\wedge a^{\prime}\wedge a_{k+1}\wedge a_{k+2}\wedge...
+&  b_{0}\wedge b_{1}\wedge...\wedge b_{k-1}\wedge\left(  \lambda
+b+\lambda^{\prime}b^{\prime}\right)  \wedge b_{k+1}\wedge b_{k+2}\wedge...\\
+&  =\lambda b_{0}\wedge b_{1}\wedge...\wedge b_{k-1}\wedge b\wedge
+b_{k+1}\wedge b_{k+2}\wedge...+\lambda^{\prime}b_{0}\wedge b_{1}%
+\wedge...\wedge b_{k-1}\wedge b^{\prime}\wedge b_{k+1}\wedge b_{k+2}\wedge...
 \end{align*}
-for all $k\in\mathbb{N}$, $a_{0},a_{1},a_{2},...\in V$ and $\lambda
-,\lambda^{\prime}\in\mathbb{C}$ for which the right hand side is well-defined}
-and antisymmetric\footnote{i. e., a well-defined wedge product $a_{0}\wedge
-a_{1}\wedge a_{2}\wedge...$ should be $0$ whenever two of the $a_{k}$ are
-equal}. These properties make it possible to compute any wedge product of the
-form $a_{0}\wedge a_{1}\wedge a_{2}\wedge...$ with $a_{0},a_{1},a_{2},...$
-being vectors in $V$ which satisfy%
+for all $k\in\mathbb{N}$, $b_{0},b_{1},b_{2},...\in V$, $b,b^{\prime}\in V$
+and $\lambda,\lambda^{\prime}\in\mathbb{C}$ for which the right hand side is
+well-defined} and antisymmetric\footnote{i. e., a well-defined wedge product
+$b_{0}\wedge b_{1}\wedge b_{2}\wedge...$ should be $0$ whenever two of the
+$b_{k}$ are equal}. These properties make it possible to compute any wedge
+product of the form $b_{0}\wedge b_{1}\wedge b_{2}\wedge...$ with $b_{0}%
+,b_{1},b_{2},...$ being vectors in $V$ which satisfy%
 \[
-a_{i}=v_{m-i}\ \ \ \ \ \ \ \ \ \ \text{for sufficiently large }i.
+b_{i}=v_{m-i}\ \ \ \ \ \ \ \ \ \ \text{for sufficiently large }i.
 \]
-In fact, whenever we are given such vectors $a_{0},a_{1},a_{2},...$, we can
-compute the wedge product $a_{0}\wedge a_{1}\wedge a_{2}\wedge...$ by the
+In fact, whenever we are given such vectors $b_{0},b_{1},b_{2},...$, we can
+compute the wedge product $b_{0}\wedge b_{1}\wedge b_{2}\wedge...$ by the
 following procedure:
 
 \begin{itemize}
 \item Find an integer $M\in\mathbb{N}$ such that every $i\geq M$ satisfies
-$a_{i}=v_{m-i}$. (This $M$ exists by the condition that $a_{i}=v_{m-i}$ for
+$b_{i}=v_{m-i}$. (This $M$ exists by the condition that $b_{i}=v_{m-i}$ for
 sufficiently large $i$.)
 
-\item Expand each of the vectors $a_{0},a_{1},...,a_{M-1}$ as a $\mathbb{C}%
+\item Expand each of the vectors $b_{0},b_{1},...,b_{M-1}$ as a $\mathbb{C}%
 $-linear combination of the basis vectors $v_{\ell}$.
 
 \item Using these expansions and the multilinearity of the wedge product,
-reduce the computation of $a_{0}\wedge a_{1}\wedge a_{2}\wedge...$ to the
+reduce the computation of $b_{0}\wedge b_{1}\wedge b_{2}\wedge...$ to the
 computation of finitely many wedge products of basis vectors.
 
 \item Each wedge product of basis vectors can now be computed as follows: If
@@ -14557,7 +14588,7 @@ compute it.
 \end{itemize}
 
 This procedure is not exactly a formal definition, and it is not immediately
-clear that the value of $a_{0}\wedge a_{1}\wedge a_{2}\wedge...$ that it
+clear that the value of $b_{0}\wedge b_{1}\wedge b_{2}\wedge...$ that it
 computes is independent of, e. g., the choice of $M$. In the following
 subsection (Subsection \ref{subsect.degress}), we will give a formal version
 of this definition.
@@ -14565,7 +14596,7 @@ of this definition.
 \subsubsection{\label{subsect.degress}The $\mathfrak{gl}_{\infty}$-module
 $\wedge^{\dfrac{\infty}{2}}V$: a formal definition}
 
-Before we formally define the value of $a_{0}\wedge a_{1}\wedge a_{2}%
+Before we formally define the value of $b_{0}\wedge b_{1}\wedge b_{2}%
 \wedge...$, let us start at the beginning and repeat the definitions of
 $\wedge^{\dfrac{\infty}{2}}V$ and $\wedge^{\dfrac{\infty}{2},m}V$ in a cleaner
 fashion than how we defined them above.
@@ -14662,23 +14693,23 @@ $\pi$ is the straightening permutation of $\left(  i_{0},i_{1},i_{2}%
 \end{definition}
 
 \begin{definition}
-Let $m\in\mathbb{Z}$. Let $a_{0},a_{1},a_{2},...$ be vectors in $V$ which
+Let $m\in\mathbb{Z}$. Let $b_{0},b_{1},b_{2},...$ be vectors in $V$ which
 satisfy%
 \[
-a_{i}=v_{m-i}\ \ \ \ \ \ \ \ \ \ \text{for sufficiently large }i.
+b_{i}=v_{m-i}\ \ \ \ \ \ \ \ \ \ \text{for sufficiently large }i.
 \]
-Then, let us define the wedge product $a_{0}\wedge a_{1}\wedge a_{2}%
+Then, let us define the wedge product $b_{0}\wedge b_{1}\wedge b_{2}%
 \wedge...\in\wedge^{\dfrac{\infty}{2},m}V$ as follows:
 
 Find an integer $M\in\mathbb{N}$ such that every $i\geq M$ satisfies
-$a_{i}=v_{m-i}$. (This $M$ exists by the condition that $a_{i}=v_{m-i}$ for
+$b_{i}=v_{m-i}$. (This $M$ exists by the condition that $b_{i}=v_{m-i}$ for
 sufficiently large $i$.)
 
-For every $i\in\left\{  0,1,...,M-1\right\}  $, write the vector $a_{i}$ as a
+For every $i\in\left\{  0,1,...,M-1\right\}  $, write the vector $b_{i}$ as a
 $\mathbb{C}$-linear combination $\sum\limits_{j\in\mathbb{Z}}\lambda
 _{i,j}v_{j}$ (with $\lambda_{i,j}\in\mathbb{C}$ for all $j$).
 
-Now, define $a_{0}\wedge a_{1}\wedge a_{2}\wedge...$ to be%
+Now, define $b_{0}\wedge b_{1}\wedge b_{2}\wedge...$ to be%
 \[
 \sum\limits_{\left(  j_{0},j_{1},...,j_{M-1}\right)  \in\mathbb{Z}^{M}}%
 \lambda_{0,j_{0}}\lambda_{1,j_{1}}...\lambda_{M-1,j_{M-1}}v_{j_{0}}\wedge
@@ -14692,7 +14723,7 @@ $m$-degression.
 \end{definition}
 
 This wedge product is easily seen to be well-defined (i. e., the choice of $M$
-does not affect the value of $a_{0}\wedge a_{1}\wedge a_{2}\wedge...$) and
+does not affect the value of $b_{0}\wedge b_{1}\wedge b_{2}\wedge...$) and
 indeed antisymmetric and multilinear.
 
 Now, we can define the action of $\mathfrak{gl}_{\infty}$ on $\wedge
@@ -14724,16 +14755,16 @@ vector space $\wedge^{\dfrac{\infty}{2},m}V$.
 Also, due to the multilinearity of our wedge product, we easily see that:
 
 \begin{proposition}
-\label{prop.glinf.glinfact}Let $m\in\mathbb{Z}$. Let $a_{0},a_{1},a_{2},...$
+\label{prop.glinf.glinfact}Let $m\in\mathbb{Z}$. Let $b_{0},b_{1},b_{2},...$
 be vectors in $V$ which satisfy%
 \[
-a_{i}=v_{m-i}\ \ \ \ \ \ \ \ \ \ \text{for all sufficiently large }i.
+b_{i}=v_{m-i}\ \ \ \ \ \ \ \ \ \ \text{for all sufficiently large }i.
 \]
 Let $a\in\mathfrak{gl}_{\infty}$. Then,%
 \[
-a\rightharpoonup\left(  a_{0}\wedge a_{1}\wedge a_{2}\wedge...\right)
-=\sum\limits_{k\geq0}a_{0}\wedge a_{1}\wedge...\wedge a_{k-1}\wedge\left(
-a\rightharpoonup a_{k}\right)  \wedge a_{k+1}\wedge a_{k+2}\wedge....
+a\rightharpoonup\left(  b_{0}\wedge b_{1}\wedge b_{2}\wedge...\right)
+=\sum\limits_{k\geq0}b_{0}\wedge b_{1}\wedge...\wedge b_{k-1}\wedge\left(
+a\rightharpoonup b_{k}\right)  \wedge b_{k+1}\wedge b_{k+2}\wedge....
 \]
 
 \end{proposition}
@@ -14805,9 +14836,9 @@ for every $m$-degression $\left(  i_{0},i_{1},i_{2},...\right)  $.
 This grading satisfies $\wedge^{\dfrac{\infty}{2},m}V=\bigoplus\limits_{d\leq
 0}\left(  \wedge^{\dfrac{\infty}{2},m}V\right)  \left[  d\right]  $ (since
 Proposition \ref{prop.glinf.wedge.grading} yields that $\sum\limits_{k\geq
-0}\left(  i_{k}+k-m\right)  $ is nonnegative for every for every
-$m$-degression $\left(  i_{0},i_{1},i_{2},...\right)  $). In other words,
-$\wedge^{\dfrac{\infty}{2},m}V$ is nonpositively graded.
+0}\left(  i_{k}+k-m\right)  $ is nonnegative for every $m$-degression $\left(
+i_{0},i_{1},i_{2},...\right)  $). In other words, $\wedge^{\dfrac{\infty}%
+{2},m}V$ is nonpositively graded.
 \end{definition}
 
 Note that, for every given $m\in\mathbb{Z}$, the $m$-degressions are in a
@@ -14838,19 +14869,22 @@ weight $\omega_{m}=\left(  ...,1,1,0,0,...\right)  $, where the last $1$ is on
 place $m$ and the first $0$ is on place $m+1$. Moreover, $L_{\omega_{m}}$ is unitary.
 \end{proposition}
 
-\textit{Proof of Proposition \ref{prop.Lomegam}.} Define a $w_{m}\in
-\wedge^{\dfrac{\infty}{2},m}V$ by $w_{m}=v_{m}\wedge v_{m-1}\wedge
-v_{m-2}\wedge...$. Then, $\mathfrak{n}_{+}\cdot w_{m}=0$. (In fact, if
-$E_{i,j}\in\mathfrak{n}_{+}$ then $i<j$ and thus indices are replaced by
-smaller indices...) Moreover, every $h\in\mathfrak{h}$ satisfies
-$hw_{m}=\omega_{m}\left(  h\right)  w_{m}$ (in fact, test at $h=E_{i,i}$).
-Also, $w_{m}$ generates the $\mathfrak{gl}_{\infty}$-module $\wedge
-^{\dfrac{\infty}{2},m}V$. Thus, $\wedge^{\dfrac{\infty}{2},m}V$ is a
-highest-weight representation with highest weight $\omega_{m}$.
+\textit{Proof of Proposition \ref{prop.Lomegam}.} Define a vector $\psi_{m}%
+\in\wedge^{\dfrac{\infty}{2},m}V$ by $\psi_{m}=v_{m}\wedge v_{m-1}\wedge
+v_{m-2}\wedge...$. (Let us repeat that we are no longer using the notations of
+Definition \ref{def.Cdelta}, so that this $\psi_{m}$ has nothing to do with
+the $\psi_{j}$ from Definition \ref{def.Cdelta}.) Then, $\mathfrak{n}_{+}%
+\cdot\psi_{m}=0$. (In fact, if $E_{i,j}\in\mathfrak{n}_{+}$ then $i<j$ and
+thus indices are replaced by smaller indices...) Moreover, every
+$h\in\mathfrak{h}$ satisfies $h\psi_{m}=\omega_{m}\left(  h\right)  \psi_{m}$
+(in fact, test at $h=E_{i,i}$). Also, $\psi_{m}$ generates the $\mathfrak{gl}%
+_{\infty}$-module $\wedge^{\dfrac{\infty}{2},m}V$. Thus, $\wedge
+^{\dfrac{\infty}{2},m}V$ is a highest-weight representation with highest
+weight $\omega_{m}$.
 
 Next let us prove that it is unitary. This will yield that it is
 irreducible.\footnote{We could also show the irreducibility more directly, by
-showing that every sum of wedges can be used to get back $w_{m}$.}
+showing that every sum of wedges can be used to get back $\psi_{m}$.}
 
 The unitarity is because the form in which the wedges are orthonormal is
 $\dag$-invariant. Thus, irreducible. (We used Lemma \ref{lem.unitrick}.)
@@ -14913,12 +14947,12 @@ $j\in\mathbb{Z}$ satisfies $T^{j}=\sum\limits_{i\in\mathbb{Z}}E_{i,i+j}$.
 \end{proposition}
 
 A \textit{difference operator} is an operator of the form $A=\sum
-\limits_{i=p}^{q}a_{i}\left(  n\right)  T^{i}$, where $p$ and $q$ are some
-integers, and $a_{i}:\mathbb{Z}\rightarrow\mathbb{C}$ are some
-functions.\footnote{The sum $\sum\limits_{i=p}^{q}a_{i}\left(  n\right)
+\limits_{i=p}^{q}\gamma_{i}\left(  n\right)  T^{i}$, where $p$ and $q$ are
+some integers, and $\gamma_{i}:\mathbb{Z}\rightarrow\mathbb{C}$ are some
+functions.\footnote{The sum $\sum\limits_{i=p}^{q}\gamma_{i}\left(  n\right)
 T^{i}$ has to be understood as the linear map $X:V\rightarrow V$ given by%
 \[
-\left(  Xx\right)  _{n}=\sum\limits_{i=p}^{q}a_{i}\left(  n\right)
+\left(  Xx\right)  _{n}=\sum\limits_{i=p}^{q}\gamma_{i}\left(  n\right)
 x_{n+i}\ \ \ \ \ \ \ \ \ \ \text{for all }x\in V\text{ and }n\in\mathbb{Z}.
 \]
 } Then, $\overline{\mathfrak{a}_{\infty}}$ is the algebra of all such
@@ -15172,11 +15206,11 @@ this is by noticing that $\overline{\mathfrak{a}_{\infty}}=\bigoplus
 $\overline{\mathfrak{a}_{\infty}^{i}}$ is the space of all matrices with
 nonzero entries only on the $i$-th diagonal. For each $i\in\mathbb{Z}$, the
 vector space $\overline{\mathfrak{a}_{\infty}^{i}}$ can be given the product
-topology (i. e., the topology in which a net $\left(  a_{z}\right)  _{z\in Z}$
-of matrices converges to a matrix $a$ if and only if for any $\left(
+topology (i. e., the topology in which a net $\left(  s_{z}\right)  _{z\in Z}$
+of matrices converges to a matrix $s$ if and only if for any $\left(
 m,n\right)  \in\mathbb{Z}^{2}$ satisfying $n-m=i$, the net of the $\left(
-m,n\right)  $-th entries of the matrices $a_{z}$ converge to the $\left(
-m,n\right)  $-th entry of $a$ in the discrete topology). Then, $\mathfrak{gl}%
+m,n\right)  $-th entries of the matrices $s_{z}$ converge to the $\left(
+m,n\right)  $-th entry of $s$ in the discrete topology). Then, $\mathfrak{gl}%
 _{\infty}^{i}$ in dense in $\overline{\mathfrak{a}_{\infty}^{i}}$ for every
 $i\in\mathbb{Z}$. We can also make $\wedge^{\dfrac{\infty}{2},m}V$ into a
 topological space by using the discrete topology. Our question can now be
@@ -15195,12 +15229,12 @@ Let us first see what goes wrong if we try to find an extension of $\rho$ to
 $\overline{\mathfrak{a}_{\infty}}$ by continuity:
 
 For $i\neq0$, a typical element $X\in\overline{\mathfrak{a}_{\infty}^{i}}$ is
-of the form $X=\sum\limits_{j\in\mathbb{Z}}a_{j}E_{j,j+i}$ with $a_{j}%
+of the form $X=\sum\limits_{j\in\mathbb{Z}}z_{j}E_{j,j+i}$ with $z_{j}%
 \in\mathbb{C}$. Now we can define $\rho\left(  X\right)  v=\sum\limits_{j\in
-\mathbb{Z}}a_{j}\rho\left(  E_{j,j+i}\right)  v$ for every $v\in\wedge
+\mathbb{Z}}z_{j}\rho\left(  E_{j,j+i}\right)  v$ for every $v\in\wedge
 ^{\dfrac{\infty}{2},m}V$; this sum has only finitely many nonzero
 addends\footnote{\textit{Proof.} We must prove that, for every $v\in
-\wedge^{\dfrac{\infty}{2},m}V$, the sum $\sum\limits_{j\in\mathbb{Z}}a_{j}%
+\wedge^{\dfrac{\infty}{2},m}V$, the sum $\sum\limits_{j\in\mathbb{Z}}z_{j}%
 \rho\left(  E_{j,j+i}\right)  v$ has only finitely many nonzero addends. It is
 clearly enough to prove this in the case when $v$ is an elementary
 semiinfinite wedge. So let us WLOG assume that $v$ is an elementary
@@ -15230,13 +15264,13 @@ Combining these two observations, we conclude that every sufficiently large
 integer $j$ satisfies $\rho\left(  E_{j,j+i}\right)  v=0$ and that every
 sufficiently small integer $j$ satisfies $\rho\left(  E_{j,j+i}\right)  v=0$.
 Hence, only finitely many integers $v$ satisfy $\rho\left(  E_{j,j+i}\right)
-v\neq0$. Thus, the sum $\sum\limits_{j\in\mathbb{Z}}a_{j}\rho\left(
+v\neq0$. Thus, the sum $\sum\limits_{j\in\mathbb{Z}}z_{j}\rho\left(
 E_{j,j+i}\right)  v$ has only finitely many nonzero addends, qed.} and thus
 makes sense.
 
 But when $i=0$, we run into a problem with this approach: $\rho\left(
-\sum\limits_{j\in\mathbb{Z}}a_{j}E_{j,j}\right)  v=\sum\limits_{j\in
-\mathbb{Z}}a_{j}\rho\left(  E_{j,j}\right)  v$ is an infinite sum which may
+\sum\limits_{j\in\mathbb{Z}}z_{j}E_{j,j}\right)  v=\sum\limits_{j\in
+\mathbb{Z}}z_{j}\rho\left(  E_{j,j}\right)  v$ is an infinite sum which may
 very well have infinitely many nonzero addends, and thus makes no sense.
 
 To fix this problem, we define a map $\widehat{\rho}$ which will be a "small"
@@ -15556,25 +15590,25 @@ exactly as $\rho\left(  a\right)  $ would if we could extend $\rho$ to
 $\overline{\mathfrak{a}_{\infty}}$:
 
 \begin{proposition}
-\label{prop.glinf.ainfact}Let $m\in\mathbb{Z}$. Let $a_{0},a_{1},a_{2},...$ be
+\label{prop.glinf.ainfact}Let $m\in\mathbb{Z}$. Let $b_{0},b_{1},b_{2},...$ be
 vectors in $V$ which satisfy%
 \[
-a_{i}=v_{m-i}\ \ \ \ \ \ \ \ \ \ \text{for sufficiently large }i.
+b_{i}=v_{m-i}\ \ \ \ \ \ \ \ \ \ \text{for sufficiently large }i.
 \]
 Let $a\in\overline{\mathfrak{a}_{\infty}}$. Assume that, for every integer
 $i\leq0$, the $\left(  i,i\right)  $-th entry of $a$ is $0$. Then,%
 \[
-\left(  \widehat{\rho}\left(  a\right)  \right)  \left(  a_{0}\wedge
-a_{1}\wedge a_{2}\wedge...\right)  =\sum\limits_{k\geq0}a_{0}\wedge
-a_{1}\wedge...\wedge a_{k-1}\wedge\left(  a\rightharpoonup a_{k}\right)
-\wedge a_{k+1}\wedge a_{k+2}\wedge....
+\left(  \widehat{\rho}\left(  a\right)  \right)  \left(  b_{0}\wedge
+b_{1}\wedge b_{2}\wedge...\right)  =\sum\limits_{k\geq0}b_{0}\wedge
+b_{1}\wedge...\wedge b_{k-1}\wedge\left(  a\rightharpoonup b_{k}\right)
+\wedge b_{k+1}\wedge b_{k+2}\wedge....
 \]
-In particular, the infinite sum $\sum\limits_{k\geq0}a_{0}\wedge a_{1}%
-\wedge...\wedge a_{k-1}\wedge\left(  a\rightharpoonup a_{k}\right)  \wedge
-a_{k+1}\wedge a_{k+2}\wedge...$ is well-defined (i. e., all but finitely many
-integers $k\geq0$ satisfy $a_{0}\wedge a_{1}\wedge...\wedge a_{k-1}%
-\wedge\left(  a\rightharpoonup a_{k}\right)  \wedge a_{k+1}\wedge
-a_{k+2}\wedge...=0$).
+In particular, the infinite sum $\sum\limits_{k\geq0}b_{0}\wedge b_{1}%
+\wedge...\wedge b_{k-1}\wedge\left(  a\rightharpoonup b_{k}\right)  \wedge
+b_{k+1}\wedge b_{k+2}\wedge...$ is well-defined (i. e., all but finitely many
+integers $k\geq0$ satisfy $b_{0}\wedge b_{1}\wedge...\wedge b_{k-1}%
+\wedge\left(  a\rightharpoonup b_{k}\right)  \wedge b_{k+1}\wedge
+b_{k+2}\wedge...=0$).
 \end{proposition}
 
 \textit{Proof of Proposition \ref{prop.glinf.ainfact}.} For every $\left(
@@ -15653,29 +15687,29 @@ E_{i,j}\right) \\
 \end{align*}
 so that%
 \begin{align*}
-&  \left(  \widehat{\rho}\left(  a\right)  \right)  \left(  a_{0}\wedge
-a_{1}\wedge a_{2}\wedge...\right) \\
+&  \left(  \widehat{\rho}\left(  a\right)  \right)  \left(  b_{0}\wedge
+b_{1}\wedge b_{2}\wedge...\right) \\
 &  =\sum\limits_{\substack{\left(  i,j\right)  \in\mathbb{Z}^{2};\\\text{not
 }\left(  i=j\text{ and }i\leq0\right)  }}a_{i,j}\underbrace{\rho\left(
-E_{i,j}\right)  \left(  a_{0}\wedge a_{1}\wedge a_{2}\wedge...\right)
-}_{\substack{=E_{i,j}\rightharpoonup\left(  a_{0}\wedge a_{1}\wedge
-a_{2}\wedge...\right)  \\=\sum\limits_{k\geq0}a_{0}\wedge a_{1}\wedge...\wedge
-a_{k-1}\wedge\left(  E_{i,j}\rightharpoonup a_{k}\right)  \wedge a_{k+1}\wedge
-a_{k+2}\wedge...\\\text{(by Definition \ref{def.glinf.semiinfwedge})}}}\\
+E_{i,j}\right)  \left(  b_{0}\wedge b_{1}\wedge b_{2}\wedge...\right)
+}_{\substack{=E_{i,j}\rightharpoonup\left(  b_{0}\wedge b_{1}\wedge
+b_{2}\wedge...\right)  \\=\sum\limits_{k\geq0}b_{0}\wedge b_{1}\wedge...\wedge
+b_{k-1}\wedge\left(  E_{i,j}\rightharpoonup b_{k}\right)  \wedge b_{k+1}\wedge
+b_{k+2}\wedge...\\\text{(by Definition \ref{def.glinf.semiinfwedge})}}}\\
 &  =\sum\limits_{\substack{\left(  i,j\right)  \in\mathbb{Z}^{2};\\\text{not
 }\left(  i=j\text{ and }i\leq0\right)  }}a_{i,j}\sum\limits_{k\geq0}%
-a_{0}\wedge a_{1}\wedge...\wedge a_{k-1}\wedge\left(  E_{i,j}\rightharpoonup
-a_{k}\right)  \wedge a_{k+1}\wedge a_{k+2}\wedge...\\
-&  =\sum\limits_{k\geq0}a_{0}\wedge a_{1}\wedge...\wedge a_{k-1}%
+b_{0}\wedge b_{1}\wedge...\wedge b_{k-1}\wedge\left(  E_{i,j}\rightharpoonup
+b_{k}\right)  \wedge b_{k+1}\wedge b_{k+2}\wedge...\\
+&  =\sum\limits_{k\geq0}b_{0}\wedge b_{1}\wedge...\wedge b_{k-1}%
 \wedge\underbrace{\left(  \sum\limits_{\substack{\left(  i,j\right)
 \in\mathbb{Z}^{2};\\\text{not }\left(  i=j\text{ and }i\leq0\right)  }%
-}a_{i,j}\left(  E_{i,j}\rightharpoonup a_{k}\right)  \right)  }%
+}a_{i,j}\left(  E_{i,j}\rightharpoonup b_{k}\right)  \right)  }%
 _{\substack{=\left(  \sum\limits_{\substack{\left(  i,j\right)  \in
 \mathbb{Z}^{2};\\\text{not }\left(  i=j\text{ and }i\leq0\right)  }%
-}a_{i,j}E_{i,j}\right)  \rightharpoonup a_{k}=a\rightharpoonup a_{k}%
+}a_{i,j}E_{i,j}\right)  \rightharpoonup b_{k}=a\rightharpoonup b_{k}%
 \\\text{(since }\sum\limits_{\substack{\left(  i,j\right)  \in\mathbb{Z}%
 ^{2};\\\text{not }\left(  i=j\text{ and }i\leq0\right)  }}a_{i,j}%
-E_{i,j}=a\text{)}}}\wedge a_{k+1}\wedge a_{k+2}\wedge...\\
+E_{i,j}=a\text{)}}}\wedge b_{k+1}\wedge b_{k+2}\wedge...\\
 &  \ \ \ \ \ \ \ \ \ \ \left(
 \begin{array}
 [c]{c}%
@@ -15683,17 +15717,17 @@ E_{i,j}=a\text{)}}}\wedge a_{k+1}\wedge a_{k+2}\wedge...\\
 the reader}\\
 \text{can check) all but finitely many }\left(  \left(  i,j\right)  ,k\right)
 \in\mathbb{Z}^{2}\times\mathbb{Z}\text{ satisfying }k\geq0\text{ and not}\\
-\left(  i=j\text{ and }i\leq0\right)  \text{ satisfy }a_{i,j}\cdot a_{0}\wedge
-a_{1}\wedge...\wedge a_{k-1}\wedge\left(  E_{i,j}\rightharpoonup a_{k}\right)
-\wedge a_{k+1}\wedge a_{k+2}\wedge...=0
+\left(  i=j\text{ and }i\leq0\right)  \text{ satisfy }a_{i,j}\cdot b_{0}\wedge
+b_{1}\wedge...\wedge b_{k-1}\wedge\left(  E_{i,j}\rightharpoonup b_{k}\right)
+\wedge b_{k+1}\wedge b_{k+2}\wedge...=0
 \end{array}
 \right) \\
-&  =\sum\limits_{k\geq0}a_{0}\wedge a_{1}\wedge...\wedge a_{k-1}\wedge\left(
-a\rightharpoonup a_{k}\right)  \wedge a_{k+1}\wedge a_{k+2}\wedge...
+&  =\sum\limits_{k\geq0}b_{0}\wedge b_{1}\wedge...\wedge b_{k-1}\wedge\left(
+a\rightharpoonup b_{k}\right)  \wedge b_{k+1}\wedge b_{k+2}\wedge...
 \end{align*}
 (and en passant, this argument has shown that the infinite sum $\sum
-\limits_{k\geq0}a_{0}\wedge a_{1}\wedge...\wedge a_{k-1}\wedge\left(
-a\rightharpoonup a_{k}\right)  \wedge a_{k+1}\wedge a_{k+2}\wedge...$ is
+\limits_{k\geq0}b_{0}\wedge b_{1}\wedge...\wedge b_{k-1}\wedge\left(
+a\rightharpoonup b_{k}\right)  \wedge b_{k+1}\wedge b_{k+2}\wedge...$ is
 well-defined). This proves Proposition \ref{prop.glinf.ainfact}.
 
 The issue that remains is that $\widehat{\rho}$ is not a representation of
@@ -16411,10 +16445,10 @@ $\widehat{v_{i}}:\mathcal{F}^{\left(  m\right)  }\rightarrow\mathcal{F}%
 \]
 Here, $v_{i}\wedge\psi$ is formally defined as follows: Write $\psi$ as a
 $\mathbb{C}$-linear combination of (well-defined) semiinfinite wedge products
-$a_{0}\wedge a_{1}\wedge a_{2}\wedge...$ (for instance, elementary
+$b_{0}\wedge b_{1}\wedge b_{2}\wedge...$ (for instance, elementary
 semiinfinite wedges); then, $v_{i}\wedge\psi$ is obtained by replacing each
-such product $a_{0}\wedge a_{1}\wedge a_{2}\wedge...$ by $v_{i}\wedge
-a_{0}\wedge a_{1}\wedge a_{2}\wedge...$.
+such product $b_{0}\wedge b_{1}\wedge b_{2}\wedge...$ by $v_{i}\wedge
+b_{0}\wedge b_{1}\wedge b_{2}\wedge...$.
 
 \textbf{(b)} We define the so-called $i$\textit{-th contraction operator}
 $\overset{\vee}{v_{i}}:\mathcal{F}^{\left(  m\right)  }\rightarrow
@@ -16739,7 +16773,8 @@ i\leq0,\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }\left[  \xi_{i}\xi_{i+j}^{\ast
 }-1,X\left(  u\right)  \right]  =\left[  \xi_{i}\xi_{i+j}^{\ast},X\left(
 u\right)  \right]  \right) \\
-&  =\sum\limits_{i}\left[  \xi_{i}\xi_{i+j}^{\ast},\sum\limits_{m}\xi_{m}%
+&  =\sum\limits_{i}\left[  \xi_{i}\xi_{i+j}^{\ast},X\left(  u\right)  \right]
+=\sum\limits_{i}\left[  \xi_{i}\xi_{i+j}^{\ast},\sum\limits_{m}\xi_{m}%
 u^{m}\right]  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }X\left(  u\right)
 =\sum\limits_{m}\xi_{m}u^{m}\right) \\
 &  =\sum\limits_{i}\sum\limits_{m}\underbrace{\left[  \xi_{i}\xi_{i+j}^{\ast
@@ -16981,10 +17016,10 @@ z^{-1}=f\left(  u\right)  \exp\left(  \sum\limits_{j>0}\dfrac{a_{-j}}{j}%
 u^{j}\right)  $, so that%
 \begin{align}
 \Gamma\left(  u\right)   &  =f\left(  u\right)  \exp\left(  \sum
-\limits_{j>0}\dfrac{a_{-j}}{j}u^{j}\right)  \cdot\Gamma_{+}\left(  u\right)
-\cdot z=f\left(  u\right)  \exp\left(  \sum\limits_{j>0}\dfrac{a_{-j}}{j}%
-u^{j}\right)  \cdot\exp\left(  -\sum\limits_{j>0}\dfrac{a_{j}}{j}%
-u^{-j}\right)  \cdot z\nonumber\\
+\limits_{j>0}\dfrac{a_{-j}}{j}u^{j}\right)  \cdot z\cdot\Gamma_{+}\left(
+u\right)  =f\left(  u\right)  \exp\left(  \sum\limits_{j>0}\dfrac{a_{-j}}%
+{j}u^{j}\right)  \cdot z\cdot\exp\left(  -\sum\limits_{j>0}\dfrac{a_{j}}%
+{j}u^{-j}\right) \nonumber\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }\Gamma_{+}\left(  u\right)
 =\exp\left(  -\sum\limits_{j>0}\dfrac{a_{j}}{j}u^{-j}\right)  \right)
 \nonumber\\
@@ -17512,8 +17547,8 @@ Proposition \ref{prop.schur.h_k.as.schur} yields $h_{k}\left(  y\right)
 =\operatorname*{PSE}\nolimits_{N}\left(  S_{k}\left(  x\right)  \right)  $ for
 each $k\in\mathbb{N}$. Since $h_{k}\left(  y\right)  =\operatorname*{PSE}%
 \nolimits_{N}\left(  S_{k}\left(  x\right)  \right)  $ also holds for every
-nonnegative integer $k$ (since every nonnegative integer $k$ satisfies
-$h_{k}=0$ and $S_{k}=0$), we thus conclude that%
+negative integer $k$ (since every negative integer $k$ satisfies $h_{k}=0$ and
+$S_{k}=0$), we thus conclude that%
 \begin{equation}
 h_{k}\left(  y\right)  =\operatorname*{PSE}\nolimits_{N}\left(  S_{k}\left(
 x\right)  \right)  \ \ \ \ \ \ \ \ \ \ \text{for every }k\in\mathbb{Z}.
@@ -18377,14 +18412,19 @@ $\left\{  0,1,...,N-1\right\}  $ such that $i_{\phi^{-1}\left(  0\right)
 }>i_{\phi^{-1}\left(  1\right)  }>...>i_{\phi^{-1}\left(  N-1\right)  }$.
 Consider this $\phi$.
 
-Since $\phi^{-1}\left(  N-1\right)  \in\left\{  0,1,...,N-1\right\}  $, the
-integer $i_{\phi^{-1}\left(  N-1\right)  }$ is one of the integers $i_{0}$,
-$i_{1}$, $...$, $i_{N-1}$, and therefore $>-N$ (due to
-(\ref{pf.schur.step2.fin2})). We thus have shown $i_{\phi^{-1}\left(
-N-1\right)  }>-N$. Combining this with $i_{\phi^{-1}\left(  0\right)
-}>i_{\phi^{-1}\left(  1\right)  }>...>i_{\phi^{-1}\left(  N-1\right)  }$, we
-get $i_{\phi^{-1}\left(  0\right)  }>i_{\phi^{-1}\left(  1\right)
-}>...>i_{\phi^{-1}\left(  N-1\right)  }>-N$.
+It is easy to see that $i_{\phi^{-1}\left(  0\right)  }>i_{\phi^{-1}\left(
+1\right)  }>...>i_{\phi^{-1}\left(  N-1\right)  }>-N$%
+.\ \ \ \ \footnote{\textit{Proof.} Every $j\in\left\{  0,1,...,N-1\right\}  $
+satisfies $\phi^{-1}\left(  j\right)  \in\phi^{-1}\left(  \left\{
+0,1,...,N-1\right\}  \right)  =\left\{  0,1,...,N-1\right\}  $. Hence, for
+every $j\in\left\{  0,1,...,N-1\right\}  $, the integer $i_{\phi^{-1}\left(
+j\right)  }$ is one of the integers $i_{0}$, $i_{1}$, $...$, $i_{N-1}$, and
+therefore $>-N$ (due to (\ref{pf.schur.step2.fin2})). That is, $i_{\phi
+^{-1}\left(  j\right)  }>-N$ for every $j\in\left\{  0,1,...,N-1\right\}  $.
+Combining this with $i_{\phi^{-1}\left(  0\right)  }>i_{\phi^{-1}\left(
+1\right)  }>...>i_{\phi^{-1}\left(  N-1\right)  }$, we get $i_{\phi
+^{-1}\left(  0\right)  }>i_{\phi^{-1}\left(  1\right)  }>...>i_{\phi
+^{-1}\left(  N-1\right)  }>-N$.}
 
 Let $\pi$ be the permutation of $\mathbb{N}$ which sends every $k\in
 \mathbb{N}$ to $\left\{
@@ -18477,9 +18517,12 @@ v_{i_{1}}\wedge v_{i_{2}}\wedge...\right)  \right) \nonumber\\
 &  =\left(  -1\right)  ^{\phi}\operatorname*{PSE}\nolimits_{N}%
 \underbrace{\left(  \tau\left(  v_{i_{\pi^{-1}\left(  0\right)  }}\wedge
 v_{i_{\pi^{-1}\left(  1\right)  }}\wedge v_{i_{\pi^{-1}\left(  2\right)  }%
-}\wedge...\right)  \right)  }_{=S_{\left(  i_{\pi^{-1}\left(  0\right)
-}+0,i_{\pi^{-1}\left(  1\right)  }+1,i_{\pi^{-1}\left(  2\right)
-}+2,...\right)  }\left(  x\right)  }\nonumber\\
+}\wedge...\right)  \right)  }_{\substack{=S_{\left(  i_{\pi^{-1}\left(
+0\right)  }+0,i_{\pi^{-1}\left(  1\right)  }+1,i_{\pi^{-1}\left(  2\right)
+}+2,...\right)  }\left(  x\right)  \\\text{(by the definition of }\phi\text{,
+since }\left(  i_{\pi^{-1}\left(  0\right)  },i_{\pi^{-1}\left(  1\right)
+},i_{\pi^{-1}\left(  2\right)  },...\right)  \text{is a }0\text{-degression)}%
+}}\nonumber\\
 &  =\left(  -1\right)  ^{\phi}\operatorname*{PSE}\nolimits_{N}\left(
 S_{\left(  i_{\pi^{-1}\left(  0\right)  }+0,i_{\pi^{-1}\left(  1\right)
 }+1,i_{\pi^{-1}\left(  2\right)  }+2,...\right)  }\left(  x\right)  \right)  .
@@ -18599,7 +18642,7 @@ v_{i_{1}}\wedge v_{i_{2}}\wedge...\right)  . \label{pf.schur.step3.2}%
 Since $m\neq0$, the matrix $T^{-m}$ has the property that, for every integer
 $i$, the $\left(  i,i\right)  $-th entry of $T^{-m}$ is $0$. Hence,
 Proposition \ref{prop.glinf.ainfact} (applied to $m=0$, $a=T^{-m}$ and
-$a_{k}=v_{i_{k}}$) yields%
+$b_{k}=v_{i_{k}}$) yields%
 \begin{align*}
 &  \left(  \widehat{\rho}\left(  T^{-m}\right)  \right)  \left(  v_{i_{0}%
 }\wedge v_{i_{1}}\wedge v_{i_{2}}\wedge...\right) \\
@@ -18816,7 +18859,7 @@ $0$-degression $\left(  i_{0},i_{1},i_{2},...\right)  $ satisfies%
 }\wedge v_{i_{2}}\wedge...\right) \\
 &  =S_{\left(  i_{0}+0,i_{1}+1,i_{2}+2,...\right)  }\left(  x\right)
 \ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }\tau\right) \\
-&  =S_{\left(  i_{0}+0,i_{1}+1,i_{2}+2,...\right)  }\left(  x\right)  ,
+&  =S_{\lambda}\left(  x\right)  ,
 \end{align*}
 where $\lambda=\left(  i_{0}+0,i_{1}+1,i_{2}+2,...\right)  $. This proves
 Theorem \ref{thm.schur}.
@@ -19438,40 +19481,40 @@ map $\widehat{V}$ is well-defined.)
 \end{definition}
 
 \begin{definition}
-\label{def.uinf.Vhatwedge}Let $m\in\mathbb{Z}$. Let $a_{0},a_{1},a_{2},...$ be
+\label{def.uinf.Vhatwedge}Let $m\in\mathbb{Z}$. Let $b_{0},b_{1},b_{2},...$ be
 vectors in $V$ which satisfy%
 \[
-a_{i}=v_{m-i}\ \ \ \ \ \ \ \ \ \ \text{for all sufficiently large }i.
+b_{i}=v_{m-i}\ \ \ \ \ \ \ \ \ \ \text{for all sufficiently large }i.
 \]
-Define an element $a_{0}\wedge a_{1}\wedge a_{2}\wedge...$ of $\wedge
+Define an element $b_{0}\wedge b_{1}\wedge b_{2}\wedge...$ of $\wedge
 ^{\dfrac{\infty}{2},m}V$ as follows: Pick some $N\in\mathbb{N}$ such that
-every $i\geq N$ satisfies $a_{i}=v_{m-i}$. (Such an $N$ exists, since we know
-that $a_{i}=v_{m-i}$ for all sufficiently large $i$.) Then, we define
-$a_{0}\wedge a_{1}\wedge a_{2}\wedge...$ to be the element
+every $i\geq N$ satisfies $b_{i}=v_{m-i}$. (Such an $N$ exists, since we know
+that $b_{i}=v_{m-i}$ for all sufficiently large $i$.) Then, we define
+$b_{0}\wedge b_{1}\wedge b_{2}\wedge...$ to be the element
 \[
-\pi_{m-N}\left(  a_{0}\right)  \wedge\pi_{m-N}\left(  a_{1}\right)
-\wedge...\wedge\pi_{m-N}\left(  a_{i-1}\right)  \wedge v_{m-i}\wedge
-v_{m-i-1}\wedge v_{m-i-2}\wedge...\in\wedge^{\dfrac{\infty}{2},m}V.
+\pi_{m-N}\left(  b_{0}\right)  \wedge\pi_{m-N}\left(  b_{1}\right)
+\wedge...\wedge\pi_{m-N}\left(  b_{N-1}\right)  \wedge v_{m-N}\wedge
+v_{m-N-1}\wedge v_{m-N-2}\wedge...\in\wedge^{\dfrac{\infty}{2},m}V.
 \]
 This element does not depend on the choice of $N$ (according to Proposition
-\ref{prop.uinf.Vhatwedge.welldef} \textbf{(a)} below). Hence, $a_{0}\wedge
-a_{1}\wedge a_{2}\wedge...$ is well-defined.
+\ref{prop.uinf.Vhatwedge.welldef} \textbf{(a)} below). Hence, $b_{0}\wedge
+b_{1}\wedge b_{2}\wedge...$ is well-defined.
 \end{definition}
 
 \begin{proposition}
-\label{prop.uinf.Vhatwedge.welldef}Let $m\in\mathbb{Z}$. Let $a_{0}%
-,a_{1},a_{2},...$ be vectors in $V$ which satisfy%
+\label{prop.uinf.Vhatwedge.welldef}Let $m\in\mathbb{Z}$. Let $b_{0}%
+,b_{1},b_{2},...$ be vectors in $V$ which satisfy%
 \[
-a_{i}=v_{m-i}\ \ \ \ \ \ \ \ \ \ \text{for all sufficiently large }i.
+b_{i}=v_{m-i}\ \ \ \ \ \ \ \ \ \ \text{for all sufficiently large }i.
 \]
 
 
 \textbf{(a)} If we pick some $N\in\mathbb{N}$ such that every $i\geq N$
-satisfies $a_{i}=v_{m-i}$, then the element%
+satisfies $b_{i}=v_{m-i}$, then the element%
 \[
-\pi_{m-N}\left(  a_{0}\right)  \wedge\pi_{m-N}\left(  a_{1}\right)
-\wedge...\wedge\pi_{m-N}\left(  a_{i-1}\right)  \wedge v_{m-i}\wedge
-v_{m-i-1}\wedge v_{m-i-2}\wedge...\in\wedge^{\dfrac{\infty}{2},m}V
+\pi_{m-N}\left(  b_{0}\right)  \wedge\pi_{m-N}\left(  b_{1}\right)
+\wedge...\wedge\pi_{m-N}\left(  b_{N-1}\right)  \wedge v_{m-N}\wedge
+v_{m-N-1}\wedge v_{m-N-2}\wedge...\in\wedge^{\dfrac{\infty}{2},m}V
 \]
 does not depend on the choice of $N$.
 
@@ -19481,9 +19524,9 @@ does not depend on the choice of $N$.
 \begin{definition}
 Let $a\in\mathfrak{gl}_{\infty}$. Then,%
 \[
-a\rightharpoonup\left(  a_{0}\wedge a_{1}\wedge a_{2}\wedge...\right)
-=\sum\limits_{k\geq0}a_{0}\wedge a_{1}\wedge...\wedge a_{k-1}\wedge\left(
-a\rightharpoonup a_{k}\right)  \wedge a_{k+1}\wedge a_{k+2}\wedge....
+a\rightharpoonup\left(  b_{0}\wedge b_{1}\wedge b_{2}\wedge...\right)
+=\sum\limits_{k\geq0}b_{0}\wedge b_{1}\wedge...\wedge b_{k-1}\wedge\left(
+a\rightharpoonup b_{k}\right)  \wedge b_{k+1}\wedge b_{k+2}\wedge....
 \]
 
 \end{definition}
@@ -20968,17 +21011,17 @@ linear map $j_{N}^{\left(  m\right)  }:\wedge^{N+m+1}\left(  V_{N}\right)
 \left(
 \begin{array}
 [c]{r}%
-j_{N}^{\left(  m\right)  }\left(  a_{0}\wedge a_{1}\wedge...\wedge
-a_{N+m}\right)  =a_{0}\wedge a_{1}\wedge...\wedge a_{N+m}\wedge v_{-N-1}\wedge
+j_{N}^{\left(  m\right)  }\left(  b_{0}\wedge b_{1}\wedge...\wedge
+b_{N+m}\right)  =b_{0}\wedge b_{1}\wedge...\wedge b_{N+m}\wedge v_{-N-1}\wedge
 v_{-N-2}\wedge v_{-N-3}\wedge...\\
-\text{for any }a_{0},a_{1},...,a_{N+m}\in V_{N}%
+\text{for any }b_{0},b_{1},...,b_{N+m}\in V_{N}%
 \end{array}
 \right)  .
 \]
-This map $j_{N}^{\left(  m\right)  }$ is well-defined (because $a_{0}\wedge
-a_{1}\wedge...\wedge a_{N+m}\wedge v_{-N-1}\wedge v_{-N-2}\wedge
+This map $j_{N}^{\left(  m\right)  }$ is well-defined (because $b_{0}\wedge
+b_{1}\wedge...\wedge b_{N+m}\wedge v_{-N-1}\wedge v_{-N-2}\wedge
 v_{-N-3}\wedge...$ is easily seen to lie in $\mathcal{F}^{\left(  m\right)  }$
-and depend multilinearly and antisymmetrically on $a_{0},a_{1},...,a_{N+m}$)
+and depend multilinearly and antisymmetrically on $b_{0},b_{1},...,b_{N+m}$)
 and injective (because the elements of the basis $\left(  v_{i_{0}}\wedge
 v_{i_{1}}\wedge...\wedge v_{i_{N+m}}\right)  _{N\geq i_{0}>i_{1}%
 >...>i_{N+m}\geq-N}$ of $\wedge^{N+m+1}\left(  V_{N}\right)  $ are sent by
@@ -21120,11 +21163,11 @@ because it is needed in our application.
 $N\in\mathbb{N}$. From the definitions of $j_{N}$ and $j_{N+1}$, it is easy to
 see that%
 \[
-j_{N}^{\left(  m\right)  }\left(  a_{0}\wedge a_{1}\wedge...\wedge
-a_{N+m}\right)  =j_{N+1}^{\left(  m\right)  }\left(  a_{0}\wedge a_{1}%
-\wedge...\wedge a_{N+m}\wedge v_{-N-1}\right)
+j_{N}^{\left(  m\right)  }\left(  b_{0}\wedge b_{1}\wedge...\wedge
+b_{N+m}\right)  =j_{N+1}^{\left(  m\right)  }\left(  b_{0}\wedge b_{1}%
+\wedge...\wedge b_{N+m}\wedge v_{-N-1}\right)
 \]
-for any $a_{0},a_{1},...,a_{N+m}\in V_{N}$. Due to linearity, this yields that
+for any $b_{0},b_{1},...,b_{N+m}\in V_{N}$. Due to linearity, this yields that
 $j_{N}^{\left(  m\right)  }\left(  a\right)  =j_{N+1}^{\left(  m\right)
 }\left(  a\wedge v_{-N-1}\right)  $ for any $a\in\wedge^{N+m+1}\left(
 V_{N}\right)  $. Hence, $j_{N}^{\left(  m\right)  }\left(  a\right)
@@ -24282,10 +24325,10 @@ u,v\right)  \right)  \ \mid\ S\left(  \tau\otimes\tau\right)  =0\right\}  .
 \end{proposition}
 
 \begin{corollary}
-We have
+For any $a^{(1)},a^{(2)},...,a^{(n)}\in\mathbb{C}$, we have
 \begin{align*}
-&  \left(  1+a_{1}\Gamma\left(  u_{1},v_{1}\right)  \right)  \left(
-1+a_{2}\Gamma\left(  u_{2},v_{2}\right)  \right)  ...\left(  1+a_{n}%
+&  \left(  1+a^{(1)}\Gamma\left(  u_{1},v_{1}\right)  \right)  \left(
+1+a^{(2)}\Gamma\left(  u_{2},v_{2}\right)  \right)  ...\left(  1+a^{(n)}%
 \Gamma\left(  u_{n},v_{n}\right)  \right)  \mathbf{1}\\
 &  \in\Omega
 \end{align*}
@@ -24304,11 +24347,12 @@ We will formalize this proof later.
 But first, here is the punchline of this:
 
 \begin{proposition}
-If $\tau=\left(  1+a_{1}\Gamma\left(  u_{1},v_{1}\right)  \right)  \left(
-1+a_{2}\Gamma\left(  u_{2},v_{2}\right)  \right)  ...\left(  1+a_{n}%
-\Gamma\left(  u_{n},v_{n}\right)  \right)  \mathbf{1}$, then $2\partial
-_{x}^{2}\log\tau$ is given by a convergent series and defines a solution of KP
-depending on the parameters $a_{i}$, $u_{i}$ and $v_{i}$.
+Let $a^{(1)},a^{(2)},...,a^{(n)}\in\mathbb{C}$. If $\tau=\left(
+1+a^{(1)}\Gamma\left(  u_{1},v_{1}\right)  \right)  \left(  1+a^{(2)}%
+\Gamma\left(  u_{2},v_{2}\right)  \right)  ...\left(  1+a^{(n)}\Gamma\left(
+u_{n},v_{n}\right)  \right)  \mathbf{1}$, then $2\partial_{x}^{2}\log\tau$ is
+given by a convergent series and defines a solution of KP depending on the
+parameters $a^{(i)}$, $u_{i}$ and $v_{i}$.
 \end{proposition}
 
 This solution is called an $n$\textit{-soliton solution}.
@@ -24527,12 +24571,12 @@ $ which is the determinant of the contravariant form $\left(  \cdot
 ,\cdot\right)  $ in degree $n$. This polynomial is defined up to a constant
 scalar. Let us recall how it is defined:
 
-Let $\left(  a_{j}\right)  $ be a basis of $U\left(  \operatorname*{Vir}%
+Let $\left(  w_{j}\right)  $ be a basis of $U\left(  \operatorname*{Vir}%
 \nolimits_{-}\right)  \left[  n\right]  $ (where $\operatorname*{Vir}%
 \nolimits_{-}$ is $\left\langle L_{-1},L_{-2},L_{-3},...\right\rangle $; this
 is now the \textbf{positive} part of $\operatorname*{Vir}$). Then,
-$\det\nolimits_{n}\left(  c,h\right)  =\det\left(  \left(  a_{I}v_{\lambda
-},a_{J}v_{\lambda}\right)  _{I,J}\right)  $. If we change the basis by a
+$\det\nolimits_{n}\left(  c,h\right)  =\det\left(  \left(  w_{I}v_{\lambda
+},w_{J}v_{\lambda}\right)  _{I,J}\right)  $. If we change the basis by a
 matrix $S$, the determinant multiplies by $\left(  \det S\right)  ^{2}$.
 
 For a Hermitian form, we can do the same when $\left(  c,h\right)  $ is real,
@@ -24588,9 +24632,9 @@ for some nonzero constant $K$ (which depends on the choice of the basis).
 \textit{Proof.} We computed before the leading term of $\det\nolimits_{m}$ for
 any graded Lie algebra.
 
-$\left\langle L_{-k}^{m_{k}}...L_{-1}^{m_{1}}v_{\lambda},L_{-k}^{n_{k}%
-}...L_{-1}^{n_{1}}v_{\lambda}\right\rangle $: the main contribution to the
-leading term comes from diagonal.
+$\left(  L_{-k}^{m_{k}}...L_{-1}^{m_{1}}v_{\lambda},L_{-k}^{n_{k}}%
+...L_{-1}^{n_{1}}v_{\lambda}\right)  $: the main contribution to the leading
+term comes from diagonal.
 
 What degree in $h$ do we get?
 
@@ -25172,8 +25216,9 @@ where the matrices $\left(
 \right)  $ are understood as block matrices made of $n\times n$ blocks.
 
 In order to compute $\alpha\left(  a\left(  t\right)  ,b\left(  t\right)
-\right)  $, let us write these two infinite matrices as block matrices
-\textbf{made of infinite blocks}, where the blocks are separated as follows:
+\right)  $, let us write these two infinite matrices $a\left(  t\right)  $ and
+$b\left(  t\right)  $ as $2\times2$ block matrices \textbf{made of infinite
+blocks each}, where the blocks are separated as follows:
 
 - The left blocks contain the $j$-th columns for all $j\leq0$; the right
 blocks contain the $j$-th columns for all $j>0$.
@@ -25314,55 +25359,71 @@ topology. A similar argument shows that the sum $\sum
 \limits_{\substack{\left(  i,k\right)  \in\mathbb{Z}^{2};\\i\geq
 0;\ k>0}}a_{k+i}b_{-k-i}$ converges with respect to the discrete topology.}.
 Hence, we can transform these sums as we please: For example,%
-\begin{align*}
+\begin{align}
 &  \sum\limits_{\substack{\left(  i,k\right)  \in\mathbb{Z}^{2};\\i\geq
-0;\ k>0}}b_{k+i}a_{-k-i}\\
+0;\ k>0}}b_{k+i}a_{-k-i}\nonumber\\
 &  =\sum\limits_{\substack{\ell\in\mathbb{Z};\\\ell>0}}\sum
 \limits_{\substack{\left(  i,k\right)  \in\mathbb{Z}^{2};\\i\geq
 0;\ k>0;\\k+i=\ell}}\underbrace{b_{k+i}}_{\substack{=b_{\ell}\\\text{(since
 }k+i=\ell\text{)}}}\underbrace{a_{-k-i}}_{\substack{=a_{-\left(  k+i\right)
 }=a_{-\ell}\\\text{(since }k+i=\ell\text{)}}}\ \ \ \ \ \ \ \ \ \ \left(
-\text{since }k+i>0\text{ for all }i\geq0\text{ and }k>0\right) \\
+\text{since }k+i>0\text{ for all }i\geq0\text{ and }k>0\right) \nonumber\\
 &  =\sum\limits_{\substack{\ell\in\mathbb{Z};\\\ell>0}}\underbrace{\sum
 \limits_{\substack{\left(  i,k\right)  \in\mathbb{Z}^{2};\\i\geq
 0;\ k>0;\\k+i=\ell}}b_{\ell}a_{-\ell}}_{\substack{=\ell b_{\ell}a_{-\ell
 }\\\text{(since there exist exactly }\ell\text{ pairs }\left(  i,k\right)
 \in\mathbb{Z}^{2}\\\text{satisfying }i\geq0\text{, }k>0\text{ and }%
-k+i=\ell\text{)}}}=\sum\limits_{\substack{\ell\in\mathbb{Z};\\\ell>0}%
-}\ell\underbrace{b_{\ell}a_{-\ell}}_{=a_{-\ell}b_{\ell}}=\sum
-\limits_{\substack{\ell\in\mathbb{Z};\\\ell>0}}\ell a_{-\ell}b_{\ell}%
-=\sum\limits_{\substack{k\in\mathbb{Z};\\k>0}}ka_{-k}b_{k}%
-\end{align*}
+k+i=\ell\text{)}}}=\sum\limits_{\substack{\ell\in\mathbb{Z};\\\ell>0}}\ell
+b_{\ell}a_{-\ell}=\sum\limits_{\substack{k\in\mathbb{Z};\\k>0}}kb_{k}a_{-k}
+\label{pf.ainf.alphaomega.sum1}%
+\end{align}
 (here, we renamed the summation index $\ell$ as $k$) and similarly
-$\sum\limits_{\substack{\left(  i,k\right)  \in\mathbb{Z}^{2};\\i\geq
+\begin{equation}
+\sum\limits_{\substack{\left(  i,k\right)  \in\mathbb{Z}^{2};\\i\geq
 0;\ k>0}}a_{k+i}b_{-k-i}=\sum\limits_{\substack{k\in\mathbb{Z};\\k>0}%
-}ka_{k}b_{-k}$.
+}ka_{k}b_{-k}. \label{pf.ainf.alphaomega.sum2}%
+\end{equation}
+The equality (\ref{pf.ainf.alphaomega.sum1}) becomes%
+\begin{align*}
+\sum\limits_{\substack{\left(  i,k\right)  \in\mathbb{Z}^{2};\\i\geq
+0;\ k>0}}b_{k+i}a_{-k-i}  &  =\sum\limits_{\substack{k\in\mathbb{Z}%
+;\\k>0}}kb_{k}a_{-k}=\sum\limits_{\substack{k\in\mathbb{Z};\\k<0}}\left(
+-k\right)  b_{-k}a_{k}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we substituted }k\text{ for
+}-k\text{ in the first sum}\right) \\
+&  =-\sum\limits_{\substack{k\in\mathbb{Z};\\k<0}}kb_{-k}a_{k},
+\end{align*}
+so that
+\begin{equation}
+\sum\limits_{\substack{k\in\mathbb{Z};\\k<0}}kb_{-k}a_{k}=-\sum
+\limits_{\substack{\left(  i,k\right)  \in\mathbb{Z}^{2};\\i\geq
+0;\ k>0}}b_{k+i}a_{-k-i}. \label{pf.ainf.alphaomega.sum3}%
+\end{equation}
+
 
 But
 \begin{align*}
 &  \omega\left(  a\left(  t\right)  ,b\left(  t\right)  \right) \\
 &  =\sum\limits_{k\in\mathbb{Z}}k\operatorname*{Tr}\left(  a_{k}b_{-k}\right)
-=\underbrace{\sum\limits_{\substack{k\in\mathbb{Z};\\k<0}}k\operatorname*{Tr}%
-\left(  a_{k}b_{-k}\right)  }_{=\operatorname*{Tr}\left(  \sum
-\limits_{\substack{k\in\mathbb{Z};\\k<0}}ka_{k}b_{-k}\right)  }%
-+\underbrace{0\operatorname*{Tr}\left(  a_{0}b_{-0}\right)  }_{=0}%
-+\underbrace{\sum\limits_{\substack{k\in\mathbb{Z};\\k>0}}k\operatorname*{Tr}%
+=\sum\limits_{\substack{k\in\mathbb{Z};\\k<0}}k\underbrace{\operatorname*{Tr}%
+\left(  a_{k}b_{-k}\right)  }_{=\operatorname*{Tr}\left(  b_{-k}a_{k}\right)
+}+\underbrace{0\operatorname*{Tr}\left(  a_{0}b_{-0}\right)  }_{=0}%
++\sum\limits_{\substack{k\in\mathbb{Z};\\k>0}}k\operatorname*{Tr}\left(
+a_{k}b_{-k}\right) \\
+&  =\underbrace{\sum\limits_{\substack{k\in\mathbb{Z};\\k<0}%
+}k\operatorname*{Tr}\left(  b_{-k}a_{k}\right)  }_{=\operatorname*{Tr}\left(
+\sum\limits_{\substack{k\in\mathbb{Z};\\k<0}}kb_{-k}a_{k}\right)
+}+\underbrace{\sum\limits_{\substack{k\in\mathbb{Z};\\k>0}}k\operatorname*{Tr}%
 \left(  a_{k}b_{-k}\right)  }_{=\operatorname*{Tr}\left(  \sum
 \limits_{\substack{k\in\mathbb{Z};\\k>0}}ka_{k}b_{-k}\right)  }\\
-&  =\operatorname*{Tr}\left(  \sum\limits_{\substack{k\in\mathbb{Z}%
-;\\k<0}}ka_{k}b_{-k}\right)  +\operatorname*{Tr}\left(  \sum
-\limits_{\substack{k\in\mathbb{Z};\\k>0}}ka_{k}b_{-k}\right)
-=\operatorname*{Tr}\left(  \sum\limits_{\substack{k\in\mathbb{Z}%
-;\\k<0}}\left(  -k\right)  a_{-k}b_{k}\right)  +\operatorname*{Tr}\left(
-\sum\limits_{\substack{k\in\mathbb{Z};\\k>0}}ka_{k}b_{-k}\right) \\
-&  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we substituted }k\text{ for
-}-k\text{ in the first sum}\right) \\
-&  =\operatorname*{Tr}\left(  -\underbrace{\sum\limits_{\substack{k\in
-\mathbb{Z};\\k>0}}ka_{-k}b_{k}}_{=\sum\limits_{\substack{\left(  i,k\right)
-\in\mathbb{Z}^{2};\\i\geq0;\ k>0}}b_{k+i}a_{-k-i}}\right)  +\operatorname*{Tr}%
-\left(  \underbrace{\sum\limits_{\substack{k\in\mathbb{Z};\\k>0}}ka_{k}b_{-k}%
-}_{=\sum\limits_{\substack{\left(  i,k\right)  \in\mathbb{Z}^{2}%
-;\\i\geq0;\ k>0}}a_{k+i}b_{-k-i}}\right) \\
+&  =\operatorname*{Tr}\left(  \underbrace{\sum\limits_{\substack{k\in
+\mathbb{Z};\\k<0}}kb_{-k}a_{k}}_{\substack{=-\sum\limits_{\substack{\left(
+i,k\right)  \in\mathbb{Z}^{2};\\i\geq0;\ k>0}}b_{k+i}a_{-k-i}\\\text{(by
+(\ref{pf.ainf.alphaomega.sum3}))}}}\right)  +\operatorname*{Tr}\left(
+\underbrace{\sum\limits_{\substack{k\in\mathbb{Z};\\k>0}}ka_{k}b_{-k}%
+}_{\substack{=\sum\limits_{\substack{\left(  i,k\right)  \in\mathbb{Z}%
+^{2};\\i\geq0;\ k>0}}a_{k+i}b_{-k-i}\\\text{(by (\ref{pf.ainf.alphaomega.sum2}%
+))}}}\right) \\
 &  =\operatorname*{Tr}\left(  -\sum\limits_{\substack{\left(  i,k\right)
 \in\mathbb{Z}^{2};\\i\geq0;\ k>0}}b_{k+i}a_{-k-i}\right)  +\operatorname*{Tr}%
 \left(  \sum\limits_{\substack{\left(  i,k\right)  \in\mathbb{Z}^{2}%
@@ -26256,7 +26317,7 @@ i,i\right)  $-th entry of $\operatorname*{Toep}\nolimits_{n}\left(  at^{\ell
 }\right)  $ is $0$. (This is due to our assumption that if $\ell=0$, then the
 diagonal entries of the matrix $a$ are zero.) As a consequence, we can apply
 Proposition \ref{prop.glinf.ainfact} to $\operatorname*{Toep}\nolimits_{n}%
-\left(  at^{\ell}\right)  $ and $v_{i_{k}}$ instead of $a$ and $a_{k}$, and
+\left(  at^{\ell}\right)  $ and $v_{i_{k}}$ instead of $a$ and $b_{k}$, and
 obtain%
 \begin{align}
 &  \left(  \widehat{\rho}\left(  \operatorname*{Toep}\nolimits_{n}\left(
@@ -28659,9 +28720,10 @@ T_{n}=\dfrac{1}{2}\sum\limits_{a\in B^{\prime}}\sum\limits_{m\in\mathbb{Z}%
 Then, the same calculations as we did in the proof of Theorem
 \ref{thm.sugawara} tell us that these $T_{n}$ satisfy $\left[  T_{n}%
 ,a_{m}\right]  =0$ and $\left[  T_{n},T_{m}\right]  =0$; they are thus central
-"elements" of $\operatorname*{End}M$ (except that they are not actually
-elements of $U\left(  \widehat{\mathfrak{g}}\right)  $, but of some completion
-acting on admissible modules).
+"elements" of $U\left(  \widehat{\mathfrak{g}}\right)  $ (except that they are
+not actually elements of $U\left(  \widehat{\mathfrak{g}}\right)  $, but of
+some completion of $U\left(  \widehat{\mathfrak{g}}\right)  $ acting on
+admissible modules).
 
 For any complex numbers $\gamma_{1},\gamma_{2},\gamma_{3},...$, we can
 construct a $\widehat{\mathfrak{g}}$-module $M_{\lambda}\diagup\left(
@@ -29142,6 +29204,191 @@ contradicting $\dbinom{\lambda}{u-1}\neq0$). Combined with $u-1\geq\lambda$,
 this yields $u-1=\lambda$. Thus, $u=\lambda+1$. Hence, $f^{u}x=0$ rewrites as
 $f^{\lambda+1}x=0$. This proves Lemma \ref{lem.serre-gen.sl2} \textbf{(c)}.
 
+\subsubsection{$Q$-graded Lie algebras}
+
+The following generalization of the standard definition of a $\mathbb{Z}%
+$-graded Lie algebra suggests itself:
+
+\begin{definition}
+\label{def.Q-graded.lie}Let $Q$ be an abelian group.
+
+\textbf{(a)} A $Q$\textit{-graded vector space} will mean a vector space $V$
+equipped with a family $\left(  V\left[  \alpha\right]  \right)  _{\alpha\in
+Q}$ of vector subspaces $V\left[  \alpha\right]  $ of $V$ (indexed by elements
+of $Q$) satisfying $V=\bigoplus\limits_{\alpha\in Q}V\left[  \alpha\right]  $.
+For every $\alpha\in Q$, the subspace $V\left[  \alpha\right]  $ is called the
+$\alpha$\textit{-th homogeneous component} of the $Q$-graded vector space $V$.
+The family $\left(  V\left[  \alpha\right]  \right)  _{\alpha\in Q}$ is called
+a $Q$\textit{-grading} on the vector space $V$.
+
+\textbf{(b)} A $Q$\textit{-graded Lie algebra} will mean a Lie algebra
+$\mathfrak{g}$ equipped with a family $\left(  \mathfrak{g}\left[
+\alpha\right]  \right)  _{\alpha\in Q}$ of vector subspaces $\mathfrak{g}%
+\left[  \alpha\right]  $ of $\mathfrak{g}$ (indexed by elements of $Q$)
+satisfying $\mathfrak{g}=\bigoplus\limits_{\alpha\in Q}\mathfrak{g}\left[
+\alpha\right]  $ and satisfying
+\[
+\left[  \mathfrak{g}\left[  \alpha\right]  ,\mathfrak{g}\left[  \beta\right]
+\right]  \subseteq\mathfrak{g}\left[  \alpha+\beta\right]
+\ \ \ \ \ \ \ \ \ \ \text{for all }\alpha,\beta\in Q\text{.}%
+\]
+In this case, $Q$ is called the \textit{root lattice} of this $Q$-graded Lie
+algebra $\mathfrak{g}$. (This does not mean that $Q$ actually has to be a
+lattice of roots of $\mathfrak{g}$, or that $Q$ must be related in any way to
+the roots of $\mathfrak{g}$.) Clearly, any $Q$-graded Lie algebra is a
+$Q$-graded vector space. Thus, the notion of the $\alpha$-th homogeneous
+component of a $Q$-graded Lie algebra makes sense for every $\alpha\in Q$.
+\end{definition}
+
+\begin{Convention}
+Whenever $Q$ is an abelian group, $\alpha$ is an element of $Q$, and $V$ is a
+$Q$-graded vector space or a $Q$-graded Lie algebra, we will denote the
+$\alpha$-th homogeneous component of $V$ by $V\left[  \alpha\right]  $.
+\end{Convention}
+
+In the context of a $Q$-graded vector space (or Lie algebra) $V$, one often
+writes $V_{\alpha}$ instead of $V\left[  \alpha\right]  $ for the $\alpha$-th
+homogeneous component of $V$. This notation, however, can sometimes be misunderstood.
+
+When a group homomorphism from $Q$ to $\mathbb{Z}$ is given, a $Q$-graded Lie
+algebra canonically becomes a $\mathbb{Z}$-graded Lie algebra:
+
+\begin{proposition}
+\label{prop.Q-graded.principal}Let $Q$ be an abelian group. Let $\ell
+:Q\rightarrow\mathbb{Z}$ be a group homomorphism. Let $\mathfrak{g}$ be a
+$Q$-graded Lie algebra.
+
+\textbf{(a)} For every $m\in\mathbb{Z}$, the internal direct sum
+$\bigoplus\limits_{\substack{\alpha\in Q;\\\ell\left(  \alpha\right)
+=m}}\mathfrak{g}\left[  \alpha\right]  $ is well-defined.
+
+\textbf{(b)} Denote this internal direct sum $\bigoplus
+\limits_{\substack{\alpha\in Q;\\\ell\left(  \alpha\right)  =m}}\mathfrak{g}%
+\left[  \alpha\right]  $ by $\mathfrak{g}_{\left[  m\right]  }$. Then, the Lie
+algebra $\mathfrak{g}$ equipped with the grading $\left(  \mathfrak{g}%
+_{\left[  m\right]  }\right)  _{m\in\mathbb{Z}}$ is a $\mathbb{Z}$-graded Lie algebra.
+
+(This grading $\left(  \mathfrak{g}_{\left[  m\right]  }\right)
+_{m\in\mathbb{Z}}$ is called the \textit{principal grading} on $\mathfrak{g}$
+induced by the given $Q$-grading on $\mathfrak{g}$ and the map $\ell$.)
+\end{proposition}
+
+\begin{vershort}
+The proof of this proposition is straightforward and left to the reader.
+\end{vershort}
+
+\begin{verlong}
+\textit{Proof of Proposition \ref{prop.Q-graded.principal}.} \textbf{(a)}
+Since $\mathfrak{g}$ is $Q$-graded, we have
+\[
+\mathfrak{g}=\bigoplus\limits_{\alpha\in Q}\mathfrak{g}\left[  \alpha\right]
+=\bigoplus\limits_{m\in\mathbb{Z}}\bigoplus\limits_{\substack{\alpha\in
+Q;\\\ell\left(  \alpha\right)  =m}}\mathfrak{g}\left[  \alpha\right]  .
+\]
+Thus, the internal direct sum $\bigoplus\limits_{\substack{\alpha\in
+Q;\\\ell\left(  \alpha\right)  =m}}\mathfrak{g}\left[  \alpha\right]  $ is
+defined for every $m\in\mathbb{Z}$. This proves Proposition
+\ref{prop.Q-graded.principal} \textbf{(a)}.
+
+\textbf{(b)} We have
+\[
+\mathfrak{g}=\bigoplus\limits_{m\in\mathbb{Z}}\underbrace{\bigoplus
+\limits_{\substack{\alpha\in Q;\\\ell\left(  \alpha\right)  =m}}\mathfrak{g}%
+\left[  \alpha\right]  }_{=\mathfrak{g}_{\left[  m\right]  }}=\bigoplus
+\limits_{m\in\mathbb{Z}}\mathfrak{g}_{\left[  m\right]  }.
+\]
+Also, every $m_{1}\in\mathbb{Z}$ and every $m_{2}\in\mathbb{Z}$ satisfy%
+\[
+\mathfrak{g}_{\left[  m_{1}\right]  }\mathfrak{g}_{\left[  m_{2}\right]
+}\subseteq\mathfrak{g}_{\left[  m_{1}+m_{2}\right]  }%
+\]
+\footnote{\textit{Proof.} Let $m_{1}\in\mathbb{Z}$ and $m_{2}\in\mathbb{Z}$.
+Then, the definition of $\mathfrak{g}_{\left[  m_{1}\right]  }$ yields
+\begin{align*}
+\mathfrak{g}_{\left[  m_{1}\right]  }  &  =\bigoplus\limits_{\substack{\alpha
+\in Q;\\\ell\left(  \alpha\right)  =m_{1}}}\mathfrak{g}\left[  \alpha\right]
+=\sum\limits_{\substack{\alpha\in Q;\\\ell\left(  \alpha\right)  =m_{1}%
+}}\mathfrak{g}\left[  \alpha\right]  \ \ \ \ \ \ \ \ \ \ \left(  \text{since
+direct sums are sums}\right) \\
+&  =\sum\limits_{\substack{\beta\in Q;\\\ell\left(  \beta\right)  =m_{1}%
+}}\mathfrak{g}\left[  \beta\right]  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we
+renamed the index }\alpha\text{ as }\beta\right)  .
+\end{align*}
+Also, the definition of $\mathfrak{g}_{\left[  m_{2}\right]  }$ yields%
+\begin{align*}
+\mathfrak{g}_{\left[  m_{2}\right]  }  &  =\bigoplus\limits_{\substack{\alpha
+\in Q;\\\ell\left(  \alpha\right)  =m_{2}}}\mathfrak{g}\left[  \alpha\right]
+=\sum\limits_{\substack{\alpha\in Q;\\\ell\left(  \alpha\right)  =m_{2}%
+}}\mathfrak{g}\left[  \alpha\right]  \ \ \ \ \ \ \ \ \ \ \left(  \text{since
+direct sums are sums}\right) \\
+&  =\sum\limits_{\substack{\gamma\in Q;\\\ell\left(  \gamma\right)  =m_{2}%
+}}\mathfrak{g}\left[  \gamma\right]  \ \ \ \ \ \ \ \ \ \ \left(  \text{here,
+we renamed the index }\alpha\text{ as }\gamma\right)  .
+\end{align*}
+Finally, the definition of $\mathfrak{g}_{\left[  m_{1}+m_{2}\right]  }$
+yields%
+\[
+\mathfrak{g}_{\left[  m_{1}+m_{2}\right]  }=\bigoplus\limits_{\substack{\alpha
+\in Q;\\\ell\left(  \alpha\right)  =m_{1}+m_{2}}}\mathfrak{g}\left[
+\alpha\right]  =\sum\limits_{\substack{\alpha\in Q;\\\ell\left(
+\alpha\right)  =m_{1}+m_{2}}}\mathfrak{g}\left[  \alpha\right]
+\ \ \ \ \ \ \ \ \ \ \left(  \text{since direct sums are sums}\right)  .
+\]
+\par
+Every $\beta\in Q$ and $\gamma\in Q$ such that $\ell\left(  \beta\right)
+=m_{1}$ and $\ell\left(  \gamma\right)  =m_{2}$ satisfy%
+\begin{align*}
+\ell\left(  \beta+\gamma\right)   &  =\underbrace{\ell\left(  \beta\right)
+}_{=m_{1}}+\underbrace{\ell\left(  \gamma\right)  }_{=m_{2}}%
+\ \ \ \ \ \ \ \ \ \ \left(  \text{since }\ell\text{ is a }\mathbb{Z}%
+\text{-module homomorphism}\right) \\
+&  =m_{1}+m_{2}.
+\end{align*}
+Thus, every $\beta\in Q$ and $\gamma\in Q$ such that $\ell\left(
+\beta\right)  =m_{1}$ and $\ell\left(  \gamma\right)  =m_{2}$ satisfy%
+\begin{equation}
+\mathfrak{g}\left[  \beta+\gamma\right]  \subseteq\sum
+\limits_{\substack{\alpha\in Q;\\\ell\left(  \alpha\right)  =m_{1}+m_{2}%
+}}\mathfrak{g}\left[  \alpha\right]  =\mathfrak{g}_{\left[  m_{1}%
++m_{2}\right]  }. \label{pf.Q-graded.principal.1}%
+\end{equation}
+\par
+Since $\mathfrak{g}_{\left[  m_{1}\right]  }=\sum\limits_{\substack{\beta\in
+Q;\\\ell\left(  \beta\right)  =m_{1}}}\mathfrak{g}\left[  \beta\right]  $ and
+$\mathfrak{g}_{\left[  m_{2}\right]  }=\sum\limits_{\substack{\gamma\in
+Q;\\\ell\left(  \gamma\right)  =m_{2}}}\mathfrak{g}\left[  \gamma\right]  $,
+we have%
+\begin{align*}
+\left[  \mathfrak{g}_{\left[  m_{1}\right]  },\mathfrak{g}_{\left[
+m_{2}\right]  }\right]   &  =\left[  \sum\limits_{\substack{\beta\in
+Q;\\\ell\left(  \beta\right)  =m_{1}}}\mathfrak{g}\left[  \beta\right]
+,\sum\limits_{\substack{\gamma\in Q;\\\ell\left(  \gamma\right)  =m_{2}%
+}}\mathfrak{g}\left[  \gamma\right]  \right]  =\sum\limits_{\substack{\beta\in
+Q;\\\ell\left(  \beta\right)  =m_{1}}}\sum\limits_{\substack{\gamma\in
+Q;\\\ell\left(  \gamma\right)  =m_{2}}}\underbrace{\left[  \mathfrak{g}\left[
+\beta\right]  ,\mathfrak{g}\left[  \gamma\right]  \right]  }%
+_{\substack{\subseteq\mathfrak{g}\left[  \beta+\gamma\right]  \\\text{(since
+}\mathfrak{g}\text{ is a }Q\text{-graded Lie algebra)}}}\\
+&  \subseteq\sum\limits_{\substack{\beta\in Q;\\\ell\left(  \beta\right)
+=m_{1}}}\sum\limits_{\substack{\gamma\in Q;\\\ell\left(  \gamma\right)
+=m_{2}}}\underbrace{\mathfrak{g}\left[  \beta+\gamma\right]  }%
+_{\substack{\subseteq\mathfrak{g}_{\left[  m_{1}+m_{2}\right]  }\\\text{(by
+(\ref{pf.Q-graded.principal.1}), since}\\\ell\left(  \beta\right)
+=m_{1}\text{ and }\ell\left(  \gamma\right)  =m_{2}\text{)}}}\subseteq
+\sum\limits_{\substack{\beta\in Q;\\\ell\left(  \beta\right)  =m_{1}}%
+}\sum\limits_{\substack{\gamma\in Q;\\\ell\left(  \gamma\right)  =m_{2}%
+}}\mathfrak{g}_{\left[  m_{1}+m_{2}\right]  }\\
+&  \subseteq\mathfrak{g}_{\left[  m_{1}+m_{2}\right]  }%
+\ \ \ \ \ \ \ \ \ \ \left(  \text{since }\mathfrak{g}_{\left[  m_{1}%
++m_{2}\right]  }\text{ is a vector space}\right)  ,
+\end{align*}
+qed.}. Combined with the fact that $\mathfrak{g}=\bigoplus\limits_{m\in
+\mathbb{Z}}\mathfrak{g}_{\left[  m\right]  }$, this yields that the Lie
+algebra $\mathfrak{g}$ equipped with the family $\left(  \mathfrak{g}_{\left[
+m\right]  }\right)  _{m\in\mathbb{Z}}$ is a $\mathbb{Z}$-graded Lie algebra.
+This proves Proposition \ref{prop.Q-graded.principal}.
+\end{verlong}
+
 \subsubsection{A few lemmas on generating subspaces of Lie algebras}
 
 We proceed with some facts about generating sets of Lie algebras (free or not):
@@ -29274,6 +29521,290 @@ Thus, (\ref{pf.generation.2}) is proven.} Hence,%
 \]
 (since $U$ is a vector space). Thus, $U=\mathfrak{g}$, and this proves Lemma
 \ref{lem.generation.1}.
+
+The next result is related:
+
+\begin{theorem}
+\label{thm.FreeLie.grading1}Let $\mathfrak{g}$ be a $\mathbb{Z}$-graded Lie
+algebra. Let $T$ be a vector subspace of $\mathfrak{g}\left[  1\right]  $ such
+that $\mathfrak{g}$ is generated by $T$ as a Lie algebra. Then,
+$T=\mathfrak{g}\left[  1\right]  $.
+\end{theorem}
+
+\begin{vershort}
+The proof of this theorem proceeds by defining the sequence $\left(
+T_{n}\right)  _{n\geq1}$ as in the proof of Lemma \ref{lem.generation.1}, and
+showing that $T_{i}\subseteq\mathfrak{g}\left[  i\right]  $ for every positive
+integer $i$. The details are left to the reader.
+\end{vershort}
+
+\begin{verlong}
+\textit{Proof of Theorem \ref{thm.FreeLie.grading1}.} Define a sequence
+$\left(  T_{n}\right)  _{n\geq1}$ of vector subspaces of $\mathfrak{g}$
+recursively as follows: Let $T_{1}=T$, and for every positive integer $n$, set
+$T_{n+1}=\left[  T,T_{n}\right]  $.
+
+Let $S$ be the vector subspace $\sum\limits_{i\geq1}T_{i}$ of $\mathfrak{g}$.
+Just as in the proof of Lemma \ref{lem.generation.1}, we can see that
+$S=\mathfrak{g}$.
+
+Let $\pi_{1}$ be the canonical projection from the graded vector space
+$\mathfrak{g}$ on its $1$-th homogeneous component $\mathfrak{g}\left[
+1\right]  $. Then, $\pi_{1}$ sends every homogeneous component of
+$\mathfrak{g}$ other than $\mathfrak{g}\left[  1\right]  $ to $0$. In other
+words, $\pi_{1}$ sends $\mathfrak{g}\left[  i\right]  $ to $0$ for every
+integer $i\neq1$. In other words,%
+\begin{equation}
+\text{every integer }i\neq1\text{ satisfies }\pi_{1}\left(  \mathfrak{g}%
+\left[  i\right]  \right)  =0. \label{pf.FreeLie.grading1}%
+\end{equation}
+
+
+On the other hand, since $\pi_{1}$ is a projection on $\mathfrak{g}\left[
+1\right]  $, we have $\mathfrak{g}\left[  1\right]  =\pi_{1}\left(
+\mathfrak{g}\right)  $.
+
+Since $\pi_{1}$ is a projection on $\mathfrak{g}\left[  1\right]  $, we have%
+\begin{equation}
+\pi_{1}\left(  x\right)  =x\ \ \ \ \ \ \ \ \ \ \text{for every }%
+x\in\mathfrak{g}\left[  1\right]  . \label{pf.FreeLie.grading0}%
+\end{equation}
+
+
+Now, it is easy to see that%
+\begin{equation}
+T_{i}\subseteq\mathfrak{g}\left[  i\right]  \ \ \ \ \ \ \ \ \ \ \text{for
+every positive integer }i. \label{pf.FreeLie.grading2}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{pf.FreeLie.grading2}):} We will prove
+(\ref{pf.FreeLie.grading2}) by induction over $i$.
+\par
+\textit{Induction base:} We have $T_{1}=T\subseteq\mathfrak{g}\left[
+1\right]  $. Thus, (\ref{pf.FreeLie.grading2}) is proven for $i=1$. This
+completes the induction base.
+\par
+\textit{Induction step:} Let $n$ be a positive integer. Assume that
+(\ref{pf.FreeLie.grading2}) holds for $i=n$. We now must prove that
+(\ref{pf.FreeLie.grading2}) also holds for $i=n+1$.
+\par
+Since (\ref{pf.FreeLie.grading2}) holds for $i=n$, we have $T_{n}%
+\subseteq\mathfrak{g}\left[  n\right]  $. By the definition of $T_{n+1}$, we
+have
+\begin{align*}
+T_{n+1}  &  =\left[  \underbrace{T}_{\subseteq\mathfrak{g}\left[  1\right]
+},\underbrace{T_{n}}_{\subseteq\mathfrak{g}\left[  n\right]  }\right]
+\subseteq\left[  \mathfrak{g}\left[  1\right]  ,\mathfrak{g}\left[  n\right]
+\right]  \subseteq\mathfrak{g}\left[  1+n\right]  \ \ \ \ \ \ \ \ \ \ \left(
+\text{since }\mathfrak{g}=\operatorname*{FreeLie}T\text{ is a }\mathbb{Z}%
+\text{-graded Lie algebra}\right) \\
+&  =\mathfrak{g}\left[  n+1\right]  .
+\end{align*}
+Thus, (\ref{pf.FreeLie.grading2}) also holds for $i=n+1$. This completes the
+induction step. The induction proof of (\ref{pf.FreeLie.grading2}) is thus
+complete.} Hence, for every positive integer $i\geq2$, we have%
+\[
+\pi_{1}\left(  \underbrace{T_{i}}_{\subseteq\mathfrak{g}\left[  i\right]
+}\right)  \subseteq\pi_{1}\left(  \mathfrak{g}\left[  i\right]  \right)  =0
+\]
+(by (\ref{pf.FreeLie.grading1}), since $i\neq1$). Hence,%
+\begin{align*}
+\mathfrak{g}\left[  1\right]   &  =\pi_{1}\left(  \underbrace{\mathfrak{g}%
+}_{=S=\sum\limits_{i\geq1}T_{i}}\right)  =\pi_{1}\left(  \sum\limits_{i\geq
+1}T_{i}\right)  =\sum\limits_{i\geq1}\pi_{1}\left(  T_{i}\right)  =\pi
+_{1}\left(  T_{1}\right)  +\sum\limits_{i\geq2}\underbrace{\pi_{1}\left(
+T_{i}\right)  }_{\substack{=0\\\text{(since }i\geq2\text{)}}}\\
+&  =\pi_{1}\left(  T_{1}\right)  +\underbrace{\sum\limits_{i\geq2}0}_{=0}%
+=\pi_{1}\left(  T_{1}\right)  =\left\{  \underbrace{\pi_{1}\left(  x\right)
+}_{\substack{=x\\\text{(by (\ref{pf.FreeLie.grading0}), since}\\x\in
+T_{1}=T\subseteq\mathfrak{g}\left[  1\right]  \text{)}}}\ \mid\ x\in
+T_{1}\right\}  =\left\{  x\ \mid\ x\in T_{1}\right\}  =T_{1}=T.
+\end{align*}
+This proves Theorem \ref{thm.FreeLie.grading1}.
+\end{verlong}
+
+Generating subspaces can help in proving that Lie algebra homomorphisms are
+$Q$-graded:
+
+\begin{proposition}
+\label{prop.generation.Q-gr}Let $\mathfrak{g}$ and $\mathfrak{h}$ be two
+$Q$-graded Lie algebras. Let $T$ be a $Q$-graded vector subspace of
+$\mathfrak{g}$. Assume that $\mathfrak{g}$ is generated by $T$ as a Lie algebra.
+
+Let $f:\mathfrak{g}\rightarrow\mathfrak{h}$ be a Lie algebra homomorphism.
+Assume that $f\mid_{T}:T\rightarrow\mathfrak{h}$ is a $Q$-graded map.
+
+Then, the map $f$ is $Q$-graded.
+\end{proposition}
+
+\begin{vershort}
+The proof of this is left to the reader.
+\end{vershort}
+
+\begin{verlong}
+\textit{Proof of Proposition \ref{prop.generation.Q-gr}.} For every $\alpha\in
+Q$, let $P_{\alpha}$ be the vector subspace $\left(  \mathfrak{g}\left[
+\alpha\right]  \right)  \cap f^{-1}\left(  \mathfrak{h}\left[  \alpha\right]
+\right)  $ of $\mathfrak{g}$. Then,%
+\begin{equation}
+\left[  P_{\alpha},P_{\beta}\right]  \subseteq P_{\alpha+\beta}%
+\ \ \ \ \ \ \ \ \ \ \text{for any }\alpha\in Q\text{ and }\beta\in Q.
+\label{pf.generation.Q-gr.PaPb}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{pf.generation.Q-gr.PaPb}):} Let $\alpha\in Q$
+and $\beta\in Q$. Let $x\in P_{\alpha}$ and $y\in P_{\beta}$. Then, $x\in
+P_{\alpha}=\left(  \mathfrak{g}\left[  \alpha\right]  \right)  \cap
+f^{-1}\left(  \mathfrak{h}\left[  \alpha\right]  \right)  $ (by the definition
+of $P_{\alpha}$), so that $x\in\mathfrak{g}\left[  \alpha\right]  $ and $x\in
+f^{-1}\left(  \mathfrak{h}\left[  \alpha\right]  \right)  $. Also, $y\in
+P_{\beta}=\left(  \mathfrak{g}\left[  \beta\right]  \right)  \cap
+f^{-1}\left(  \mathfrak{h}\left[  \beta\right]  \right)  $ (by the definition
+of $P_{\beta}$), so that $y\in\mathfrak{g}\left[  \beta\right]  $ and $y\in
+f^{-1}\left(  \mathfrak{h}\left[  \beta\right]  \right)  $. From $x\in
+f^{-1}\left(  \mathfrak{h}\left[  \alpha\right]  \right)  $, we obtain
+$f\left(  x\right)  \in\mathfrak{h}\left[  \alpha\right]  $. From $y\in
+f^{-1}\left(  \mathfrak{h}\left[  \beta\right]  \right)  $, we get $f\left(
+y\right)  \in\mathfrak{h}\left[  \beta\right]  $. Now,%
+\begin{align*}
+f\left(  \left[  x,y\right]  \right)   &  =\left[  \underbrace{f\left(
+x\right)  }_{\in\mathfrak{h}\left[  \alpha\right]  },\underbrace{f\left(
+y\right)  }_{\in\mathfrak{h}\left[  \beta\right]  }\right]
+\ \ \ \ \ \ \ \ \ \ \left(  \text{since }f\text{ is a Lie algebra
+homomorphism}\right) \\
+&  \in\left[  \mathfrak{h}\left[  \alpha\right]  ,\mathfrak{h}\left[
+\beta\right]  \right]  \subseteq\mathfrak{h}\left[  \alpha+\beta\right]
+\ \ \ \ \ \ \ \ \ \ \left(  \text{since }\mathfrak{h}\text{ is a
+}Q\text{-graded Lie algebra}\right)  ,
+\end{align*}
+and thus $\left[  x,y\right]  \in f^{-1}\left(  \mathfrak{h}\left[
+\alpha+\beta\right]  \right)  $. Combined with%
+\[
+\left[  \underbrace{x}_{\in\mathfrak{g}\left[  \alpha\right]  },\underbrace{y}%
+_{\in\mathfrak{g}\left[  \beta\right]  }\right]  \in\left[  \mathfrak{g}%
+\left[  \alpha\right]  ,\mathfrak{g}\left[  \beta\right]  \right]
+\subseteq\mathfrak{g}\left[  \alpha+\beta\right]  \ \ \ \ \ \ \ \ \ \ \left(
+\text{since }\mathfrak{g}\text{ is a }Q\text{-graded Lie algebra}\right)  ;
+\]
+this yields $\left[  x,y\right]  \in\left(  \mathfrak{g}\left[  \alpha
++\beta\right]  \right)  \cap f^{-1}\left(  \mathfrak{h}\left[  \alpha
++\beta\right]  \right)  $. But since $P_{\alpha+\beta}=\left(  \mathfrak{g}%
+\left[  \alpha+\beta\right]  \right)  \cap f^{-1}\left(  \mathfrak{h}\left[
+\alpha+\beta\right]  \right)  $ (by the definition of $P_{\alpha+\beta}$),
+this rewrites as $\left[  x,y\right]  \in P_{\alpha+\beta}$.
+\par
+Now forget that we fixed $x$ and $y$. We thus have proven that every $x\in
+P_{\alpha}$ and $y\in P_{\beta}$ satisfy $\left[  x,y\right]  \in
+P_{\alpha+\beta}$. Since $P_{\alpha+\beta}$ is a vector space, this yields
+$\left[  P_{\alpha},P_{\beta}\right]  \subseteq P_{\alpha+\beta}$. This proves
+(\ref{pf.generation.Q-gr.PaPb}).}
+
+Now, let $P$ be the vector subspace $\sum\limits_{\alpha\in Q}P_{\alpha}$ of
+$\mathfrak{g}$. Then,%
+\begin{equation}
+P_{\alpha}\subseteq P\text{ for every }\alpha\in Q\text{.}
+\label{pf.generation.Q-gr.tauto}%
+\end{equation}
+
+
+But since $P=\sum\limits_{\alpha\in Q}P_{\alpha}$ and $P=\sum\limits_{\alpha
+\in Q}P_{\alpha}=\sum\limits_{\beta\in Q}P_{\beta}$ (here, we renamed the
+summation index $\alpha$ as $\beta$), we have%
+\begin{align*}
+\left[  P,P\right]   &  =\left[  \sum\limits_{\alpha\in Q}P_{\alpha}%
+,\sum\limits_{\beta\in Q}P_{\beta}\right]  =\sum\limits_{\alpha\in Q}%
+\sum\limits_{\beta\in Q}\underbrace{\left[  P_{\alpha},P_{\beta}\right]
+}_{\substack{\subseteq P_{\alpha+\beta}\\\text{(by
+(\ref{pf.generation.Q-gr.PaPb}))}}}\ \ \ \ \ \ \ \ \ \ \left(  \text{since the
+Lie bracket is bilinear}\right) \\
+&  \subseteq\sum\limits_{\alpha\in Q}\sum\limits_{\beta\in Q}%
+\underbrace{P_{\alpha+\beta}}_{\substack{\subseteq P\\\text{(by
+(\ref{pf.generation.Q-gr.tauto}), applied to}\\\alpha+\beta\text{ instead of
+}\alpha\text{)}}}\subseteq\sum\limits_{\alpha\in Q}\sum\limits_{\beta\in
+Q}P\subseteq P\ \ \ \ \ \ \ \ \ \ \left(  \text{since }P\text{ is a vector
+space}\right)  .
+\end{align*}
+As a consequence, $P$ is a Lie subalgebra of $\mathfrak{g}$.
+
+Since $T$ is a $Q$-graded vector subspace, we have $T=\bigoplus\limits_{\alpha
+\in Q}T\left[  \alpha\right]  $, and every $\alpha\in Q$ satisfies $T\left[
+\alpha\right]  \subseteq\mathfrak{g}\left[  \alpha\right]  $.
+
+Now, $T\subseteq P$\ \ \ \ \footnote{\textit{Proof.} Let $\alpha\in Q$. Let
+$x\in T\left[  \alpha\right]  $. Then, $\left(  f\mid_{T}\right)  \left(
+x\right)  \in\mathfrak{h}\left[  \alpha\right]  $ (since $f\mid_{T}$ is
+$Q$-graded). Thus, $f\left(  x\right)  =\left(  f\mid_{T}\right)  \left(
+x\right)  \in\mathfrak{h}\left[  \alpha\right]  $, so that $x\in f^{-1}\left(
+\mathfrak{h}\left[  \alpha\right]  \right)  $. Combined with $x\in T\left[
+\alpha\right]  \subseteq\mathfrak{g}\left[  \alpha\right]  $, this yields
+$x\in\left(  \mathfrak{g}\left[  \alpha\right]  \right)  \cap f^{-1}\left(
+\mathfrak{h}\left[  \alpha\right]  \right)  =P_{\alpha}$.
+\par
+Now forget that we fixed $x$. We thus have proven that every $x\in T\left[
+\alpha\right]  $ satisfies $x\in P_{\alpha}$. In other words, $T\left[
+\alpha\right]  \subseteq P_{\alpha}$.
+\par
+Now forget that we fixed $\alpha$. We thus have proven that $T\left[
+\alpha\right]  \subseteq P_{\alpha}$ for every $\alpha\in Q$. But
+\begin{align*}
+T  &  =\bigoplus\limits_{\alpha\in Q}T\left[  \alpha\right]  =\sum
+\limits_{\alpha\in Q}\underbrace{T\left[  \alpha\right]  }_{\subseteq
+P_{\alpha}}\ \ \ \ \ \ \ \ \ \ \left(  \text{since direct sums are
+sums}\right) \\
+&  \subseteq\sum\limits_{\alpha\in Q}P_{\alpha}=P,
+\end{align*}
+qed.}. Hence, $P$ is a Lie subalgebra of $\mathfrak{g}$ containing $T$ as a
+subset. But since every Lie subalgebra of $\mathfrak{g}$ containing $T$ as a
+subset must be $\mathfrak{g}$ (because $\mathfrak{g}$ is generated by $T$ as a
+Lie algebra), this yields that $P=\mathfrak{g}$.
+
+Now, let $\beta\in Q$ be arbitrary. Let $x\in\mathfrak{g}\left[  \beta\right]
+$. Then, $x\in\mathfrak{g}\left[  \beta\right]  \subseteq\mathfrak{g}%
+=P=\sum\limits_{\alpha\in Q}P_{\alpha}=P_{\beta}+\sum\limits_{\substack{\alpha
+\in Q;\\\alpha\neq\beta}}P_{\alpha}$. Hence, there exist some $y\in P_{\beta}$
+and some $z\in\sum\limits_{\substack{\alpha\in Q;\\\alpha\neq\beta}}P_{\alpha
+}$ such that $x=y+z$. Consider these $y$ and $z$. From $x=y+z$, we obtain
+$x-y=z$. But since $\mathfrak{g}$ is $Q$-graded, we have
+\[
+\mathfrak{g}=\bigoplus\limits_{\alpha\in Q}T\left[  \alpha\right]  =\left(
+T\left[  \beta\right]  \right)  \oplus\underbrace{\bigoplus
+\limits_{\substack{\alpha\in Q;\\\alpha\neq\beta}}T\left[  \alpha\right]
+}_{\substack{=\sum\limits_{\substack{\alpha\in Q;\\\alpha\neq\beta}}T\left[
+\alpha\right]  \\\text{(since direct sums are sums)}}}=\left(  T\left[
+\beta\right]  \right)  \oplus\left(  \sum\limits_{\substack{\alpha\in
+Q;\\\alpha\neq\beta}}T\left[  \alpha\right]  \right)  .
+\]
+Thus, the internal direct sum $\left(  T\left[  \beta\right]  \right)
+\oplus\left(  \sum\limits_{\substack{\alpha\in Q;\\\alpha\neq\beta}}T\left[
+\alpha\right]  \right)  $ is well-defined, so that $\left(  T\left[
+\beta\right]  \right)  \cap\left(  \sum\limits_{\substack{\alpha\in
+Q;\\\alpha\neq\beta}}T\left[  \alpha\right]  \right)  =0$.
+
+By the definition of $P_{\beta}$, we have $P_{\beta}=\left(  \mathfrak{g}%
+\left[  \beta\right]  \right)  \cap f^{-1}\left(  \mathfrak{h}\left[
+\beta\right]  \right)  \subseteq\mathfrak{g}\left[  \beta\right]  $. Hence,
+$y\in P_{\beta}\subseteq\mathfrak{g}\left[  \beta\right]  $. Combined with
+$x\in\mathfrak{g}\left[  \beta\right]  $, this yields $x-y\in\mathfrak{g}%
+\left[  \beta\right]  -\mathfrak{g}\left[  \beta\right]  \subseteq
+\mathfrak{g}\left[  \beta\right]  $ (since $\mathfrak{g}\left[  \beta\right]
+$ is a vector space). Since $x-y=z$, this rewrites as $z\in\mathfrak{g}\left[
+\beta\right]  $. Combined with $z\in\sum\limits_{\substack{\alpha\in
+Q;\\\alpha\neq\beta}}T\left[  \alpha\right]  $, this yields $z\in\left(
+T\left[  \beta\right]  \right)  \cap\left(  \sum\limits_{\substack{\alpha\in
+Q;\\\alpha\neq\beta}}T\left[  \alpha\right]  \right)  =0$. Hence, $z=0$. Thus,
+$x-y=z=0$, so that $x=y\in P_{\beta}=\left(  \mathfrak{g}\left[  \beta\right]
+\right)  \cap f^{-1}\left(  \mathfrak{h}\left[  \beta\right]  \right)
+\subseteq f^{-1}\left(  \mathfrak{h}\left[  \beta\right]  \right)  $, hence
+$f\left(  x\right)  \in\mathfrak{h}\left[  \beta\right]  $.
+
+Now forget that we fixed $x$. We thus have proven that $f\left(  x\right)
+\in\mathfrak{h}\left[  \beta\right]  $ for every $x\in\mathfrak{g}\left[
+\beta\right]  $. In other words, $f\left(  \mathfrak{g}\left[  \beta\right]
+\right)  \subseteq\mathfrak{h}\left[  \beta\right]  $.
+
+Now forget that we fixed $\beta$. We thus have shown that $f\left(
+\mathfrak{g}\left[  \beta\right]  \right)  \subseteq\mathfrak{h}\left[
+\beta\right]  $ for every $\beta\in Q$.\ In other words, the map $f$ is
+$Q$-graded. This proves Proposition \ref{prop.generation.Q-gr}.
+\end{verlong}
 
 Next, a result on free Lie algebras:
 
@@ -31117,7 +31648,9 @@ As we said, we are not going to prove Theorem \ref{thm.serre-gen.2}
 
 \subsection{Kac-Moody Lie algebras: definition and construction}
 
-Now forget about our simple Lie algebra $\mathfrak{g}$.
+Now forget about our simple Lie algebra $\mathfrak{g}$. Let us first define
+the notion of contragredient Lie algebras by axioms; we will construct these
+algebras later.
 
 \begin{definition}
 \label{def.contragredient}Suppose that $A=\left(  a_{i,j}\right)  _{1\leq
@@ -31128,18 +31661,6 @@ $\alpha_{2}$, $...$, $\alpha_{n}$ (that is, $Q=\mathbb{Z}\alpha_{1}%
 \oplus\mathbb{Z}\alpha_{2}\oplus...\oplus\mathbb{Z}\alpha_{n}$). These symbols
 are just symbols, not weights of any Lie algebra (at the moment). We write the
 group $Q$ additively.
-
-A $Q$\textit{-graded Lie algebra} will mean a Lie algebra $\mathfrak{g}$ with
-a decomposition $\mathfrak{g}=\bigoplus\limits_{\alpha\in Q}\mathfrak{g}%
-\left[  \alpha\right]  $ for some vector subspaces $\mathfrak{g}\left[
-\alpha\right]  $ of $\mathfrak{g}$ (indexed by elements of $Q$) satisfying
-\[
-\left[  \mathfrak{g}\left[  \alpha\right]  ,\mathfrak{g}\left[  \beta\right]
-\right]  \subseteq\mathfrak{g}\left[  \alpha+\beta\right]
-\ \ \ \ \ \ \ \ \ \ \text{for all }\alpha,\beta\in Q\text{.}%
-\]
-In this case, $Q$ is called the \textit{root lattice} of this Lie algebra
-$\mathfrak{g}$.
 
 A \textit{contragredient Lie algebra} corresponding to $A$ is a $Q$-graded
 $\mathbb{C}$-Lie algebra $\mathfrak{g}$ which is (as a Lie algebra) generated
@@ -31154,26 +31675,35 @@ have $\mathfrak{g}\left[  \alpha_{i}\right]  =\mathbb{C}e_{i}$ and
 $\mathfrak{g}\left[  -\alpha_{i}\right]  =\mathbb{C}f_{i}$ for all
 $i\in\left\{  1,2,...,n\right\}  $.
 
-\textbf{(3)} Every $Q$-graded nonzero ideal in $\mathfrak{g}$ has a nonzero
+\textbf{(3)} Every nonzero $Q$-graded ideal in $\mathfrak{g}$ has a nonzero
 intersection with $\mathfrak{g}\left[  0\right]  $.
+
+(Here, we are using the notation $\mathfrak{g}\left[  \alpha\right]  $ for the
+$\alpha$-th homogeneous component of the $Q$-graded Lie algebra $\mathfrak{g}%
+$, just as in Definition \ref{def.Q-graded.lie}.)
 
 Just as in the case of $\mathbb{Z}$-graded Lie algebras, we will denote
 $\mathfrak{g}\left[  0\right]  $ by $\mathfrak{h}$.
 \end{definition}
 
 Note that the condition \textbf{(3)} is satisfied for simple
-finite-dimensional $\mathfrak{g}$ (where $Q$ is the root lattice\footnote{in
-the meaning which this word has in the theory of simple Lie algebras} of
-$\mathfrak{g}$, and $A$ is the Cartan matrix); hence, simple
-finite-dimensional Lie algebras are contragredient.
+finite-dimensional Lie algebras $\mathfrak{g}$ (graded by their weight spaces,
+where $Q$ is the root lattice\footnote{in the meaning which this word has in
+the theory of simple Lie algebras} of $\mathfrak{g}$, and $A$ is the Cartan
+matrix); hence, simple finite-dimensional Lie algebras (graded by their weight
+spaces) are contragredient.
 
 \begin{theorem}
 \label{thm.g(A).exuni}Let $A=\left(  a_{i,j}\right)  _{1\leq i,j\leq n}$ be a
-(fixed) $n\times n$ matrix of complex numbers. Then, there exists a unique (up
-to $Q$-graded isomorphism respecting the generators $e_{1}$, $e_{2}$, $...$,
-$e_{n}$, $f_{1}$, $f_{2}$, $...$, $f_{n}$, $h_{1}$, $h_{2}$, $...$, $h_{n}$)
-contragredient Lie algebra $\mathfrak{g}$ corresponding to $A$. If $A$ is a
-Cartan matrix, then this Lie algebra $\mathfrak{g}$ is finite-dimensional and simple.
+(fixed) $n\times n$ matrix of complex numbers.
+
+\textbf{(a)} Then, there exists a unique (up to $Q$-graded isomorphism
+respecting the generators $e_{1}$, $e_{2}$, $...$, $e_{n}$, $f_{1}$, $f_{2}$,
+$...$, $f_{n}$, $h_{1}$, $h_{2}$, $...$, $h_{n}$) contragredient Lie algebra
+$\mathfrak{g}$ corresponding to $A$.
+
+\textbf{(b)} If $A$ is a Cartan matrix, then the contragredient Lie algebra
+$\mathfrak{g}$ corresponding to $A$ is finite-dimensional and simple.
 \end{theorem}
 
 \begin{definition}
@@ -31295,20 +31825,24 @@ $\widetilde{\mathfrak{g}}$ which have zero intersection with $\iota_{0}\left(
 $\widetilde{\mathfrak{g}}$ which has zero intersection with $\iota_{0}\left(
 \widetilde{\mathfrak{h}}\right)  $.
 
-\textbf{(i)} Let $\mathfrak{g}=\widetilde{\mathfrak{g}}\diagup I$. The
-projections of the elements $e_{1}$, $e_{2}$, $...$, $e_{n}$, $f_{1}$, $f_{2}%
-$, $...$, $f_{n}$, $h_{1}$, $h_{2}$, $...$, $h_{n}$ of
-$\widetilde{\mathfrak{g}}$ on the quotient Lie algebra
-$\widetilde{\mathfrak{g}}\diagup I=\mathfrak{g}$ will still be denoted by
+\textbf{(i)} Let $\mathfrak{g}=\widetilde{\mathfrak{g}}\diagup I$. Clearly,
+$\mathfrak{g}$ is a $Q$-graded Lie algebra. The projections of the elements
 $e_{1}$, $e_{2}$, $...$, $e_{n}$, $f_{1}$, $f_{2}$, $...$, $f_{n}$, $h_{1}$,
-$h_{2}$, $...$, $h_{n}$. Then, $\mathfrak{g}$ is a contragredient Lie algebra
-corresponding to $A$.
+$h_{2}$, $...$, $h_{n}$ of $\widetilde{\mathfrak{g}}$ on the quotient Lie
+algebra $\widetilde{\mathfrak{g}}\diagup I=\mathfrak{g}$ will still be denoted
+by $e_{1}$, $e_{2}$, $...$, $e_{n}$, $f_{1}$, $f_{2}$, $...$, $f_{n}$, $h_{1}%
+$, $h_{2}$, $...$, $h_{n}$. Then, $\mathfrak{g}$ is a contragredient Lie
+algebra corresponding to $A$.
 \end{theorem}
 
 \textit{Proof of Theorem \ref{thm.gtilde}.} First of all, for the sake of
-clarity, let us make a convention: In the following proof, the word
-"derivation" will always be used for "derivation of algebras" and not for
-"derivation of Lie algebras", unless we explicitly say otherwise in the same sentence.
+clarity, let us make a convention: In the following proof, the word "Lie
+derivation" will always mean "derivation of Lie algebras", whereas the word
+"derivation" without the word "Lie" directly in front of it will always mean
+"derivation of algebras". The only exception to this will be the formulation
+"$\mathfrak{a}$ acts on $\mathfrak{b}$ by derivations" where $\mathfrak{a}$
+and $\mathfrak{b}$ are two Lie algebras; this formulation has been defined in
+Definition \ref{def.semidir.lielie} \textbf{(a)}.
 
 \bigskip
 
@@ -31683,8 +32217,8 @@ Lie algebra, and the grading on this Lie algebra also satisfies%
 i\in\left\{  1,2,...,n\right\}  .
 \]
 (This grading clearly makes the map $\iota_{-}$ graded. We will not use this
-fact, however.) We will later use this grading to define certain derivations
-$\eta_{1}$, $\eta_{2}$, $...$, $\eta_{n}$ of the Lie algebra
+fact, however.) We will later use this grading to define certain Lie
+derivations $\eta_{1}$, $\eta_{2}$, $...$, $\eta_{n}$ of the Lie algebra
 $\widetilde{\mathfrak{n}}_{-}$.
 
 \bigskip
@@ -31709,7 +32243,7 @@ acts as a scalar on each homogeneous component of $\widetilde{\mathfrak{n}%
 }_{-}$. Moreover, for every $i\in\left\{  1,2,...,n\right\}  $, Lemma
 \ref{lem.deriv.grading} (applied to $s=e_{i}^{T}A$, $\mathfrak{n}%
 =\widetilde{\mathfrak{n}}_{-}$ and $\eta=\eta_{i}$) yields that $\eta_{i}$ is
-a derivation of Lie algebras. That is, $\eta_{i}\in\operatorname*{Der}\left(
+a Lie derivation. That is, $\eta_{i}\in\operatorname*{Der}\left(
 \widetilde{\mathfrak{n}}_{-}\right)  $. One can directly see that%
 \begin{equation}
 \eta_{i}\left(  f_{j}\right)  =-a_{i,j}f_{j}\ \ \ \ \ \ \ \ \ \ \text{for any
@@ -32843,7 +33377,7 @@ $\widetilde{\mathfrak{h}}$. Consequently, the elements $h_{1}$, $h_{2}$,
 $...$, $h_{n}$ of $\widetilde{\mathfrak{g}}$ span the vector space $\iota
 _{0}\left(  \widetilde{\mathfrak{h}}\right)  $ (because the elements $h_{1}$,
 $h_{2}$, $...$, $h_{n}$ of $\widetilde{\mathfrak{g}}$ are the images of the
-elements $h_{1}$, $h_{2}$, $...$, $h_{n}$ of $\widetilde{\mathfrak{h}}$ undet
+elements $h_{1}$, $h_{2}$, $...$, $h_{n}$ of $\widetilde{\mathfrak{h}}$ under
 the map $\iota_{0}$). Hence, every vector subspace of $\widetilde{\mathfrak{g}%
 }$ which contains the elements $h_{1}$, $h_{2}$, $...$, $h_{n}$ must contain
 $\iota_{0}\left(  \widetilde{\mathfrak{h}}\right)  $ as a subset. Since we
@@ -32936,21 +33470,21 @@ Let $i\in\left\{  1,2,...,n\right\}  $. Let $\xi_{i}:\widetilde{\mathfrak{g}%
 \left(  \xi_{i}\left(  x\right)  =\left[  h_{i},x\right]
 \ \ \ \ \ \ \ \ \ \ \text{for any }x\in\widetilde{\mathfrak{g}}\right)  .
 \]
-Then, $\xi_{i}$ is a derivation of the Lie algebra $\widetilde{\mathfrak{g}}$.
-On the other hand, the subset $\left\{  f_{1},f_{2},...,f_{n}\right\}  $ of
-$\widetilde{\mathfrak{n}}_{-}$ generates $\widetilde{\mathfrak{n}}_{-}$ as a
-Lie algebra (since the elements $f_{1}$, $f_{2}$, $...$, $f_{n}$ of
-$\widetilde{\mathfrak{n}}_{-}$ generate $\widetilde{\mathfrak{n}}_{-}$ as a
-Lie algebra), and we can easily check that $\xi_{i}\left(  \left\{
-f_{1},f_{2},...,f_{n}\right\}  \right)  \subseteq\widetilde{\mathfrak{n}}_{-}%
-$\ \ \ \ \footnote{\textit{Proof.} For every $j\in\left\{  1,2,...,n\right\}
-$, we have%
+Then, $\xi_{i}$ is a Lie derivation of the Lie algebra
+$\widetilde{\mathfrak{g}}$. On the other hand, the subset $\left\{
+f_{1},f_{2},...,f_{n}\right\}  $ of $\widetilde{\mathfrak{n}}_{-}$ generates
+$\widetilde{\mathfrak{n}}_{-}$ as a Lie algebra (since the elements $f_{1}$,
+$f_{2}$, $...$, $f_{n}$ of $\widetilde{\mathfrak{n}}_{-}$ generate
+$\widetilde{\mathfrak{n}}_{-}$ as a Lie algebra), and we can easily check that
+$\xi_{i}\left(  \left\{  f_{1},f_{2},...,f_{n}\right\}  \right)
+\subseteq\widetilde{\mathfrak{n}}_{-}$\ \ \ \ \footnote{\textit{Proof.} For
+every $j\in\left\{  1,2,...,n\right\}  $, we have%
 \begin{align*}
 \xi_{i}\left(  f_{j}\right)   &  =\left[  h_{i},f_{j}\right]
-\ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }\xi_{i}\right) \\
+\ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }\xi_{i}\right)  \\
 &  =-a_{i,j}\underbrace{f_{j}}_{\in\widetilde{\mathfrak{n}}_{-}}%
 \ \ \ \ \ \ \ \ \ \ \left(  \text{by the relations (\ref{nonserre-relations}%
-)}\right) \\
+)}\right)  \\
 &  \in-a_{i,j}\widetilde{\mathfrak{n}}_{-}\subseteq\widetilde{\mathfrak{n}%
 }_{-}.
 \end{align*}
@@ -32975,7 +33509,7 @@ x\in\widetilde{\mathfrak{n}}_{-}\right\}  =\left\{  \left[  h_{i},x\right]
 ,\widetilde{\mathfrak{n}}_{-}\right]  =\left[  h_{i},\widetilde{\mathfrak{n}%
 }_{-}\right]  \mathbb{C}\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }\left[  h_{i}%
-,\widetilde{\mathfrak{n}}_{-}\right]  \text{ is a vector space}\right) \\
+,\widetilde{\mathfrak{n}}_{-}\right]  \text{ is a vector space}\right)  \\
 &  =\left[  h_{i}\mathbb{C},\widetilde{\mathfrak{n}}_{-}\right]
 \ \ \ \ \ \ \ \ \ \ \left(  \text{since the Lie bracket is bilinear}\right)  .
 \end{align*}
@@ -33145,21 +33679,22 @@ Let $i\in\left\{  1,2,...,n\right\}  $. Define a map $\psi_{i}%
 \left(  \psi_{i}\left(  x\right)  =\left[  e_{i},x\right]
 \ \ \ \ \ \ \ \ \ \ \text{for every }x\in\widetilde{\mathfrak{g}}\right)  .
 \]
-Then, $\psi_{i}$ is a derivation of the Lie algebra $\widetilde{\mathfrak{g}}%
-$. On the other hand, the subset $\left\{  f_{1},f_{2},...,f_{n}\right\}  $ of
-$\widetilde{\mathfrak{n}}_{-}$ generates $\widetilde{\mathfrak{n}}_{-}$ as a
-Lie algebra (since the elements $f_{1}$, $f_{2}$, $...$, $f_{n}$ of
-$\widetilde{\mathfrak{n}}_{-}$ generate $\widetilde{\mathfrak{n}}_{-}$ as a
-Lie algebra), and we can easily check that $\psi_{i}\left(  \left\{
-f_{1},f_{2},...,f_{n}\right\}  \right)  \subseteq\widetilde{\mathfrak{n}}%
-_{-}\oplus\widetilde{\mathfrak{h}}$\ \ \ \ \footnote{\textit{Proof.} For every
-$j\in\left\{  1,2,...,n\right\}  $, we have%
+Then, $\psi_{i}$ is a Lie derivation of the Lie algebra
+$\widetilde{\mathfrak{g}}$. On the other hand, the subset $\left\{
+f_{1},f_{2},...,f_{n}\right\}  $ of $\widetilde{\mathfrak{n}}_{-}$ generates
+$\widetilde{\mathfrak{n}}_{-}$ as a Lie algebra (since the elements $f_{1}$,
+$f_{2}$, $...$, $f_{n}$ of $\widetilde{\mathfrak{n}}_{-}$ generate
+$\widetilde{\mathfrak{n}}_{-}$ as a Lie algebra), and we can easily check that
+$\psi_{i}\left(  \left\{  f_{1},f_{2},...,f_{n}\right\}  \right)
+\subseteq\widetilde{\mathfrak{n}}_{-}\oplus\widetilde{\mathfrak{h}}%
+$\ \ \ \ \footnote{\textit{Proof.} For every $j\in\left\{  1,2,...,n\right\}
+$, we have%
 \begin{align*}
 \psi_{i}\left(  f_{j}\right)   &  =\left[  e_{i},f_{j}\right]
-\ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }\psi_{i}\right) \\
+\ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }\psi_{i}\right)  \\
 &  =\delta_{i,j}\underbrace{h_{i}}_{\in\widetilde{\mathfrak{h}}}%
 \ \ \ \ \ \ \ \ \ \ \left(  \text{by the relations (\ref{nonserre-relations}%
-)}\right) \\
+)}\right)  \\
 &  \in\widetilde{\mathfrak{h}}\subseteq\widetilde{\mathfrak{n}}_{-}%
 \oplus\widetilde{\mathfrak{h}}.
 \end{align*}
@@ -33187,7 +33722,7 @@ x\in\widetilde{\mathfrak{n}}_{-}\right\}  =\left\{  \left[  e_{i},x\right]
 ,\widetilde{\mathfrak{n}}_{-}\right]  =\left[  e_{i},\widetilde{\mathfrak{n}%
 }_{-}\right]  \mathbb{C}\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }\left[  e_{i}%
-,\widetilde{\mathfrak{n}}_{-}\right]  \text{ is a vector space}\right) \\
+,\widetilde{\mathfrak{n}}_{-}\right]  \text{ is a vector space}\right)  \\
 &  =\left[  e_{i}\mathbb{C},\widetilde{\mathfrak{n}}_{-}\right]
 \ \ \ \ \ \ \ \ \ \ \left(  \text{since the Lie bracket is bilinear}\right)  .
 \end{align*}
@@ -33461,7 +33996,7 @@ $, $\iota_{-}\left(  \widetilde{\mathfrak{n}}_{-}\right)  $, $\iota_{0}\left(
 \widetilde{\mathfrak{h}}\right)  $, $\widetilde{\mathfrak{g}}\left[
 >0\right]  $, $\widetilde{\mathfrak{g}}\left[  <0\right]  $,
 $\widetilde{\mathfrak{g}}\left[  0\right]  $ are six vector subspaces of
-$\widetilde{\mathfrak{g}}$ satifying the four relations $\iota_{+}\left(
+$\widetilde{\mathfrak{g}}$ satisfying the four relations $\iota_{+}\left(
 \widetilde{\mathfrak{n}}_{+}\right)  \subseteq\widetilde{\mathfrak{g}}\left[
 >0\right]  $, $\iota_{-}\left(  \widetilde{\mathfrak{n}}_{-}\right)
 \subseteq\widetilde{\mathfrak{g}}\left[  <0\right]  $, $\iota_{0}\left(
@@ -33495,7 +34030,7 @@ is a $\mathbb{Z}$-linear combination of $\alpha_{1}$, $\alpha_{2}$, $...$,
 $\alpha_{n}$ with nonnegative coefficients such that $\alpha\neq0$).
 
 Also, we have proven that $\iota_{-}\left(  \widetilde{\mathfrak{n}}%
-_{-}\right)  \subseteq\widetilde{\mathfrak{g}}\left[  <0\right]  $. Hence,%
+_{-}\right)  =\widetilde{\mathfrak{g}}\left[  <0\right]  $. Hence,%
 \[
 \iota_{-}\left(  \widetilde{\mathfrak{n}}_{-}\right)  =\widetilde{\mathfrak{g}%
 }\left[  <0\right]  =\bigoplus\limits_{\substack{\alpha\in Q;\\\alpha
@@ -33513,7 +34048,258 @@ This completes the proof of Theorem \ref{thm.gtilde} \textbf{(e)}.
 
 \bigskip
 
-\textbf{(g)} [...]
+\textbf{(g)} Define a $\mathbb{Z}$-linear map $\ell:Q\rightarrow\mathbb{Z}$ by%
+\[
+\left(  \ell\left(  \alpha_{i}\right)  =1\text{ for every }i\in\left\{
+1,2,...,n\right\}  \right)  .
+\]
+(This is well-defined since $Q$ is a free abelian group with generators
+$\alpha_{1}$, $\alpha_{2}$, $...$, $\alpha_{n}$.) Then, $\ell$ is a group homomorphism.
+
+We will use the notations we introduced in our proof of Theorem
+\ref{thm.gtilde} \textbf{(c)}. As shown in the proof of Theorem
+\ref{thm.gtilde} \textbf{(e)}, we have $\iota_{+}\left(
+\widetilde{\mathfrak{n}}_{+}\right)  =\widetilde{\mathfrak{g}}\left[
+>0\right]  $, $\iota_{-}\left(  \widetilde{\mathfrak{n}}_{-}\right)
+=\widetilde{\mathfrak{g}}\left[  <0\right]  $ and $\iota_{0}\left(
+\widetilde{\mathfrak{h}}\right)  =\widetilde{\mathfrak{g}}\left[  0\right]  $.
+
+Just as in the proof of Theorem \ref{thm.gtilde} \textbf{(c)}, we will regard
+the maps $\iota_{+}$, $\iota_{-}$ and $\iota_{0}$ as inclusions. Thus,
+$\iota_{+}\left(  \widetilde{\mathfrak{n}}_{+}\right)
+=\widetilde{\mathfrak{n}}_{+}$, $\iota_{-}\left(  \widetilde{\mathfrak{n}}%
+_{-}\right)  =\widetilde{\mathfrak{n}}_{-}$ and $\iota_{0}\left(
+\widetilde{\mathfrak{h}}\right)  =\widetilde{\mathfrak{h}}$.
+
+From the proof of Theorem \ref{thm.gtilde} \textbf{(c)}, we know that
+$\widetilde{\mathfrak{g}}\left[  0\right]  $, $\widetilde{\mathfrak{g}}\left[
+<0\right]  $ and $\widetilde{\mathfrak{g}}\left[  >0\right]  $ are $Q$-graded
+Lie subalgebras of $\widetilde{\mathfrak{g}}$. Since $\widetilde{\mathfrak{g}%
+}\left[  0\right]  =\iota_{0}\left(  \widetilde{\mathfrak{h}}\right)
+=\widetilde{\mathfrak{h}}$, $\widetilde{\mathfrak{g}}\left[  <0\right]
+=\iota_{-}\left(  \widetilde{\mathfrak{n}}_{-}\right)
+=\widetilde{\mathfrak{n}}_{-}$ and $\widetilde{\mathfrak{g}}\left[  >0\right]
+=\iota_{+}\left(  \widetilde{\mathfrak{n}}_{+}\right)
+=\widetilde{\mathfrak{n}}_{+}$, this rewrites as follows:
+$\widetilde{\mathfrak{h}}$, $\widetilde{\mathfrak{n}}_{-}$ and
+$\widetilde{\mathfrak{n}}_{+}$ are $Q$-graded Lie subalgebras of
+$\widetilde{\mathfrak{g}}$.
+
+Fix $i\in\left\{  1,2,...,n\right\}  $. Since $\alpha_{i}>0$, the space
+$\widetilde{\mathfrak{g}}\left[  \alpha_{i}\right]  $ is an addend in the
+direct sum $\bigoplus\limits_{\substack{\alpha\in Q;\\\alpha>0}%
+}\widetilde{\mathfrak{g}}\left[  \alpha\right]  $ (namely, the addend for
+$\alpha=\alpha_{i}$). Hence, $\widetilde{\mathfrak{g}}\left[  \alpha
+_{i}\right]  \subseteq\bigoplus\limits_{\substack{\alpha\in Q;\\\alpha
+>0}}\widetilde{\mathfrak{g}}\left[  \alpha\right]  =\widetilde{\mathfrak{g}%
+}\left[  >0\right]  =\widetilde{\mathfrak{n}}_{+}$. But since
+$\widetilde{\mathfrak{n}}_{+}$ is a $Q$-graded vector subspace of
+$\widetilde{\mathfrak{g}}$, we have $\widetilde{\mathfrak{n}}_{+}\left[
+\alpha_{i}\right]  =\left(  \widetilde{\mathfrak{g}}\left[  \alpha_{i}\right]
+\right)  \cap\widetilde{\mathfrak{n}}_{+}=\widetilde{\mathfrak{g}}\left[
+\alpha_{i}\right]  $ (since $\widetilde{\mathfrak{g}}\left[  \alpha
+_{i}\right]  \subseteq\widetilde{\mathfrak{n}}_{+}$).
+
+Now, $\widetilde{\mathfrak{n}}_{+}$ is a $Q$-graded Lie algebra, and $\ell$ is
+a group homomorphism. Hence, we can apply Proposition
+\ref{prop.Q-graded.principal} to $\widetilde{\mathfrak{n}}_{+}$ instead of
+$\widetilde{\mathfrak{g}}$. Applying Proposition \ref{prop.Q-graded.principal}
+\textbf{(a)} to $\widetilde{\mathfrak{n}}_{+}$ instead of $\mathfrak{g}$, we
+see that for every $m\in\mathbb{Z}$, the internal direct sum $\bigoplus
+\limits_{\substack{\alpha\in Q;\\\ell\left(  \alpha\right)  =m}%
+}\widetilde{\mathfrak{n}}_{+}\left[  \alpha\right]  $ is well-defined. Denote
+this internal direct sum $\bigoplus\limits_{\substack{\alpha\in Q;\\\ell
+\left(  \alpha\right)  =m}}\widetilde{\mathfrak{n}}_{+}\left[  \alpha\right]
+$ by $\widetilde{\mathfrak{n}}_{+\left[  m\right]  }$. Applying Proposition
+\ref{prop.Q-graded.principal} \textbf{(b)} to $\widetilde{\mathfrak{n}}_{+}$
+instead of $\mathfrak{g}$, we see that the Lie algebra
+$\widetilde{\mathfrak{n}}_{+}$ equipped with the grading $\left(
+\widetilde{\mathfrak{n}}_{+\left[  m\right]  }\right)  _{m\in\mathbb{Z}}$ is a
+$\mathbb{Z}$-graded Lie algebra. Denote this $\mathbb{Z}$-graded Lie algebra
+by $\widetilde{\mathfrak{n}}_{+}^{\operatorname*{principal}}$. Then,
+$\widetilde{\mathfrak{n}}_{+}^{\operatorname*{principal}}\left[  m\right]
+=\widetilde{\mathfrak{n}}_{+\left[  m\right]  }$ for every $m\in\mathbb{Z}$.
+Applied to $m=1$, this yields $\widetilde{\mathfrak{n}}_{+}%
+^{\operatorname*{principal}}\left[  1\right]  =\widetilde{\mathfrak{n}%
+}_{+\left[  1\right]  }$.
+
+We have $\widetilde{\mathfrak{n}}_{+\left[  1\right]  }=\bigoplus
+\limits_{\substack{\alpha\in Q;\\\ell\left(  \alpha\right)  =1}%
+}\widetilde{\mathfrak{n}}_{+}\left[  \alpha\right]  $ (by the definition of
+$\widetilde{\mathfrak{n}}_{+\left[  1\right]  }$).
+
+For every $j\in\left\{  1,2,...,n\right\}  $, the vector space
+$\widetilde{\mathfrak{n}}_{+}\left[  \alpha_{j}\right]  $ is an addend in the
+direct sum $\bigoplus\limits_{\substack{\alpha\in Q;\\\ell\left(
+\alpha\right)  =1}}\widetilde{\mathfrak{n}}_{+}\left[  \alpha\right]  $
+(namely, the addend for $\alpha=\alpha_{j}$), because $\ell\left(  \alpha
+_{j}\right)  =1$. Thus, for every $j\in\left\{  1,2,...,n\right\}  $, we have
+$\widetilde{\mathfrak{n}}_{+}\left[  \alpha_{j}\right]  \subseteq
+\bigoplus\limits_{\substack{\alpha\in Q;\\\ell\left(  \alpha\right)
+=1}}\widetilde{\mathfrak{n}}_{+}\left[  \alpha\right]
+=\widetilde{\mathfrak{n}}_{+\left[  1\right]  }$. Applied to $j=i$, this
+yields $\widetilde{\mathfrak{n}}_{+}\left[  \alpha_{i}\right]  \subseteq
+\widetilde{\mathfrak{n}}_{+\left[  1\right]  }$.
+
+Let $N_{+}$ be the free vector space with basis $e_{1},e_{2},...,e_{n}$. Since
+$\widetilde{\mathfrak{n}}_{+}=\operatorname*{FreeLie}\left(  e_{i}\ \mid
+\ i\in\left\{  1,2,...,n\right\}  \right)  $, we then have a canonical
+isomorphism $\widetilde{\mathfrak{n}}_{+}\cong\operatorname*{FreeLie}\left(
+N_{+}\right)  $ (where $\operatorname*{FreeLie}\left(  N_{+}\right)  $ means
+the free Lie algebra over the vector space (not the set) $N_{+}$). We identify
+$\widetilde{\mathfrak{n}}_{+}$ with $\operatorname*{FreeLie}\left(
+N_{+}\right)  $ along this isomorphism. Due to the construction of the free
+Lie algebra, we have a canonical injection $N_{+}\rightarrow
+\operatorname*{FreeLie}\left(  N_{+}\right)  =\widetilde{\mathfrak{n}}_{+}$.
+We will regard this injection as an inclusion (so that $N_{+}\subseteq
+\widetilde{\mathfrak{n}}_{+}$).
+
+Since $\widetilde{\mathfrak{n}}_{+}=\operatorname*{FreeLie}\left(
+N_{+}\right)  $, it is clear that $\widetilde{\mathfrak{n}}_{+}$ is generated
+by $N_{+}$ as a Lie algebra. In other words, $\widetilde{\mathfrak{n}}%
+_{+}^{\operatorname*{principal}}$ is generated by $N_{+}$ as a Lie algebra
+(since $\widetilde{\mathfrak{n}}_{+}^{\operatorname*{principal}}%
+=\widetilde{\mathfrak{n}}_{+}$ as Lie algebra).
+
+Since $N_{+}$ is the free vector space with basis $e_{1},e_{2},...,e_{n}$, we
+have $N_{+}=\bigoplus\limits_{j=1}^{n}e_{j}\mathbb{C}$.
+
+For every $j\in\left\{  1,2,...,n\right\}  $, we have $\deg\left(
+e_{j}\right)  =\alpha_{j}$ (by the definition of the $Q$-grading on
+$\widetilde{\mathfrak{g}}$) and thus $e_{j}\in\widetilde{\mathfrak{n}}%
+_{+}\left[  \alpha_{j}\right]  $ (since $e_{j}\in\widetilde{\mathfrak{n}}_{+}%
+$). Hence, for every $j\in\left\{  1,2,...,n\right\}  $, we have
+$e_{j}\mathbb{C}\subseteq\widetilde{\mathfrak{n}}_{+}\left[  \alpha
+_{j}\right]  $. Thus, for every $j\in\left\{  1,2,...,n\right\}  $, the vector
+subspace $e_{j}\mathbb{C}$ of $\widetilde{\mathfrak{n}}_{+}$ lies entirely
+within one homogeneous component of $\widetilde{\mathfrak{n}}_{+}$. Thus, for
+every $j\in\left\{  1,2,...,n\right\}  $, the vector subspace $e_{j}%
+\mathbb{C}$ is a $Q$-graded vector subspace of $\widetilde{\mathfrak{n}}_{+}$.
+Therefore, the internal direct sum $\bigoplus\limits_{j=1}^{n}e_{j}\mathbb{C}$
+also is a $Q$-graded vector subspace of $\widetilde{\mathfrak{n}}_{+}$
+(because any internal direct sum of $Q$-graded vector subspaces of a
+$Q$-graded vector space must itself be a $Q$-graded vector subspace). Since
+$\bigoplus\limits_{j=1}^{n}e_{j}\mathbb{C}=N_{+}$, this means that $N_{+}$ is
+a $Q$-graded vector subspace of $\widetilde{\mathfrak{n}}_{+}$.
+
+For every $j\in\left\{  1,2,...,n\right\}  $ satisfying $j\neq i$, we have
+$\left(  e_{j}\mathbb{C}\right)  \left[  \alpha_{i}\right]  =0$ (because
+\begin{align*}
+\left(  e_{j}\mathbb{C}\right)  \left[  \alpha_{i}\right]   &
+=\underbrace{\left(  e_{j}\mathbb{C}\right)  }_{\subseteq
+\widetilde{\mathfrak{n}}_{+}\left[  \alpha_{j}\right]  }\cap\left(
+\widetilde{\mathfrak{n}}_{+}\left[  \alpha_{i}\right]  \right)  \subseteq
+\left(  \widetilde{\mathfrak{n}}_{+}\left[  \alpha_{j}\right]  \right)
+\cap\left(  \widetilde{\mathfrak{n}}_{+}\left[  \alpha_{i}\right]  \right)
+=0\\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{since }j\neq i\text{, so that }\alpha_{j}\neq\alpha_{i}\text{, and thus
+the }\alpha_{j}\text{-th and the}\\
+\alpha_{i}\text{-th homogeneous components of }\widetilde{\mathfrak{n}}%
+_{+}\text{ are linearly}\\
+\text{disjoint, i. e., they satisfy }\left(  \widetilde{\mathfrak{n}}%
+_{+}\left[  \alpha_{j}\right]  \right)  \cap\left(  \widetilde{\mathfrak{n}%
+}_{+}\left[  \alpha_{i}\right]  \right)  =0
+\end{array}
+\right)
+\end{align*}
+and thus $\left(  e_{j}\mathbb{C}\right)  \left[  \alpha_{i}\right]  =0$).
+Moreover, we know that for every $j\in\left\{  1,2,...,n\right\}  $, we have
+$e_{j}\mathbb{C}\subseteq\widetilde{\mathfrak{n}}_{+}\left[  \alpha
+_{j}\right]  $. Applied to $j=i$, this yields $e_{i}\mathbb{C}\subseteq
+\widetilde{\mathfrak{n}}_{+}\left[  \alpha_{i}\right]  $. Now, $\left(
+e_{i}\mathbb{C}\right)  \left[  \alpha_{i}\right]  =\left(  e_{i}%
+\mathbb{C}\right)  \cap\left(  \widetilde{\mathfrak{n}}_{+}\left[  \alpha
+_{i}\right]  \right)  =e_{i}\mathbb{C}$ (since $e_{i}\mathbb{C}\subseteq
+\widetilde{\mathfrak{n}}_{+}\left[  \alpha_{i}\right]  $).
+
+Now,
+\begin{align*}
+N_{+}\left[  \alpha_{i}\right]   &  =\left(  \bigoplus\limits_{j=1}^{n}%
+e_{j}\mathbb{C}\right)  \left[  \alpha_{i}\right]  \ \ \ \ \ \ \ \ \ \ \left(
+\text{since }N_{+}=\bigoplus\limits_{j=1}^{n}e_{j}\mathbb{C}\right) \\
+&  =\bigoplus\limits_{j=1}^{n}\left(  \left(  e_{j}\mathbb{C}\right)  \left[
+\alpha_{i}\right]  \right) \\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }e_{j}\mathbb{C}\text{ is a
+}Q\text{-graded vector subspace of }\widetilde{\mathfrak{n}}_{+}\text{ for
+every }j\in\left\{  1,2,...,n\right\}  \right) \\
+&  =\bigoplus\limits_{j\in\left\{  1,2,...,n\right\}  }\left(  \left(
+e_{j}\mathbb{C}\right)  \left[  \alpha_{i}\right]  \right)  =\left(
+\underbrace{\left(  e_{i}\mathbb{C}\right)  \left[  \alpha_{i}\right]
+}_{=e_{i}\mathbb{C}}\right)  \oplus\bigoplus\limits_{\substack{j\in\left\{
+1,2,...,n\right\}  ;\\j\neq i}}\left(  \underbrace{\left(  e_{j}%
+\mathbb{C}\right)  \left[  \alpha_{i}\right]  }_{\substack{=0\\\text{(since
+}j\neq i\text{)}}}\right) \\
+&  =\left(  e_{i}\mathbb{C}\right)  \oplus\underbrace{\bigoplus
+\limits_{\substack{j\in\left\{  1,2,...,n\right\}  ;\\j\neq i}}0}_{=0}%
+=e_{i}\mathbb{C}.
+\end{align*}
+
+
+On the other hand,%
+\begin{align*}
+N_{+}  &  =\bigoplus\limits_{j=1}^{n}e_{j}\mathbb{C}=\sum\limits_{j=1}%
+^{n}\underbrace{e_{j}\mathbb{C}}_{\subseteq\widetilde{\mathfrak{n}}_{+}\left[
+\alpha_{j}\right]  \subseteq\widetilde{\mathfrak{n}}_{+\left[  1\right]  }%
+}\ \ \ \ \ \ \ \ \ \ \left(  \text{since direct sums are sums}\right) \\
+&  \subseteq\sum\limits_{j=1}^{n}\widetilde{\mathfrak{n}}_{+\left[  1\right]
+}\subseteq\widetilde{\mathfrak{n}}_{+\left[  1\right]  }%
+=\widetilde{\mathfrak{n}}_{+}^{\operatorname*{principal}}\left[  1\right]  .
+\end{align*}
+Since $\widetilde{\mathfrak{n}}_{+}^{\operatorname*{principal}}$ is generated
+by $N_{+}$ as a Lie algebra, this yields that we can apply Theorem
+\ref{thm.FreeLie.grading1} to $\widetilde{\mathfrak{n}}_{+}%
+^{\operatorname*{principal}}$ and $N_{+}$ instead of $\mathfrak{g}$ and $T$.
+As a result, we obtain that $N_{+}=\widetilde{\mathfrak{n}}_{+}%
+^{\operatorname*{principal}}\left[  1\right]  =\widetilde{\mathfrak{n}%
+}_{+\left[  1\right]  }$. Now,%
+\[
+\widetilde{\mathfrak{g}}\left[  \alpha_{i}\right]  =\widetilde{\mathfrak{n}%
+}_{+}\left[  \alpha_{i}\right]  \subseteq\widetilde{\mathfrak{n}}_{+\left[
+1\right]  }=N_{+},
+\]
+so that%
+\begin{align*}
+\widetilde{\mathfrak{g}}\left[  \alpha_{i}\right]   &  =\left(
+\widetilde{\mathfrak{g}}\left[  \alpha_{i}\right]  \right)  \cap N_{+}%
+=N_{+}\left[  \alpha_{i}\right]  \ \ \ \ \ \ \ \ \ \ \left(  \text{since
+}N_{+}\text{ is a }Q\text{-graded vector subspace of }\widetilde{\mathfrak{g}%
+}\right) \\
+&  =e_{i}\mathbb{C}.
+\end{align*}
+
+
+Now, notice that $Q$ is a free abelian group with generators $-\alpha_{1}$,
+$-\alpha_{2}$, $...$, $-\alpha_{n}$. Hence, we can prove
+$\widetilde{\mathfrak{g}}\left[  -\alpha_{i}\right]  =f_{i}\mathbb{C}$ by
+means of making the following modifications to the above proof of
+$\widetilde{\mathfrak{g}}\left[  \alpha_{i}\right]  =e_{i}\mathbb{C}$:
+
+\begin{itemize}
+\item Replace every $>$ sign by a $<$ sign, and vice versa.
+
+\item Replace every $\alpha_{j}$ by $-\alpha_{j}$ (this includes replacing
+every $\alpha_{i}$ by $-\alpha_{i}$).
+
+\item Replace every $\widetilde{\mathfrak{n}}_{+}$ by $\widetilde{\mathfrak{n}%
+}_{-}$ and vice versa.
+
+\item Replace every $\iota_{+}$ by $\iota_{-}$ and vice versa.
+
+\item Replace every $e_{j}$ by $f_{j}$ (this includes replacing every $e_{i}$
+by $f_{i}$).
+
+\item Replace every $N_{+}$ by $N_{-}$.
+
+\item Replace $\widetilde{\mathfrak{n}}_{+}^{\operatorname*{principal}}$ by
+$\widetilde{\mathfrak{n}}_{-}^{\operatorname*{principal}}$.
+\end{itemize}
+
+Thus we have proven both $\widetilde{\mathfrak{g}}\left[  \alpha_{i}\right]
+=e_{i}\mathbb{C}$ and $\widetilde{\mathfrak{g}}\left[  -\alpha_{i}\right]
+=f_{i}\mathbb{C}$. This proves Theorem \ref{thm.gtilde} \textbf{(g)}.
 
 \bigskip
 
@@ -33643,98 +34429,416 @@ _{0}\left(  \widetilde{\mathfrak{h}}\right)  $. This proves Theorem
 
 \bigskip
 
-\textbf{(i)} [...]
+\textbf{(i)} First, we notice that the Lie algebra $\widetilde{\mathfrak{g}}$
+is generated by its elements $e_{1}$, $e_{2}$, $...$, $e_{n}$, $f_{1}$,
+$f_{2}$, $...$, $f_{n}$, $h_{1}$, $h_{2}$, $...$, $h_{n}$ (since
+\[
+\widetilde{\mathfrak{g}}=\operatorname*{FreeLie}\left(  h_{i},f_{i}%
+,e_{i}\ \mid\ i\in\left\{  1,2,...,n\right\}  \right)  \diagup\left(
+\text{the relations (\ref{nonserre-relations})}\right)
+\]
+). Hence, the Lie algebra $\mathfrak{g}$ is generated by its elements $e_{1}$,
+$e_{2}$, $...$, $e_{n}$, $f_{1}$, $f_{2}$, $...$, $f_{n}$, $h_{1}$, $h_{2}$,
+$...$, $h_{n}$ as well (since $\mathfrak{g}=\widetilde{\mathfrak{g}}\diagup I$).
 
-[...]
+In order to prove that $\mathfrak{g}$ is a contragredient Lie algebra
+corresponding to $A$, we must prove that it satisfies the conditions
+\textbf{(1)}, \textbf{(2)} and \textbf{(3)} of Definition
+\ref{def.contragredient}.
 
-\textit{Proof of Theorem \ref{thm.g(A).exuni}.} [...] Let
-$\widetilde{\mathfrak{g}}$ be the quotient Lie algebra
+\textit{Proof of condition \textbf{(1)}:} The relations
+(\ref{nonserre-relations}) are satisfied in $\widetilde{\mathfrak{g}}$ (by the
+definition of $\widetilde{\mathfrak{g}}$ as the quotient Lie algebra
 $\operatorname*{FreeLie}\left(  h_{i},f_{i},e_{i}\right)  \diagup\left(
-\text{the relations (\ref{nonserre-relations})}\right)  $. We will abuse
-notations and denote the projections of $e_{i}$, $f_{i}$ and $h_{i}$ onto this
-quotient $\widetilde{\mathfrak{g}}$ by $e_{i}$, $f_{i}$ and $h_{i}$. Then, let
-us make $\widetilde{\mathfrak{g}}$ into a $Q$-graded Lie algebra by setting%
+\text{the relations (\ref{nonserre-relations})}\right)  $) and thus also in
+$\mathfrak{g}$ (since $\mathfrak{g}$ is a quotient Lie algebra of
+$\widetilde{\mathfrak{g}}$). This proves condition \textbf{(1)} for our
+$Q$-graded Lie algebra $\mathfrak{g}$.
+
+\textit{Proof of condition \textbf{(2)}:} By Theorem \ref{thm.gtilde}
+\textbf{(e)}, we have $\widetilde{\mathfrak{g}}\left[  0\right]  =\iota
+_{0}\left(  \widetilde{\mathfrak{h}}\right)  $. We know that $h_{1}%
+,h_{2},...,h_{n}$ is a basis of the vector space $\widetilde{\mathfrak{h}}$
+(since $\widetilde{\mathfrak{h}}$ was defined as the free vector space with
+basis $h_{1},h_{2},...,h_{n}$). Since $\iota_{0}$ is injective, this yields
+that $h_{1},h_{2},...,h_{n}$ is a basis of $\iota_{0}\left(
+\widetilde{\mathfrak{h}}\right)  $ (because we identify the images of the
+vectors $h_{1}$, $h_{2}$, $...$, $h_{n}$ under $\iota_{0}$ with $h_{1}$,
+$h_{2}$, $...$, $h_{n}$). Thus, in particular, the vectors $h_{1}%
+,h_{2},...,h_{n}$ in $\widetilde{\mathfrak{g}}$ span the vector space
+$\iota_{0}\left(  \widetilde{\mathfrak{h}}\right)  =\widetilde{\mathfrak{g}%
+}\left[  0\right]  $. As a consequence, the vectors $h_{1}$, $h_{2}$, $...$,
+$h_{n}$ in $\mathfrak{g}$ span the vector space $\mathfrak{g}\left[  0\right]
+$ (because $\mathfrak{g}=\widetilde{\mathfrak{g}}\diagup I$).
+
+The vectors $h_{1}$, $h_{2}$, $...$, $h_{n}$ in $\mathfrak{g}$ are linearly
+independent\footnote{\textit{Proof.} Let $\left(  \lambda_{1},\lambda
+_{2},...,\lambda_{n}\right)  \in\mathbb{C}^{n}$ be such that $\lambda_{1}%
+h_{1}+\lambda_{2}h_{2}+...+\lambda_{n}h_{n}=0$ in $\mathfrak{g}$. Then,
+$\lambda_{1}h_{1}+\lambda_{2}h_{2}+...+\lambda_{n}h_{n}\in I$ in
+$\widetilde{\mathfrak{g}}$ (since $\mathfrak{g}=\widetilde{\mathfrak{g}%
+}\diagup I$). Combined with $\lambda_{1}h_{1}+\lambda_{2}h_{2}+...+\lambda
+_{n}h_{n}\in\widetilde{\mathfrak{g}}\left[  0\right]  =\iota_{0}\left(
+\widetilde{\mathfrak{h}}\right)  $, this yields $\lambda_{1}h_{1}+\lambda
+_{2}h_{2}+...+\lambda_{n}h_{n}\in I\cap\iota_{0}\left(
+\widetilde{\mathfrak{h}}\right)  =0$ (since Theorem \ref{thm.gtilde}
+\textbf{(h)} yields that $I$ has zero intersection with $\iota_{0}\left(
+\widetilde{\mathfrak{h}}\right)  $). Thus, $\lambda_{1}h_{1}+\lambda_{2}%
+h_{2}+...+\lambda_{n}h_{n}=0$ in $\iota_{0}\left(  \widetilde{\mathfrak{h}%
+}\right)  $. Since $h_{1},h_{2},...,h_{n}$ is a basis of $\iota_{0}\left(
+\widetilde{\mathfrak{h}}\right)  $, this yields $\lambda_{1}=\lambda
+_{2}=...=\lambda_{n}=0$.
+\par
+Now forget that we fixed $\left(  \lambda_{1},\lambda_{2},...,\lambda
+_{n}\right)  $. We have thus shown that every $\left(  \lambda_{1},\lambda
+_{2},...,\lambda_{n}\right)  \in\mathbb{C}^{n}$ such that $\lambda_{1}%
+h_{1}+\lambda_{2}h_{2}+...+\lambda_{n}h_{n}=0$ in $\mathfrak{g}$ satisfies
+$\lambda_{1}=\lambda_{2}=...=\lambda_{n}=0$. In other words, the vectors
+$h_{1}$, $h_{2}$, $...$, $h_{n}$ in $\mathfrak{g}$ are linearly independent,
+qed.}. Hence, $h_{1},h_{2},...,h_{n}$ is a basis of the vector space
+$\mathfrak{g}\left[  0\right]  $ (since the vectors $h_{1}$, $h_{2}$, $...$,
+$h_{n}$ in $\mathfrak{g}$ span the vector space $\mathfrak{g}\left[  0\right]
+$ and are linearly independent). In other words, the vector space
+$\mathfrak{g}\left[  0\right]  $ has $\left(  h_{1},h_{2},...,h_{n}\right)  $
+as a $\mathbb{C}$-vector space basis.
+
+Let $i\in\left\{  1,2,...,n\right\}  $. Theorem \ref{thm.gtilde} \textbf{(g)}
+yields $\widetilde{\mathfrak{g}}\left[  \alpha_{i}\right]  =\mathbb{C}e_{i}$.
+Projecting this onto $\widetilde{\mathfrak{g}}\diagup I=\mathfrak{g}$, we
+obtain $\mathfrak{g}\left[  \alpha_{i}\right]  =\mathbb{C}e_{i}$ (since the
+projection of $e_{i}$ onto $\mathfrak{g}$ is also called $e_{i}$). Similarly,
+$\mathfrak{g}\left[  -\alpha_{i}\right]  =\mathbb{C}f_{i}$.
+
+Condition \textbf{(2)} is thus verified for our $Q$-graded Lie algebra
+$\mathfrak{g}$.
+
+\textit{Proof of condition \textbf{(3)}:} Let $J$ be a nonzero $Q$-graded
+ideal in $\mathfrak{g}$. Assume that $J\cap\left(  \mathfrak{g}\left[
+0\right]  \right)  =0$.
+
+Recall that $I$ has zero intersection with $\iota_{0}\left(
+\widetilde{\mathfrak{h}}\right)  $. That is, $I\cap\iota_{0}\left(
+\widetilde{\mathfrak{h}}\right)  =0$.
+
+Let $\operatorname*{proj}:\widetilde{\mathfrak{g}}\rightarrow
+\widetilde{\mathfrak{g}}\diagup I=\mathfrak{g}$ be the canonical projection.
+Then, $\operatorname*{proj}$ is a $Q$-graded Lie algebra homomorphism, so that
+$\operatorname*{proj}\nolimits^{-1}\left(  J\right)  $ is a $Q$-graded ideal
+of $\widetilde{\mathfrak{g}}$ (since $J$ is a $Q$-graded ideal of
+$\mathfrak{g}$). Also, $\operatorname*{Ker}\operatorname*{proj}=I$ (since
+$\operatorname*{proj}$ is the canonical projection $\widetilde{\mathfrak{g}%
+}\rightarrow\widetilde{\mathfrak{g}}\diagup I$).
+
+Let $x\in\operatorname*{proj}\nolimits^{-1}\left(  J\right)  \cap\iota
+_{0}\left(  \widetilde{\mathfrak{h}}\right)  $. Then, $x\in
+\operatorname*{proj}\nolimits^{-1}\left(  J\right)  $ and $x\in\iota
+_{0}\left(  \widetilde{\mathfrak{h}}\right)  $. Since $x\in
+\operatorname*{proj}\nolimits^{-1}\left(  J\right)  $, we have
+$\operatorname*{proj}\left(  x\right)  \in J$. Since $x\in\iota_{0}\left(
+\widetilde{\mathfrak{h}}\right)  =\widetilde{\mathfrak{g}}\left[  0\right]  $
+(by Theorem \ref{thm.gtilde} \textbf{(e)}), we have $\operatorname*{proj}%
+\left(  x\right)  \in\mathfrak{g}\left[  0\right]  $ (since
+$\operatorname*{proj}$ is $Q$-graded). Combined with $\operatorname*{proj}%
+\left(  x\right)  \in J$, this yields $\operatorname*{proj}\left(  x\right)
+\in J\cap\left(  \mathfrak{g}\left[  0\right]  \right)  =0$, so that
+$\operatorname*{proj}\left(  x\right)  =0$, thus $x\in\operatorname*{Ker}%
+\operatorname*{proj}=I$. Combined with $x\in\iota_{0}\left(
+\widetilde{\mathfrak{h}}\right)  $, this yields $x\in I\cap\left(  \iota
+_{0}\left(  \widetilde{\mathfrak{h}}\right)  \right)  =0$, so that $x=0$.
+
+Forget that we fixed $x$. We thus have proven that every $x\in
+\operatorname*{proj}\nolimits^{-1}\left(  J\right)  \cap\iota_{0}\left(
+\widetilde{\mathfrak{h}}\right)  $ satisfies $x=0$. Hence,
+$\operatorname*{proj}\nolimits^{-1}\left(  J\right)  \cap\iota_{0}\left(
+\widetilde{\mathfrak{h}}\right)  =0$. Thus, $\operatorname*{proj}%
+\nolimits^{-1}\left(  J\right)  $ is a $Q$-graded ideal in
+$\widetilde{\mathfrak{g}}$ which has zero intersection with $\iota_{0}\left(
+\widetilde{\mathfrak{h}}\right)  $. Hence,%
+\[
+\operatorname*{proj}\nolimits^{-1}\left(  J\right)  \subseteq\left(  \text{sum
+of all }Q\text{-graded ideals in }\widetilde{\mathfrak{g}}\text{ which have
+zero intersection with }\iota_{0}\left(  \widetilde{\mathfrak{h}}\right)
+\right)  =I.
+\]
+
+
+Now let $y\in J$ be arbitrary. Since $y\in J\subseteq\mathfrak{g}%
+=\widetilde{\mathfrak{g}}\diagup I$, there exists a $y^{\prime}\in
+\widetilde{\mathfrak{g}}$ such that $y=\operatorname*{proj}\left(  y^{\prime
+}\right)  $. Consider this $y$. Since $\operatorname*{proj}\left(  y^{\prime
+}\right)  =y\in J$, we have $y^{\prime}\in\operatorname*{proj}\nolimits^{-1}%
+\left(  J\right)  \subseteq I=\operatorname*{Ker}\operatorname*{proj}$, so
+that $\operatorname*{proj}\left(  y^{\prime}\right)  =0$. Thus,
+$y=\operatorname*{proj}\left(  y^{\prime}\right)  =0$. Now, forget that we
+fixed $y$. We thus have proven that every $y\in J$ satisfies $y=0$. Thus,
+$J=0$, contradicting to the fact that $J$ is nonzero.
+
+This contradiction shows that our assumption (that $J\cap\left(
+\mathfrak{g}\left[  0\right]  \right)  =0$) was wrong. In other words,
+$J\cap\left(  \mathfrak{g}\left[  0\right]  \right)  \neq0$.
+
+Now forget that we fixed $J$. We thus have proven that every nonzero
+$Q$-graded ideal $J$ in $\mathfrak{g}$ satisfies $J\cap\left(  \mathfrak{g}%
+\left[  0\right]  \right)  \neq0$. In other words, every nonzero $Q$-graded
+ideal in $\mathfrak{g}$ has a nonzero intersection with $\mathfrak{g}\left[
+0\right]  $. This proves that Condition \textbf{(3)} holds for our $Q$-graded
+Lie algebra $\mathfrak{g}$.
+
+Now that we have checked all three conditions \textbf{(1)}, \textbf{(2)} and
+\textbf{(3)} for our $Q$-graded Lie algebra $\mathfrak{g}$, we conclude that
+$\mathfrak{g}$ indeed is a contragredient Lie algebra corresponding to $A$.
+Theorem \ref{thm.gtilde} \textbf{(i)} is proven.
+
+\bigskip
+
+\textit{Proof of Theorem \ref{thm.g(A).exuni}.} \textbf{(a)} Let the
+$Q$-graded Lie algebra $\mathfrak{g}$ be defined as in Theorem
+\ref{thm.gtilde}. According to Theorem \ref{thm.gtilde} \textbf{(i)}, this
+$\mathfrak{g}$ is a contragredient Lie algebra corresponding to $A$. Thus,
+there exists at least one contragredient Lie algebra corresponding to $A$,
+namely this $\mathfrak{g}$. Now, it only remains to prove that it is the only
+such Lie algebra (up to isomorphism). In other words, it remains to prove that
+whenever $\mathfrak{g}^{\prime}$ is a contragredient Lie algebra corresponding
+to $A$, then there exists a $Q$-graded Lie algebra isomorphism $\mathfrak{g}%
+\rightarrow\mathfrak{g}^{\prime}$ which sends the generators $e_{1}$, $e_{2}$,
+$...$, $e_{n}$, $f_{1}$, $f_{2}$, $...$, $f_{n}$, $h_{1}$, $h_{2}$, $...$,
+$h_{n}$ of $\mathfrak{g}$ to the respective generators $e_{1}$, $e_{2}$,
+$...$, $e_{n}$, $f_{1}$, $f_{2}$, $...$, $f_{n}$, $h_{1}$, $h_{2}$, $...$,
+$h_{n}$ of $\mathfrak{g}^{\prime}$.
+
+So let $\mathfrak{g}^{\prime}$ be a contragredient Lie algebra. Then,
+condition \textbf{(1)} of Definition \ref{def.contragredient} is satisfied for
+$\mathfrak{g}^{\prime}$. Thus, the relations (\ref{nonserre-relations}) are
+satisfied in $\mathfrak{g}^{\prime}$.
+
+Define a Lie algebra homomorphism $\psi:\widetilde{\mathfrak{g}}%
+\rightarrow\mathfrak{g}^{\prime}$ by%
+\[
+\left\{
+\begin{array}
+[c]{c}%
+\psi\left(  e_{i}\right)  =e_{i}\ \ \ \ \ \ \ \ \ \ \text{for every }%
+i\in\left\{  1,2,...,n\right\}  ;\\
+\psi\left(  f_{i}\right)  =f_{i}\ \ \ \ \ \ \ \ \ \ \text{for every }%
+i\in\left\{  1,2,...,n\right\}  ;\\
+\psi\left(  h_{i}\right)  =h_{i}\ \ \ \ \ \ \ \ \ \ \text{for every }%
+i\in\left\{  1,2,...,n\right\}
+\end{array}
+\right.  .
+\]
+This $\psi$ is well-defined because the relations (\ref{nonserre-relations})
+are satisfied in $\mathfrak{g}^{\prime}$ (and because $\widetilde{\mathfrak{g}%
+}=\operatorname*{FreeLie}\left(  h_{i},f_{i},e_{i}\ \mid\ i\in\left\{
+1,2,...,n\right\}  \right)  \diagup\left(  \text{the relations
+(\ref{nonserre-relations})}\right)  $).
+
+Since the Lie algebra $\mathfrak{g}^{\prime}$ is generated by its elements
+$e_{1}$, $e_{2}$, $...$, $e_{n}$, $f_{1}$, $f_{2}$, $...$, $f_{n}$, $h_{1}$,
+$h_{2}$, $...$, $h_{n}$ (by the definition of a contragredient Lie algebra),
+the homomorphism $\psi$ is surjective (since all of the elements $e_{1}$,
+$e_{2}$, $...$, $e_{n}$, $f_{1}$, $f_{2}$, $...$, $f_{n}$, $h_{1}$, $h_{2}$,
+$...$, $h_{n}$ clearly lie in the image of $\psi$).
+
+Since $\mathfrak{g}^{\prime}$ is a contragredient Lie algebra, the condition
+\textbf{(2)} of Definition \ref{def.contragredient} is satisfied for
+$\mathfrak{g}^{\prime}$. In other words, the vector space $\mathfrak{g}%
+^{\prime}\left[  0\right]  $ has $\left(  h_{1},h_{2},...,h_{n}\right)  $ as a
+$\mathbb{C}$-vector space basis, and we have $\mathfrak{g}^{\prime}\left[
+\alpha_{i}\right]  =\mathbb{C}e_{i}$ and $\mathfrak{g}^{\prime}\left[
+-\alpha_{i}\right]  =\mathbb{C}f_{i}$ for all $i\in\left\{  1,2,...,n\right\}
+$. This yields that the elements $e_{i}$, $f_{i}$ and $h_{i}$ of
+$\mathfrak{g}^{\prime}$ satisfy%
 \[
 \deg\left(  e_{i}\right)  =\alpha_{i},\ \ \ \ \ \ \ \ \ \ \deg\left(
 f_{i}\right)  =-\alpha_{i}\ \ \ \ \ \ \ \ \ \ \text{and }\deg\left(
 h_{i}\right)  =0\ \ \ \ \ \ \ \ \ \ \text{for all }i\in\left\{
 1,2,...,n\right\}  .
 \]
-We will now prove that $\widetilde{\mathfrak{g}}$ already satisfies conditions
-\textbf{(1)} and \textbf{(2)}. In fact, the condition \textbf{(1)} is clearly
-satisfied. Let us define Lie subalgebras $\widetilde{\mathfrak{n}}_{+}$,
-$\widetilde{\mathfrak{n}}_{-}$ and $\mathfrak{h}^{\prime}$ of
-$\widetilde{\mathfrak{g}}$ as follows: Let $\widetilde{\mathfrak{n}}_{+}$ be
-the Lie subalgebra of $\widetilde{\mathfrak{g}}$ generated by $e_{1}$, $e_{2}%
-$, $...$, $e_{n}$. Let $\widetilde{\mathfrak{n}}_{-}$ be the Lie subalgebra of
-$\widetilde{\mathfrak{g}}$ generated by $f_{1}$, $f_{2}$, $...$, $f_{n}$. Let
-$\mathfrak{h}^{\prime}$ denote the Lie subalgebra of $\widetilde{\mathfrak{g}%
-}$ generated by $h_{1}$, $h_{2}$, $...$, $h_{n}$. It is easy to see that
-$\mathfrak{h}^{\prime}$ coincides with the $\mathbb{C}$-linear span
-$\left\langle h_{1},h_{2},...,h_{n}\right\rangle $ (since the relations
-(\ref{nonserre-relations}) include $\left[  h_{i},h_{j}\right]  =0$).
+Of course, the elements $e_{i}$, $f_{i}$ and $h_{i}$ of
+$\widetilde{\mathfrak{g}}$ satisfy the same relations (because of the
+definition of the $Q$-grading on $\widetilde{\mathfrak{g}}$). As a
+consequence, it is easy to see that Lie algebra homomorphism $\psi$ is
+$Q$-graded\footnote{\textit{Proof.} Let $T$ be the vector subspace of
+$\widetilde{\mathfrak{g}}$ spanned by the elements $e_{1}$, $e_{2}$, $...$,
+$e_{n}$, $f_{1}$, $f_{2}$, $...$, $f_{n}$, $h_{1}$, $h_{2}$, $...$, $h_{n}$.
+Then, $\widetilde{\mathfrak{g}}$ is generated by $T$ as a Lie algebra (because
+$\widetilde{\mathfrak{g}}$ is generated by the elements $e_{1}$, $e_{2}$,
+$...$, $e_{n}$, $f_{1}$, $f_{2}$, $...$, $f_{n}$, $h_{1}$, $h_{2}$, $...$,
+$h_{n}$ as a Lie algebra). Due to the relations%
+\[
+\deg\left(  e_{i}\right)  =\alpha_{i},\ \ \ \ \ \ \ \ \ \ \deg\left(
+f_{i}\right)  =-\alpha_{i}\ \ \ \ \ \ \ \ \ \ \text{and }\deg\left(
+h_{i}\right)  =0\ \ \ \ \ \ \ \ \ \ \text{for all }i\in\left\{
+1,2,...,n\right\}
+\]
+holding in $\widetilde{\mathfrak{g}}$, the subspace $T$ is of
+$\widetilde{\mathfrak{g}}$ is $Q$-graded, and its homogeneous components are%
+\[
+T\left[  \alpha\right]  =\left\{
+\begin{array}
+[c]{l}%
+\mathbb{C}h_{1}+\mathbb{C}h_{2}+...+\mathbb{C}h_{n}%
+,\ \ \ \ \ \ \ \ \ \ \text{if }\alpha=0;\\
+\mathbb{C}e_{i},\ \ \ \ \ \ \ \ \ \ \text{if }\alpha=\alpha_{i}\text{ for some
+}i\in\left\{  1,2,...,n\right\}  ;\\
+\mathbb{C}f_{i},\ \ \ \ \ \ \ \ \ \ \text{if }\alpha=-\alpha_{i}\text{ for
+some }i\in\left\{  1,2,...,n\right\}  ;\\
+0,\ \ \ \ \ \ \ \ \ \ \text{otherwise}%
+\end{array}
+\right.  \ \ \ \ \ \ \ \ \ \ \text{for all }\alpha\in Q.
+\]
+Using this fact, it is straightforward to check that $\psi\left(  T\left[
+\alpha\right]  \right)  \subseteq\mathfrak{g}^{\prime}\left[  \alpha\right]  $
+for every $\alpha\in Q$. In other words, $\left(  \psi\mid_{T}\right)  \left(
+T\left[  \alpha\right]  \right)  \subseteq\mathfrak{g}^{\prime}\left[
+\alpha\right]  $ for every $\alpha\in Q$. Thus, the map $\psi\mid_{T}$ is
+$Q$-graded. Proposition \ref{prop.generation.Q-gr} (applied to
+$\widetilde{\mathfrak{g}}$, $\mathfrak{g}^{\prime}$ and $\psi$ instead of
+$\mathfrak{g}$, $\mathfrak{h}$ and $f$) now yields that $\psi$ is $Q$-graded,
+qed.}. As a consequence, $\operatorname*{Ker}\psi$ is a $Q$-graded Lie ideal
+of $\widetilde{\mathfrak{g}}$.
 
-[...]
+Define $\widetilde{\mathfrak{h}}$, $I$ and $\iota_{0}$ as in Theorem
+\ref{thm.gtilde}. Then, $\widetilde{\mathfrak{h}}$ is the free vector space
+with basis $h_{1},h_{2},...,h_{n}$. Thus, the vector space
+$\widetilde{\mathfrak{h}}$ is spanned by $h_{1},h_{2},...,h_{n}$. As a
+consequence, the vector space $\iota_{0}\left(  \widetilde{\mathfrak{h}%
+}\right)  $ is spanned by $h_{1},h_{2},...,h_{n}$ (since $\iota_{0}$ maps the
+elements $h_{1},h_{2},...,h_{n}$ of $\widetilde{\mathfrak{h}}$ to the elements
+$h_{1},h_{2},...,h_{n}$ of $\widetilde{\mathfrak{g}}$). Now, it is easy to see
+that $\left(  \operatorname*{Ker}\psi\right)  \cap\iota_{0}\left(
+\widetilde{\mathfrak{h}}\right)  =0$\ \ \ \ \footnote{\textit{Proof.} Let
+$x\in\left(  \operatorname*{Ker}\psi\right)  \cap\iota_{0}\left(
+\widetilde{\mathfrak{h}}\right)  $. Then, $x\in\operatorname*{Ker}\psi$ and
+$x\in\iota_{0}\left(  \widetilde{\mathfrak{h}}\right)  $. Since $x\in\iota
+_{0}\left(  \widetilde{\mathfrak{h}}\right)  $, there exist some elements
+$\lambda_{1}$, $\lambda_{2}$, $...$, $\lambda_{n}$ of $\mathbb{C}$ such that
+$x=\lambda_{1}h_{1}+\lambda_{2}h_{2}+...+\lambda_{n}h_{n}$ (since the vector
+space $\iota_{0}\left(  \widetilde{\mathfrak{h}}\right)  $ is spanned by
+$h_{1},h_{2},...,h_{n}$). Consider these $\lambda_{1}$, $\lambda_{2}$, $...$,
+$\lambda_{n}$. Since $x\in\operatorname*{Ker}\psi$, we have $\psi\left(
+x\right)  =0$, so that%
+\begin{align*}
+0  &  =\psi\left(  x\right)  =\psi\left(  \lambda_{1}h_{1}+\lambda_{2}%
+h_{2}+...+\lambda_{n}h_{n}\right)  =\lambda_{1}\psi\left(  h_{1}\right)
++\lambda_{2}\psi\left(  h_{2}\right)  +...+\lambda_{n}\psi\left(  h_{n}\right)
+\\
+&  =\lambda_{1}h_{1}+\lambda_{2}h_{2}+...+\lambda_{n}h_{n}%
+\ \ \ \ \ \ \ \ \ \ \left(  \text{since }\psi\left(  h_{i}\right)
+=h_{i}\text{ for every }i\in\left\{  1,2,...,n\right\}  \right)
+\end{align*}
+in $\mathfrak{g}^{\prime}$. But since the elements $h_{1}$, $h_{2}$, $...$,
+$h_{n}$ of $\mathfrak{g}^{\prime}$ are linearly independent (because the
+vector space $\mathfrak{g}^{\prime}\left[  0\right]  $ has $\left(
+h_{1},h_{2},...,h_{n}\right)  $ as a $\mathbb{C}$-vector space basis), this
+yields that $\lambda_{1}=\lambda_{2}=...=\lambda_{n}=0$. Thus, $x=\lambda
+_{1}h_{1}+\lambda_{2}h_{2}+...+\lambda_{n}h_{n}$ becomes $x=0h_{1}%
++0h_{2}+...+0h_{n}=0$.
+\par
+Now forget that we fixed $x$. We thus have seen that every $x\in\left(
+\operatorname*{Ker}\psi\right)  \cap\iota_{0}\left(  \widetilde{\mathfrak{h}%
+}\right)  $ satisfies $x=0$. In other words, $\left(  \operatorname*{Ker}%
+\psi\right)  \cap\iota_{0}\left(  \widetilde{\mathfrak{h}}\right)  =0$, qed.}.
+Hence, $\operatorname*{Ker}\psi$ is a $Q$-graded Lie ideal of
+$\widetilde{\mathfrak{g}}$ which has zero intersection with $\iota_{0}\left(
+\widetilde{\mathfrak{h}}\right)  $.
 
-To prove the rest, consider the Lie algebra $\widetilde{\mathfrak{g}}^{\prime
-}=\operatorname*{FreeLie}\left(  e_{i}\right)  \oplus\mathfrak{h}%
-\oplus\operatorname*{FreeLie}\left(  f_{i}\right)  $. Grade this in the
-obvious way, so that $\operatorname*{FreeLie}\left(  e_{i}\right)
-=\widetilde{\mathfrak{n}}_{+}^{\prime}$ and $\operatorname*{FreeLie}\left(
-f_{i}\right)  =\widetilde{\mathfrak{n}}_{-}^{\prime}$. Make this a Lie algebra
-by the Leibniz rule, and check that this indeed gives a Lie algebra.
+But $I$ is the sum of all $Q$-graded ideals in $\widetilde{\mathfrak{g}}$
+which have zero intersection with $\iota_{0}\left(  \widetilde{\mathfrak{h}%
+}\right)  $. Thus, every $Q$-graded ideal of $\widetilde{\mathfrak{g}}$ which
+has zero intersection with $\iota_{0}\left(  \widetilde{\mathfrak{h}}\right)
+$ must be a subset of $I$. Since $\operatorname*{Ker}\psi$ is a $Q$-graded Lie
+ideal of $\widetilde{\mathfrak{g}}$ which has zero intersection with
+$\iota_{0}\left(  \widetilde{\mathfrak{h}}\right)  $, this yields that
+$\operatorname*{Ker}\psi\subseteq I$.
 
-We have a surjective homomorphism $\phi:\widetilde{\mathfrak{g}}%
-\rightarrow\widetilde{\mathfrak{g}}^{\prime}$ (since $\widetilde{\mathfrak{g}%
-}^{\prime}$ satisfies conditions \textbf{(1)} and \textbf{(2)}). We want to
-prove that this $\phi$ is an isomorphism.
+We will now prove the reverse inclusion, i. e., we will show that
+$I\subseteq\operatorname*{Ker}\psi$.
 
-\textbf{Claim:} We can write $\widetilde{\mathfrak{g}}=\widetilde{\mathfrak{n}%
-}_{+}\oplus\widetilde{\mathfrak{h}}\oplus\widetilde{\mathfrak{n}}_{-}$, where
-$\widetilde{\mathfrak{n}}_{+}$ is generated by the $e_{i}$ and where
-$\widetilde{\mathfrak{n}}_{-}$ is generated by the $f_{i}$, and where
-$\widetilde{\mathfrak{h}}$ is generated and actually spanned by $h_{i}$.
+We know that $I$ is $Q$-graded (by Theorem \ref{thm.gtilde} \textbf{(h)}).
+Since $\psi$ is $Q$-graded, this yields that $\psi\left(  I\right)  $ is a
+$Q$-graded vector subspace of $\mathfrak{g}^{\prime}$. On the other hand,
+since $I$ is $Q$-graded, we have $I\left[  0\right]  =I\cap\underbrace{\left(
+\widetilde{\mathfrak{g}}\left[  0\right]  \right)  }_{\substack{=\iota
+_{0}\left(  \widetilde{\mathfrak{h}}\right)  \\\text{(by Theorem
+\ref{thm.gtilde} \textbf{(e)})}}}=I\cap\iota_{0}\left(
+\widetilde{\mathfrak{h}}\right)  =0$ (since Theorem \ref{thm.gtilde}
+\textbf{(h)} yields that $I$ has zero intersection with $\iota_{0}\left(
+\widetilde{\mathfrak{h}}\right)  $).
 
-\textit{Proof of the Claim:} Any commutator can be written as a commutator of
-only $e_{i}$, or of only $f_{i}$, or it lies in $\mathfrak{h}$. (This is
-rather clear from the relations (\ref{nonserre-relations}).) Thus, we get a
-decomposition $\widetilde{\mathfrak{g}}=\widetilde{\mathfrak{n}}%
-_{+}+\widetilde{\mathfrak{h}}+\widetilde{\mathfrak{n}}_{-}$. Since the addends
-live in different degrees, this is a direct sum, and thus we conclude that
-$\widetilde{\mathfrak{g}}=\widetilde{\mathfrak{n}}_{+}\oplus
-\widetilde{\mathfrak{h}}\oplus\widetilde{\mathfrak{n}}_{-}$.
+Since $\mathfrak{g}^{\prime}$ is a contragredient Lie algebra, the condition
+\textbf{(3)} of Definition \ref{def.contragredient} is satisfied for
+$\mathfrak{g}^{\prime}$. In other words, every nonzero $Q$-graded ideal in
+$\mathfrak{g}^{\prime}$ has a nonzero intersection with $\mathfrak{g}^{\prime
+}\left[  0\right]  $. Since $I$ is an ideal of $\widetilde{\mathfrak{g}}$, the
+image $\psi\left(  I\right)  $ is an ideal of $\mathfrak{g}^{\prime}$ (because
+$\psi$ is a surjective homomorphism of Lie algebras, and because the image of
+an ideal under a \textbf{surjective} homomorphism of Lie algebras must always
+be an ideal of the target Lie algebra). Assume that $\psi\left(  I\right)
+\neq0$. Clearly, $\psi\left(  I\right)  $ is $Q$-graded (since $I$ is
+$Q$-graded (by Theorem \ref{thm.gtilde} \textbf{(h)}) and since $\psi$ is
+$Q$-graded). Thus, $\psi\left(  I\right)  $ is a nonzero $Q$-graded ideal in
+$\mathfrak{g}^{\prime}$. Thus, $\psi\left(  I\right)  $ has a nonzero
+intersection with $\mathfrak{g}^{\prime}\left[  0\right]  $ (because every
+nonzero $Q$-graded ideal in $\mathfrak{g}^{\prime}$ has a nonzero intersection
+with $\mathfrak{g}^{\prime}\left[  0\right]  $). In other words, $\psi\left(
+I\right)  \cap\left(  \mathfrak{g}^{\prime}\left[  0\right]  \right)  \neq0$.
 
-Hence, $\phi$ is an isomorphism (since $\widetilde{\mathfrak{n}}_{+}^{\prime}$
-and $\widetilde{\mathfrak{n}}_{-}^{\prime}$ are free Lie algebras).
+The following is a known and easy fact from linear algebra: If $A$ and $B$ are
+two $Q$-graded vector spaces, and $\Phi:A\rightarrow B$ is a $Q$-graded linear
+map, then $\Phi\left(  A\left[  \beta\right]  \right)  =\left(  \Phi\left(
+A\right)  \right)  \left[  \beta\right]  $ for every $\beta\in Q$. Applying
+this fact to $A=I$, $B=\mathfrak{g}^{\prime}$, $\Phi=\psi$ and $\beta=0$, we
+obtain $\psi\left(  I\left[  0\right]  \right)  =\left(  \psi\left(  I\right)
+\right)  \left[  0\right]  $. But since $I\left[  0\right]  =0$, this rewrites
+as $\psi\left(  0\right)  =\left(  \psi\left(  I\right)  \right)  \left[
+0\right]  $. Hence, $\left(  \psi\left(  I\right)  \right)  \left[  0\right]
+=\psi\left(  0\right)  =0$.
 
-So we have proven that $\widetilde{\mathfrak{g}}$ satisfies conditions
-\textbf{(1)} and \textbf{(2)}. Now, in order to find a Lie algebra
-$\mathfrak{g}$ which additionally satisfies \textbf{(3)}, we do something
-cheap: Let $I$ be the sum of all $Q$-graded ideals in $\widetilde{\mathfrak{g}%
-}$ which have zero intersection with $\mathfrak{h}$. Let $\mathfrak{g}%
-=\widetilde{\mathfrak{g}}\diagup I$.
+But since $\psi\left(  I\right)  $ is a $Q$-graded vector subspace of
+$\mathfrak{g}^{\prime}$, we have $\psi\left(  I\right)  \cap\left(
+\mathfrak{g}^{\prime}\left[  0\right]  \right)  =\left(  \psi\left(  I\right)
+\right)  \left[  0\right]  =0$. This contradicts the fact that $\psi\left(
+I\right)  \cap\left(  \mathfrak{g}^{\prime}\left[  0\right]  \right)  \neq0$.
+Hence, our assumption (that $\psi\left(  I\right)  \neq0$) must have been
+wrong. In other words, $\psi\left(  I\right)  =0$, so that $I\subseteq
+\operatorname*{Ker}\psi$. Combined with $\operatorname*{Ker}\psi\subseteq I$,
+this yields $I=\operatorname*{Ker}\psi$.
 
-We now claim that $\mathfrak{g}$ is a contragredient Lie algebra corresponding
-to $A$. To prove this, we must check that conditions \textbf{(1)},
-\textbf{(2)} and \textbf{(3)} are satisfied. We know that conditions
-\textbf{(1)} and \textbf{(2)} hold (since they hold for $\mathfrak{g}$, and
-since "intersection with $\mathfrak{h}$" is the same as "projection onto the
-$0$-th graded component" due to our grading!), so it only remains to check
-\textbf{(3)}.
+Since the $Q$-graded Lie algebra homomorphism $\psi:\widetilde{\mathfrak{g}%
+}\rightarrow\mathfrak{g}^{\prime}$ is surjective, it factors (according to the
+homomorphism theorem) through a $Q$-graded Lie algebra isomorphism
+$\widetilde{\mathfrak{g}}\diagup\left(  \operatorname*{Ker}\psi\right)
+\rightarrow\mathfrak{g}^{\prime}$. Since $\widetilde{\mathfrak{g}}%
+\diagup\underbrace{\left(  \operatorname*{Ker}\psi\right)  }_{=I}%
+=\widetilde{\mathfrak{g}}\diagup I=\mathfrak{g}$, this means that $\psi$
+factors through a $Q$-graded Lie algebra isomorphism $\mathfrak{g}%
+\rightarrow\mathfrak{g}^{\prime}$. This $Q$-graded Lie algebra isomorphism
+$\mathfrak{g}\rightarrow\mathfrak{g}^{\prime}$ clearly sends the generators
+$e_{1}$, $e_{2}$, $...$, $e_{n}$, $f_{1}$, $f_{2}$, $...$, $f_{n}$, $h_{1}$,
+$h_{2}$, $...$, $h_{n}$ of $\mathfrak{g}$ to the respective generators $e_{1}%
+$, $e_{2}$, $...$, $e_{n}$, $f_{1}$, $f_{2}$, $...$, $f_{n}$, $h_{1}$, $h_{2}%
+$, $...$, $h_{n}$ of $\mathfrak{g}^{\prime}$.
 
-If $J\subseteq\widetilde{\mathfrak{g}}\diagup I$ is a graded ideal such that
-$J\cap\mathfrak{h}=0$, then the preimage $\widetilde{J}$ of $J$ in
-$\widetilde{\mathfrak{g}}$ is also such an ideal and properly contains $J$,
-which is a contradiction. So $\mathfrak{g}$ is a contragredient Lie algebra
-corresponding to $A$.
+We have thus proven that there exists a $Q$-graded Lie algebra isomorphism
+$\mathfrak{g}\rightarrow\mathfrak{g}^{\prime}$ which sends the generators
+$e_{1}$, $e_{2}$, $...$, $e_{n}$, $f_{1}$, $f_{2}$, $...$, $f_{n}$, $h_{1}$,
+$h_{2}$, $...$, $h_{n}$ of $\mathfrak{g}$ to the respective generators $e_{1}%
+$, $e_{2}$, $...$, $e_{n}$, $f_{1}$, $f_{2}$, $...$, $f_{n}$, $h_{1}$, $h_{2}%
+$, $...$, $h_{n}$ of $\mathfrak{g}^{\prime}$. This completes the proof of
+Theorem \ref{thm.g(A).exuni} \textbf{(a)}.
 
-If $\mathfrak{g}^{\prime}$ is another contragredient Lie algebra corresponding
-to $A$, then we have a surjective map $\widetilde{\mathfrak{g}}\rightarrow
-\mathfrak{g}^{\prime}$, and $I$ is killed by this map, so we get a surjective
-map $\psi:\mathfrak{g}\rightarrow\mathfrak{g}^{\prime}$. The kernel
-$\operatorname*{Ker}\psi$ is a $Q$-graded ideal, so that $\operatorname*{Ker}%
-\psi\cap\mathfrak{h}=0$, and thus (by condition \textbf{(3)}) we have
-$\operatorname*{Ker}\psi=0$ and thus $\psi$ is a graded isomorphism.
+\textbf{(b)} Let $A$ be the Cartan matrix of a simple finite-dimensional Lie
+algebra. Clearly it is enough to prove that this Lie algebra is a
+contragredient Lie algebra corresponding to $A$, that is, is generated by
+$e_{1}$, $e_{2}$, $...$, $e_{n}$, $f_{1}$, $f_{2}$, $...$, $f_{n}$, $h_{1}$,
+$h_{2}$, $...$, $h_{n}$ as a Lie algebra and satisfies the conditions
+\textbf{(1)}, \textbf{(2)} and \textbf{(3)} of Definition
+\ref{def.contragredient}. But this follows from the standard theory of roots
+of simple finite-dimensional Lie algebras\footnote{For instance, condition
+\textbf{(3)} follows form the fact that the Lie algebra in question is simple
+and thus contains no ideals other than $0$ and itself.}. Theorem
+\ref{thm.g(A).exuni} \textbf{(b)} is thus proven.
 
 \begin{remark}
 Let $A$ be a complex $n\times n$ matrix. One can show that the Lie algebra
@@ -33755,6 +34859,52 @@ this will later be used for the bilinear form. $\widetilde{\mathfrak{g}%
 0\right]  =\widetilde{\mathfrak{h}}$, $\widetilde{\mathfrak{g}}\left[
 \operatorname*{tot}<0\right]  ...$, $\widetilde{\mathfrak{g}}\left[  1\right]
 =...$]
+
+\begin{remark}
+\label{rmk.g(A+A)}Let $A_{1}$ and $A_{2}$ be two square complex matrices. As
+usual, we denote by $A_{1}\oplus A_{2}$ the block-diagonal matrix $\left(
+\begin{array}
+[c]{cc}%
+A_{1} & 0\\
+0 & A_{2}%
+\end{array}
+\right)  $. Then, $\mathfrak{g}\left(  A_{1}\oplus A_{2}\right)
+\cong\mathfrak{g}\left(  A_{1}\right)  \oplus\mathfrak{g}\left(  A_{2}\right)
+$ as Lie algebras naturally.
+\end{remark}
+
+\textit{Proof of Remark \ref{rmk.g(A+A)} (sketched).} Say $A_{1}$ is an
+$\ell\times\ell$ matrix, and $A_{2}$ is an $m\times m$ matrix. Let $n=\ell+m$
+and $A=A_{1}\oplus A_{2}$. Introduce the notations $\widetilde{\mathfrak{g}}$,
+$\widetilde{\mathfrak{h}}$, $\widetilde{\mathfrak{n}}_{+}$,
+$\widetilde{\mathfrak{n}}_{-}$, $\iota_{0}$, $\iota_{+}$, $\iota_{-}$ and $I$
+as in Theorem \ref{thm.gtilde}. Let $\mathfrak{j}_{+}$ be the ideal of the
+algebra $\widetilde{\mathfrak{n}}_{+}$ generated by all elements of the form
+$\left[  e_{i},e_{j}\right]  $ with $i\in\left\{  1,2,...,\ell\right\}  $ and
+$j\in\left\{  \ell+1,\ell+2,...,n\right\}  $. Let $\mathfrak{j}_{-}$ be the
+ideal of the algebra $\widetilde{\mathfrak{n}}_{-}$ generated by all elements
+of the form $\left[  f_{i},f_{j}\right]  $ with $i\in\left\{  1,2,...,\ell
+\right\}  $ and $j\in\left\{  \ell+1,\ell+2,...,n\right\}  $. Prove that
+$\iota_{+}\left(  \mathfrak{j}_{+}\right)  $ and $\iota_{-}\left(
+\mathfrak{j}_{-}\right)  $ are actually $Q$-graded ideals of
+$\widetilde{\mathfrak{g}}$ (and not only of $\iota_{+}\left(
+\widetilde{\mathfrak{n}}_{+}\right)  $ and $\iota_{-}\left(
+\widetilde{\mathfrak{n}}_{-}\right)  $), so that both $\iota_{+}\left(
+\mathfrak{j}_{+}\right)  $ and $\iota_{-}\left(  \mathfrak{j}_{-}\right)  $
+are subsets of $I$. Notice that $\widetilde{\mathfrak{g}}\diagup\left(
+\iota_{+}\left(  \mathfrak{j}_{+}\right)  +\iota_{-}\left(  \mathfrak{j}%
+_{-}\right)  \right)  \cong\widetilde{\mathfrak{g}}_{1}\oplus
+\widetilde{\mathfrak{g}}_{2}$, where for every $i\in\left\{  1,2\right\}  $,
+let $\widetilde{\mathfrak{g}}_{i}$ be the Lie algebra constructed analogously
+to $\widetilde{\mathfrak{g}}$ but for the matrix $A_{i}$ instead of $A$.
+Conclude the proof by noticing that if $J$ is a $Q$-graded ideal in
+$\widetilde{\mathfrak{g}}$ which has zero intersection with $\iota_{0}\left(
+\widetilde{\mathfrak{h}}\right)  $, and $K$ is the sum of all $Q$-graded
+ideals in $\widetilde{\mathfrak{g}}\diagup J$ which have zero intersection
+with the projection of $\iota_{0}\left(  \widetilde{\mathfrak{h}}\right)  $ on
+$\widetilde{\mathfrak{g}}\diagup J$, then $\left(  \widetilde{\mathfrak{g}%
+}\diagup J\right)  \diagup K\cong\widetilde{\mathfrak{g}}\diagup
+I=\mathfrak{g}$. The details are left to the reader.
 
 \subsection{Kac-Moody algebras for generalized Cartan matrices}
 
@@ -33916,23 +35066,17 @@ Of course, simple Lie algebras are Kac-Moody algebras. The next class of
 Kac-Moody algebras we are interested in is the \textit{affine Lie algebras}:
 
 \begin{remark}
-Let $\sigma$ be a permutation, and $A$ be an $n\times n$ complex matrix. Then,
-$\mathfrak{g}\left(  A\right)  \cong\mathfrak{g}\left(  \sigma A\sigma
-^{-1}\right)  $.
-\end{remark}
-
-\begin{remark}
-Let $A_{1}$ and $A_{2}$ be two square complex matrices. Then, $\mathfrak{g}%
-\left(  A_{1}\oplus A_{2}\right)  \cong\mathfrak{g}\left(  A_{2}\right)
-\oplus\mathfrak{g}\left(  A_{2}\right)  $ naturally.
+Let $\sigma\in S_{n}$ be a permutation, and $A$ be an $n\times n$ complex
+matrix. Then, $\mathfrak{g}\left(  A\right)  \cong\mathfrak{g}\left(  \sigma
+A\sigma^{-1}\right)  $.
 \end{remark}
 
 \begin{definition}
 A generalized Cartan matrix $A$ is said to be \textit{indecomposable} if it
 cannot be written in the form $\sigma\left(  A_{1}\oplus A_{2}\right)
 \sigma^{-1}$ for some permutation $\sigma$ and nontrivial square matrices
-$A_{1}$ and $A_{2}$. Due to the above two remarks, we need to only consider
-indecomposable generalized Cartan matrices.
+$A_{1}$ and $A_{2}$. Due to the above remark and to Remark \ref{rmk.g(A+A)},
+we need to only consider indecomposable generalized Cartan matrices.
 \end{definition}
 
 \begin{definition}
@@ -34031,8 +35175,8 @@ is the root lattice of $\mathfrak{g}$. Define $\alpha_{0}=\delta-\theta$.
 $\delta\mid_{\widehat{\mathfrak{h}}}=0$. So if we think of $\alpha_{0}$ as an
 element of $\widehat{\mathfrak{h}}^{\ast}$, then $\alpha_{0},\alpha
 _{1},...,\alpha_{r}$ is neither linearly independent nor spanning. So the
-direct sum $Q\oplus\mathbb{Z}\delta$ is an exterior direct sum, not an
-interior one!!
+direct sum $Q\oplus\mathbb{Z}\delta$ is an external direct sum, not an
+internal one!!
 
 $\widehat{Q}$-grading: $\deg\left(  e_{i}\right)  =\alpha_{i}$, $\deg\left(
 f_{i}\right)  =-\alpha_{i}$ and $\deg\left(  h_{i}\right)  =0$ for
