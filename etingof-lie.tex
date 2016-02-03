@@ -23,7 +23,7 @@
 \setcounter{MaxMatrixCols}{30}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Monday, March 12, 2012 17:53:53}
+%TCIDATA{LastRevised=Monday, March 12, 2012 21:55:12}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
 %TCIDATA{BibliographyScheme=Manual}
@@ -4319,101 +4319,104 @@ $J_{\varepsilon}$ induces a corresponding isomorphism $M_{\lambda
 }^{-\mathfrak{g}}=M_{\lambda}^{-\mathfrak{g}^{\varepsilon}}$.
 
 Before we do any substantial computations, let us define a notion of
-\textit{pseudo-Lie polynomial terms}. This is more or less an upgraded notion
-of a polynomial, which we will use to formalize what it means for two
-expressions in $M_{\lambda}^{+\mathfrak{g}^{\varepsilon}}$ to be "equal up to
-$\varepsilon$ times an expression which is formed in the same way for every
-$\varepsilon$" (we cannot really talk of an element in $M_{\lambda
+\textit{pseudo-}$\mathfrak{g}$\textit{ polynomial terms}. This is more or less
+an upgraded notion of a polynomial, which we will use to formalize what it
+means for two expressions in $M_{\lambda}^{+\mathfrak{g}^{\varepsilon}}$ to be
+"equal up to $\varepsilon$ times an expression which is formed in the same way
+for every $\varepsilon$" (we cannot really talk of an element in $M_{\lambda
 }^{+\mathfrak{g}^{\varepsilon}}$ being "polynomial with respect to
 $\varepsilon$", because for different $M_{\lambda}^{+\mathfrak{g}%
 ^{\varepsilon}}$, the modules $M_{\lambda}^{+\mathfrak{g}^{\varepsilon}}$ are
 completely different).
 
 \begin{definition}
-Let $m\in\mathbb{N}$. Let $E$, $U_{1}$, $U_{2}$, $...$, $U_{m}$ be $m$
-variable symbols. Let $L$ be a function symbol (of one argument). In the
-following, a \textit{term} will denote a term using symbols from the set%
+Let $m\in\mathbb{N}$. Let $E$ be a variable symbol. Let $L$ be a function
+symbol (of one argument). In the following, a \textit{term} will denote a term
+using symbols from the set%
 \[
-\mathbb{C}\cup\left\{  L\right\}  \cup\left\{  E\right\}  \cup\left\{
-U_{1},U_{2},...,U_{m}\right\}  \cup\left\{  +,\cdot,\left[  \cdot
-,\cdot\right]  \right\}  ,
+\mathbb{C}\cup\mathfrak{g}\cup\left\{  L\right\}  \cup\left\{  E\right\}
+\cup\left\{  +,\cdot,\left[  \cdot,\cdot\right]  \right\}  ,
 \]
 where $+$ and $\cdot$ and $\left[  \cdot,\cdot\right]  $ are function symbols
 of two arguments. The symbol $\cdot$ will often be suppressed. The application
 $\left[  \cdot,\cdot\right]  \left(  t,s\right)  $ (with $t$ and $s$ being
 terms) will often be written as $\left[  t,s\right]  $. Semantic brackets are
-also allowed, but have no other purpose than, uhm, bracketing.
+also allowed, but serve no other purpose than disambiguation.
 
-Let $\operatorname*{psLie}\nolimits_{\mathbb{C}}\left(  U_{1},U_{2}%
-,...,U_{m}\right)  $ and $\operatorname*{psLie}\nolimits_{\operatorname*{Lie}%
-}\left(  U_{1},U_{2},...,U_{m}\right)  $ be two sets of terms defined
+\textbf{(a)} Let $\operatorname*{psLie}\nolimits_{\mathbb{C}}$ and
+$\operatorname*{psLie}\nolimits_{\mathfrak{g}}$ be two sets of terms defined
 recursively as follows:
 
 - The symbols in $\mathbb{C}$ are elements of $\operatorname*{psLie}%
-\nolimits_{\mathbb{C}}\left(  U_{1},U_{2},...,U_{m}\right)  $.
+\nolimits_{\mathbb{C}}$.
 
-- The variables $U_{1}$, $U_{2}$, $...$, $U_{m}$ are elements of
-$\operatorname*{psLie}\nolimits_{\operatorname*{Lie}}\left(  U_{1}%
-,U_{2},...,U_{m}\right)  $.
+- The symbols in $\mathfrak{g}$ are elements of $\operatorname*{psLie}%
+\nolimits_{\mathfrak{g}}$.
 
 - The variable $E$ is an element of $\operatorname*{psLie}%
-\nolimits_{\mathbb{C}}\left(  U_{1},U_{2},...,U_{m}\right)  $.
+\nolimits_{\mathbb{C}}$.
 
-- For every $t\in\operatorname*{psLie}\nolimits_{\operatorname*{Lie}}\left(
-U_{1},U_{2},...,U_{m}\right)  $, the term $L\left(  t\right)  $ is in
-$\operatorname*{psLie}\nolimits_{\mathbb{C}}\left(  U_{1},U_{2},...,U_{m}%
-\right)  $.
+- For every $t\in\operatorname*{psLie}\nolimits_{\mathfrak{g}}$, the term
+$L\left(  t\right)  $ is in $\operatorname*{psLie}\nolimits_{\mathbb{C}}$.
 
-- For every $p$ and $q$ in $\operatorname*{psLie}\nolimits_{\mathbb{C}}\left(
-U_{1},U_{2},...,U_{m}\right)  $, each of $p+q$ and $pq$ belongs to
-$\operatorname*{psLie}\nolimits_{\mathbb{C}}\left(  U_{1},U_{2},...,U_{m}%
-\right)  $.
+- For every $p$ and $q$ in $\operatorname*{psLie}\nolimits_{\mathbb{C}}$, each
+of $p+q$ and $pq$ belongs to $\operatorname*{psLie}\nolimits_{\mathbb{C}}$.
 
-- For every $p$ and $q$ in $\operatorname*{psLie}%
-\nolimits_{\operatorname*{Lie}}\left(  U_{1},U_{2},...,U_{m}\right)  $, each
-of $p+q$ and $\left[  p,q\right]  $ belongs to $\operatorname*{psLie}%
-\nolimits_{\operatorname*{Lie}}\left(  U_{1},U_{2},...,U_{m}\right)  $.
+- For every $p$ and $q$ in $\operatorname*{psLie}\nolimits_{\mathfrak{g}}$,
+each of $p+q$ and $\left[  p,q\right]  $ belongs to $\operatorname*{psLie}%
+\nolimits_{\mathfrak{g}}$.
 
-- For every $p\in\operatorname*{psLie}\nolimits_{\mathbb{C}}\left(
-U_{1},U_{2},...,U_{m}\right)  $ and $q\in\operatorname*{psLie}%
-\nolimits_{\operatorname*{Lie}}\left(  U_{1},U_{2},...,U_{m}\right)  $, we
-have $pq\in\operatorname*{psLie}\nolimits_{\operatorname*{Lie}}\left(
-U_{1},U_{2},...,U_{m}\right)  $.
+- For every $p\in\operatorname*{psLie}\nolimits_{\mathbb{C}}$ and
+$q\in\operatorname*{psLie}\nolimits_{\mathfrak{g}}$, we have $pq\in
+\operatorname*{psLie}\nolimits_{\mathfrak{g}}$.
 
-We denote the elements of $\operatorname*{psLie}\nolimits_{\mathbb{C}}\left(
-U_{1},U_{2},...,U_{m}\right)  $ as \textit{pseudo-Lie polynomial terms of type
-}$\mathbb{C}$ (in the variables $U_{1}$, $U_{2}$, $...$, $U_{m}$). We denote
-the elements of $\operatorname*{psLie}\nolimits_{\mathbb{C}}\left(
-U_{1},U_{2},...,U_{m}\right)  $ as \textit{pseudo-Lie polynomial terms of type
-}$\operatorname*{Lie}$ (in the variables $U_{1}$, $U_{2}$, $...$, $U_{m}$).
+We denote the elements of $\operatorname*{psLie}\nolimits_{\mathbb{C}}$ as
+\textit{pseudo-}$\mathfrak{g}$\textit{ polynomial terms of type }$\mathbb{C}$.
+We denote the elements of $\operatorname*{psLie}\nolimits_{\mathbb{C}}$ as
+\textit{pseudo-}$\mathfrak{g}$\textit{ polynomial terms of type }%
+$\operatorname*{Lie}$.
 
-Furthermore, we define a set $\operatorname*{psLie}\nolimits_{U\left(
-\operatorname*{Lie}\right)  }\left(  U_{1},U_{2},...,U_{m}\right)  $
-recursively as follows:
+\textbf{(b)} Furthermore, we define a set $\operatorname*{psLie}%
+\nolimits_{U\left(  \mathfrak{g}\right)  }$ recursively as follows:
 
-- Every element of $\operatorname*{psLie}\nolimits_{\operatorname*{Lie}%
-}\left(  U_{1},U_{2},...,U_{m}\right)  $ and every element of
-$\operatorname*{psLie}\nolimits_{\mathbb{C}}\left(  U_{1},U_{2},...,U_{m}%
-\right)  $ is an element of $\operatorname*{psLie}\nolimits_{U\left(
-\operatorname*{Lie}\right)  }\left(  U_{1},U_{2},...,U_{m}\right)  $.
+- Every element of $\operatorname*{psLie}\nolimits_{\mathfrak{g}}$ and every
+element of $\operatorname*{psLie}\nolimits_{\mathbb{C}}$ is an element of
+$\operatorname*{psLie}\nolimits_{U\left(  \mathfrak{g}\right)  }$.
 
 - For any $p$ and $q$ in $\operatorname*{psLie}\nolimits_{U\left(
-\operatorname*{Lie}\right)  }\left(  U_{1},U_{2},...,U_{m}\right)  $, each of
-$p+q$ and $pq$ belongs to $\operatorname*{psLie}\nolimits_{U\left(
-\operatorname*{Lie}\right)  }\left(  U_{1},U_{2},...,U_{m}\right)  $.
+\mathfrak{g}\right)  }$, each of $p+q$ and $pq$ belongs to
+$\operatorname*{psLie}\nolimits_{U\left(  \mathfrak{g}\right)  }$.
 
 We denote the elements of $\operatorname*{psLie}\nolimits_{U\left(
-\operatorname*{Lie}\right)  }\left(  U_{1},U_{2},...,U_{m}\right)  $ as
-\textit{pseudo-Lie polynomial terms of type }$U\left(  \operatorname*{Lie}%
-\right)  $.
+\mathfrak{g}\right)  }$ as \textit{pseudo-}$\mathfrak{g}$\textit{ polynomial
+terms of type }$U\left(  \mathfrak{g}\right)  $.
 \end{definition}
 
 \begin{definition}
 Let $m\in\mathbb{N}$. Let $\mathfrak{g}$ be a $\mathbb{Z}$-graded Lie algebra.
-Let $\lambda\in\mathfrak{g}_{0}^{\ast}$. Let $u_{1}$, $u_{2}$, $...$, $u_{m}$
-be $m$ \textbf{homogeneous} elements of $\mathfrak{g}$. Then:
+Let $\lambda\in\mathfrak{g}_{0}^{\ast}$. Let $\varepsilon\in\mathbb{C}$.
 
-- For every $p\in$
+Let $p$ be a pseudo-$\mathfrak{g}$ polynomial term of any type, i. e., an
+element of either of the sets $\operatorname*{psLie}\nolimits_{\mathbb{C}}$,
+$\operatorname*{psLie}\nolimits_{\mathfrak{g}}$ and $\operatorname*{psLie}%
+\nolimits_{U\left(  \mathfrak{g}\right)  }$. Then, the \textit{evaluation of
+}$p$ \textit{at }$\left(  \lambda,\varepsilon\right)  $ will mean the result
+of replacing each occurence of $L$ in $p$ by $\lambda$, replacing each
+occurence of $E$ in $p$ by $\varepsilon$, and evaluating the resulting term in
+the usual meaning of this word. We denote the evaluation of $p$ at $\left(
+\lambda,\varepsilon\right)  $ by $p\left(  \lambda,\varepsilon\right)  $. If
+$p\in\operatorname*{psLie}\nolimits_{\mathbb{C}}$, then $p\left(
+\lambda,\varepsilon\right)  \in\mathbb{C}$. If $p\in\operatorname*{psLie}%
+\nolimits_{\mathfrak{g}}$, then $p\left(  \lambda,\varepsilon\right)
+\in\mathfrak{g}^{\varepsilon}$. If $p\in\operatorname*{psLie}%
+\nolimits_{U\left(  \mathfrak{g}\right)  }$, then $p\left(  \lambda
+,\varepsilon\right)  \in U\left(  \mathfrak{g}^{\varepsilon}\right)  $.
+
+If $p\in\operatorname*{psLie}\nolimits_{\mathbb{C}}$ or $p\in
+\operatorname*{psLie}\nolimits_{\mathfrak{g}}$, then the evaluation $p\left(
+\lambda,\varepsilon\right)  $ depends polynomially on $\lambda$ and
+$\varepsilon$. (This cannot be said in the case $p\in\operatorname*{psLie}%
+\nolimits_{U\left(  \mathfrak{g}\right)  }$ because 
 \end{definition}
 
 \begin{lemma}
