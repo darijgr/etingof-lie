@@ -23,7 +23,7 @@
 \setcounter{MaxMatrixCols}{30}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Thursday, March 22, 2012 16:03:10}
+%TCIDATA{LastRevised=Saturday, March 24, 2012 19:28:20}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
 %TCIDATA{BibliographyScheme=Manual}
@@ -2940,7 +2940,8 @@ M_{\lambda}^{+}=U\left(  \mathfrak{g}\right)  \otimes_{U\left(  \mathfrak{h}%
 \]
 The element $1\otimes_{U\left(  \mathfrak{h}\oplus\mathfrak{n}_{+}\right)
 }v_{\lambda}^{+}$ of $M_{\lambda}^{+}$ will still be denoted by $v_{\lambda
-}^{+}$ by abuse of notation. Since $U\left(  \mathfrak{g}\right)  $ and
+}^{+}$ by abuse of notation, and will be called the \textit{defining vector}
+of $M_{\lambda}^{+}$. Since $U\left(  \mathfrak{g}\right)  $ and
 $\mathbb{C}_{\lambda}$ are graded $U\left(  \mathfrak{h}\oplus\mathfrak{n}%
 _{+}\right)  $-modules, their tensor product $U\left(  \mathfrak{g}\right)
 \otimes_{U\left(  \mathfrak{h}\oplus\mathfrak{n}_{+}\right)  }\mathbb{C}%
@@ -2971,7 +2972,8 @@ M_{\lambda}^{-}=U\left(  \mathfrak{g}\right)  \otimes_{U\left(  \mathfrak{h}%
 \]
 The element $1\otimes_{U\left(  \mathfrak{h}\oplus\mathfrak{n}_{-}\right)
 }v_{\lambda}^{-}$ of $M_{\lambda}^{-}$ will still be denoted by $v_{\lambda
-}^{-}$ by abuse of notation. Since $U\left(  \mathfrak{g}\right)  $ and
+}^{-}$ by abuse of notation, and will be called the \textit{defining vector}
+of $M_{\lambda}^{-}$. Since $U\left(  \mathfrak{g}\right)  $ and
 $\mathbb{C}_{\lambda}$ are graded $U\left(  \mathfrak{h}\oplus\mathfrak{n}%
 _{-}\right)  $-modules, their tensor product $U\left(  \mathfrak{g}\right)
 \otimes_{U\left(  \mathfrak{h}\oplus\mathfrak{n}_{-}\right)  }\mathbb{C}%
@@ -3133,7 +3135,14 @@ This proves Proposition \ref{prop.verma1} \textbf{(a)}.
 
 This proves Proposition \ref{prop.verma1}.
 
-\subsection{The invariant bilinear form on Verma modules}
+\subsection{\label{subsect.invform}The invariant bilinear form on Verma
+modules}
+
+\subsubsection{The invariant bilinear form}
+
+The study of the Verma modules rests on a $\mathfrak{g}$-bilinear form which
+connects a highest-weight Verma module with a lowest-weight Verma module for
+the opposite weight. First, let us prove its existence and basic properties:
 
 \begin{proposition}
 \label{prop.invform}\textbf{(a)} There exists a unique $\mathfrak{g}%
@@ -3503,6 +3512,17 @@ $, $\mathfrak{n}_{+}$ and $\mathfrak{h}$ are free modules (the latter was only
 used for applying consequences of Poincar\'{e}-Birkhoff-Witt); we thus have
 also verified Remark \ref{rmk.invform.1}.
 
+\subsubsection{Generic nondegenericity: Statement of the fact}
+
+We will later (Theorem \ref{thm.verma}) see that the bilinear form $\left(
+\cdot,\cdot\right)  :M_{\lambda}^{+}\times M_{-\lambda}^{-}\rightarrow
+\mathbb{C}$ is nondegenerate if and only if the $\mathfrak{g}$-module
+$M_{\lambda}^{+}$ is irreducible. This makes the question of when the form
+$\left(  \cdot,\cdot\right)  $ is nondegenerate an important question to
+study. It can, in many concrete cases, be answered by combinatorial
+computations. But let us first give a general result about how it is
+nondegenerate "if $\lambda$ is in sufficiently general position":
+
 \begin{theorem}
 \label{thm.invformnondeg}Assume that $\mathfrak{g}$ is a nondegenerate
 $\mathbb{Z}$-graded Lie algebra.
@@ -3523,15 +3543,15 @@ claim that "for generic $\lambda$, the form $\left(  \cdot,\cdot\right)  $ is
 nondegenerate in every degree"!)
 \end{theorem}
 
-\textbf{[...]}
+The proof of this theorem will occupy the rest of Section
+\ref{subsect.invform}. While it is not important for this course (Theorem
+\ref{thm.invformnondeg} will never be used in this text), it involves several
+useful ideas and provides a good examples of how to work with Verma modules computationally.
 
-\textbf{[The following proof will take a long time to be completed, if it will
-be at all. As Theorem \ref{thm.invformnondeg} will not be used anywhere in
-this course, it is better left ignored.]}
+\subsubsection{Proof of Theorem \ref{thm.invformnondeg}: Casting bilinear
+forms on coinvariant spaces}
 
-\textbf{[...]}
-
-Before we prove this, a general fact from representation theory:
+Before we start with the proof, a general fact from representation theory:
 
 \begin{lemma}
 \label{lem.bilform}Let $k$ be a field, and let $G$ be a finite group. Let
@@ -3698,15 +3718,29 @@ We have thus shown that every $p\in V_{G}$ such that $B^{\prime}\left(
 p,W_{G}\right)  =0$ must satisfy $p=0$. In other words, the form $B^{\prime}$
 is nondegenerate. Lemma \ref{lem.bilform} \textbf{(b)} is proven.
 
-\textit{Proof of Theorem \ref{thm.invformnondeg}.} As vector spaces,
-$M_{\lambda}^{+}=U\left(  \mathfrak{n}_{-}\right)  v_{\lambda}^{+}\cong
-U\left(  \mathfrak{n}_{-}\right)  $ (where the isomorphism maps $v_{\lambda
-}^{+}$ to $1$) and $M_{-\lambda}^{-}=U\left(  \mathfrak{n}_{+}\right)
-v_{-\lambda}^{-}\cong U\left(  \mathfrak{n}_{+}\right)  $ (where the
-isomorphism maps $v_{-\lambda}^{-}$ to $1$). Thus, the bilinear form $\left(
-\cdot,\cdot\right)  :M_{\lambda}^{+}\times M_{-\lambda}^{-}\rightarrow
-\mathbb{C}$ can be considered as a bilinear form $U\left(  \mathfrak{n}%
-_{-}\right)  \times U\left(  \mathfrak{n}_{+}\right)  \rightarrow\mathbb{C}$.
+\subsubsection{Proof of Theorem \ref{thm.invformnondeg}: The form $\left(
+\cdot,\cdot\right)  _{\lambda}^{\circ}$}
+
+Let us formulate some standing assumptions:
+
+\begin{Convention}
+From now on until the end of Section \ref{subsect.invform}, we let
+$\mathfrak{g}$ be a $\mathbb{Z}$-graded Lie algebra, and let $\lambda
+\in\mathfrak{h}^{\ast}$. We also require that $\mathfrak{g}_{0}$ is abelian
+(this is condition \textbf{(2)} of Definition \ref{def.gradLienondeg}), but we
+do \textit{not} require $\mathfrak{g}$ to be nondegenerate (unless we
+explicitly state this).
+\end{Convention}
+
+As vector spaces, $M_{\lambda}^{+}=U\left(  \mathfrak{n}_{-}\right)
+v_{\lambda}^{+}\cong U\left(  \mathfrak{n}_{-}\right)  $ (where the
+isomorphism maps $v_{\lambda}^{+}$ to $1$) and $M_{-\lambda}^{-}=U\left(
+\mathfrak{n}_{+}\right)  v_{-\lambda}^{-}\cong U\left(  \mathfrak{n}%
+_{+}\right)  $ (where the isomorphism maps $v_{-\lambda}^{-}$ to $1$). Thus,
+the bilinear form $\left(  \cdot,\cdot\right)  :M_{\lambda}^{+}\times
+M_{-\lambda}^{-}\rightarrow\mathbb{C}$ can be regarded as a bilinear form
+$U\left(  \mathfrak{n}_{-}\right)  \times U\left(  \mathfrak{n}_{+}\right)
+\rightarrow\mathbb{C}$.
 
 Fix $n\in\mathbb{N}$.
 
@@ -3717,7 +3751,12 @@ U\left(  \mathfrak{n}_{+}\right)  \rightarrow\mathbb{C}$ to $U\left(
 _{+}\right)  \left[  n\right]  $. In order to prove Theorem
 \ref{thm.invformnondeg}, it is enough to prove that for every $n\in\mathbb{N}%
 $, this form $\left(  \cdot,\cdot\right)  _{\lambda,n}$ is nondegenerate for
-generic $\lambda$. We now introduce a $\mathbb{C}$-bilinear form:
+generic $\lambda$ when $\mathfrak{g}$ is nondegenerate.
+
+We now introduce a $\mathbb{C}$-bilinear form, which will turn out to be the
+"highest term" of the form $\left(  \cdot,\cdot\right)  $ with respect to
+$\lambda$ (what this exactly means will be explained in Proposition
+\ref{prop.det.US}).
 
 \begin{proposition}
 \label{prop.lambda_k}For every $k\in\mathbb{N}$, there exists one and only one
@@ -3737,9 +3776,14 @@ _{2}...\beta_{k}\right)   &  =\sum\limits_{\sigma\in S_{k}}\lambda\left(
 
 \end{proposition}
 
-Here, the map $\lambda:\mathfrak{g}_{0}\rightarrow\mathbb{C}$ is extended to a
-linear map $\lambda:\mathfrak{g}\rightarrow\mathbb{C}$ by composing it with
-the canonical projection $\mathfrak{g}\rightarrow\mathfrak{g}_{0}$.
+Here, we are using the following convention:
+
+\begin{Convention}
+From now on until the end of Section \ref{subsect.invform}, the map
+$\lambda:\mathfrak{g}_{0}\rightarrow\mathbb{C}$ is extended to a linear map
+$\lambda:\mathfrak{g}\rightarrow\mathbb{C}$ by composing it with the canonical
+projection $\mathfrak{g}\rightarrow\mathfrak{g}_{0}$.
+\end{Convention}
 
 \textit{First proof of Proposition \ref{prop.lambda_k} (sketched).} Let
 $k\in\mathbb{N}$. The value of
@@ -3859,6 +3903,9 @@ is not the one that gives the $k$-th symmetric power the degree $k$ for every
 $k\in\mathbb{N}$, but is the one induced by the grading on $\mathfrak{n}_{-}$
 and $\mathfrak{n}_{+}$). Denote this form by $\left(  \cdot,\cdot\right)
 _{\lambda}^{\circ}$.
+
+\subsubsection{Proof of Theorem \ref{thm.invformnondeg}: Generic nondegeneracy
+of $\left(  \cdot,\cdot\right)  _{\lambda}^{\circ}$}
 
 \begin{lemma}
 \label{lem.lambda_k}Let $\lambda\in\mathfrak{h}^{\ast}$ be such that the
@@ -4023,6 +4070,84 @@ choice of basis, but since a change of basis always multiplies the determinant
 by a \textit{nonzero} scalar, the property of these determinants to be zero or
 nonzero will \textit{not} depend on the choice of basis.
 
+\subsubsection{Proof of Theorem \ref{thm.invformnondeg}: $\left(  \cdot
+,\cdot\right)  _{\lambda}^{\circ}$ is the "highest term" of $\left(
+\cdot,\cdot\right)  _{\lambda}$}
+
+Let us look at how the form $\left(  \cdot,\cdot\right)  _{\lambda,n}$ and its
+determinant $\det\left(  \left(  \cdot,\cdot\right)  _{\lambda,n}\right)  $
+depend on $\lambda$. The dependence will turn out to be polynomial. In order
+to make sense of this, let us define what we mean by "polynomial" here:
+
+\begin{definition}
+\label{def.det.US.poly}Let $V$ be a finite-dimensional vector space. A
+function $\phi:V\rightarrow\mathbb{C}$ is said to be a \textit{polynomial
+function} (or just to be \textit{polynomial} -- but this is not the same as
+being \textit{a polynomial}) if one of the following equivalent conditions holds:
+
+\textbf{(1)} There exist a basis $\left(  \beta_{1},\beta_{2},...,\beta
+_{m}\right)  $ of the dual space $V^{\ast}$ and a polynomial $P\in
+\mathbb{C}\left[  X_{1},X_{2},...,X_{m}\right]  $ such that%
+\[
+\text{every }v\in V\text{ satisfies }\phi\left(  v\right)  =P\left(  \beta
+_{1}\left(  v\right)  ,\beta_{2}\left(  v\right)  ,...,\beta_{m}\left(
+v\right)  \right)  .
+\]
+
+
+\textbf{(2)} For every basis $\left(  \beta_{1},\beta_{2},...,\beta
+_{m}\right)  $ of the dual space $V^{\ast}$, there exists a polynomial
+$P\in\mathbb{C}\left[  X_{1},X_{2},...,X_{m}\right]  $ such that%
+\[
+\text{every }v\in V\text{ satisfies }\phi\left(  v\right)  =P\left(  \beta
+_{1}\left(  v\right)  ,\beta_{2}\left(  v\right)  ,...,\beta_{m}\left(
+v\right)  \right)  .
+\]
+
+\end{definition}
+
+Note that this is exactly the meaning of the word "polynomial function" that
+is used in Classical Invariant Theory. In our case (where the field is
+$\mathbb{C}$), polynomial functions $V\rightarrow\mathbb{C}$ can be identified
+with elements of the symmetric algebra $\operatorname*{S}\left(  V^{\ast
+}\right)  $, and in some sense are an "obsoleted version" of the
+latter.\footnote{The identification of polynomial functions $V\rightarrow
+\mathbb{C}$ with elements of the symmetric algebra $\operatorname*{S}\left(
+V^{\ast}\right)  $ works similarly over any \textit{infinite} field instead of
+$\mathbb{C}$. It breaks down over finite fields, however (because different
+elements of $\operatorname*{S}\left(  V^{\ast}\right)  $ may correspond to the
+same polynomial function over a finite field).} For our goals, however,
+polynomial functions are enough. Let us define the notion of
+\textit{homogeneous polynomial functions}:
+
+\begin{definition}
+\label{def.det.US.poly.hom}Let $V$ be a finite-dimensional vector space.
+
+\textbf{(a)} Let $n\in\mathbb{N}$. A polynomial function $\phi:V\rightarrow
+\mathbb{C}$ is said to be \textit{homogeneous of degree }$n$ if and only if%
+\[
+\text{every }v\in V\text{ and every }\lambda\in\mathbb{C}\text{ satisfy }%
+\phi\left(  \lambda v\right)  =\lambda^{n}\phi\left(  v\right)  .
+\]
+
+
+\textbf{(b)} A polynomial function $\phi:V\rightarrow\mathbb{C}$ is said to be
+\textit{homogeneous} if and only if there exists some $n\in\mathbb{N}$ such
+that $\phi$ is homogeneous of degree $n$.
+
+\textbf{(c)} It is easy to see that for every polynomial function
+$\phi:V\rightarrow\mathbb{C}$, there exists a unique sequence $\left(
+\phi_{n}\right)  _{n\in\mathbb{N}}$ of polynomial functions $\phi
+_{n}:V\rightarrow\mathbb{C}$ such that all but finitely $n\in\mathbb{N}$
+satisfy $\phi_{n}=0$, such that $\phi_{n}$ is homogeneous of degree $n$ for
+every $n\in\mathbb{N}$, and such that $\phi=\sum\limits_{n\in\mathbb{N}}%
+\phi_{n}$. This sequence is said to be the \textit{graded decomposition} of
+$\phi$. For every $n\in\mathbb{N}$, its member $\phi_{n}$ is called the
+$n$\textit{-th homogeneous component} of $\phi$. If $N$ is the highest
+$n\in\mathbb{N}$ such that $\phi_{n}\neq0$, then $\phi_{N}$ is said to be the
+\textit{leading term} of $\phi$.
+\end{definition}
+
 We now need the following fact:
 
 \begin{proposition}
@@ -4030,19 +4155,509 @@ We now need the following fact:
 $\mathfrak{g}$ is a nondegenerate $\mathbb{Z}$-graded Lie algebra. (Actually,
 we could weaken the condition \textbf{(3)} in Definition
 \ref{def.gradLienondeg} to the condition that $\dim\left(  \mathfrak{g}%
-_{n}\right)  =\dim\left(  \mathfrak{g}_{-n}\right)  $ for every integer $n>0$.)
+_{n}\right)  =\dim\left(  \mathfrak{g}_{-n}\right)  $ for every integer
+$n>0$.) As a consequence, $\dim\mathfrak{h}=\dim\left(  \mathfrak{g}%
+_{0}\right)  \neq\infty$, so that $\dim\left(  \mathfrak{h}^{\ast}\right)
+\neq\infty$, and thus the notion of a polynomial function $\mathfrak{h}^{\ast
+}\rightarrow\mathbb{C}$ is well-defined.
 
 The determinants $\det\left(  \left(  \cdot,\cdot\right)  _{\lambda,n}\right)
 $ and $\det\left(  \left(  \cdot,\cdot\right)  _{\lambda,n}^{\circ}\right)  $
-are polynomials in $\lambda$ (this means: polynomials in the coordinates of
-$\lambda$ with respect to any basis of $\mathfrak{h}^{\ast}$). The leading
-term of the polynomial $\det\left(  \left(  \cdot,\cdot\right)  _{\lambda
-,n}\right)  $ is $\det\left(  \left(  \cdot,\cdot\right)  _{\lambda,n}^{\circ
-}\right)  $, up to multiplication by a nonzero scalar.
+are polynomial functions in $\lambda$ (this means: the functions%
+\[
+\mathfrak{h}^{\ast}\rightarrow\mathbb{C},\ \ \ \ \ \ \ \ \ \ \lambda
+\mapsto\det\left(  \left(  \cdot,\cdot\right)  _{\lambda,n}\right)
+\]
+and%
+\[
+\mathfrak{h}^{\ast}\rightarrow\mathbb{C},\ \ \ \ \ \ \ \ \ \ \lambda
+\mapsto\det\left(  \left(  \cdot,\cdot\right)  _{\lambda,n}^{\circ}\right)
+\]
+are polynomial functions). The leading term of the polynomial function
+$\det\left(  \left(  \cdot,\cdot\right)  _{\lambda,n}\right)  $ is
+$\det\left(  \left(  \cdot,\cdot\right)  _{\lambda,n}^{\circ}\right)  $, up to
+multiplication by a nonzero scalar.
 
 (Here, the "leading term" of a polynomial means its highest nonzero graded
 component. It may (and usually will) contain more than one monomial.)
 \end{proposition}
+
+Before we prove this fact, let us show how it completes the proof of Theorem
+\ref{thm.invformnondeg}:
+
+\textit{Proof of Theorem \ref{thm.invformnondeg}.} Fix $n\in\mathbb{N}$. For
+generic $\lambda$, the bilinear form%
+\[
+\mathfrak{g}_{-k}\times\mathfrak{g}_{k}\rightarrow\mathbb{C}%
+,\ \ \ \ \ \ \ \ \ \ \left(  a,b\right)  \mapsto\lambda\left(  \left[
+a,b\right]  \right)
+\]
+is nondegenerate for every $k\in\left\{  1,2,...,n\right\}  $ (because
+$\mathfrak{g}$ is nondegenerate). Thus, for generic $\lambda$, the form
+$\left(  \cdot,\cdot\right)  _{\lambda,n}^{\circ}$ must also be nondegenerate
+(by Lemma \ref{lem.lambda_k.2}), so that $\det\left(  \left(  \cdot
+,\cdot\right)  _{\lambda,n}^{\circ}\right)  \neq0$. By Proposition
+\ref{prop.det.US}, this yields that $\det\left(  \left(  \cdot,\cdot\right)
+_{\lambda,n}\right)  \neq0$ for generic $\lambda$. In other words, the form
+$\left(  \cdot,\cdot\right)  _{\lambda,n}$ is nondegenerate for generic
+$\lambda$. But this form $\left(  \cdot,\cdot\right)  _{\lambda,n}$ is exactly
+the restriction of the form $\left(  \cdot,\cdot\right)  :M_{\lambda}%
+^{+}\times M_{-\lambda}^{-}\rightarrow\mathbb{C}$ to $M_{\lambda}^{+}\left[
+-n\right]  \times M_{-\lambda}^{-}\left[  n\right]  $. Hence, the restriction
+of the form $\left(  \cdot,\cdot\right)  :M_{\lambda}^{+}\times M_{-\lambda
+}^{-}\rightarrow\mathbb{C}$ to $M_{\lambda}^{+}\left[  -n\right]  \times
+M_{-\lambda}^{-}\left[  n\right]  $ is nondegenerate for generic $\lambda$.
+This proves Theorem \ref{thm.invformnondeg}.
+
+So all that remains to finish the proof of Theorem \ref{thm.invformnondeg} is
+verifying Proposition \ref{prop.det.US}.
+
+\subsubsection{Proof of Theorem \ref{thm.invformnondeg}: The deformed Lie
+algebra $\mathfrak{g}^{\varepsilon}$}
+
+Before we go on, here is a rough plan of how we will attack Proposition
+\ref{prop.det.US}:
+
+In order to gain a foothold on the polynomial $\det\left(  \left(  \cdot
+,\cdot\right)  _{\lambda,n}\right)  $, we are going to consider not just one
+Lie algebra $\mathfrak{g}$ but a whole family $\left(  \mathfrak{g}%
+^{\varepsilon}\right)  _{\varepsilon\in\mathbb{C}}$ of its "deformations" at
+the same time. Inspite of all of these deformations being isomorphic as Lie
+algebras with one exception, they will give us useful information: we will
+show that the bilinear forms $\left(  \cdot,\cdot\right)  _{\lambda
+,n}^{\mathfrak{g}^{\varepsilon}}$ they induce, in some sense, depend
+"polynomially" on $\lambda$ and $\varepsilon$, and this polynomial function is
+homogeneous in $\left(  \lambda,\varepsilon\right)  $, so that the leading
+term of $\lambda$ will be the term with smallest power of $\varepsilon$ (and,
+as it will turn out, this will be the power $\varepsilon^{0}$, so this term
+will be obtainable by setting $\varepsilon$ to $0$). We will have to restrain
+from speaking directly of the bilinear form $\left(  \cdot,\cdot\right)
+_{\lambda,n}^{\mathfrak{g}^{\varepsilon}}$ as depending polynomially on
+$\lambda$, since this makes no sense (the domain of the bilinear form $\left(
+\cdot,\cdot\right)  _{\lambda,n}^{\mathfrak{g}^{\varepsilon}}$ changes with
+$\lambda$), but instead we will sample this form on particular elements of the
+Verma modules coming from fixed elements of the tensor algebras $T\left(
+\mathfrak{n}_{-}\right)  $ and $T\left(  \mathfrak{n}_{+}\right)  $ (since
+these do not depend on $\lambda$). Once this "polynomiality" (and homogeneity)
+is proven, we will explicitly show that (more or less) $\left(  \cdot
+,\cdot\right)  _{\lambda,n}^{\mathfrak{g}^{0}}=\left(  \cdot,\cdot\right)
+_{\lambda,n}^{\circ}$, and we know this form to be nondegenerate (by Lemma
+\ref{lem.lambda_k.2}).
+
+Now, to the details. First, let us define $\mathfrak{g}^{\varepsilon}$.
+
+For every $\varepsilon\in\mathbb{C}$, let us define a new Lie bracket $\left[
+\cdot,\cdot\right]  ^{\varepsilon}$ on the vector space $\mathfrak{g}$ by the
+formula%
+\begin{align}
+\left[  x,y\right]  ^{\varepsilon}  &  =\varepsilon\left[  x,y\right]
++\left(  1-\varepsilon\right)  \pi\left(  \left[  x,y\right]  \right)
+-\varepsilon\left(  1-\varepsilon\right)  \left[  x,\pi\left(  y\right)
+\right]  -\varepsilon\left(  1-\varepsilon\right)  \left[  \pi\left(
+x\right)  ,y\right] \label{pf.invformnondeg.g^epsi.1}\\
+&  \ \ \ \ \ \ \ \ \ \ \text{for all }x\in\mathfrak{g}\text{ and }%
+y\in\mathfrak{g},\nonumber
+\end{align}
+where $\pi$ is the canonical projection $\mathfrak{g}\rightarrow
+\mathfrak{g}_{0}$. In other words, let us define a new Lie bracket $\left[
+\cdot,\cdot\right]  ^{\varepsilon}$ on the vector space $\mathfrak{g}$ by%
+\begin{align}
+\left[  x,y\right]  ^{\varepsilon}  &  =\varepsilon^{\delta_{n,0}+\delta
+_{m,0}+1-\delta_{n+m,0}}\left[  x,y\right]  \label{pf.invformnondeg.g^epsi.2}%
+\\
+&  \ \ \ \ \ \ \ \ \ \ \text{for all }n\in\mathbb{Z}\text{, }m\in
+\mathbb{Z}\text{, }x\in\mathfrak{g}_{n}\text{ and }y\in\mathfrak{g}%
+_{m}\nonumber
+\end{align}
+(note that the right hand side of this equation makes sense since
+$1-\delta_{n+m,0}\geq0$ for all $n\in\mathbb{Z}$ and $m\in\mathbb{Z}%
+$)\ \ \ \ \footnote{Proving that these two definitions of $\left[  \cdot
+,\cdot\right]  ^{\varepsilon}$ are equivalent is completely straightforward:
+just assume WLOG that $x$ and $y$ are homogeneous, so that $x\in
+\mathfrak{g}_{n}$ and $y\in\mathfrak{g}_{m}$ for $n\in\mathbb{Z}$ and
+$m\in\mathbb{Z}$, and distinguish between the following four cases:
+\par
+\textit{Case 1:} We have $n=0$ and $m=0$.
+\par
+\textit{Case 2:} We have $n\neq0$ and $m\neq0$ but $n+m=0$.
+\par
+\textit{Case 3:} We have $n\neq0$, $m\neq0$ and $n+m\neq0$.
+\par
+\textit{Case 4:} Exactly one of $n$ and $m$ is $0$.
+\par
+In Case 1, the assumption that $\mathfrak{g}_{0}$ is abelian must be used.}.
+It is easy to prove that this Lie bracket $\left[  \cdot,\cdot\right]
+^{\varepsilon}$ is antisymmetric and satisfies the Jacobi
+identity\footnote{\textit{Proof.} Antisymmetry is obvious. As for the Jacobi
+identity, it can be proven in a straightforward way:
+\par
+We must show the equality $\left[  x,\left[  y,z\right]  ^{\varepsilon
+}\right]  ^{\varepsilon}+\left[  y,\left[  z,x\right]  ^{\varepsilon}\right]
+^{\varepsilon}+\left[  z,\left[  x,y\right]  ^{\varepsilon}\right]
+^{\varepsilon}=0$ for all $x,y,z\in\mathfrak{g}$. Since this equality is
+linear in each of $x$, $y$ and $z$, it is enough to prove it for homogeneous
+$x,y,z\in\mathfrak{g}$. So let $x,y,z\in\mathfrak{g}$ be homogeneous. Then,
+there exists $n,m,p\in\mathbb{Z}$ such that $x\in\mathfrak{g}_{n}$,
+$y\in\mathfrak{g}_{m}$ and $z\in\mathfrak{g}_{p}$. Consider these $n$, $m$ and
+$p$. Then, by (\ref{pf.invformnondeg.g^epsi.2}) (applied to $y$, $z$, $m$ and
+$p$ instead of $x$, $y$, $n$ and $m$), we have $\left[  y,z\right]
+^{\varepsilon}=\varepsilon^{\delta_{m,0}+\delta_{p,0}+1-\delta_{m+p,0}}\left[
+y,z\right]  $. Thus,%
+\begin{align*}
+&  \left[  x,\left[  y,z\right]  ^{\varepsilon}\right]  ^{\varepsilon}\\
+&  =\left[  x,\varepsilon^{\delta_{m,0}+\delta_{p,0}+1-\delta_{m+p,0}}\left[
+y,z\right]  \right]  ^{\varepsilon}=\varepsilon^{\delta_{m,0}+\delta
+_{p,0}+1-\delta_{m+p,0}}\left[  x,\left[  y,z\right]  \right]  ^{\varepsilon
+}\\
+&  =\varepsilon^{\delta_{m,0}+\delta_{p,0}+1-\delta_{m+p,0}}\varepsilon
+^{\delta_{n,0}+\delta_{m+p,0}+1-\delta_{n+m+p,0}}\left[  x,\left[  y,z\right]
+\right] \\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{because (\ref{pf.invformnondeg.g^epsi.2}) (applied to }\left[
+y,z\right]  \text{ and }m+p\text{ instead of }y\text{ and }m\text{) yields}\\
+\left[  x,\left[  y,z\right]  \right]  ^{\varepsilon}=\varepsilon
+^{\delta_{n,0}+\delta_{m+p,0}+1-\delta_{n+m+p,0}}\left[  x,\left[  y,z\right]
+\right]  \text{ (since }\left[  y,z\right]  \in\mathfrak{g}_{m+p}\text{ (since
+}y\in\mathfrak{g}_{m}\text{ and }z\in\mathfrak{g}_{p}\text{))}%
+\end{array}
+\right) \\
+&  =\varepsilon^{\delta_{m,0}+\delta_{p,0}+1-\delta_{m+p,0}+\delta
+_{n,0}+\delta_{m+p,0}+1-\delta_{n+m+p,0}}\left[  x,\left[  y,z\right]
+\right]  =\varepsilon^{\delta_{n,0}+\delta_{m,0}+\delta_{p,0}+2-\delta
+_{n+m+p,0}}\left[  x,\left[  y,z\right]  \right]  .
+\end{align*}
+Similarly,
+\begin{align*}
+\left[  y,\left[  z,x\right]  ^{\varepsilon}\right]  ^{\varepsilon}  &
+=\varepsilon^{\delta_{n,0}+\delta_{m,0}+\delta_{p,0}+2-\delta_{n+m+p,0}%
+}\left[  y,\left[  z,x\right]  \right]  \ \ \ \ \ \ \ \ \ \ \text{and}\\
+\left[  z,\left[  x,y\right]  ^{\varepsilon}\right]  ^{\varepsilon}  &
+=\varepsilon^{\delta_{n,0}+\delta_{m,0}+\delta_{p,0}+2-\delta_{n+m+p,0}%
+}\left[  z,\left[  x,y\right]  \right]  .
+\end{align*}
+Adding up these three equations yields%
+\begin{align*}
+&  \left[  x,\left[  y,z\right]  ^{\varepsilon}\right]  ^{\varepsilon}+\left[
+y,\left[  z,x\right]  ^{\varepsilon}\right]  ^{\varepsilon}+\left[  z,\left[
+x,y\right]  ^{\varepsilon}\right]  ^{\varepsilon}\\
+&  =\varepsilon^{\delta_{n,0}+\delta_{m,0}+\delta_{p,0}+2-\delta_{n+m+p,0}%
+}\left[  x,\left[  y,z\right]  \right]  +\varepsilon^{\delta_{n,0}%
++\delta_{m,0}+\delta_{p,0}+2-\delta_{n+m+p,0}}\left[  y,\left[  z,x\right]
+\right]  +\varepsilon^{\delta_{n,0}+\delta_{m,0}+\delta_{p,0}+2-\delta
+_{n+m+p,0}}\left[  z,\left[  x,y\right]  \right] \\
+&  =\varepsilon^{\delta_{n,0}+\delta_{m,0}+\delta_{p,0}+2-\delta_{n+m+p,0}%
+}\underbrace{\left(  \left[  x,\left[  y,z\right]  \right]  +\left[  y,\left[
+z,x\right]  \right]  +\left[  z,\left[  x,y\right]  \right]  \right)
+}_{=0\text{ (since }\mathfrak{g}\text{ is a Lie algebra)}}=0.
+\end{align*}
+This proves the Jacobi identity for the Lie bracket $\left[  \cdot
+,\cdot\right]  ^{\varepsilon}$, qed.} and is graded. Thus, this Lie bracket
+$\left[  \cdot,\cdot\right]  ^{\varepsilon}$ defines a Lie algebra structure
+on $\mathfrak{g}$. Let us denote this Lie algebra by $\mathfrak{g}%
+^{\varepsilon}$. Thus, $\mathfrak{g}^{\varepsilon}$ is identical with
+$\mathfrak{g}$ as a vector space, but the Lie bracket on $\mathfrak{g}%
+^{\varepsilon}$ is $\left[  \cdot,\cdot\right]  ^{\varepsilon}$ rather than
+$\left[  \cdot,\cdot\right]  $.
+
+Trivially, $\mathfrak{g}^{1}=\mathfrak{g}$ (this is an actual equality, not
+only an isomorphism).
+
+For every $\varepsilon\in\mathbb{C}$, define a $\mathbb{C}$-linear map
+$J_{\varepsilon}:\mathfrak{g}^{\varepsilon}\rightarrow\mathfrak{g}$ by%
+\[
+J_{\varepsilon}\left(  x\right)  =\varepsilon^{1+\delta_{n,0}}%
+x\ \ \ \ \ \ \ \ \ \ \text{for every }n\in\mathbb{Z}\text{ and }%
+x\in\mathfrak{g}_{n}.
+\]
+Then, $J_{\varepsilon}$ is a Lie algebra homomorphism\footnote{\textit{Proof.}
+We must show that $J_{\varepsilon}\left(  \left[  x,y\right]  ^{\varepsilon
+}\right)  =\left[  J_{\varepsilon}\left(  x\right)  ,J_{\varepsilon}\left(
+y\right)  \right]  $ for all $x,y\in\mathfrak{g}$. In order to show this, it
+is enough to prove that $J_{\varepsilon}\left(  \left[  x,y\right]
+^{\varepsilon}\right)  =\left[  J_{\varepsilon}\left(  x\right)
+,J_{\varepsilon}\left(  y\right)  \right]  $ for all homogeneous
+$x,y\in\mathfrak{g}$ (because of linearity). So let $x,y\in\mathfrak{g}$ be
+homogeneous. Thus, there exist $n\in\mathbb{Z}$ and $m\in\mathbb{Z}$ such that
+$x\in\mathfrak{g}_{n}$ and $y\in\mathfrak{g}_{m}$. Consider these $n$ and $m$.
+Then, $\left[  x,y\right]  \in\mathfrak{g}_{n+m}$. Now, $J_{\varepsilon
+}\left(  x\right)  =\varepsilon^{1+\delta_{n,0}}x$ and $J_{\varepsilon}\left(
+y\right)  =\varepsilon^{1+\delta_{m,0}}y$ by the definition of $J_{\varepsilon
+}$. Thus,%
+\[
+\left[  J_{\varepsilon}\left(  x\right)  ,J_{\varepsilon}\left(  y\right)
+\right]  =\left[  \varepsilon^{1+\delta_{n,0}}x,\varepsilon^{1+\delta_{m,0}%
+}y\right]  =\varepsilon^{1+\delta_{n,0}}\varepsilon^{1+\delta_{m,0}}\left[
+x,y\right]  =\varepsilon^{2+\delta_{n,0}+\delta_{m,0}}\left[  x,y\right]  .
+\]
+Compared with%
+\begin{align*}
+J_{\varepsilon}\left(  \left[  x,y\right]  ^{\varepsilon}\right)   &
+=J_{\varepsilon}\left(  \varepsilon^{\delta_{n,0}+\delta_{m,0}+1-\delta
+_{n+m,0}}\left[  x,y\right]  \right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{by
+(\ref{pf.invformnondeg.g^epsi.2})}\right) \\
+&  =\varepsilon^{\delta_{n,0}+\delta_{m,0}+1-\delta_{n+m,0}}%
+\underbrace{J_{\varepsilon}\left(  \left[  x,y\right]  \right)  }%
+_{\substack{=\varepsilon^{1+\delta_{n+m,0}}\left[  x,y\right]  \\\text{(by the
+definition of }J_{\varepsilon}\text{,}\\\text{since }\left[  x,y\right]
+\in\mathfrak{g}_{n+m}\text{)}}}=\varepsilon^{\delta_{n,0}+\delta
+_{m,0}+1-\delta_{n+m,0}}\varepsilon^{1+\delta_{n+m,0}}\left[  x,y\right] \\
+&  =\varepsilon^{2+\delta_{n,0}+\delta_{m,0}}\left[  x,y\right]  ,
+\end{align*}
+this yields $J_{\varepsilon}\left(  \left[  x,y\right]  ^{\varepsilon}\right)
+=\left[  J_{\varepsilon}\left(  x\right)  ,J_{\varepsilon}\left(  y\right)
+\right]  $, qed.}. Also, $J_{\varepsilon}$ is a vector space isomorphism when
+$\varepsilon\neq0$. Hence, $J_{\varepsilon}$ is a Lie algebra isomorphism when
+$\varepsilon\neq0$. Moreover, $J_{1}=\operatorname*{id}$ and $J_{0}=0$.
+
+Now, we are dealing with several Lie algebras on the several vector space, and
+we are going to be dealing with their Verma modules. In order not to confuse
+them, let us introduce a notation:
+
+\begin{Convention}
+In the following, whenever $\mathfrak{e}$ is a $\mathbb{Z}$-graded Lie
+algebra, and $\lambda\in\mathfrak{e}_{0}^{\ast}$, we are going to denote by
+$M_{\lambda}^{+\mathfrak{e}}$ the Verma highest-weight module of $\left(
+\mathfrak{e},\lambda\right)  $, and we are going to denote by $M_{\lambda
+}^{-\mathfrak{e}}$ the Verma lowest-weight module of $\left(  \mathfrak{e}%
+,\lambda\right)  $. We will furthermore denote by $v_{\lambda}^{+\mathfrak{e}%
+}$ the defining vector of $M_{\lambda}^{+\mathfrak{e}}$, and we will denote by
+$v_{\lambda}^{-\mathfrak{e}}$ the defining vector of $M_{\lambda
+}^{-\mathfrak{e}}$.
+\end{Convention}
+
+Thus, for instance, the Verma highest-weight module of $\left(  \mathfrak{g}%
+,\lambda\right)  $ (which we have always denoted by $M_{\lambda}^{+}$) can now
+be called $M_{\lambda}^{+\mathfrak{g}}$, and thus can be discerned from the
+Verma highest-weight module $M_{\lambda}^{+\mathfrak{g}^{\varepsilon}}$ of
+$\left(  \mathfrak{g}^{\varepsilon},\lambda\right)  $.
+
+\begin{Convention}
+In the following, we let $T$ denote the tensor algebra functor. Hence, for
+every vector space $V$, we denote by $T\left(  V\right)  $ the tensor algebra
+of $V$.
+
+We notice that $T\left(  V\right)  $ is canonically graded even if $V$ is not.
+In fact, $T\left(  V\right)  =\bigoplus\limits_{i\in\mathbb{N}}V^{\otimes i}$,
+so that we get a grading on $T\left(  V\right)  $ if we set $V^{\otimes i}$ to
+be the $i$-th graded component of $T\left(  V\right)  $. This grading is
+called the \textit{tensor length grading} on $T\left(  V\right)  $. It makes
+$T\left(  V\right)  $ concentrated in nonnegative degrees.
+
+If $V$ itself is a graded vector space, then we can also grade $T\left(
+V\right)  $ by canonically extending the grading on $V$ to $T\left(  V\right)
+$ (this means that the degree of a pure tensor is the sum of the degrees of
+its tensorands). This grading is called the \textit{internal grading} on
+$T\left(  V\right)  $. It is different from the tensor length grading (unless
+$V$ is concentrated in degree $1$).
+
+Hence, if $V$ is a graded vector space, then $T\left(  V\right)  $ becomes a
+bigraded vector space (i. e., a vector space with two gradings). Let us agree
+to denote by $T\left(  V\right)  \left[  n,m\right]  $ the intersection of the
+$n$-th graded component in the internal grading with the $m$-th graded
+component in the tensor length grading (i. e., with $V^{\otimes m}$).
+\end{Convention}
+
+Let us notice that \textbf{as vector spaces}, we have $\mathfrak{g}%
+=\mathfrak{g}^{\varepsilon}$, $\mathfrak{n}_{-}=\mathfrak{n}_{-}^{\varepsilon
+}$, $\mathfrak{n}_{+}=\mathfrak{n}_{+}^{\varepsilon}$ and $\mathfrak{h}%
+=\mathfrak{h}^{\varepsilon}$ for every $\varepsilon\in\mathbb{C}$. Hence,
+$T\left(  \mathfrak{g}\right)  =T\left(  \mathfrak{g}^{\varepsilon}\right)  $,
+$T\left(  \mathfrak{n}_{-}\right)  =T\left(  \mathfrak{n}_{-}^{\varepsilon
+}\right)  $, $T\left(  \mathfrak{n}_{+}\right)  =\mathfrak{n}_{+}%
+^{\varepsilon}$ and $T\left(  \mathfrak{h}\right)  =T\left(  \mathfrak{h}%
+^{\varepsilon}\right)  $.
+
+\begin{definition}
+In the following, for every Lie algebra $\mathfrak{a}$ and every element $x\in
+T\left(  \mathfrak{a}\right)  $, we denote by $\operatorname*{env}%
+\nolimits_{\mathfrak{a}}x$ the projection of $x$ onto the factor algebra
+$U\left(  \mathfrak{a}\right)  $ of $T\left(  \mathfrak{a}\right)  $.
+\end{definition}
+
+Let us again stress that $T\left(  \mathfrak{g}\right)  =T\left(
+\mathfrak{g}^{\varepsilon}\right)  $, so that $T\left(  \mathfrak{g}%
+^{\varepsilon}\right)  $ does not depend on $\varepsilon$, whereas $U\left(
+\mathfrak{g}^{\varepsilon}\right)  $ does. Hence, if we want to study the form
+$\left(  \cdot,\cdot\right)  _{\lambda,n}^{\mathfrak{g}^{\varepsilon}}$ as it
+changes with $\varepsilon$, the easiest thing to do is to study the values of
+$\left(  \left(  \operatorname*{env}\nolimits_{\mathfrak{g}}a\right)
+v_{\lambda}^{+\mathfrak{g}^{\varepsilon}},\left(  \operatorname*{env}%
+\nolimits_{\mathfrak{g}}b\right)  v_{-\lambda}^{-\mathfrak{g}^{\varepsilon}%
+}\right)  $ for fixed $a\in T\left(  \mathfrak{g}\right)  =T\left(
+\mathfrak{g}^{\varepsilon}\right)  $ and $b\in T\left(  \mathfrak{g}\right)
+=T\left(  \mathfrak{g}^{\varepsilon}\right)  $. Here is the polynomiality
+lemma that we want to have:
+
+\begin{lemma}
+\label{lem.invformnondeg.polynomiality}Let $n\in\mathbb{Z}$ and $m\in
+\mathbb{N}$. Let $a\in T\left(  \mathfrak{g}\right)  \left[  -n,m\right]  $
+and $b\in T\left(  \mathfrak{g}\right)  \left[  n,m\right]  $. Then, there
+exists a \textbf{homogeneous} polynomial function $Q_{a,b}:\mathfrak{h}^{\ast
+}\times\mathbb{C}\rightarrow\mathbb{C}$ of degree $2m$ such that every
+$\lambda\in\mathfrak{h}^{\ast}$ and every $\varepsilon\in\mathbb{C}$ satisfy%
+\[
+\left(  \left(  \operatorname*{env}\nolimits_{\mathfrak{g}^{\varepsilon}%
+}a\right)  v_{\lambda}^{+\mathfrak{g}^{\varepsilon}},\left(
+\operatorname*{env}\nolimits_{\mathfrak{g}^{\varepsilon}}b\right)
+v_{-\lambda}^{-\mathfrak{g}^{\varepsilon}}\right)  =Q_{a,b}\left(
+\lambda,\varepsilon\right)  .
+\]
+
+\end{lemma}
+
+To prove this lemma, we show something more general:
+
+\begin{lemma}
+\label{lem.invformnondeg.polynomiality2}Let $n\in\mathbb{Z}$. Let
+$m\in\mathbb{N}$. Let $c\in T\left(  \mathfrak{g}\right)  \left[  n,m\right]
+$. Then, there exist:
+
+- a finite set $I$;
+
+- an element $d_{i}\in T\left(  \mathfrak{n}_{-}\right)  \left[  n,m\right]  $
+for every $i\in I$;
+
+- a \textbf{homogeneous} polynomial function $P_{i}:\mathfrak{h}^{\ast}%
+\times\mathbb{C}\times\mathbb{C}\rightarrow\mathbb{C}$ of degree $m$ for every
+$i\in I$
+
+such that every $\lambda\in\mathfrak{h}^{\ast}$ and every $\varepsilon
+\in\mathbb{C}$ satisfy%
+\[
+\left(  \operatorname*{env}\nolimits_{\mathfrak{g}^{\varepsilon}}c\right)
+v_{\lambda}^{+\mathfrak{g}^{\varepsilon}}=\sum\limits_{i\in I}P_{i}\left(
+\lambda,\varepsilon,\varepsilon^{2}\right)  \cdot d_{i}v_{\lambda
+}^{+\mathfrak{g}^{\varepsilon}}.
+\]
+
+\end{lemma}
+
+\begin{lemma}
+$\left(  av_{\lambda}^{+\mathfrak{g}^{\varepsilon}},bv_{-\lambda
+}^{-\mathfrak{g}^{\varepsilon}}\right)  $
+\end{lemma}
+
+[...]
+
+When $\varepsilon\neq0$, the Lie algebra isomorphism $J_{\varepsilon}$
+satisfies $\left(  \lambda/\varepsilon^{2}\right)  \circ J_{\varepsilon
+}=\lambda$. Hence, when $\varepsilon\neq0$, the Lie algebra isomorphism
+$J_{\varepsilon}$ induces a corresponding isomorphism $M_{\lambda
+/\varepsilon^{2}}^{+\mathfrak{g}}\cong M_{\lambda}^{+\mathfrak{g}%
+^{\varepsilon}}$ of modules. Similarly, $M_{\lambda/\varepsilon^{2}%
+}^{-\mathfrak{g}}=M_{\lambda}^{-\mathfrak{g}^{\varepsilon}}$.
+
+\begin{lemma}
+\label{lem.invformnondeg.form1}Let $\ell\in\mathbb{N}$. Let $\alpha_{1}%
+,\alpha_{2},...,\alpha_{\ell}\in\mathfrak{n}_{-}$ and $\beta\in\mathfrak{n}%
+_{+}$. Then, there exists a polynomial $P_{\left(  \alpha_{1},\alpha
+_{2},...,\alpha_{\ell}\right)  ,\beta}:\mathbb{C}\times\mathfrak{h}^{\ast
+}\rightarrow U\left(  \mathfrak{g}^{\varepsilon}\right)  $ such that every
+$\varepsilon\in\mathbb{C}$ and $\lambda\in\mathfrak{h}^{\ast}$ satisfy%
+\[
+\beta\alpha_{1}\alpha_{2}...\alpha_{\ell}v_{\lambda}^{+}=\sum\limits_{p=1}%
+^{\ell}\lambda\left(  \left[  \beta,\alpha_{p}\right]  \right)  \alpha
+_{1}\alpha_{2}...\alpha_{p-1}\alpha_{p+1}\alpha_{p+2}...\alpha_{\ell
+}v_{\lambda}^{+}+\varepsilon P_{\left(  \alpha_{1},\alpha_{2},...,\alpha
+_{\ell}\right)  ,\beta}\left(  \varepsilon,\lambda\right)  v_{\lambda}^{+}%
+\]
+in the Verma highest-weight module $M_{\lambda}^{+\mathfrak{g}^{\varepsilon}}$.
+\end{lemma}
+
+I am tempted to formulate this lemma as follows:%
+\begin{align*}
+\beta\alpha_{1}\alpha_{2}...\alpha_{\ell}v_{\lambda}^{+}  &  =\sum
+\limits_{p=1}^{\ell}\lambda\left(  \left[  \beta,\alpha_{p}\right]  \right)
+\alpha_{1}\alpha_{2}...\alpha_{p-1}\alpha_{p+1}\alpha_{p+2}...\alpha_{\ell
+}v_{\lambda}^{+}+o\left(  \varepsilon\right)  v_{\lambda}^{+}\\
+&  \ \ \ \ \ \ \ \ \ \ \text{for all }\ell\in\mathbb{N}\text{, }\alpha
+_{1},\alpha_{2},...,\alpha_{\ell}\in\mathfrak{n}_{-}\text{ and }\beta
+\in\mathbb{N}_{+},
+\end{align*}
+where $o\left(  \varepsilon\right)  $ means "terms divisible by $\varepsilon
+$". However, this version of the statement does not really show how the
+$o\left(  \varepsilon\right)  $ part depends on $\lambda$, whereas we will use
+that this dependence is polynomial.
+
+[...]
+
+\textit{Proof of Lemma \ref{lem.invformnondeg.form1}.} We will prove Lemma
+\ref{lem.invformnondeg.form1} by induction over $\ell$:
+
+\textit{Induction base:} For $\ell=0$, the left hand side of
+(\ref{prop.det.US.pf.3}) is $\beta v_{\lambda}^{+}=0$ (since $\beta
+\in\overline{\mathfrak{n}_{+}}$), and the right hand side of
+(\ref{prop.det.US.pf.3}) is $\left(  \text{empty sum}\right)  =0$. Thus, for
+$\ell=0$, the equality (\ref{prop.det.US.pf.3}) holds. This completes the
+induction base.
+
+\textit{Induction step:} Let $m\in\mathbb{N}$ be positive. Assume that
+(\ref{prop.det.US.pf.3}) holds for $\ell=m-1$. We now must show that
+(\ref{prop.det.US.pf.3}) holds for $\ell=m$.
+
+Let $\alpha_{1},\alpha_{2},...,\alpha_{m}\in\overline{\mathfrak{n}_{-}}$ and
+$\beta\in\overline{\mathfrak{n}_{+}}$.
+
+Since (\ref{prop.det.US.pf.3}) holds for $\ell=m-1$, we can apply
+(\ref{prop.det.US.pf.3}) to $m-1$ and $\left(  \alpha_{2},\alpha
+_{3},...,\alpha_{m}\right)  $ instead of $\ell$ and $\left(  \alpha_{1}%
+,\alpha_{2},...,\alpha_{\ell}\right)  $, and thus obtain%
+\begin{align*}
+\beta\alpha_{2}\alpha_{3}...\alpha_{m}v_{\lambda}^{+}  &  =\sum\limits_{p=1}%
+^{m-1}\lambda\left(  \left[  \beta,\alpha_{p+1}\right]  \right)  \alpha
+_{2}\alpha_{3}...\alpha_{p-1+1}\alpha_{p+1+1}\alpha_{p+2+1}...\alpha
+_{m}v_{\lambda}^{+}\\
+&  =\sum\limits_{p=2}^{m}\lambda\left(  \left[  \beta,\alpha_{p}\right]
+\right)  \alpha_{2}\alpha_{3}...\alpha_{p-1}\alpha_{p+1}\alpha_{p+2}%
+...\alpha_{m}v_{\lambda}^{+}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we substituted }p\text{ for
+}p+1\text{ in the sum}\right)  .
+\end{align*}
+
+
+Now,%
+\begin{align*}
+\beta\alpha_{1}\alpha_{2}...\alpha_{m}v_{\lambda}^{+}  &  =\underbrace{\beta
+\alpha_{1}}_{=\alpha_{1}\beta+\left[  \beta,\alpha_{1}\right]  }\alpha
+_{2}\alpha_{3}...\alpha_{m}v_{\lambda}^{+}=\left(  \alpha_{1}\beta+\left[
+\beta,\alpha_{1}\right]  \right)  \alpha_{2}\alpha_{3}...\alpha_{m}v_{\lambda
+}^{+}\\
+&  =\alpha_{1}\underbrace{\beta\alpha_{2}\alpha_{3}...\alpha_{m}v_{\lambda
+}^{+}}_{\substack{=\sum\limits_{p=2}^{m}\lambda\left(  \left[  \beta
+,\alpha_{p}\right]  \right)  \alpha_{2}\alpha_{3}...\alpha_{p-1}\alpha
+_{p+1}\alpha_{p+2}...\alpha_{m}v_{\lambda}^{+}}}+\underbrace{\left[
+\beta,\alpha_{1}\right]  \alpha_{2}\alpha_{3}...\alpha_{m}}_{\substack{=\alpha
+_{2}\alpha_{3}...\alpha_{m}\left[  \beta,\alpha_{1}\right]  \\\text{(since
+}\beta\in\overline{\mathfrak{n}_{+}}\text{ and }\alpha_{1}\in\overline
+{\mathfrak{n}_{-}}\text{, so that}\\\left[  \beta,\alpha_{1}\right]
+\in\left[  \overline{\mathfrak{n}_{+}},\overline{\mathfrak{n}_{-}}\right]
+\subseteq\overline{\mathfrak{h}}\subseteq Z\left(  \mathfrak{g}\right)
+\text{)}}}v_{\lambda}^{+}\\
+&  =\underbrace{\alpha_{1}\sum\limits_{p=2}^{m}\lambda\left(  \left[
+\beta,\alpha_{p}\right]  \right)  \alpha_{2}\alpha_{3}...\alpha_{p-1}%
+\alpha_{p+1}\alpha_{p+2}...\alpha_{m}v_{\lambda}^{+}}_{=\sum\limits_{p=2}%
+^{m}\lambda\left(  \left[  \beta,\alpha_{p}\right]  \right)  \alpha_{1}%
+\alpha_{2}\alpha_{3}...\alpha_{p-1}\alpha_{p+1}\alpha_{p+2}...\alpha
+_{m}v_{\lambda}^{+}}+\alpha_{2}\alpha_{3}...\alpha_{m}\underbrace{\left[
+\beta,\alpha_{1}\right]  v_{\lambda}^{+}}_{=\lambda\left(  \left[
+\beta,\alpha_{1}\right]  \right)  v_{\lambda}^{+}}\\
+&  =\sum\limits_{p=2}^{m}\lambda\left(  \left[  \beta,\alpha_{p}\right]
+\right)  \alpha_{1}\alpha_{2}\alpha_{3}...\alpha_{p-1}\alpha_{p+1}\alpha
+_{p+2}...\alpha_{m}v_{\lambda}^{+}+\lambda\left(  \left[  \beta,\alpha
+_{1}\right]  \right)  \alpha_{2}\alpha_{3}...\alpha_{m}v_{\lambda}^{+}\\
+&  =\sum\limits_{p=1}^{m}\lambda\left(  \left[  \beta,\alpha_{p}\right]
+\right)  \alpha_{1}\alpha_{2}\alpha_{3}...\alpha_{p-1}\alpha_{p+1}\alpha
+_{p+2}...\alpha_{m}v_{\lambda}^{+}\\
+&  =\sum\limits_{p=1}^{m}\lambda\left(  \left[  \beta,\alpha_{p}\right]
+\right)  \alpha_{1}\alpha_{2}...\alpha_{p-1}\alpha_{p+1}\alpha_{p+2}%
+...\alpha_{m}v_{\lambda}^{+}.
+\end{align*}
+Thus, (\ref{prop.det.US.pf.3}) holds for $\ell=m$. This completes the
+induction step. Thus, (\ref{prop.det.US.pf.3}) is proven.
+
+[...]
 
 \textit{Proof of Proposition \ref{prop.det.US}.} Consider the $\mathbb{C}%
 \left[  \varepsilon\right]  $-Lie algebra $\mathfrak{g}\left[  \varepsilon
