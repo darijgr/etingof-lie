@@ -1,10 +1,38 @@
-% This paper comes in two versions:
-% The long version:
-% \includecomment{verlong}
-% \excludecomment{vershort}
-% The short version:
-% \excludecomment{verlong}
-% \includecomment{vershort}
+% -------------------------------------------------------------
+% NOTE ON THE DETAILED AND SHORT VERSIONS:
+% -------------------------------------------------------------
+% This paper comes in two versions, a detailed and a short one.
+% The short version should be more than sufficient for any
+% reasonable use; the detailed one was written purely to
+% convince the author of its correctness.
+% To switch between the two versions, find the line containing
+% "\newenvironment{noncompile}{}{}" in this LaTeX file.
+% Look at the two lines right beneath this line.
+% To compile the detailed version, they should be as follows:
+%   \includecomment{verlong}
+%   \excludecomment{vershort}
+% To compile the short version, they should be as follows:
+%   \excludecomment{verlong}
+%   \includecomment{vershort}
+% As a rule, the line
+%   \excludecomment{noncompile}
+% should stay as it is.
+% -------------------------------------------------------------
+% NOTES ON SOME HACKS USED IN THIS FILE:
+% -------------------------------------------------------------
+% One of my pet peeves with amsthm is its use of italics in the theorem and
+% proposition environments; this makes math and text indistinguishable in said
+% enviroments. To avoid this, I redefine the enviroments to use the standard
+% font and to use a hanging indent, along with a bold vertical bar to its
+% left, to distinguish these environments from surrounding text. (Along with
+% the advantage of distinguishing math from text, this also allows nesting
+% several such environments inside each other, like a definition inside a
+% remark. I'm not sure how good of an idea this is, though. There are also
+% downsides related to the hanging indentation, such as footnotes out of it
+% being painful to do right.) This is done starting from the line
+%   \theoremstyle{definition}
+% and until the line
+%   {\end{leftbar}\end{exmp}}
 
 \documentclass
 [numbers=enddot,12pt,final,onecolumn,german,notitlepage]{scrartcl}%
