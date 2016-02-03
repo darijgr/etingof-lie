@@ -23,7 +23,7 @@
 \setcounter{MaxMatrixCols}{30}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Saturday, March 24, 2012 19:28:20}
+%TCIDATA{LastRevised=Tuesday, April 03, 2012 02:35:19}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
 %TCIDATA{BibliographyScheme=Manual}
@@ -82,6 +82,7 @@
 \newenvironment{Warning}[1][]
 {\begin{warn}[#1]\begin{leftbar}}
 {\end{leftbar}\end{warn}}
+\newtheorem{example}[theo]{Example}
 \voffset=-0.5cm
 \hoffset=-0.7cm
 \newenvironment{verlong}{}{}
@@ -4010,7 +4011,7 @@ S\left(  \mathfrak{n}_{+}\right)  \left[  n\right]  =\sum\limits_{k\in
 S\left(  \mathfrak{n}_{+}^{\prime}\right)  \left[  n\right]  =\sum
 \limits_{k\in\mathbb{N}}\sum\limits_{\substack{\left(  i_{1},i_{2}%
 ,...,i_{k}\right)  \in\mathbb{N}^{k};\\\text{each }i_{j}\geq1;\\\text{each
-}\left\vert i_{j}\right\vert \leq n\\i_{1}+i_{2}+...+i_{k}=n}}\mathfrak{g}%
+}\left\vert i_{j}\right\vert \leq n;\\i_{1}+i_{2}+...+i_{k}=n}}\mathfrak{g}%
 _{i_{1}}\mathfrak{g}_{i_{2}}...\mathfrak{g}_{i_{k}}%
 \]
 (because $\mathfrak{g}^{\prime}$ is obtained from $\mathfrak{g}$ by removing
@@ -4019,7 +4020,7 @@ all $\mathfrak{g}_{i}$ with $\left\vert i\right\vert >n$). Thus,%
 S\left(  \mathfrak{n}_{+}^{\prime}\right)  \left[  n\right]   &
 =\sum\limits_{k\in\mathbb{N}}\sum\limits_{\substack{\left(  i_{1}%
 ,i_{2},...,i_{k}\right)  \in\mathbb{N}^{k};\\\text{each }i_{j}\geq
-1;\\\text{each }\left\vert i_{j}\right\vert \leq n\\i_{1}+i_{2}+...+i_{k}%
+1;\\\text{each }\left\vert i_{j}\right\vert \leq n;\\i_{1}+i_{2}+...+i_{k}%
 =n}}\mathfrak{g}_{i_{1}}\mathfrak{g}_{i_{2}}...\mathfrak{g}_{i_{k}}%
 =\sum\limits_{k\in\mathbb{N}}\sum\limits_{\substack{\left(  i_{1}%
 ,i_{2},...,i_{k}\right)  \in\mathbb{N}^{k};\\\text{each }i_{j}\geq
@@ -4097,6 +4098,16 @@ v\right)  \right)  .
 
 \textbf{(2)} For every basis $\left(  \beta_{1},\beta_{2},...,\beta
 _{m}\right)  $ of the dual space $V^{\ast}$, there exists a polynomial
+$P\in\mathbb{C}\left[  X_{1},X_{2},...,X_{m}\right]  $ such that%
+\[
+\text{every }v\in V\text{ satisfies }\phi\left(  v\right)  =P\left(  \beta
+_{1}\left(  v\right)  ,\beta_{2}\left(  v\right)  ,...,\beta_{m}\left(
+v\right)  \right)  .
+\]
+
+
+\textbf{(3)} There exist finitely many elements $\beta_{1}$, $\beta_{2}$,
+$...$, $\beta_{m}$ of the dual space $V^{\ast}$ and a polynomial
 $P\in\mathbb{C}\left[  X_{1},X_{2},...,X_{m}\right]  $ such that%
 \[
 \text{every }v\in V\text{ satisfies }\phi\left(  v\right)  =P\left(  \beta
@@ -4212,6 +4223,51 @@ This proves Theorem \ref{thm.invformnondeg}.
 So all that remains to finish the proof of Theorem \ref{thm.invformnondeg} is
 verifying Proposition \ref{prop.det.US}.
 
+\subsubsection{Proof of Theorem \ref{thm.invformnondeg}: Polynomial maps}
+
+We already defined the notion of a polynomial function in Definition
+\ref{def.det.US.poly}. Let us give a definition of a notion of a "polynomial
+map" which is tailored for our proof of Theorem \ref{thm.invformnondeg}. I
+cannot guarantee that it is the same as what other people call "polynomial
+map", but it should be very close.
+
+\begin{definition}
+\label{def.det.US.polymap}Let $V$ be a finite-dimensional vector space. Let
+$W$ be a vector space. A map $\phi:V\rightarrow W$ is said to be a
+\textit{polynomial map} if and only if there exist:
+
+- some $n\in\mathbb{N}$;
+
+- $n$ vectors $w_{1}$, $w_{2}$, $...$, $w_{n}$ in $W$;
+
+- $n$ polynomial functions $P_{1}$, $P_{2}$, $...$, $P_{n}$ from $V$ to
+$\mathbb{C}$
+
+such that%
+\[
+\text{every }v\in V\text{ satisfies }\phi\left(  v\right)  =\sum
+\limits_{i=1}^{n}P_{i}\left(  v\right)  w_{i}.
+\]
+
+\end{definition}
+
+Note that it is clear that:
+
+\begin{itemize}
+\item If $V$ is a finite-dimensional vector space and $W$ is a vector space,
+then any $\mathbb{C}$-linear combination of polynomial maps $V\rightarrow W$
+is a polynomial map.
+
+\item If $V$ is a finite-dimensional vector space and $W$ is a $\mathbb{C}%
+$-algebra, then any product of polynomial maps $V\rightarrow W$ is a
+polynomial map.
+
+\item If $V$ is a finite-dimensional vector space, then polynomial maps
+$V\rightarrow\mathbb{C}$ are exactly the same as polynomial functions
+$V\rightarrow\mathbb{C}$ (since $\mathbb{C}$-linear combinations of polynomial
+functions are polynomials).
+\end{itemize}
+
 \subsubsection{Proof of Theorem \ref{thm.invformnondeg}: The deformed Lie
 algebra $\mathfrak{g}^{\varepsilon}$}
 
@@ -4244,7 +4300,8 @@ is proven, we will explicitly show that (more or less) $\left(  \cdot
 _{\lambda,n}^{\circ}$, and we know this form to be nondegenerate (by Lemma
 \ref{lem.lambda_k.2}).
 
-Now, to the details. First, let us define $\mathfrak{g}^{\varepsilon}$.
+Now, to the details. Consider the situation of Proposition \ref{prop.det.US}.
+First, let us define $\mathfrak{g}^{\varepsilon}$.
 
 For every $\varepsilon\in\mathbb{C}$, let us define a new Lie bracket $\left[
 \cdot,\cdot\right]  ^{\varepsilon}$ on the vector space $\mathfrak{g}$ by the
@@ -4409,7 +4466,8 @@ this yields $J_{\varepsilon}\left(  \left[  x,y\right]  ^{\varepsilon}\right)
 =\left[  J_{\varepsilon}\left(  x\right)  ,J_{\varepsilon}\left(  y\right)
 \right]  $, qed.}. Also, $J_{\varepsilon}$ is a vector space isomorphism when
 $\varepsilon\neq0$. Hence, $J_{\varepsilon}$ is a Lie algebra isomorphism when
-$\varepsilon\neq0$. Moreover, $J_{1}=\operatorname*{id}$ and $J_{0}=0$.
+$\varepsilon\neq0$. Moreover, $J_{1}=\operatorname*{id}$, so that $\left[
+\cdot,\cdot\right]  ^{\varepsilon}=\left[  \cdot,\cdot\right]  $.
 
 Now, we are dealing with several Lie algebras on the several vector space, and
 we are going to be dealing with their Verma modules. In order not to confuse
@@ -4432,6 +4490,124 @@ Thus, for instance, the Verma highest-weight module of $\left(  \mathfrak{g}%
 be called $M_{\lambda}^{+\mathfrak{g}}$, and thus can be discerned from the
 Verma highest-weight module $M_{\lambda}^{+\mathfrak{g}^{\varepsilon}}$ of
 $\left(  \mathfrak{g}^{\varepsilon},\lambda\right)  $.
+
+\begin{Convention}
+For every $n\in\mathbb{N}$, let $\left(  e_{n,i}\right)  _{i\in\left\{
+1,2,...,m_{n}\right\}  }$ be a basis of the vector space $\mathfrak{g}_{n}$
+(such a basis exists since $\dim\left(  \mathfrak{g}_{n}\right)  <\infty$).
+Then, $\left(  e_{n,i}\right)  _{\left(  n,i\right)  \in E}$ is a basis of the
+vector space $\mathfrak{g}$, where $E=\left\{  \left(  n,i\right)
+\ \mid\ n\in\mathbb{Z};\ i\in\left\{  1,2,...,m_{n}\right\}  \right\}  $.
+
+We totally order the set $E$ lexicographically. Let $\operatorname*{Seq}E$ be
+the set of all finite sequences of elements of $E$. For every $\mathbf{i}%
+\in\operatorname*{Seq}E$ and every $\varepsilon\in\mathbb{C}$, we define an
+element $e_{\mathbf{i}}^{\varepsilon}$ of $U\left(  \mathfrak{g}^{\varepsilon
+}\right)  $ by%
+\[
+e_{\mathbf{i}}^{\varepsilon}=e_{\left(  n_{1},i_{1}\right)  }e_{\left(
+n_{2},i_{2}\right)  }...e_{\left(  n_{\ell},i_{\ell}\right)  }%
+,\ \ \ \ \ \ \ \ \ \ \text{where we write }\mathbf{i}\text{ in the form
+}\left(  \left(  n_{1},i_{1}\right)  ,\left(  n_{2},i_{2}\right)  ,...,\left(
+n_{\ell},i_{\ell}\right)  \right)  .
+\]
+For every $\mathbf{i}\in\operatorname*{Seq}E$, we define the \textit{length}
+$\operatorname*{len}\mathbf{i}$ of $\mathbf{i}$ to be the number of elements
+of $\mathbf{i}$ (in other words, we set $\operatorname*{len}\mathbf{i}=\ell$,
+where we write $\mathbf{i}$ in the form $\left(  \left(  n_{1},i_{1}\right)
+,\left(  n_{2},i_{2}\right)  ,...,\left(  n_{\ell},i_{\ell}\right)  \right)
+$), and we define the \textit{degree} $\deg\mathbf{i}$ of $\mathbf{i}$ to be
+the sum $n_{1}+n_{2}+...+n_{\ell}$, where we write $\mathbf{i}$ in the form
+$\left(  \left(  n_{1},i_{1}\right)  ,\left(  n_{2},i_{2}\right)  ,...,\left(
+n_{\ell},i_{\ell}\right)  \right)  $. It is clear that $e_{\mathbf{i}%
+}^{\varepsilon}\in U\left(  \mathfrak{g}^{\varepsilon}\right)  \left[
+\deg\mathbf{i}\right]  $.
+
+Let $\operatorname*{Seq}\nolimits_{+}E$ be the set of all
+\textbf{nondecreasing} sequences $\left(  \left(  n_{1},i_{1}\right)  ,\left(
+n_{2},i_{2}\right)  ,...,\left(  n_{\ell},i_{\ell}\right)  \right)
+\in\operatorname*{Seq}E$ such that all of $n_{1}$, $n_{2}$, $...$, $n_{\ell}$
+are \textbf{positive}. By the Poincar\'{e}-Birkhoff-Witt theorem (applied to
+the Lie algebra $\mathfrak{n}_{+}^{\varepsilon}$), the family $\left(
+e_{\mathbf{j}}^{\varepsilon}\right)  _{\mathbf{j}\in\operatorname*{Seq}%
+\nolimits_{+}E}$ is a basis of the vector space $U\left(  \mathfrak{n}%
+_{+}^{\varepsilon}\right)  $. Moreover, it is a graded basis, i. e., the
+family $\left(  e_{\mathbf{j}}^{\varepsilon}\right)  _{\mathbf{j}%
+\in\operatorname*{Seq}\nolimits_{+}E;\ \deg\mathbf{j}=n}$ is a basis of the
+vector space $U\left(  \mathfrak{n}_{+}^{\varepsilon}\right)  \left[
+n\right]  $ for every $n\in\mathbb{Z}$. Hence, $\left(  e_{\mathbf{j}%
+}^{\varepsilon}v_{\lambda}^{+\mathfrak{g}^{\varepsilon}}\right)
+_{\mathbf{j}\in\operatorname*{Seq}\nolimits_{+}E;\ \deg\mathbf{j}=n}$ is a
+basis of the vector space $M_{-\lambda}^{-\mathfrak{g}^{\varepsilon}}\left[
+n\right]  $ for every $n\in\mathbb{Z}$ and $\lambda\in\mathfrak{h}^{\ast}$.
+
+Let $\operatorname*{Seq}\nolimits_{-}E$ be the set of all
+\textbf{nonincreasing} sequences $\left(  \left(  n_{1},i_{1}\right)  ,\left(
+n_{2},i_{2}\right)  ,...,\left(  n_{\ell},i_{\ell}\right)  \right)
+\in\operatorname*{Seq}E$ such that all of $n_{1}$, $n_{2}$, $...$, $n_{\ell}$
+are \textbf{negative}. By the Poincar\'{e}-Birkhoff-Witt theorem (applied to
+the Lie algebra $\mathfrak{n}_{-}^{\varepsilon}$), the family $\left(
+e_{\mathbf{i}}^{\varepsilon}\right)  _{\mathbf{i}\in\operatorname*{Seq}%
+\nolimits_{-}E}$ is a basis of the vector space $U\left(  \mathfrak{n}%
+_{-}^{\varepsilon}\right)  $. Moreover, it is a graded basis, i. e., the
+family $\left(  e_{\mathbf{i}}^{\varepsilon}\right)  _{\mathbf{i}%
+\in\operatorname*{Seq}\nolimits_{-}E;\ \deg\mathbf{i}=-n}$ is a basis of the
+vector space $U\left(  \mathfrak{n}_{-}^{\varepsilon}\right)  \left[
+-n\right]  $ for every $n\in\mathbb{Z}$. Hence, $\left(  e_{\mathbf{i}%
+}^{\varepsilon}v_{-\lambda}^{-\mathfrak{g}^{\varepsilon}}\right)
+_{\mathbf{i}\in\operatorname*{Seq}\nolimits_{-}E;\ \deg\mathbf{i}=-n}$ is a
+basis of the vector space $M_{-\lambda}^{-\mathfrak{g}^{\varepsilon}}\left[
+-n\right]  $ for every $n\in\mathbb{Z}$ and $\lambda\in\mathfrak{h}^{\ast}$.
+
+We can define a bijection%
+\begin{align*}
+E  &  \rightarrow E,\\
+\left(  n,i\right)   &  \mapsto\left(  -n,i\right)
+\end{align*}
+(because $\dim\left(  \mathfrak{g}_{m}\right)  =\dim\left(  \mathfrak{g}%
+_{-m}\right)  $ for every $m\in\mathbb{Z}$). This bijection canonically
+induces a bijection $\operatorname*{Seq}E\rightarrow\operatorname*{Seq}E$,
+which maps $\operatorname*{Seq}\nolimits_{+}E$ to $\operatorname*{Seq}%
+\nolimits_{-}E$ and vice versa, and reverses the degree of every sequence
+while keeping the length of every sequence invariant. One consequence of this
+bijection is that for every $n\in\mathbb{Z}$, the number of all $\mathbf{j}%
+\in\operatorname*{Seq}\nolimits_{+}E$ satisfying$\ \deg\mathbf{j}=n$ equals
+the number of all $\mathbf{i}\in\operatorname*{Seq}\nolimits_{-}E$
+satisfying$\ \deg\mathbf{i}=-n$. Another consequence is that $\sum
+\limits_{\substack{\mathbf{i}\in\operatorname*{Seq}\nolimits_{-}%
+E;\\\deg\mathbf{i}=-n}}\operatorname*{len}\mathbf{i=}\sum
+\limits_{\substack{\mathbf{j}\in\operatorname*{Seq}\nolimits_{+}%
+E;\\\deg\mathbf{j}=n}}\operatorname*{len}\mathbf{j}$.
+
+For every $n\in\mathbb{N}$, we represent the bilinear form $\left(
+\cdot,\cdot\right)  _{\lambda,n}^{\mathfrak{g}^{\varepsilon}}:M_{\lambda
+}^{+\mathfrak{g}^{\varepsilon}}\left[  -n\right]  \times M_{-\lambda
+}^{-\mathfrak{g}^{\varepsilon}}\left[  n\right]  \rightarrow\mathbb{C}$ by its
+matrix with respect to the bases $\left(  e_{\mathbf{i}}^{\varepsilon
+}v_{-\lambda}^{-\mathfrak{g}^{\varepsilon}}\right)  _{\mathbf{i}%
+\in\operatorname*{Seq}\nolimits_{-}E;\ \deg\mathbf{i}=-n}$ and $\left(
+e_{\mathbf{j}}^{\varepsilon}v_{\lambda}^{+\mathfrak{g}^{\varepsilon}}\right)
+_{\mathbf{j}\in\operatorname*{Seq}\nolimits_{+}E;\ \deg\mathbf{j}=n}$ of
+$M_{\lambda}^{+\mathfrak{g}^{\varepsilon}}\left[  -n\right]  $ and
+$M_{-\lambda}^{-\mathfrak{g}^{\varepsilon}}\left[  n\right]  $, respectively.
+This is the matrix%
+\[
+\left(  \left(  e_{\mathbf{i}}^{\varepsilon}v_{\lambda}^{+\mathfrak{g}%
+^{\varepsilon}},e_{\mathbf{j}}^{\varepsilon}v_{-\lambda}^{-\mathfrak{g}%
+^{\varepsilon}}\right)  _{\lambda,n}^{\mathfrak{g}^{\varepsilon}}\right)
+_{\substack{\mathbf{i}\in\operatorname*{Seq}\nolimits_{-}E;\ \mathbf{j}%
+\in\operatorname*{Seq}\nolimits_{+}E;\\\deg\mathbf{i}=-n;\ \deg\mathbf{j}%
+=n}}.
+\]
+This matrix is a square matrix (since the number of all $\mathbf{j}%
+\in\operatorname*{Seq}\nolimits_{+}E$ satisfying$\ \deg\mathbf{j}=n$ equals
+the number of all $\mathbf{i}\in\operatorname*{Seq}\nolimits_{-}E$
+satisfying$\ \deg\mathbf{i}=-n$), and its determinant is what we are going to
+denote by $\det\left(  \left(  \cdot,\cdot\right)  _{\lambda,n}^{\mathfrak{g}%
+^{\varepsilon}}\right)  $.
+\end{Convention}
+
+A few words about tensor algebras:
 
 \begin{Convention}
 In the following, we let $T$ denote the tensor algebra functor. Hence, for
@@ -4485,24 +4661,22 @@ changes with $\varepsilon$, the easiest thing to do is to study the values of
 $\left(  \left(  \operatorname*{env}\nolimits_{\mathfrak{g}}a\right)
 v_{\lambda}^{+\mathfrak{g}^{\varepsilon}},\left(  \operatorname*{env}%
 \nolimits_{\mathfrak{g}}b\right)  v_{-\lambda}^{-\mathfrak{g}^{\varepsilon}%
-}\right)  $ for fixed $a\in T\left(  \mathfrak{g}\right)  =T\left(
-\mathfrak{g}^{\varepsilon}\right)  $ and $b\in T\left(  \mathfrak{g}\right)
-=T\left(  \mathfrak{g}^{\varepsilon}\right)  $. Here is the polynomiality
-lemma that we want to have:
+}\right)  _{\lambda,n}^{\mathfrak{g}^{\varepsilon}}$ for fixed $a\in T\left(
+\mathfrak{g}\right)  =T\left(  \mathfrak{g}^{\varepsilon}\right)  $ and $b\in
+T\left(  \mathfrak{g}\right)  =T\left(  \mathfrak{g}^{\varepsilon}\right)  $.
+Here is the polynomiality lemma that we want to have:
 
 \begin{lemma}
-\label{lem.invformnondeg.polynomiality}Let $n\in\mathbb{Z}$ and $m\in
-\mathbb{N}$. Let $a\in T\left(  \mathfrak{g}\right)  \left[  -n,m\right]  $
-and $b\in T\left(  \mathfrak{g}\right)  \left[  n,m\right]  $. Then, there
-exists a \textbf{homogeneous} polynomial function $Q_{a,b}:\mathfrak{h}^{\ast
-}\times\mathbb{C}\rightarrow\mathbb{C}$ of degree $2m$ such that every
-$\lambda\in\mathfrak{h}^{\ast}$ and every $\varepsilon\in\mathbb{C}$ satisfy%
+\label{lem.invformnondeg.polynomiality}Let $\mathbf{i}\in\operatorname*{Seq}E$
+and $\mathbf{j}\in\operatorname*{Seq}E$. Then, there exists a polynomial
+function $Q_{\mathbf{i},\mathbf{j}}:\mathfrak{h}^{\ast}\times\mathbb{C}%
+\rightarrow\mathbb{C}$ such that every $\lambda\in\mathfrak{h}^{\ast}$ and
+every $\varepsilon\in\mathbb{C}$ satisfy%
 \[
-\left(  \left(  \operatorname*{env}\nolimits_{\mathfrak{g}^{\varepsilon}%
-}a\right)  v_{\lambda}^{+\mathfrak{g}^{\varepsilon}},\left(
-\operatorname*{env}\nolimits_{\mathfrak{g}^{\varepsilon}}b\right)
-v_{-\lambda}^{-\mathfrak{g}^{\varepsilon}}\right)  =Q_{a,b}\left(
-\lambda,\varepsilon\right)  .
+\left(  e_{\mathbf{i}}^{\varepsilon}v_{\lambda}^{+\mathfrak{g}^{\varepsilon}%
+},e_{\mathbf{j}}^{\varepsilon}v_{-\lambda}^{-\mathfrak{g}^{\varepsilon}%
+}\right)  _{\lambda}^{\mathfrak{g}^{\varepsilon}}=Q_{\mathbf{i},\mathbf{j}%
+}\left(  \lambda,\varepsilon\right)  .
 \]
 
 \end{lemma}
@@ -4510,229 +4684,1505 @@ v_{-\lambda}^{-\mathfrak{g}^{\varepsilon}}\right)  =Q_{a,b}\left(
 To prove this lemma, we show something more general:
 
 \begin{lemma}
-\label{lem.invformnondeg.polynomiality2}Let $n\in\mathbb{Z}$. Let
-$m\in\mathbb{N}$. Let $c\in T\left(  \mathfrak{g}\right)  \left[  n,m\right]
-$. Then, there exist:
-
-- a finite set $I$;
-
-- an element $d_{i}\in T\left(  \mathfrak{n}_{-}\right)  \left[  n,m\right]  $
-for every $i\in I$;
-
-- a \textbf{homogeneous} polynomial function $P_{i}:\mathfrak{h}^{\ast}%
-\times\mathbb{C}\times\mathbb{C}\rightarrow\mathbb{C}$ of degree $m$ for every
-$i\in I$
-
-such that every $\lambda\in\mathfrak{h}^{\ast}$ and every $\varepsilon
-\in\mathbb{C}$ satisfy%
+\label{lem.invformnondeg.polynomiality2}Let $n\in\mathbb{Z}$. Let $c\in
+T\left(  \mathfrak{g}\right)  \left[  n\right]  $. Then, there exists a
+polynomial map $d:\mathfrak{h}^{\ast}\times\mathbb{C}\rightarrow T\left(
+\mathfrak{n}_{-}\right)  \left[  n\right]  $ such that every $\lambda
+\in\mathfrak{h}^{\ast}$ and every $\varepsilon\in\mathbb{C}$ satisfy%
 \[
 \left(  \operatorname*{env}\nolimits_{\mathfrak{g}^{\varepsilon}}c\right)
-v_{\lambda}^{+\mathfrak{g}^{\varepsilon}}=\sum\limits_{i\in I}P_{i}\left(
-\lambda,\varepsilon,\varepsilon^{2}\right)  \cdot d_{i}v_{\lambda
-}^{+\mathfrak{g}^{\varepsilon}}.
+v_{\lambda}^{+\mathfrak{g}^{\varepsilon}}=\left(  \operatorname*{env}%
+\nolimits_{\mathfrak{g}^{\varepsilon}}\left(  d\left(  \lambda,\varepsilon
+\right)  \right)  \right)  v_{\lambda}^{+\mathfrak{g}^{\varepsilon}}.
 \]
 
 \end{lemma}
 
-\begin{lemma}
-$\left(  av_{\lambda}^{+\mathfrak{g}^{\varepsilon}},bv_{-\lambda
-}^{-\mathfrak{g}^{\varepsilon}}\right)  $
-\end{lemma}
+To get some intuition about Lemma \ref{lem.invformnondeg.polynomiality2},
+recall that the Verma highest-weight module $M_{\lambda}^{+\mathfrak{g}%
+^{\varepsilon}}$ was defined as $U\left(  \mathfrak{g}^{\varepsilon}\right)
+\otimes_{U\left(  \mathfrak{h}^{\varepsilon}\oplus\mathfrak{n}_{+}%
+^{\varepsilon}\right)  }\mathbb{C}_{\lambda}$, but turned out to be $U\left(
+\mathfrak{n}_{-}^{\varepsilon}\right)  v_{\lambda}^{+\mathfrak{g}%
+^{\varepsilon}}$ (as a vector space), so that every term of the form
+$xv_{\lambda}^{+\mathfrak{g}^{\varepsilon}}$ with $x\in U\left(
+\mathfrak{g}^{\varepsilon}\right)  $ can be reduced to the form $yv_{\lambda
+}^{+\mathfrak{g}^{\varepsilon}}$ with $y\in U\left(  \mathfrak{n}%
+_{-}^{\varepsilon}\right)  $. Lemma \ref{lem.invformnondeg.polynomiality2}
+says that, if $x$ is given as the projection $\operatorname*{env}%
+\nolimits_{\mathfrak{g}^{\varepsilon}}c$ of some tensor $c\in T\left(
+\mathfrak{g}\right)  \left[  n,m\right]  $ onto $U\left(  \mathfrak{g}%
+^{\varepsilon}\right)  $, then $y$ can be found as the projection of some
+tensor $d\left(  \lambda,\varepsilon\right)  \in T\left(  \mathfrak{n}%
+_{-}\right)  \left[  n\right]  $ onto $U\left(  \mathfrak{n}_{-}^{\varepsilon
+}\right)  $ which depends polynomially on $\lambda$ and $\varepsilon$. This is
+not particularly surprising, since $y$ is found from $x$ by picking a
+tensorial representation\footnote{By a "tensorial representation"\ of $x$, I
+mean a tensor $c\in T\left(  \mathfrak{g}\right)  $ such that
+$\operatorname*{env}\nolimits_{\mathfrak{g}^{\varepsilon}}c=x$.} of $x$ and
+"gradually" stratifying it\footnote{By "stratifying" a tensorial
+representation of $x$, I mean writing it as a linear combination of pure
+tensors, and whenever such a pure tensor has a negative tensorand (i. e., a
+tensorand in $\mathfrak{n}_{-}$) standing directly before a positive tensorand
+(i. e., a tensorand in $\mathfrak{n}_{+}$), applying the $xy-yx=\left[
+x,y\right]  ^{\varepsilon}$ relations in $U\left(  \mathfrak{g}^{\varepsilon
+}\right)  $ to move the negative tensorand past the positive one. As soon as a
+positive tensorand hits the right end of the tensor, the tensor can be thrown
+away since $\mathfrak{n}_{+}v_{\lambda}^{+\mathfrak{g}^{\varepsilon}}=0$. For
+instance, in Example \ref{exa.Vir} further below, we compute $L_{1}%
+L_{-1}v_{\lambda}^{+}$ by stratifying the tensorial representation
+$L_{1}\otimes L_{-1}$ of $L_{1}L_{-1}$, and we compute $L_{1}^{2}L_{-1}%
+^{2}v_{\lambda}^{+}$ by stratifying the tensorial representation $L_{1}\otimes
+L_{1}\otimes L_{-1}\otimes L_{-1}$ of $L_{1}^{2}L_{-1}^{2}$.}, and the
+$\lambda$'s and $\varepsilon$'s which appear during this stratification
+process don't appear "randomly", but rather appear at foreseeable places. The
+following proof of Lemma \ref{lem.invformnondeg.polynomiality2} will formalize
+this idea.
 
-[...]
+\textit{Proof of Lemma \ref{lem.invformnondeg.polynomiality2}.} First some notations:
 
-When $\varepsilon\neq0$, the Lie algebra isomorphism $J_{\varepsilon}$
-satisfies $\left(  \lambda/\varepsilon^{2}\right)  \circ J_{\varepsilon
-}=\lambda$. Hence, when $\varepsilon\neq0$, the Lie algebra isomorphism
-$J_{\varepsilon}$ induces a corresponding isomorphism $M_{\lambda
-/\varepsilon^{2}}^{+\mathfrak{g}}\cong M_{\lambda}^{+\mathfrak{g}%
-^{\varepsilon}}$ of modules. Similarly, $M_{\lambda/\varepsilon^{2}%
-}^{-\mathfrak{g}}=M_{\lambda}^{-\mathfrak{g}^{\varepsilon}}$.
-
-\begin{lemma}
-\label{lem.invformnondeg.form1}Let $\ell\in\mathbb{N}$. Let $\alpha_{1}%
-,\alpha_{2},...,\alpha_{\ell}\in\mathfrak{n}_{-}$ and $\beta\in\mathfrak{n}%
-_{+}$. Then, there exists a polynomial $P_{\left(  \alpha_{1},\alpha
-_{2},...,\alpha_{\ell}\right)  ,\beta}:\mathbb{C}\times\mathfrak{h}^{\ast
-}\rightarrow U\left(  \mathfrak{g}^{\varepsilon}\right)  $ such that every
-$\varepsilon\in\mathbb{C}$ and $\lambda\in\mathfrak{h}^{\ast}$ satisfy%
+If $n\in\mathbb{Z}$, then a tensor $c\in T\left(  \mathfrak{g}\right)  \left[
+n\right]  $ is said to be $n$\textit{-stratifiable} if there exists a
+polynomial map $d:\mathfrak{h}^{\ast}\times\mathbb{C}\rightarrow T\left(
+\mathfrak{n}_{-}\right)  \left[  n\right]  $ such that every $\lambda
+\in\mathfrak{h}^{\ast}$ and every $\varepsilon\in\mathbb{C}$ satisfy%
 \[
-\beta\alpha_{1}\alpha_{2}...\alpha_{\ell}v_{\lambda}^{+}=\sum\limits_{p=1}%
-^{\ell}\lambda\left(  \left[  \beta,\alpha_{p}\right]  \right)  \alpha
-_{1}\alpha_{2}...\alpha_{p-1}\alpha_{p+1}\alpha_{p+2}...\alpha_{\ell
-}v_{\lambda}^{+}+\varepsilon P_{\left(  \alpha_{1},\alpha_{2},...,\alpha
-_{\ell}\right)  ,\beta}\left(  \varepsilon,\lambda\right)  v_{\lambda}^{+}%
+\left(  \operatorname*{env}\nolimits_{\mathfrak{g}^{\varepsilon}}c\right)
+v_{\lambda}^{+\mathfrak{g}^{\varepsilon}}=\left(  \operatorname*{env}%
+\nolimits_{\mathfrak{g}^{\varepsilon}}\left(  d\left(  \lambda,\varepsilon
+\right)  \right)  \right)  v_{\lambda}^{+\mathfrak{g}^{\varepsilon}}.
 \]
-in the Verma highest-weight module $M_{\lambda}^{+\mathfrak{g}^{\varepsilon}}$.
+
+
+Lemma \ref{lem.invformnondeg.polynomiality2} states that for every
+$n\in\mathbb{Z}$, every tensor $c\in T\left(  \mathfrak{g}\right)  \left[
+n\right]  $ is $n$-stratifiable.
+
+We will now prove that
+\begin{equation}
+\text{for every }n\in\mathbb{Z}\text{ and every }m\in\mathbb{N}\text{, every
+tensor }c\in T\left(  \mathfrak{g}\right)  \left[  n,m\right]  \text{ is
+}n\text{-stratifiable.} \label{lem.invformnondeg.polynomiality2.ind}%
+\end{equation}
+
+
+Before we start proving this, let us formulate two easy observations about
+stratifiable tensors:
+
+\textit{Observation 1:} For any fixed $n$, any $\mathbb{C}$-linear combination
+of $n$-stratifiable tensors is $n$-stratifiable. (In fact, we can just take
+the corresponding $\mathbb{C}$-linear combination of the corresponding
+polynomial maps $d\left(  \lambda,\varepsilon\right)  $.)
+
+\textit{Observation 2:} If an integer $n$, a positive integer $m$ and a
+negative integer $\nu$ are such that $x\in\mathfrak{g}_{\nu}$, and if $y\in
+T\left(  \mathfrak{g}\right)  \left[  n-\nu,m-1\right]  $ is $\left(
+n-\nu\right)  $-stratifiable, then $x\otimes y\in T\left(  \mathfrak{g}%
+\right)  \left[  n,m\right]  $ is $n$-stratifiable.\footnote{\textit{Proof of
+Observation 2.} Let an integer $n$, a positive integer $m$ and a negative
+integer $\nu$ be such that $x\in\mathfrak{g}_{\nu}$, and if $y\in T\left(
+\mathfrak{g}\right)  \left[  n-\nu,m-1\right]  $ is $\left(  n-\nu\right)
+$-stratifiable. Then, there exists a polynomial map $\widetilde{d}%
+:\mathfrak{h}^{\ast}\times\mathbb{C}\rightarrow T\left(  \mathfrak{n}%
+_{-}\right)  \left[  n-\nu\right]  $ such that every $\lambda\in
+\mathfrak{h}^{\ast}$ and every $\varepsilon\in\mathbb{C}$ satisfy%
+\[
+\left(  \operatorname*{env}\nolimits_{\mathfrak{g}^{\varepsilon}}y\right)
+v_{\lambda}^{+\mathfrak{g}^{\varepsilon}}=\left(  \operatorname*{env}%
+\nolimits_{\mathfrak{g}^{\varepsilon}}\left(  \widetilde{d}\left(
+\lambda,\varepsilon\right)  \right)  \right)  v_{\lambda}^{+\mathfrak{g}%
+^{\varepsilon}}%
+\]
+(by the definition of "$\left(  n-\nu\right)  $-stratifiable"). Now, define a
+map $d:\mathfrak{h}^{\ast}\times\mathbb{C}\rightarrow T\left(  \mathfrak{n}%
+_{-}\right)  \left[  n-\nu\right]  $ by
+\[
+d\left(  \lambda,\varepsilon\right)  =x\otimes\widetilde{d}\left(
+\lambda,\varepsilon\right)  \ \ \ \ \ \ \ \ \ \ \text{for every }\left(
+\lambda,\varepsilon\right)  \in\mathfrak{h}^{\ast}\times\mathbb{C}.
+\]
+(This is well-defined, since $x\in\mathfrak{g}_{\nu}\subseteq\mathfrak{n}_{-}$
+(since $\nu$ is negative).) This map $d$ is clearly polynomial (since
+$\widetilde{d}$ is a polynomial map), and every $\lambda\in\mathfrak{h}^{\ast
+}$ and every $\varepsilon\in\mathbb{C}$ satisfy%
+\begin{align*}
+\underbrace{\left(  \operatorname*{env}\nolimits_{\mathfrak{g}^{\varepsilon}%
+}\left(  x\otimes y\right)  \right)  }_{=x\cdot\operatorname*{env}%
+\nolimits_{\mathfrak{g}^{\varepsilon}}y}v_{\lambda}^{+\mathfrak{g}%
+^{\varepsilon}}  &  =x\cdot\underbrace{\left(  \operatorname*{env}%
+\nolimits_{\mathfrak{g}^{\varepsilon}}y\right)  v_{\lambda}^{+\mathfrak{g}%
+^{\varepsilon}}}_{=\left(  \operatorname*{env}\nolimits_{\mathfrak{g}%
+^{\varepsilon}}\left(  \widetilde{d}\left(  \lambda,\varepsilon\right)
+\right)  \right)  v_{\lambda}^{+\mathfrak{g}^{\varepsilon}}}%
+=\underbrace{x\cdot\left(  \operatorname*{env}\nolimits_{\mathfrak{g}%
+^{\varepsilon}}\left(  \widetilde{d}\left(  \lambda,\varepsilon\right)
+\right)  \right)  }_{=\operatorname*{env}\nolimits_{\mathfrak{g}^{\varepsilon
+}}\left(  x\otimes\widetilde{d}\left(  \lambda,\varepsilon\right)  \right)
+}v_{\lambda}^{+\mathfrak{g}^{\varepsilon}}\\
+&  =\left(  \operatorname*{env}\nolimits_{\mathfrak{g}^{\varepsilon}%
+}\underbrace{\left(  x\otimes\widetilde{d}\left(  \lambda,\varepsilon\right)
+\right)  }_{=d\left(  \lambda,\varepsilon\right)  }\right)  v_{\lambda
+}^{+\mathfrak{g}^{\varepsilon}}=\left(  \operatorname*{env}%
+\nolimits_{\mathfrak{g}^{\varepsilon}}\left(  d\left(  \lambda,\varepsilon
+\right)  \right)  \right)  v_{\lambda}^{+\mathfrak{g}^{\varepsilon}}.
+\end{align*}
+Hence, $x\otimes y$ is $n$-stratifiable (by the definition of "$n$%
+-stratifiable"). This proves Observation 2.}
+
+We are now going to prove (\ref{lem.invformnondeg.polynomiality2.ind}) by
+induction on $m$:
+
+\textit{Induction base:} We have $T\left(  \mathfrak{g}\right)  \left[
+n,0\right]  =\mathbb{C}\left[  n\right]  $. Hence, every tensor $c\in T\left(
+\mathfrak{g}\right)  \left[  n,0\right]  $ is $\left(  n,0\right)
+$-stratifiable (because we can define the polynomial map $d:\mathfrak{h}%
+^{\ast}\times\mathbb{C}\rightarrow T\left(  \mathfrak{n}_{-}\right)  \left[
+n\right]  $ by%
+\[
+d\left(  \lambda,\varepsilon\right)  =c\ \ \ \ \ \ \ \ \ \ \text{for all
+}\left(  \lambda,\varepsilon\right)  \in\mathfrak{h}^{\ast}\times\mathbb{C}%
+\]
+). In other words, (\ref{lem.invformnondeg.polynomiality2.ind}) is proven for
+$m=0$. In other words, the induction base is complete.
+
+\textit{Induction step:} Let $m\in\mathbb{N}$ be positive. We must show that
+(\ref{lem.invformnondeg.polynomiality2.ind}) holds for this $m$, using the
+assumption that (\ref{lem.invformnondeg.polynomiality2.ind}) holds for $m-1$
+instead of $m$.
+
+Let $n\in\mathbb{Z}$. Let $\pi_{n}:T\left(  \mathfrak{g}\right)  \rightarrow
+T\left(  \mathfrak{g}\right)  \left[  n\right]  $ denote the canonical
+projection of $T\left(  \mathfrak{g}\right)  $ to the $n$-th graded component
+with respect to the internal grading.
+
+Let $c\in T\left(  \mathfrak{g}\right)  \left[  n,m\right]  $. Then, $c\in
+T\left(  \mathfrak{g}\right)  \left[  n,m\right]  \subseteq\mathfrak{g}%
+^{\otimes m}$, and since the $m$-th tensor power is generated by pure tensors,
+this yields that $c$ is a $\mathbb{C}$-linear combination of pure tensors. In
+other words, $c$ is a $\mathbb{C}$-linear combination of finitely many pure
+tensors of the form $x_{1}\otimes x_{2}\otimes...\otimes x_{m}$ with
+$x_{1},x_{2},...,x_{m}\in\mathfrak{g}$. We can WLOG assume that, in each of
+these pure tensors, the elements $x_{1},x_{2},...,x_{m}$ are homogeneous
+(since otherwise we can break each of $x_{1},x_{2},...,x_{m}$ into homogeneous
+components, and thus the pure tensors $x_{1}\otimes x_{2}\otimes...\otimes
+x_{m}$ break into smaller pieces which are still pure tensors). So we can
+write $c$ as a $\mathbb{C}$-linear combination of finitely many pure tensors
+of the form $x_{1}\otimes x_{2}\otimes...\otimes x_{m}$ with
+\textbf{homogeneous }$x_{1},x_{2},...,x_{m}\in\mathfrak{g}$. If we apply the
+projection $\pi_{n}$ to this, then $c$ remains invariant (since $c\in T\left(
+\mathfrak{g}\right)  \left[  n,m\right]  \subseteq T\left(  \mathfrak{g}%
+\right)  \left[  n\right]  $), and the terms of the form $x_{1}\otimes
+x_{2}\otimes...\otimes x_{m}$ with \textbf{homogeneous }$x_{1},x_{2}%
+,...,x_{m}\in\mathfrak{g}$ satisfying $\deg\left(  x_{1}\right)  +\deg\left(
+x_{2}\right)  +...+\deg\left(  x_{m}\right)  =n$ remain invariant as well
+(since they also lie in $T\left(  \mathfrak{g}\right)  \left[  n\right]  $),
+whereas the terms of the form $x_{1}\otimes x_{2}\otimes...\otimes x_{m}$ with
+\textbf{homogeneous }$x_{1},x_{2},...,x_{m}\in\mathfrak{g}$ satisfying
+$\deg\left(  x_{1}\right)  +\deg\left(  x_{2}\right)  +...+\deg\left(
+x_{m}\right)  \neq n$ are mapped to $0$ (since they lie in graded components
+of $T\left(  \mathfrak{g}\right)  $ other than $T\left(  \mathfrak{g}\right)
+\left[  n\right]  $). Hence, we write $c$ as a $\mathbb{C}$-linear combination
+of finitely many pure tensors of the form $x_{1}\otimes x_{2}\otimes...\otimes
+x_{m}$ with \textbf{homogeneous }$x_{1},x_{2},...,x_{m}\in\mathfrak{g}$
+\textbf{satisfying} $\deg\left(  x_{1}\right)  +\deg\left(  x_{2}\right)
++...+\deg\left(  x_{m}\right)  =n$.
+
+Therefore, in proving (\ref{lem.invformnondeg.polynomiality2.ind}), we can
+WLOG assume that $c$ \textbf{is} a pure tensor of the form $x_{1}\otimes
+x_{2}\otimes...\otimes x_{m}$ with homogeneous\textbf{ }$x_{1},x_{2}%
+,...,x_{m}\in\mathfrak{g}$ satisfying $\deg\left(  x_{1}\right)  +\deg\left(
+x_{2}\right)  +...+\deg\left(  x_{m}\right)  =n$ (because, clearly, once Lemma
+\ref{lem.invformnondeg.polynomiality2} is proven for certain values of $c\in
+T\left(  \mathfrak{g}\right)  \left[  n,m\right]  $, it must clearly also hold
+for all their $\mathbb{C}$-linear combinations\footnote{due to Observation
+1}). Let us now assume this.
+
+So we have $c=x_{1}\otimes x_{2}\otimes...\otimes x_{m}$ with
+homogeneous\textbf{ }$x_{1},x_{2},...,x_{m}\in\mathfrak{g}$ satisfying
+$\deg\left(  x_{1}\right)  +\deg\left(  x_{2}\right)  +...+\deg\left(
+x_{m}\right)  =n$. We must now prove that $c$ is $n$-stratifiable.
+
+For every $i\in\left\{  1,2,...,m\right\}  $, let $n_{i}$ be the degree of
+$x_{i}$ (this is well-defined since $x_{i}$ is homogeneous). Thus, $x_{i}%
+\in\mathfrak{g}_{n_{i}}$.
+
+We have%
+\[
+\deg\left(  x_{2}\right)  +\deg\left(  x_{3}\right)  +...+\deg\left(
+x_{m}\right)  =\underbrace{\left(  \deg\left(  x_{1}\right)  +\deg\left(
+x_{2}\right)  +...+\deg\left(  x_{m}\right)  \right)  }_{=n}-\underbrace{\deg
+\left(  x_{1}\right)  }_{=n_{1}}=n-n_{1},
+\]
+so that $x_{2}\otimes x_{3}\otimes...\otimes x_{m}\in T\left(  \mathfrak{g}%
+\right)  \left[  n-n_{1}\right]  $ and thus $x_{2}\otimes x_{3}\otimes
+...\otimes x_{m}\in T\left(  \mathfrak{g}\right)  \left[  n-n_{1},m-1\right]
+$. Since we have assumed that (\ref{lem.invformnondeg.polynomiality2.ind})
+holds for $m-1$ instead of $m$, we can thus apply
+(\ref{lem.invformnondeg.polynomiality2.ind}) to $n-n_{1}$, $m-1$ and
+$x_{2}\otimes x_{3}\otimes...\otimes x_{m}$ instead of $n$, $m$ and $c$. We
+conclude that $x_{2}\otimes x_{3}\otimes...\otimes x_{m}$ is $\left(
+n-n_{1}\right)  $-stratifiable. In other words, there exists a polynomial map
+$\widetilde{d}:\mathfrak{h}^{\ast}\times\mathbb{C}\rightarrow T\left(
+\mathfrak{n}_{-}\right)  \left[  n-n_{1}\right]  $ such that every $\lambda
+\in\mathfrak{h}^{\ast}$ and every $\varepsilon\in\mathbb{C}$ satisfy%
+\[
+\left(  \operatorname*{env}\nolimits_{\mathfrak{g}^{\varepsilon}}\left(
+x_{2}\otimes x_{3}\otimes...\otimes x_{m}\right)  \right)  v_{\lambda
+}^{+\mathfrak{g}^{\varepsilon}}=\left(  \operatorname*{env}%
+\nolimits_{\mathfrak{g}^{\varepsilon}}\left(  \widetilde{d}\left(
+\lambda,\varepsilon\right)  \right)  \right)  v_{\lambda}^{+\mathfrak{g}%
+^{\varepsilon}}.
+\]
+
+
+We notice that $c=x_{1}\otimes x_{2}\otimes...\otimes x_{m}$, so that%
+\begin{align}
+&  \operatorname*{env}\nolimits_{\mathfrak{g}^{\varepsilon}}c\nonumber\\
+&  =x_{1}x_{2}...x_{m}\nonumber\\
+&  =\sum\limits_{i=1}^{m-1}\underbrace{\left(  x_{2}x_{3}...x_{i-1}x_{i}\cdot
+x_{1}\cdot x_{i+1}x_{i+2}...x_{m}-x_{2}x_{3}...x_{i}x_{i+1}\cdot x_{1}\cdot
+x_{i+2}x_{i+3}...x_{m}\right)  }_{=x_{2}x_{3}...x_{i-1}x_{i}\left(
+x_{1}x_{i+1}-x_{i+1}x_{1}\right)  x_{i+2}x_{i+3}...x_{m}}+x_{2}x_{3}%
+...x_{m}\cdot x_{1}\nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{since the sum }\sum\limits_{i=1}^{m-1}\left(  x_{2}x_{3}...x_{i-1}%
+x_{i}\cdot x_{1}\cdot x_{i+1}x_{i+2}...x_{m}-x_{2}x_{3}...x_{i}x_{i+1}\cdot
+x_{1}\cdot x_{i+2}x_{i+3}...x_{m}\right) \\
+\text{telescopes to }x_{1}x_{2}...x_{m}-x_{2}x_{3}...x_{m}\cdot x_{1}%
+\end{array}
+\right) \nonumber\\
+&  =\sum\limits_{i=1}^{m-1}x_{2}x_{3}...x_{i-1}x_{i}\underbrace{\left(
+x_{1}x_{i+1}-x_{i+1}x_{1}\right)  }_{\substack{=\left[  x_{1},x_{i+1}\right]
+^{\varepsilon}\\\text{(since we are in }U\left(  \mathfrak{g}^{\varepsilon
+}\right)  \text{)}}}x_{i+2}x_{i+3}...x_{m}+x_{2}x_{3}...x_{m}\cdot
+x_{1}\nonumber\\
+&  =\sum\limits_{i=1}^{m-1}x_{2}x_{3}...x_{i-1}x_{i}\underbrace{\left[
+x_{1},x_{i+1}\right]  ^{\varepsilon}}_{\substack{=\varepsilon^{\delta
+_{n_{1},0}+\delta_{n_{i+1},0}+1-\delta_{n_{1}+n_{i+1},0}}\left[  x_{i}%
+,x_{i+1}\right]  \\\text{(by (\ref{pf.invformnondeg.g^epsi.2}) (applied to
+}x_{1}\text{ and }x_{i+1}\text{ instead of }x\text{ and }y\text{),}%
+\\\text{since }x_{1}\in\mathfrak{g}_{n_{1}}\text{ and }x_{i+1}\in
+\mathfrak{g}_{n_{i+1}}\text{)}}}x_{i+2}x_{i+3}...x_{m}+x_{2}x_{3}...x_{m}\cdot
+x_{1}\nonumber\\
+&  =\sum\limits_{i=1}^{m-1}\varepsilon^{\delta_{n_{1},0}+\delta_{n_{i+1}%
+,0}+1-\delta_{n_{1}+n_{i+1},0}}\underbrace{x_{2}x_{3}...x_{i-1}x_{i}\left[
+x_{i},x_{i+1}\right]  x_{i+2}x_{i+3}...x_{m}}_{=\operatorname*{env}%
+\nolimits_{\mathfrak{g}^{\varepsilon}}\left(  x_{2}\otimes x_{3}%
+\otimes...\otimes x_{i-1}\otimes x_{i}\otimes\left[  x_{1},x_{i+1}\right]
+\otimes x_{i+2}\otimes x_{i+3}\otimes...\otimes x_{m}\right)  }%
++\underbrace{x_{2}x_{3}...x_{m}}_{=\operatorname*{env}\nolimits_{\mathfrak{g}%
+^{\varepsilon}}\left(  x_{2}\otimes x_{3}\otimes...\otimes x_{m}\right)
+}\cdot x_{1}\nonumber\\
+&  =\sum\limits_{i=1}^{m-1}\varepsilon^{\delta_{n_{1},0}+\delta_{n_{i+1}%
+,0}+1-\delta_{n_{1}+n_{i+1},0}}\operatorname*{env}\nolimits_{\mathfrak{g}%
+^{\varepsilon}}\left(  x_{2}\otimes x_{3}\otimes...\otimes x_{i-1}\otimes
+x_{i}\otimes\left[  x_{1},x_{i+1}\right]  \otimes x_{i+2}\otimes
+x_{i+3}\otimes...\otimes x_{m}\right) \nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ +\operatorname*{env}\nolimits_{\mathfrak{g}%
+^{\varepsilon}}\left(  x_{2}\otimes x_{3}\otimes...\otimes x_{m}\right)  \cdot
+x_{1}. \label{pf.invformnondeg.polynomiality2.big}%
+\end{align}
+
+
+Now, for every $i\in\left\{  1,2,...,m-1\right\}  $, denote the element
+$x_{2}\otimes x_{3}\otimes...\otimes x_{i-1}\otimes x_{i}\otimes\left[
+x_{1},x_{i+1}\right]  \otimes x_{i+2}\otimes x_{i+3}\otimes...\otimes x_{m}$
+by $c_{i}$. It is easily seen that $c_{i}\in T\left(  \mathfrak{g}\right)
+\left[  n,m-1\right]  $. Then, (\ref{pf.invformnondeg.polynomiality2.big})
+rewrites as%
+\begin{align}
+&  \operatorname*{env}\nolimits_{\mathfrak{g}^{\varepsilon}}c\nonumber\\
+&  =\sum\limits_{i=1}^{m-1}\varepsilon^{\delta_{n_{1},0}+\delta_{n_{i+1}%
+,0}+1-\delta_{n_{1}+n_{i+1},0}}\operatorname*{env}\nolimits_{\mathfrak{g}%
+^{\varepsilon}}\left(  c_{i}\right)  +\operatorname*{env}%
+\nolimits_{\mathfrak{g}^{\varepsilon}}\left(  x_{2}\otimes x_{3}%
+\otimes...\otimes x_{m}\right)  \cdot x_{1}.
+\label{pf.invformnondeg.polynomiality2.small}%
+\end{align}
+
+
+For every $i\in\left\{  1,2,...,m-1\right\}  $, we can apply
+(\ref{lem.invformnondeg.polynomiality2.ind}) to $n$, $m-1$ and $c_{i}$ instead
+of $n$, $m$ and $c$ (since $c_{i}\in T\left(  \mathfrak{g}\right)  \left[
+n,m-1\right]  $, and since we have assumed that
+(\ref{lem.invformnondeg.polynomiality2.ind}) holds for $m-1$ instead of $m$).
+We conclude that $c_{i}$ is $n$-stratifiable for every $i\in\left\{
+1,2,...,m-1\right\}  $. In other words, for every $i\in\left\{
+1,2,...,m-1\right\}  $, there exists a polynomial map $\widetilde{d_{i}%
+}:\mathfrak{h}^{\ast}\times\mathbb{C}\rightarrow T\left(  \mathfrak{n}%
+_{-}\right)  \left[  n\right]  $ such that every $\lambda\in\mathfrak{h}%
+^{\ast}$ and every $\varepsilon\in\mathbb{C}$ satisfy%
+\[
+\left(  \operatorname*{env}\nolimits_{\mathfrak{g}^{\varepsilon}}\left(
+c_{i}\right)  \right)  v_{\lambda}^{+\mathfrak{g}^{\varepsilon}}=\left(
+\operatorname*{env}\nolimits_{\mathfrak{g}^{\varepsilon}}\left(
+\widetilde{d_{i}}\left(  \lambda,\varepsilon\right)  \right)  \right)
+v_{\lambda}^{+\mathfrak{g}^{\varepsilon}}.
+\]
+
+
+We now distinguish between three cases:
+
+\textit{Case 1:} We have $n_{1}>0$.
+
+\textit{Case 2:} We have $n_{1}=0$.
+
+\textit{Case 3:} We have $n_{1}<0$.
+
+First, let us consider Case 1. In this case, $n_{1}>0$. Thus, $x_{1}%
+\in\mathfrak{n}_{+}$ (since $x_{1}\in\mathfrak{g}_{n_{1}}$), so that
+$x_{1}v_{\lambda}^{+\mathfrak{g}^{\varepsilon}}\in\mathfrak{n}_{+}%
+^{\varepsilon}v_{\lambda}^{+\mathfrak{g}^{\varepsilon}}=0$ and thus
+$x_{1}v_{\lambda}^{+\mathfrak{g}^{\varepsilon}}=0$. Now,
+(\ref{pf.invformnondeg.polynomiality2.small}) yields%
+\begin{align}
+&  \left(  \operatorname*{env}\nolimits_{\mathfrak{g}^{\varepsilon}}c\right)
+v_{\lambda}^{+\mathfrak{g}^{\varepsilon}}\nonumber\\
+&  =\left(  \sum\limits_{i=1}^{m-1}\varepsilon^{\delta_{n_{1},0}%
++\delta_{n_{i+1},0}+1-\delta_{n_{1}+n_{i+1},0}}\operatorname*{env}%
+\nolimits_{\mathfrak{g}^{\varepsilon}}\left(  c_{i}\right)
++\operatorname*{env}\nolimits_{\mathfrak{g}^{\varepsilon}}\left(  x_{2}\otimes
+x_{3}\otimes...\otimes x_{m}\right)  \cdot x_{1}\right)  v_{\lambda
+}^{+\mathfrak{g}^{\varepsilon}}\nonumber\\
+&  =\sum\limits_{i=1}^{m-1}\varepsilon^{\delta_{n_{1},0}+\delta_{n_{i+1}%
+,0}+1-\delta_{n_{1}+n_{i+1},0}}\underbrace{\left(  \operatorname*{env}%
+\nolimits_{\mathfrak{g}^{\varepsilon}}\left(  c_{i}\right)  \right)
+v_{\lambda}^{+\mathfrak{g}^{\varepsilon}}}_{=\left(  \operatorname*{env}%
+\nolimits_{\mathfrak{g}^{\varepsilon}}\left(  \widetilde{d_{i}}\left(
+\lambda,\varepsilon\right)  \right)  \right)  v_{\lambda}^{+\mathfrak{g}%
+^{\varepsilon}}}+\operatorname*{env}\nolimits_{\mathfrak{g}^{\varepsilon}%
+}\left(  x_{2}\otimes x_{3}\otimes...\otimes x_{m}\right)  \cdot
+\underbrace{x_{1}v_{\lambda}^{+\mathfrak{g}^{\varepsilon}}}_{=0}\nonumber\\
+&  =\sum\limits_{i=1}^{m-1}\varepsilon^{\delta_{n_{1},0}+\delta_{n_{i+1}%
+,0}+1-\delta_{n_{1}+n_{i+1},0}}\left(  \operatorname*{env}%
+\nolimits_{\mathfrak{g}^{\varepsilon}}\left(  \widetilde{d_{i}}\left(
+\lambda,\varepsilon\right)  \right)  \right)  v_{\lambda}^{+\mathfrak{g}%
+^{\varepsilon}}\nonumber\\
+&  =\left(  \operatorname*{env}\nolimits_{\mathfrak{g}^{\varepsilon}}\left(
+\sum\limits_{i=1}^{m-1}\varepsilon^{\delta_{n_{1},0}+\delta_{n_{i+1}%
+,0}+1-\delta_{n_{1}+n_{i+1},0}}\widetilde{d_{i}}\left(  \lambda,\varepsilon
+\right)  \right)  \right)  v_{\lambda}^{+\mathfrak{g}^{\varepsilon}}.
+\label{pf.invformnondeg.polynomiality2.small1}%
+\end{align}
+If we define a map $d:\mathfrak{h}^{\ast}\times\mathbb{C}\rightarrow T\left(
+\mathfrak{n}_{-}\right)  \left[  n\right]  $ by%
+\[
+d\left(  \lambda,\varepsilon\right)  =\sum\limits_{i=1}^{m-1}\varepsilon
+^{\delta_{n_{1},0}+\delta_{n_{i+1},0}+1-\delta_{n_{1}+n_{i+1},0}%
+}\widetilde{d_{i}}\left(  \lambda,\varepsilon\right)
+\ \ \ \ \ \ \ \ \ \ \text{for every }\left(  \lambda,\varepsilon\right)
+\in\mathfrak{h}^{\ast}\times\mathbb{C},
+\]
+then this map $d$ is polynomial (since $\widetilde{d_{i}}$ are polynomial maps
+for all $i$), and (\ref{pf.invformnondeg.polynomiality2.small1}) becomes%
+\begin{align*}
+&  \left(  \operatorname*{env}\nolimits_{\mathfrak{g}^{\varepsilon}}c\right)
+v_{\lambda}^{+\mathfrak{g}^{\varepsilon}}\\
+&  =\left(  \operatorname*{env}\nolimits_{\mathfrak{g}^{\varepsilon}%
+}\underbrace{\left(  \sum\limits_{i=1}^{m-1}\varepsilon^{\delta_{n_{1}%
+,0}+\delta_{n_{i+1},0}+1-\delta_{n_{1}+n_{i+1},0}}\widetilde{d_{i}}\left(
+\lambda,\varepsilon\right)  \right)  }_{=d\left(  \lambda,\varepsilon\right)
+}\right)  v_{\lambda}^{+\mathfrak{g}^{\varepsilon}}=\left(
+\operatorname*{env}\nolimits_{\mathfrak{g}^{\varepsilon}}\left(  d\left(
+\lambda,\varepsilon\right)  \right)  \right)  v_{\lambda}^{+\mathfrak{g}%
+^{\varepsilon}}.
+\end{align*}
+Hence, $c$ is $n$-stratifiable (by the definition of "$n$-stratifiable").
+
+Next, let us consider Case 2. In this case, $n_{1}=0$. Thus, $x_{1}%
+\in\mathfrak{h}$ (since $x_{1}\in\mathfrak{g}_{n_{1}}$), so that
+$x_{1}v_{\lambda}^{+\mathfrak{g}^{\varepsilon}}=\lambda\left(  x_{1}\right)
+v_{\lambda}^{+\mathfrak{g}^{\varepsilon}}$. Now,
+(\ref{pf.invformnondeg.polynomiality2.small}) yields%
+\begin{align}
+&  \left(  \operatorname*{env}\nolimits_{\mathfrak{g}^{\varepsilon}}c\right)
+v_{\lambda}^{+\mathfrak{g}^{\varepsilon}}\nonumber\\
+&  =\left(  \sum\limits_{i=1}^{m-1}\varepsilon^{\delta_{n_{1},0}%
++\delta_{n_{i+1},0}+1-\delta_{n_{1}+n_{i+1},0}}\operatorname*{env}%
+\nolimits_{\mathfrak{g}^{\varepsilon}}\left(  c_{i}\right)
++\operatorname*{env}\nolimits_{\mathfrak{g}^{\varepsilon}}\left(  x_{2}\otimes
+x_{3}\otimes...\otimes x_{m}\right)  \cdot x_{1}\right)  v_{\lambda
+}^{+\mathfrak{g}^{\varepsilon}}\nonumber\\
+&  =\sum\limits_{i=1}^{m-1}\varepsilon^{\delta_{n_{1},0}+\delta_{n_{i+1}%
+,0}+1-\delta_{n_{1}+n_{i+1},0}}\underbrace{\left(  \operatorname*{env}%
+\nolimits_{\mathfrak{g}^{\varepsilon}}\left(  c_{i}\right)  \right)
+v_{\lambda}^{+\mathfrak{g}^{\varepsilon}}}_{=\left(  \operatorname*{env}%
+\nolimits_{\mathfrak{g}^{\varepsilon}}\left(  \widetilde{d_{i}}\left(
+\lambda,\varepsilon\right)  \right)  \right)  v_{\lambda}^{+\mathfrak{g}%
+^{\varepsilon}}}+\operatorname*{env}\nolimits_{\mathfrak{g}^{\varepsilon}%
+}\left(  x_{2}\otimes x_{3}\otimes...\otimes x_{m}\right)  \cdot
+\underbrace{x_{1}v_{\lambda}^{+\mathfrak{g}^{\varepsilon}}}_{=\lambda\left(
+x_{1}\right)  v_{\lambda}^{+\mathfrak{g}^{\varepsilon}}}\nonumber\\
+&  =\sum\limits_{i=1}^{m-1}\varepsilon^{\delta_{n_{1},0}+\delta_{n_{i+1}%
+,0}+1-\delta_{n_{1}+n_{i+1},0}}\left(  \operatorname*{env}%
+\nolimits_{\mathfrak{g}^{\varepsilon}}\left(  \widetilde{d_{i}}\left(
+\lambda,\varepsilon\right)  \right)  \right)  v_{\lambda}^{+\mathfrak{g}%
+^{\varepsilon}}\nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ +\lambda\left(  x_{1}\right)  \underbrace{\left(
+\operatorname*{env}\nolimits_{\mathfrak{g}^{\varepsilon}}\left(  x_{2}\otimes
+x_{3}\otimes...\otimes x_{m}\right)  \right)  v_{\lambda}^{+\mathfrak{g}%
+^{\varepsilon}}}_{=\left(  \operatorname*{env}\nolimits_{\mathfrak{g}%
+^{\varepsilon}}\left(  \widetilde{d}\left(  \lambda,\varepsilon\right)
+\right)  \right)  v_{\lambda}^{+\mathfrak{g}^{\varepsilon}}}\nonumber\\
+&  =\sum\limits_{i=1}^{m-1}\varepsilon^{\delta_{n_{1},0}+\delta_{n_{i+1}%
+,0}+1-\delta_{n_{1}+n_{i+1},0}}\left(  \operatorname*{env}%
+\nolimits_{\mathfrak{g}^{\varepsilon}}\left(  \widetilde{d_{i}}\left(
+\lambda,\varepsilon\right)  \right)  \right)  v_{\lambda}^{+\mathfrak{g}%
+^{\varepsilon}}+\lambda\left(  x_{1}\right)  \left(  \operatorname*{env}%
+\nolimits_{\mathfrak{g}^{\varepsilon}}\left(  \widetilde{d}\left(
+\lambda,\varepsilon\right)  \right)  \right)  v_{\lambda}^{+\mathfrak{g}%
+^{\varepsilon}}\nonumber\\
+&  =\left(  \operatorname*{env}\nolimits_{\mathfrak{g}^{\varepsilon}}\left(
+\sum\limits_{i=1}^{m-1}\varepsilon^{\delta_{n_{1},0}+\delta_{n_{i+1}%
+,0}+1-\delta_{n_{1}+n_{i+1},0}}\widetilde{d_{i}}\left(  \lambda,\varepsilon
+\right)  +\lambda\left(  x_{1}\right)  \widetilde{d}\left(  \lambda
+,\varepsilon\right)  \right)  \right)  v_{\lambda}^{+\mathfrak{g}%
+^{\varepsilon}}. \label{pf.invformnondeg.polynomiality2.small2}%
+\end{align}
+If we define a map $d:\mathfrak{h}^{\ast}\times\mathbb{C}\rightarrow T\left(
+\mathfrak{n}_{-}\right)  \left[  n\right]  $ by%
+\[
+d\left(  \lambda,\varepsilon\right)  =\sum\limits_{i=1}^{m-1}\varepsilon
+^{\delta_{n_{1},0}+\delta_{n_{i+1},0}+1-\delta_{n_{1}+n_{i+1},0}%
+}\widetilde{d_{i}}\left(  \lambda,\varepsilon\right)  +\lambda\left(
+x_{1}\right)  \widetilde{d}\left(  \lambda,\varepsilon\right)
+\ \ \ \ \ \ \ \ \ \ \text{for every }\left(  \lambda,\varepsilon\right)
+\in\mathfrak{h}^{\ast}\times\mathbb{C},
+\]
+then this map $d$ is polynomial (since $\widetilde{d_{i}}$ are polynomial maps
+for all $i$, and since $\widetilde{d}$ is polynomial), and
+(\ref{pf.invformnondeg.polynomiality2.small2}) becomes%
+\begin{align*}
+&  \left(  \operatorname*{env}\nolimits_{\mathfrak{g}^{\varepsilon}}c\right)
+v_{\lambda}^{+\mathfrak{g}^{\varepsilon}}\\
+&  =\left(  \underbrace{\operatorname*{env}\nolimits_{\mathfrak{g}%
+^{\varepsilon}}\left(  \sum\limits_{i=1}^{m-1}\varepsilon^{\delta_{n_{1}%
+,0}+\delta_{n_{i+1},0}+1-\delta_{n_{1}+n_{i+1},0}}\widetilde{d_{i}}\left(
+\lambda,\varepsilon\right)  +\lambda\left(  x_{1}\right)  \widetilde{d}\left(
+\lambda,\varepsilon\right)  \right)  }_{=d\left(  \lambda,\varepsilon\right)
+}\right)  v_{\lambda}^{+\mathfrak{g}^{\varepsilon}}=\left(
+\operatorname*{env}\nolimits_{\mathfrak{g}^{\varepsilon}}\left(  d\left(
+\lambda,\varepsilon\right)  \right)  \right)  v_{\lambda}^{+\mathfrak{g}%
+^{\varepsilon}}.
+\end{align*}
+Hence, $c$ is $n$-stratifiable (by the definition of "$n$-stratifiable").
+
+Now, let us consider Case 3. In this case, $n_{1}<0$. Thus, we can apply
+Observation 2 to $x_{1}$, $x_{2}\otimes x_{3}\otimes...\otimes x_{m}$ and
+$n_{1}$ instead of $x$, $y$ and $\nu$, and conclude that $x_{1}\otimes\left(
+x_{2}\otimes x_{3}\otimes...\otimes x_{m}\right)  $ is $n$-stratifiable (since
+$x_{2}\otimes x_{3}\otimes...\otimes x_{m}$ is $\left(  n-n_{1}\right)
+$-stratifiable). Since $x_{1}\otimes\left(  x_{2}\otimes x_{3}\otimes
+...\otimes x_{m}\right)  =x_{1}\otimes x_{2}\otimes...\otimes x_{m}=c$, this
+shows that $c$ is $n$-stratifiable.
+
+Hence, in each of the cases 1, 2 and 3, we have shown that $c$ is
+$n$-stratifiable. Thus, $c$ is always $n$-stratifiable.
+
+Forget that we fixed $c$. We thus have shown that $c$ is $n$-stratifiable for
+every tensor $c\in T\left(  \mathfrak{g}\right)  \left[  n,m\right]  $. In
+other words, we have proven (\ref{lem.invformnondeg.polynomiality2.ind}) for
+our $m$. This completes the induction step.
+
+Thus, (\ref{lem.invformnondeg.polynomiality2.ind}) is proven by induction.
+
+Now, let $n\in\mathbb{Z}$. Then, every $c\in T\left(  \mathfrak{g}\right)
+\left[  n\right]  $ is a $\mathbb{C}$-linear combination of elements of
+$T\left(  \mathfrak{g}\right)  \left[  n,m\right]  $ for varying
+$m\in\mathbb{N}$ (since $T\left(  \mathfrak{g}\right)  \left[  n\right]
+=\bigoplus\limits_{m\in\mathbb{N}}T\left(  \mathfrak{g}\right)  \left[
+n,m\right]  $), and thus every $c\in T\left(  \mathfrak{g}\right)  \left[
+n\right]  $ is $n$-stratifiable (since
+(\ref{lem.invformnondeg.polynomiality2.ind}) shows that every element of
+$T\left(  \mathfrak{g}\right)  \left[  n,m\right]  $ is $n$-stratifiable, and
+due to Observation 1).
+
+Now forget that we fixed $n$. We have thus proven that for every
+$n\in\mathbb{Z}$, every $c\in T\left(  \mathfrak{g}\right)  \left[  n\right]
+$ is $n$-stratifiable. In other words, we have proved Lemma
+\ref{lem.invformnondeg.polynomiality2}.
+
+\textit{Proof of Lemma \ref{lem.invformnondeg.polynomiality}.} We have
+$e_{\mathbf{i}}^{\varepsilon}\in U\left(  \mathfrak{g}^{\varepsilon}\right)
+\left[  \deg\mathbf{i}\right]  $ and thus $e_{\mathbf{i}}^{\varepsilon
+}v_{\lambda}^{+\mathfrak{g}^{\varepsilon}}\in M_{\lambda}^{+\mathfrak{g}%
+^{\varepsilon}}\left[  \deg\mathbf{i}\right]  $. Similarly, $e_{\mathbf{j}%
+}^{\varepsilon}v_{-\lambda}^{-\mathfrak{g}^{\varepsilon}}\in M_{-\lambda
+}^{-\mathfrak{g}^{\varepsilon}}\left[  \deg\mathbf{j}\right]  $. Hence, if
+$\deg\mathbf{i}+\deg\mathbf{j}\neq0$, then $\left(  e_{\mathbf{i}%
+}^{\varepsilon}v_{\lambda}^{+\mathfrak{g}^{\varepsilon}},e_{\mathbf{j}%
+}^{\varepsilon}v_{-\lambda}^{-\mathfrak{g}^{\varepsilon}}\right)  _{\lambda
+}^{\mathfrak{g}^{\varepsilon}}\in\left(  M_{\lambda}^{+\mathfrak{g}%
+^{\varepsilon}}\left[  \deg\mathbf{i}\right]  ,M_{-\lambda}^{-\mathfrak{g}%
+^{\varepsilon}}\left[  \deg\mathbf{j}\right]  \right)  _{\lambda
+}^{\mathfrak{g}^{\varepsilon}}=0$ (because the form $\left(  \cdot
+,\cdot\right)  _{\lambda}^{\mathfrak{g}^{\varepsilon}}$ is of degree $0$,
+while $\deg\mathbf{i}+\deg\mathbf{j}\neq0$) and thus $\left(  e_{\mathbf{i}%
+}^{\varepsilon}v_{\lambda}^{+\mathfrak{g}^{\varepsilon}},e_{\mathbf{j}%
+}^{\varepsilon}v_{-\lambda}^{-\mathfrak{g}^{\varepsilon}}\right)  _{\lambda
+}^{\mathfrak{g}^{\varepsilon}}=0$. Thus, if $\deg\mathbf{i}+\deg\mathbf{j}%
+\neq0$, then Lemma \ref{lem.invformnondeg.polynomiality} trivially holds
+(because we can then just take $Q_{\mathbf{i},\mathbf{j}}=0$). Thus, for the
+rest of the proof of Lemma \ref{lem.invformnondeg.polynomiality}, we can WLOG
+assume that we \textit{don't} have $\deg\mathbf{i}+\deg\mathbf{j}\neq0$.
+Hence, we have $\deg\mathbf{i}+\deg\mathbf{j}=0$.
+
+Write the sequence $\mathbf{j}$ in the form $\left(  \left(  m_{1}%
+,j_{1}\right)  ,\left(  m_{2},j_{2}\right)  ,...,\left(  m_{k},j_{k}\right)
+\right)  $. Then, $e_{\mathbf{j}}^{\varepsilon}=e_{\left(  m_{1},j_{1}\right)
+}e_{\left(  m_{2},j_{2}\right)  }...e_{\left(  m_{k},j_{k}\right)  }$ and
+$\deg\mathbf{j}=m_{1}+m_{2}+...+m_{k}=m_{k}+m_{k-1}+...+m_{1}$.
+
+Since $e_{\mathbf{j}}^{\varepsilon}=e_{\left(  m_{1},j_{1}\right)  }e_{\left(
+m_{2},j_{2}\right)  }...e_{\left(  m_{k},j_{k}\right)  }$, we have%
+\begin{align}
+&  \left(  e_{\mathbf{i}}^{\varepsilon}v_{\lambda}^{+\mathfrak{g}%
+^{\varepsilon}},e_{\mathbf{j}}^{\varepsilon}v_{-\lambda}^{-\mathfrak{g}%
+^{\varepsilon}}\right)  _{\lambda}^{\mathfrak{g}^{\varepsilon}}\nonumber\\
+&  =\left(  e_{\mathbf{i}}^{\varepsilon}v_{\lambda}^{+\mathfrak{g}%
+^{\varepsilon}},e_{\left(  m_{1},j_{1}\right)  }e_{\left(  m_{2},j_{2}\right)
+}...e_{\left(  m_{k},j_{k}\right)  }v_{-\lambda}^{-\mathfrak{g}^{\varepsilon}%
+}\right)  _{\lambda}^{\mathfrak{g}^{\varepsilon}}\nonumber\\
+&  =\left(  -1\right)  ^{k}\left(  e_{\left(  m_{k},j_{k}\right)  }e_{\left(
+m_{k-1},j_{k-1}\right)  }...e_{\left(  m_{1},j_{1}\right)  }\cdot
+e_{\mathbf{i}}^{\varepsilon}v_{\lambda}^{+\mathfrak{g}^{\varepsilon}%
+},v_{-\lambda}^{-\mathfrak{g}^{\varepsilon}}\right)  _{\lambda}^{\mathfrak{g}%
+^{\varepsilon}}\nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we applied the }\mathfrak{g}%
+\text{-invariance of the form }\left(  \cdot,\cdot\right)  _{\lambda
+}^{\mathfrak{g}^{\varepsilon}}\text{ for a total of }k\text{ times}\right)
+\nonumber\\
+&  =\left(  \left(  -1\right)  ^{k}e_{\left(  m_{k},j_{k}\right)  }e_{\left(
+m_{k-1},j_{k-1}\right)  }...e_{\left(  m_{1},j_{1}\right)  }\cdot
+e_{\mathbf{i}}^{\varepsilon}v_{\lambda}^{+\mathfrak{g}^{\varepsilon}%
+},v_{-\lambda}^{-\mathfrak{g}^{\varepsilon}}\right)  _{\lambda}^{\mathfrak{g}%
+^{\varepsilon}}. \label{pf.invformnondeg.polynomiality.1}%
+\end{align}
+
+
+Write the sequence $\mathbf{i}$ in the form $\left(  \left(  n_{1}%
+,i_{1}\right)  ,\left(  n_{2},i_{2}\right)  ,...,\left(  n_{\ell},i_{\ell
+}\right)  \right)  $. Then, $e_{\mathbf{i}}^{\varepsilon}=e_{\left(
+n_{1},i_{1}\right)  }e_{\left(  n_{2},i_{2}\right)  }...e_{\left(  n_{\ell
+},i_{\ell}\right)  }$ and $\deg\mathbf{i}=n_{1}+n_{2}+...+n_{\ell}$. Now,%
+\begin{align}
+&  \left(  -1\right)  ^{k}e_{\left(  m_{k},j_{k}\right)  }e_{\left(
+m_{k-1},j_{k-1}\right)  }...e_{\left(  m_{1},j_{1}\right)  }\cdot
+\underbrace{e_{\mathbf{i}}^{\varepsilon}}_{=e_{\left(  n_{1},i_{1}\right)
+}e_{\left(  n_{2},i_{2}\right)  }...e_{\left(  n_{\ell},i_{\ell}\right)  }%
+}\nonumber\\
+&  =\left(  -1\right)  ^{k}e_{\left(  m_{k},j_{k}\right)  }e_{\left(
+m_{k-1},j_{k-1}\right)  }...e_{\left(  m_{1},j_{1}\right)  }\cdot e_{\left(
+n_{1},i_{1}\right)  }e_{\left(  n_{2},i_{2}\right)  }...e_{\left(  n_{\ell
+},i_{\ell}\right)  }\nonumber\\
+&  =\operatorname*{env}\nolimits_{\mathfrak{g}^{\varepsilon}}\left(  \left(
+-1\right)  ^{k}e_{\left(  m_{k},j_{k}\right)  }\otimes e_{\left(
+m_{k-1},j_{k-1}\right)  }\otimes...\otimes e_{\left(  m_{1},j_{1}\right)
+}\otimes e_{\left(  n_{1},i_{1}\right)  }\otimes e_{\left(  n_{2}%
+,i_{2}\right)  }\otimes...\otimes e_{\left(  n_{\ell},i_{\ell}\right)
+}\right)  . \label{pf.invformnondeg.polynomiality.2}%
+\end{align}
+Denote the tensor $\left(  -1\right)  ^{k}e_{\left(  m_{k},j_{k}\right)
+}\otimes e_{\left(  m_{k-1},j_{k-1}\right)  }\otimes...\otimes e_{\left(
+m_{1},j_{1}\right)  }\otimes e_{\left(  n_{1},i_{1}\right)  }\otimes
+e_{\left(  n_{2},i_{2}\right)  }\otimes...\otimes e_{\left(  n_{\ell},i_{\ell
+}\right)  }$ by $c$. Then, (\ref{pf.invformnondeg.polynomiality.2}) rewrites
+as%
+\begin{equation}
+\left(  -1\right)  ^{k}e_{\left(  m_{k},j_{k}\right)  }e_{\left(
+m_{k-1},j_{k-1}\right)  }...e_{\left(  m_{1},j_{1}\right)  }\cdot
+e_{\mathbf{i}}^{\varepsilon}=\operatorname*{env}\nolimits_{\mathfrak{g}%
+^{\varepsilon}}c. \label{pf.invformnondeg.polynomiality.3}%
+\end{equation}
+
+
+Since
+\begin{align*}
+c  &  =\left(  -1\right)  ^{k}e_{\left(  m_{k},j_{k}\right)  }\otimes
+e_{\left(  m_{k-1},j_{k-1}\right)  }\otimes...\otimes e_{\left(  m_{1}%
+,j_{1}\right)  }\otimes e_{\left(  n_{1},i_{1}\right)  }\otimes e_{\left(
+n_{2},i_{2}\right)  }\otimes...\otimes e_{\left(  n_{\ell},i_{\ell}\right)
+}\\
+&  \in T\left(  \mathfrak{g}\right)  \left[  m_{k}+m_{k-1}+...+m_{1}%
++n_{1}+n_{2}+...+n_{\ell}\right] \\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{since }e_{\left(  m_{k},j_{k}\right)  }\in\mathfrak{g}_{m_{k}}\text{,
+}e_{\left(  m_{k-1},j_{k-1}\right)  }\in\mathfrak{g}_{m_{k-1}}\text{,
+}...\text{, }e_{\left(  m_{1},j_{1}\right)  }\in\mathfrak{g}_{m_{1}}\\
+\text{and }e_{\left(  n_{1},i_{1}\right)  }\in\mathfrak{g}_{n_{1}}\text{,
+}e_{\left(  n_{2},i_{2}\right)  }\in\mathfrak{g}_{n_{2}}\text{, }...\text{,
+}e_{\left(  n_{\ell},i_{\ell}\right)  }\in\mathfrak{g}_{n_{\ell}}%
+\end{array}
+\right) \\
+&  =T\left(  \mathfrak{g}\right)  \left[  0\right] \\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }\underbrace{m_{k}+m_{k-1}%
++...+m_{1}}_{=\deg\mathbf{j}}+\underbrace{n_{1}+n_{2}+...+n_{\ell}}%
+_{=\deg\mathbf{i}}=\deg\mathbf{j}+\deg\mathbf{i}=\deg\mathbf{i}+\deg
+\mathbf{j}=0\right)  ,
+\end{align*}
+we can apply Lemma \ref{lem.invformnondeg.polynomiality2} to $n=0$. We
+conclude that there exists a polynomial map $d:\mathfrak{h}^{\ast}%
+\times\mathbb{C}\rightarrow T\left(  \mathfrak{n}_{-}\right)  \left[
+0\right]  $ such that every $\lambda\in\mathfrak{h}^{\ast}$ and every
+$\varepsilon\in\mathbb{C}$ satisfy%
+\begin{equation}
+\left(  \operatorname*{env}\nolimits_{\mathfrak{g}^{\varepsilon}}c\right)
+v_{\lambda}^{+\mathfrak{g}^{\varepsilon}}=\left(  \operatorname*{env}%
+\nolimits_{\mathfrak{g}^{\varepsilon}}\left(  d\left(  \lambda,\varepsilon
+\right)  \right)  \right)  v_{\lambda}^{+\mathfrak{g}^{\varepsilon}}.
+\label{pf.invformnondeg.polynomiality.4}%
+\end{equation}
+Since $T\left(  \mathfrak{n}_{-}\right)  \left[  0\right]  =\mathbb{C}$
+(because $\mathfrak{n}_{-}$ is concentrated in negative degrees), this
+polynomial map $d:\mathfrak{h}^{\ast}\times\mathbb{C}\rightarrow T\left(
+\mathfrak{n}_{-}\right)  \left[  0\right]  $ is a polynomial function
+$d:\mathfrak{h}^{\ast}\times\mathbb{C}\rightarrow\mathbb{C}$. Denoting the
+function by $Q_{\mathbf{i},\mathbf{j}}$. Then, every $\lambda\in
+\mathfrak{h}^{\ast}$ and every $\varepsilon\in\mathbb{C}$ satisfy $d\left(
+\lambda,\varepsilon\right)  =Q_{\mathbf{i},\mathbf{j}}\left(  \lambda
+,\varepsilon\right)  $ and thus $\operatorname*{env}\nolimits_{\mathfrak{g}%
+^{\varepsilon}}\left(  d\left(  \lambda,\varepsilon\right)  \right)
+=\operatorname*{env}\nolimits_{\mathfrak{g}^{\varepsilon}}\left(
+Q_{\mathbf{i},\mathbf{j}}\left(  \lambda,\varepsilon\right)  \right)
+=Q_{\mathbf{i},\mathbf{j}}\left(  \lambda,\varepsilon\right)  $ (since
+$Q_{\mathbf{i},\mathbf{j}}\left(  \lambda,\varepsilon\right)  \in\mathbb{C}$).
+Thus, every $\lambda\in\mathfrak{h}^{\ast}$ and every $\varepsilon
+\in\mathbb{C}$ satisfy%
+\begin{align}
+\left(  \operatorname*{env}\nolimits_{\mathfrak{g}^{\varepsilon}}c\right)
+v_{\lambda}^{+\mathfrak{g}^{\varepsilon}}  &  =\underbrace{\left(
+\operatorname*{env}\nolimits_{\mathfrak{g}^{\varepsilon}}\left(  d\left(
+\lambda,\varepsilon\right)  \right)  \right)  }_{=Q_{\mathbf{i},\mathbf{j}%
+}\left(  \lambda,\varepsilon\right)  }v_{\lambda}^{+\mathfrak{g}^{\varepsilon
+}}\ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{pf.invformnondeg.polynomiality.4}%
+)}\right) \nonumber\\
+&  =Q_{\mathbf{i},\mathbf{j}}\left(  \lambda,\varepsilon\right)  \cdot
+v_{\lambda}^{+\mathfrak{g}^{\varepsilon}}.
+\label{pf.invformnondeg.polynomiality.5}%
+\end{align}
+
+
+Now, every $\lambda\in\mathfrak{h}^{\ast}$ and every $\varepsilon\in
+\mathbb{C}$ satisfy%
+\begin{align*}
+\left(  e_{\mathbf{i}}^{\varepsilon}v_{\lambda}^{+\mathfrak{g}^{\varepsilon}%
+},e_{\mathbf{j}}^{\varepsilon}v_{-\lambda}^{-\mathfrak{g}^{\varepsilon}%
+}\right)  _{\lambda}^{\mathfrak{g}^{\varepsilon}}  &  =\left(
+\underbrace{\left(  -1\right)  ^{k}e_{\left(  m_{k},j_{k}\right)  }e_{\left(
+m_{k-1},j_{k-1}\right)  }...e_{\left(  m_{1},j_{1}\right)  }\cdot
+e_{\mathbf{i}}^{\varepsilon}}_{\substack{=\operatorname*{env}%
+\nolimits_{\mathfrak{g}^{\varepsilon}}c\\\text{(by
+(\ref{pf.invformnondeg.polynomiality.3}))}}}v_{\lambda}^{+\mathfrak{g}%
+^{\varepsilon}},v_{-\lambda}^{-\mathfrak{g}^{\varepsilon}}\right)  _{\lambda
+}^{\mathfrak{g}^{\varepsilon}}\ \ \ \ \ \ \ \ \ \ \left(  \text{by
+(\ref{pf.invformnondeg.polynomiality.1})}\right) \\
+&  =\left(  \underbrace{\left(  \operatorname*{env}\nolimits_{\mathfrak{g}%
+^{\varepsilon}}c\right)  v_{\lambda}^{+\mathfrak{g}^{\varepsilon}}%
+}_{\substack{=Q_{\mathbf{i},\mathbf{j}}\left(  \lambda,\varepsilon\right)
+\cdot v_{\lambda}^{+\mathfrak{g}^{\varepsilon}}\\\text{(by
+(\ref{pf.invformnondeg.polynomiality.5}))}}},v_{-\lambda}^{-\mathfrak{g}%
+^{\varepsilon}}\right)  _{\lambda}^{\mathfrak{g}^{\varepsilon}}=\left(
+Q_{\mathbf{i},\mathbf{j}}\left(  \lambda,\varepsilon\right)  \cdot v_{\lambda
+}^{+\mathfrak{g}^{\varepsilon}},v_{-\lambda}^{-\mathfrak{g}^{\varepsilon}%
+}\right)  _{\lambda}^{\mathfrak{g}^{\varepsilon}}\\
+&  =Q_{\mathbf{i},\mathbf{j}}\left(  \lambda,\varepsilon\right)
+\cdot\underbrace{\left(  v_{\lambda}^{+\mathfrak{g}^{\varepsilon}}%
+,v_{-\lambda}^{-\mathfrak{g}^{\varepsilon}}\right)  _{\lambda}^{\mathfrak{g}%
+^{\varepsilon}}}_{=1}=Q_{\mathbf{i},\mathbf{j}}\left(  \lambda,\varepsilon
+\right)  .
+\end{align*}
+This proves Lemma \ref{lem.invformnondeg.polynomiality}.
+
+We shall now take a closer look at the polynomial $Q_{\mathbf{i},\mathbf{j}}$
+of Lemma \ref{lem.invformnondeg.polynomiality}:
+
+\begin{lemma}
+\label{lem.invformnondeg.polynomiality3}Let $\mathbf{i}\in\operatorname*{Seq}%
+\nolimits_{-}E$ and $\mathbf{j}\in\operatorname*{Seq}\nolimits_{+}E$. Consider
+the polynomial function $Q_{\mathbf{i},\mathbf{j}}:\mathfrak{h}^{\ast}%
+\times\mathbb{C}\rightarrow\mathbb{C}$ of Lemma
+\ref{lem.invformnondeg.polynomiality}. Then, every $\lambda\in\mathfrak{h}%
+^{\ast}$ and every nonzero $\varepsilon\in\mathbb{C}$ satisfy%
+\[
+Q_{\mathbf{i},\mathbf{j}}\left(  \lambda,\varepsilon\right)  =\varepsilon
+^{\operatorname*{len}\mathbf{i}+\operatorname*{len}\mathbf{j}}Q_{\mathbf{i}%
+,\mathbf{j}}\left(  \lambda/\varepsilon^{2},1\right)  .
+\]
+
 \end{lemma}
 
-I am tempted to formulate this lemma as follows:%
+Note that Lemma \ref{lem.invformnondeg.polynomiality3} does not really need
+the conditions $\mathbf{i}\in\operatorname*{Seq}\nolimits_{-}E$ and
+$\mathbf{j}\in\operatorname*{Seq}\nolimits_{+}E$. It is sufficient that
+$\mathbf{i}\in\operatorname*{Seq}E$ is such that no element $\left(
+n,i\right)  $ of the sequence $\mathbf{i}$ satisfies $n=0$, and that a similar
+condition holds for $\mathbf{j}$. But since we will only use Lemma
+\ref{lem.invformnondeg.polynomiality3} in the case when $\mathbf{i}%
+\in\operatorname*{Seq}\nolimits_{-}E$ and $\mathbf{j}\in\operatorname*{Seq}%
+\nolimits_{+}E$, we would not gain much from thus generalizing it.
+
+\textit{Proof of Lemma \ref{lem.invformnondeg.polynomiality3}.} We recall that
+the definition of $Q_{\mathbf{i},\mathbf{j}}$ said that%
+\begin{equation}
+\left(  e_{\mathbf{i}}^{\varepsilon}v_{\lambda}^{+\mathfrak{g}^{\varepsilon}%
+},e_{\mathbf{j}}^{\varepsilon}v_{-\lambda}^{-\mathfrak{g}^{\varepsilon}%
+}\right)  _{\lambda}^{\mathfrak{g}^{\varepsilon}}=Q_{\mathbf{i},\mathbf{j}%
+}\left(  \lambda,\varepsilon\right)  \ \ \ \ \ \ \ \ \ \ \text{for all
+}\lambda\in\mathfrak{h}^{\ast}\text{ and }\varepsilon\in\mathbb{C}.
+\label{pf.invformnondeg.polynomiality3.1}%
+\end{equation}
+
+
+Let $\lambda\in\mathfrak{h}^{\ast}$ be arbitrary, and let $\varepsilon
+\in\mathbb{C}$ be nonzero. Since $\varepsilon\neq0$, the Lie algebra
+isomorphism $J_{\varepsilon}:\mathfrak{g}^{\varepsilon}\rightarrow
+\mathfrak{g}$ exists and satisfies $\left(  \lambda/\varepsilon^{2}\right)
+\circ J_{\varepsilon}=\lambda$. Hence, we have an isomorphism $J_{\varepsilon
+}:\left(  \mathfrak{g}^{\varepsilon},\lambda\right)  \rightarrow\left(
+\mathfrak{g},\lambda/\varepsilon^{2}\right)  $ in the category of pairs of a
+$\mathbb{Z}$-graded Lie algebra and a linear form on its $0$-th graded
+component (where the morphisms in this category are defined in the obvious
+way). This isomorphism induces a corresponding isomorphism $M_{\lambda
+}^{+\mathfrak{g}^{\varepsilon}}\rightarrow M_{\lambda/\varepsilon^{2}%
+}^{+\mathfrak{g}}$ of Verma modules which sends $xv_{\lambda}^{+\mathfrak{g}%
+^{\varepsilon}}$ to $\left(  U\left(  J_{\varepsilon}\right)  \right)  \left(
+x\right)  v_{\lambda/\varepsilon^{2}}^{+\mathfrak{g}}$ for every $x\in
+U\left(  \mathfrak{g}^{\varepsilon}\right)  $ (where $U\left(  J_{\varepsilon
+}\right)  $ is the isomorphism $U\left(  \mathfrak{g}^{\varepsilon}\right)
+\rightarrow U\left(  \mathfrak{g}\right)  $ canonically induced by the Lie
+algebra isomorphism $\mathfrak{g}^{\varepsilon}\rightarrow\mathfrak{g}$).
+Similarly, we get an isomorphism $M_{-\lambda}^{-\mathfrak{g}^{\varepsilon}%
+}\rightarrow M_{-\lambda/\varepsilon^{2}}^{-\mathfrak{g}}$ of Verma modules
+which sends $yv_{-\lambda}^{-\mathfrak{g}^{\varepsilon}}$ to $\left(  U\left(
+J_{\varepsilon}\right)  \right)  \left(  y\right)  v_{-\lambda/\varepsilon
+^{2}}^{-\mathfrak{g}}$ for every $y\in U\left(  \mathfrak{g}^{\varepsilon
+}\right)  $. Since the bilinear form $\left(  \cdot,\cdot\right)  _{\mu
+}^{\mathfrak{e}}$ depends functorially on a $\mathbb{Z}$-graded Lie algebra
+$\mathfrak{e}$ and a linear form $\mu:\mathfrak{e}_{0}^{\ast}\rightarrow
+\mathbb{C}$, these isomorphisms leave the bilinear form invariant, i. e., we
+have%
+\[
+\left(  \left(  U\left(  J_{\varepsilon}\right)  \right)  \left(  x\right)
+v_{\lambda/\varepsilon^{2}}^{+\mathfrak{g}},\left(  U\left(  J_{\varepsilon
+}\right)  \right)  \left(  y\right)  v_{-\lambda/\varepsilon^{2}%
+}^{-\mathfrak{g}}\right)  _{\lambda/\varepsilon^{2}}^{\mathfrak{g}}=\left(
+xv_{\lambda}^{+\mathfrak{g}^{\varepsilon}},yv_{-\lambda}^{-\mathfrak{g}%
+^{\varepsilon}}\right)  _{\lambda}^{\mathfrak{g}^{\varepsilon}}%
+\]
+for every $x\in U\left(  \mathfrak{g}^{\varepsilon}\right)  $ and $y\in
+U\left(  \mathfrak{g}^{\varepsilon}\right)  $. Applied to $x=e_{\mathbf{i}%
+}^{\varepsilon}$ and $y=e_{\mathbf{j}}^{\varepsilon}$, this yields%
+\[
+\left(  \left(  U\left(  J_{\varepsilon}\right)  \right)  \left(
+e_{\mathbf{i}}^{\varepsilon}\right)  v_{\lambda/\varepsilon^{2}}%
+^{+\mathfrak{g}},\left(  U\left(  J_{\varepsilon}\right)  \right)  \left(
+e_{\mathbf{j}}^{\varepsilon}\right)  v_{-\lambda/\varepsilon^{2}%
+}^{-\mathfrak{g}}\right)  _{\lambda/\varepsilon^{2}}^{\mathfrak{g}}=\left(
+e_{\mathbf{i}}^{\varepsilon}v_{\lambda}^{+\mathfrak{g}^{\varepsilon}%
+},e_{\mathbf{j}}^{\varepsilon}v_{-\lambda}^{-\mathfrak{g}^{\varepsilon}%
+}\right)  _{\lambda}^{\mathfrak{g}^{\varepsilon}}=Q_{\mathbf{i},\mathbf{j}%
+}\left(  \lambda,\varepsilon\right)
+\]
+(by the definition of $Q_{\mathbf{i},\mathbf{j}}$).
+
+But we have $\left(  U\left(  J_{\varepsilon}\right)  \right)  \left(
+e_{\mathbf{i}}^{\varepsilon}\right)  =\varepsilon^{\operatorname*{len}%
+\mathbf{i}}e_{\mathbf{i}}^{1}$\ \ \ \ \footnote{\textit{Proof.} Write the
+sequence $\mathbf{i}$ in the form $\left(  \left(  n_{1},i_{1}\right)
+,\left(  n_{2},i_{2}\right)  ,...,\left(  n_{\ell},i_{\ell}\right)  \right)
+$. Since $\mathbf{i}\in\operatorname*{Seq}\nolimits_{-}E$, all of the numbers
+$n_{1}$, $n_{2}$, $...$, $n_{\ell}$ are negative, so that none of them is $0$.
+As a consequence, $\delta_{n_{u},0}=0$ for every $u\in\left\{  1,2,...,\ell
+\right\}  $. By the definition of $J_{\varepsilon}$, we have%
 \begin{align*}
-\beta\alpha_{1}\alpha_{2}...\alpha_{\ell}v_{\lambda}^{+}  &  =\sum
-\limits_{p=1}^{\ell}\lambda\left(  \left[  \beta,\alpha_{p}\right]  \right)
-\alpha_{1}\alpha_{2}...\alpha_{p-1}\alpha_{p+1}\alpha_{p+2}...\alpha_{\ell
-}v_{\lambda}^{+}+o\left(  \varepsilon\right)  v_{\lambda}^{+}\\
-&  \ \ \ \ \ \ \ \ \ \ \text{for all }\ell\in\mathbb{N}\text{, }\alpha
-_{1},\alpha_{2},...,\alpha_{\ell}\in\mathfrak{n}_{-}\text{ and }\beta
-\in\mathbb{N}_{+},
+J_{\varepsilon}\left(  e_{n_{u},i_{u}}\right)   &  =\underbrace{\varepsilon
+^{1+\delta_{n_{u},0}}}_{\substack{=\varepsilon\\\text{(since }\delta_{n_{u}%
+,0}=0\text{)}}}e_{n_{u},i_{u}}\ \ \ \ \ \ \ \ \ \ \left(  \text{since
+}e_{n_{u},i_{u}}\in\mathfrak{g}_{n_{u}}\right) \\
+&  =\varepsilon e_{n_{u},i_{u}}%
 \end{align*}
-where $o\left(  \varepsilon\right)  $ means "terms divisible by $\varepsilon
-$". However, this version of the statement does not really show how the
-$o\left(  \varepsilon\right)  $ part depends on $\lambda$, whereas we will use
-that this dependence is polynomial.
-
-[...]
-
-\textit{Proof of Lemma \ref{lem.invformnondeg.form1}.} We will prove Lemma
-\ref{lem.invformnondeg.form1} by induction over $\ell$:
-
-\textit{Induction base:} For $\ell=0$, the left hand side of
-(\ref{prop.det.US.pf.3}) is $\beta v_{\lambda}^{+}=0$ (since $\beta
-\in\overline{\mathfrak{n}_{+}}$), and the right hand side of
-(\ref{prop.det.US.pf.3}) is $\left(  \text{empty sum}\right)  =0$. Thus, for
-$\ell=0$, the equality (\ref{prop.det.US.pf.3}) holds. This completes the
-induction base.
-
-\textit{Induction step:} Let $m\in\mathbb{N}$ be positive. Assume that
-(\ref{prop.det.US.pf.3}) holds for $\ell=m-1$. We now must show that
-(\ref{prop.det.US.pf.3}) holds for $\ell=m$.
-
-Let $\alpha_{1},\alpha_{2},...,\alpha_{m}\in\overline{\mathfrak{n}_{-}}$ and
-$\beta\in\overline{\mathfrak{n}_{+}}$.
-
-Since (\ref{prop.det.US.pf.3}) holds for $\ell=m-1$, we can apply
-(\ref{prop.det.US.pf.3}) to $m-1$ and $\left(  \alpha_{2},\alpha
-_{3},...,\alpha_{m}\right)  $ instead of $\ell$ and $\left(  \alpha_{1}%
-,\alpha_{2},...,\alpha_{\ell}\right)  $, and thus obtain%
+for every $u\in\left\{  1,2,...,\ell\right\}  $.
+\par
+Now, $e_{\mathbf{i}}^{\varepsilon}$ is defined as the product $e_{n_{1},i_{1}%
+}e_{n_{2},i_{2}}...e_{n_{\ell},i_{\ell}}$ in $U\left(  \mathfrak{g}%
+^{\varepsilon}\right)  $, and $e_{\mathbf{i}}^{1}$ is defined as the product
+$e_{n_{1},i_{1}}e_{n_{2},i_{2}}...e_{n_{\ell},i_{\ell}}$ in $U\left(
+\mathfrak{g}^{1}\right)  $. Hence,%
 \begin{align*}
-\beta\alpha_{2}\alpha_{3}...\alpha_{m}v_{\lambda}^{+}  &  =\sum\limits_{p=1}%
-^{m-1}\lambda\left(  \left[  \beta,\alpha_{p+1}\right]  \right)  \alpha
-_{2}\alpha_{3}...\alpha_{p-1+1}\alpha_{p+1+1}\alpha_{p+2+1}...\alpha
-_{m}v_{\lambda}^{+}\\
-&  =\sum\limits_{p=2}^{m}\lambda\left(  \left[  \beta,\alpha_{p}\right]
-\right)  \alpha_{2}\alpha_{3}...\alpha_{p-1}\alpha_{p+1}\alpha_{p+2}%
-...\alpha_{m}v_{\lambda}^{+}\\
-&  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we substituted }p\text{ for
-}p+1\text{ in the sum}\right)  .
+\left(  U\left(  J_{\varepsilon}\right)  \right)  \left(  e_{\mathbf{i}%
+}^{\varepsilon}\right)   &  =\left(  U\left(  J_{\varepsilon}\right)  \right)
+\left(  e_{n_{1},i_{1}}e_{n_{2},i_{2}}...e_{n_{\ell},i_{\ell}}\right)
+\ \ \ \ \ \ \ \ \ \ \left(  \text{since }e_{\mathbf{i}}^{\varepsilon}%
+=e_{n_{1},i_{1}}e_{n_{2},i_{2}}...e_{n_{\ell},i_{\ell}}\right) \\
+&  =J_{\varepsilon}\left(  e_{n_{1},i_{1}}\right)  J_{\varepsilon}\left(
+e_{n_{2},i_{2}}\right)  ...J_{\varepsilon}\left(  e_{n_{\ell},i_{\ell}}\right)
+\\
+&  =\varepsilon e_{n_{1},i_{1}}\cdot\varepsilon e_{n_{2},i_{2}}\cdot
+...\cdot\varepsilon e_{n_{\ell},i_{\ell}}\ \ \ \ \ \ \ \ \ \ \left(
+\text{since }J_{\varepsilon}\left(  e_{n_{u},i_{u}}\right)  =\varepsilon
+e_{n_{u},i_{u}}\text{ for every }u\in\left\{  1,2,...,\ell\right\}  \right) \\
+&  =\varepsilon^{\ell}\underbrace{e_{n_{1},i_{1}}e_{n_{2},i_{2}}...e_{n_{\ell
+},i_{\ell}}}_{=e_{\mathbf{i}}^{1}}=\varepsilon^{\ell}e_{\mathbf{i}}%
+^{1}=\varepsilon^{\operatorname*{len}\mathbf{i}}e_{\mathbf{i}}^{1}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }\ell=\operatorname*{len}%
+\mathbf{i}\text{ by the definition of }\operatorname*{len}\mathbf{i}\right)  ,
 \end{align*}
+qed.} and similarly $\left(  U\left(  J_{\varepsilon}\right)  \right)  \left(
+e_{\mathbf{j}}^{\varepsilon}\right)  =\varepsilon^{\operatorname*{len}%
+\mathbf{j}}e_{\mathbf{j}}^{1}$. Hence,%
+\begin{align*}
+&  \left(  \left(  U\left(  J_{\varepsilon}\right)  \right)  \left(
+e_{\mathbf{i}}^{\varepsilon}\right)  v_{\lambda/\varepsilon^{2}}%
+^{+\mathfrak{g}},\left(  U\left(  J_{\varepsilon}\right)  \right)  \left(
+e_{\mathbf{j}}^{\varepsilon}\right)  v_{-\lambda/\varepsilon^{2}%
+}^{-\mathfrak{g}}\right)  _{\lambda/\varepsilon^{2}}^{\mathfrak{g}}\\
+&  =\left(  \varepsilon^{\operatorname*{len}\mathbf{i}}e_{\mathbf{i}}%
+^{1}v_{\lambda/\varepsilon^{2}}^{+\mathfrak{g}},\varepsilon
+^{\operatorname*{len}\mathbf{j}}e_{\mathbf{j}}^{1}v_{-\lambda/\varepsilon^{2}%
+}^{-\mathfrak{g}}\right)  _{\lambda/\varepsilon^{2}}^{\mathfrak{g}%
+}=\varepsilon^{\operatorname*{len}\mathbf{i}+\operatorname*{len}\mathbf{j}%
+}\left(  e_{\mathbf{i}}^{1}v_{\lambda/\varepsilon^{2}}^{+\mathfrak{g}%
+},e_{\mathbf{j}}^{1}v_{-\lambda/\varepsilon^{2}}^{-\mathfrak{g}}\right)
+_{\lambda/\varepsilon^{2}}^{\mathfrak{g}}=\varepsilon^{\operatorname*{len}%
+\mathbf{i}+\operatorname*{len}\mathbf{j}}\underbrace{\left(  e_{\mathbf{i}%
+}^{1}v_{\lambda/\varepsilon^{2}}^{+\mathfrak{g}^{1}},e_{\mathbf{j}}%
+^{1}v_{-\lambda/\varepsilon^{2}}^{-\mathfrak{g}^{1}}\right)  _{\lambda
+/\varepsilon^{2}}^{\mathfrak{g}^{1}}}_{\substack{=Q_{\mathbf{i},\mathbf{j}%
+}\left(  \lambda/\varepsilon^{2},1\right)  \\\text{(by
+(\ref{pf.invformnondeg.polynomiality3.1}), applied to }\lambda/\varepsilon
+^{1}\text{ and }1\\\text{instead of }\lambda\text{ and }\varepsilon\text{)}%
+}}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }\mathfrak{g}=\mathfrak{g}%
+^{1}\right) \\
+&  =\varepsilon^{\operatorname*{len}\mathbf{i}+\operatorname*{len}\mathbf{j}%
+}Q_{\mathbf{i},\mathbf{j}}\left(  \lambda/\varepsilon^{2},1\right)  .
+\end{align*}
+This proves Lemma \ref{lem.invformnondeg.polynomiality3}.
+
+Here is the consequence of Lemmas \ref{lem.invformnondeg.polynomiality} and
+\ref{lem.invformnondeg.polynomiality3} that we will actually use:
+
+\begin{corollary}
+\label{cor.invformnondeg.polynomiality}Let $n\in\mathbb{N}$. Let
+$\operatorname*{LEN}n=\sum\limits_{\substack{\mathbf{i}\in\operatorname*{Seq}%
+\nolimits_{+}E;\\\deg\mathbf{i}=-n}}\operatorname*{len}\mathbf{i=}%
+\sum\limits_{\substack{\mathbf{j}\in\operatorname*{Seq}\nolimits_{+}%
+E;\\\deg\mathbf{j}=n}}\operatorname*{len}\mathbf{j}$ (we are using the fact
+that $\sum\limits_{\substack{\mathbf{i}\in\operatorname*{Seq}\nolimits_{+}%
+E;\\\deg\mathbf{i}=-n}}\operatorname*{len}\mathbf{i=}\sum
+\limits_{\substack{\mathbf{j}\in\operatorname*{Seq}\nolimits_{+}%
+E;\\\deg\mathbf{j}=n}}\operatorname*{len}\mathbf{j}$, which we proved above).
+
+Then, there exists a polynomial function $Q_{n}:\mathfrak{h}^{\ast}%
+\times\mathbb{C}\rightarrow\mathbb{C}$ such that every $\lambda\in
+\mathfrak{h}^{\ast}$ and every $\varepsilon\in\mathbb{C}$ satisfy%
+\[
+\det\left(  \left(  \cdot,\cdot\right)  _{\lambda,n}^{\mathfrak{g}%
+^{\varepsilon}}\right)  =Q_{n}\left(  \lambda,\varepsilon\right)  .
+\]
+This function $Q_{n}$ satisfies%
+\[
+Q_{n}\left(  \lambda,\varepsilon\right)  =\varepsilon^{2\operatorname*{LEN}%
+n}Q_{n}\left(  \lambda/\varepsilon^{2},1\right)  \ \ \ \ \ \ \ \ \ \ \text{for
+every }\lambda\in\mathfrak{h}^{\ast}\text{ and every nonzero }\varepsilon
+\in\mathbb{C}.
+\]
+
+\end{corollary}
+
+\textit{Proof of Corollary \ref{cor.invformnondeg.polynomiality}.} For any
+$\mathbf{i}\in\operatorname*{Seq}\nolimits_{-}E$ satisfying $\deg
+\mathbf{i}=-n$, and any $\mathbf{j}\in\operatorname*{Seq}\nolimits_{+}E$
+satisfying $\deg\mathbf{j}=n$, consider the polynomial function $Q_{\mathbf{i}%
+,\mathbf{j}}:\mathfrak{h}^{\ast}\times\mathbb{C}\rightarrow\mathbb{C}$ of
+Lemma \ref{lem.invformnondeg.polynomiality}. Define a polynomial function
+$Q_{n}:\mathfrak{h}^{\ast}\times\mathbb{C}\rightarrow\mathbb{C}$ by%
+\[
+Q_{n}=\det\left(  \left(  Q_{\mathbf{i},\mathbf{j}}\right)
+_{\substack{\mathbf{i}\in\operatorname*{Seq}\nolimits_{-}E;\ \mathbf{j}%
+\in\operatorname*{Seq}\nolimits_{+}E;\\\deg\mathbf{i}=-n;\ \deg\mathbf{j}%
+=n}}\right)  .
+\]
+Then, every $\lambda\in\mathfrak{h}^{\ast}$ and every $\varepsilon
+\in\mathbb{C}$ satisfy%
+\begin{align*}
+Q_{n}\left(  \lambda,\varepsilon\right)   &  =\det\left(  \left(
+Q_{\mathbf{i},\mathbf{j}}\left(  \lambda,\varepsilon\right)  \right)
+_{\substack{\mathbf{i}\in\operatorname*{Seq}\nolimits_{-}E;\ \mathbf{j}%
+\in\operatorname*{Seq}\nolimits_{+}E;\\\deg\mathbf{i}=-n;\ \deg\mathbf{j}%
+=n}}\right)  =\det\left(  \left(  \left(  e_{\mathbf{i}}^{\varepsilon
+}v_{\lambda}^{+\mathfrak{g}^{\varepsilon}},e_{\mathbf{j}}^{\varepsilon
+}v_{-\lambda}^{-\mathfrak{g}^{\varepsilon}}\right)  _{\lambda,n}%
+^{\mathfrak{g}^{\varepsilon}}\right)  _{\substack{\mathbf{i}\in
+\operatorname*{Seq}\nolimits_{-}E;\ \mathbf{j}\in\operatorname*{Seq}%
+\nolimits_{+}E;\\\deg\mathbf{i}=-n;\ \deg\mathbf{j}=n}}\right) \\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{since Lemma \ref{lem.invformnondeg.polynomiality} yields}\\
+Q_{\mathbf{i},\mathbf{j}}\left(  \lambda,\varepsilon\right)  =\left(
+e_{\mathbf{i}}^{\varepsilon}v_{\lambda}^{+\mathfrak{g}^{\varepsilon}%
+},e_{\mathbf{j}}^{\varepsilon}v_{-\lambda}^{-\mathfrak{g}^{\varepsilon}%
+}\right)  _{\lambda}^{\mathfrak{g}^{\varepsilon}}=\left(  e_{\mathbf{i}%
+}^{\varepsilon}v_{\lambda}^{+\mathfrak{g}^{\varepsilon}},e_{\mathbf{j}%
+}^{\varepsilon}v_{-\lambda}^{-\mathfrak{g}^{\varepsilon}}\right)  _{\lambda
+,n}^{\mathfrak{g}^{\varepsilon}}\\
+\text{(since }\deg\mathbf{i}=-n\text{ yields }e_{\mathbf{i}}^{\varepsilon}\in
+U\left(  \mathfrak{g}^{\varepsilon}\right)  \left[  -n\right]  \text{ and thus
+}e_{\mathbf{i}}^{\varepsilon}v_{\lambda}^{+\mathfrak{g}^{\varepsilon}}\in
+M_{\lambda}^{+\mathfrak{g}^{\varepsilon}}\left[  -n\right] \\
+\text{and similarly }e_{\mathbf{j}}^{\varepsilon}v_{-\lambda}^{-\mathfrak{g}%
+^{\varepsilon}}\in M_{-\lambda}^{-\mathfrak{g}^{\varepsilon}}\left[  n\right]
+\text{)}%
+\end{array}
+\right) \\
+&  =\det\left(  \left(  \cdot,\cdot\right)  _{\lambda,n}^{\mathfrak{g}%
+^{\varepsilon}}\right)  .
+\end{align*}
+We have thus proven that every $\lambda\in\mathfrak{h}^{\ast}$ and every
+$\varepsilon\in\mathbb{C}$ satisfy $\det\left(  \left(  \cdot,\cdot\right)
+_{\lambda,n}^{\mathfrak{g}^{\varepsilon}}\right)  =Q_{n}\left(  \lambda
+,\varepsilon\right)  $.
+
+Now, it remains to show that this function $Q_{n}$ satisfies $Q_{n}\left(
+\lambda,\varepsilon\right)  =\varepsilon^{2\operatorname*{LEN}n}Q_{n}\left(
+\lambda/\varepsilon^{2},1\right)  $ for every $\lambda\in\mathfrak{h}^{\ast}$
+and every nonzero $\varepsilon\in\mathbb{C}$. In order to do this, we let
+$\lambda\in\mathfrak{h}^{\ast}$ be arbitrary and $\varepsilon\in\mathbb{C}$ be
+nonzero. Then,
+\begin{align}
+Q_{n}\left(  \lambda,\varepsilon\right)   &  =\det\left(  \left(
+Q_{\mathbf{i},\mathbf{j}}\left(  \lambda,\varepsilon\right)  \right)
+_{\substack{\mathbf{i}\in\operatorname*{Seq}\nolimits_{-}E;\ \mathbf{j}%
+\in\operatorname*{Seq}\nolimits_{+}E;\\\deg\mathbf{i}=-n;\ \deg\mathbf{j}%
+=n}}\right)  =\det\left(  \left(  \varepsilon^{\operatorname*{len}\mathbf{i}%
+}\varepsilon^{\operatorname*{len}\mathbf{j}}Q_{\mathbf{i},\mathbf{j}}\left(
+\lambda/\varepsilon^{2},1\right)  \right)  _{\substack{\mathbf{i}%
+\in\operatorname*{Seq}\nolimits_{-}E;\ \mathbf{j}\in\operatorname*{Seq}%
+\nolimits_{+}E;\\\deg\mathbf{i}=-n;\ \deg\mathbf{j}=n}}\right)
+\label{pf.invformnondeg.polynomiality5.1}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{since Lemma \ref{lem.invformnondeg.polynomiality3} yields}\\
+Q_{\mathbf{i},\mathbf{j}}\left(  \lambda,\varepsilon\right)  =\varepsilon
+^{\operatorname*{len}\mathbf{i}+\operatorname*{len}\mathbf{j}}Q_{\mathbf{i}%
+,\mathbf{j}}\left(  \lambda/\varepsilon^{2},1\right)  =\varepsilon
+^{\operatorname*{len}\mathbf{i}}\varepsilon^{\operatorname*{len}\mathbf{j}%
+}Q_{\mathbf{i},\mathbf{j}}\left(  \lambda/\varepsilon^{2},1\right)
+\end{array}
+\right)  .\nonumber
+\end{align}
+
+
+Now, recall that if we multiply a row of a square matrix by some scalar, then
+the determinant of the matrix is also multiplied by the same scalar. A similar
+fact holds for the columns. Thus,
+\begin{align*}
+&  \det\left(  \left(  \varepsilon^{\operatorname*{len}\mathbf{i}}%
+\varepsilon^{\operatorname*{len}\mathbf{j}}Q_{\mathbf{i},\mathbf{j}}\left(
+\lambda/\varepsilon^{2},1\right)  \right)  _{\substack{\mathbf{i}%
+\in\operatorname*{Seq}\nolimits_{-}E;\ \mathbf{j}\in\operatorname*{Seq}%
+\nolimits_{+}E;\\\deg\mathbf{i}=-n;\ \deg\mathbf{j}=n}}\right) \\
+&  =\left(  \prod\limits_{\substack{\mathbf{i}\in\operatorname*{Seq}%
+\nolimits_{-}E;\\\deg\mathbf{i}=-n}}\varepsilon^{\operatorname*{len}%
+\mathbf{i}}\right)  \cdot\left(  \prod\limits_{\substack{\mathbf{j}%
+\in\operatorname*{Seq}\nolimits_{+}E;\\\deg\mathbf{j}=n}}\varepsilon
+^{\operatorname*{len}\mathbf{j}}\right)  \cdot\det\left(  \left(
+Q_{\mathbf{i},\mathbf{j}}\left(  \lambda/\varepsilon^{2},1\right)  \right)
+_{\substack{\mathbf{i}\in\operatorname*{Seq}\nolimits_{-}E;\ \mathbf{j}%
+\in\operatorname*{Seq}\nolimits_{+}E;\\\deg\mathbf{i}=-n;\ \deg\mathbf{j}%
+=n}}\right)
+\end{align*}
+(because the matrix $\left(  \varepsilon^{\operatorname*{len}\mathbf{i}%
+}\varepsilon^{\operatorname*{len}\mathbf{j}}Q_{\mathbf{i},\mathbf{j}}\left(
+\lambda/\varepsilon^{2},1\right)  \right)  _{\substack{\mathbf{i}%
+\in\operatorname*{Seq}\nolimits_{-}E;\ \mathbf{j}\in\operatorname*{Seq}%
+\nolimits_{+}E;\\\deg\mathbf{i}=-n;\ \deg\mathbf{j}=n}}$ is obtained from the
+matrix $\left(  Q_{\mathbf{i},\mathbf{j}}\left(  \lambda/\varepsilon
+^{2},1\right)  \right)  _{\substack{\mathbf{i}\in\operatorname*{Seq}%
+\nolimits_{-}E;\ \mathbf{j}\in\operatorname*{Seq}\nolimits_{+}E;\\\deg
+\mathbf{i}=-n;\ \deg\mathbf{j}=n}}$ by multiplying every row $\mathbf{i}$ by
+the scalar $\varepsilon^{\operatorname*{len}\mathbf{i}}$ and multiplying every
+row $\mathbf{j}$ by the scalar $\varepsilon^{\operatorname*{len}\mathbf{j}}$).
+Hence, (\ref{pf.invformnondeg.polynomiality5.1}) becomes%
+\begin{equation}
+Q_{n}\left(  \lambda,\varepsilon\right)  =\left(  \prod
+\limits_{\substack{\mathbf{i}\in\operatorname*{Seq}\nolimits_{-}%
+E;\\\deg\mathbf{i}=-n}}\varepsilon^{\operatorname*{len}\mathbf{i}}\right)
+\cdot\left(  \prod\limits_{\substack{\mathbf{j}\in\operatorname*{Seq}%
+\nolimits_{+}E;\\\deg\mathbf{j}=n}}\varepsilon^{\operatorname*{len}\mathbf{j}%
+}\right)  \cdot\det\left(  \left(  Q_{\mathbf{i},\mathbf{j}}\left(
+\lambda/\varepsilon^{2},1\right)  \right)  _{\substack{\mathbf{i}%
+\in\operatorname*{Seq}\nolimits_{-}E;\ \mathbf{j}\in\operatorname*{Seq}%
+\nolimits_{+}E;\\\deg\mathbf{i}=-n;\ \deg\mathbf{j}=n}}\right)  .
+\label{pf.invformnondeg.polynomiality5.3}%
+\end{equation}
+
+
+Now, since $\operatorname*{LEN}n=\sum\limits_{\substack{\mathbf{i}%
+\in\operatorname*{Seq}\nolimits_{-}E;\\\deg\mathbf{i}=-n}}\operatorname*{len}%
+\mathbf{i}$, we have $\varepsilon^{\operatorname*{LEN}n}=\prod
+\limits_{\substack{\mathbf{i}\in\operatorname*{Seq}\nolimits_{-}%
+E;\\\deg\mathbf{i}=-n}}\varepsilon^{\operatorname*{len}\mathbf{i}}$. Also,
+since $\operatorname*{LEN}n=\sum\limits_{\substack{\mathbf{j}\in
+\operatorname*{Seq}\nolimits_{+}E;\\\deg\mathbf{j}=-n}}\operatorname*{len}%
+\mathbf{j}$, we have $\varepsilon^{\operatorname*{LEN}n}=\prod
+\limits_{\substack{\mathbf{j}\in\operatorname*{Seq}\nolimits_{+}%
+E;\\\deg\mathbf{j}=n}}\varepsilon^{\operatorname*{len}\mathbf{j}}$. Hence,
+(\ref{pf.invformnondeg.polynomiality5.3}) becomes%
+\begin{align}
+&  Q_{n}\left(  \lambda,\varepsilon\right) \nonumber\\
+&  =\underbrace{\left(  \prod\limits_{\substack{\mathbf{i}\in
+\operatorname*{Seq}\nolimits_{-}E;\\\deg\mathbf{i}=-n}}\varepsilon
+^{\operatorname*{len}\mathbf{i}}\right)  }_{=\varepsilon^{\operatorname*{LEN}%
+n}}\cdot\underbrace{\left(  \prod\limits_{\substack{\mathbf{j}\in
+\operatorname*{Seq}\nolimits_{+}E;\\\deg\mathbf{j}=n}}\varepsilon
+^{\operatorname*{len}\mathbf{j}}\right)  }_{=\varepsilon^{\operatorname*{LEN}%
+n}}\cdot\det\left(  \left(  Q_{\mathbf{i},\mathbf{j}}\left(  \lambda
+/\varepsilon^{2},1\right)  \right)  _{\substack{\mathbf{i}\in
+\operatorname*{Seq}\nolimits_{-}E;\ \mathbf{j}\in\operatorname*{Seq}%
+\nolimits_{+}E;\\\deg\mathbf{i}=-n;\ \deg\mathbf{j}=n}}\right) \nonumber\\
+&  =\underbrace{\varepsilon^{\operatorname*{LEN}n}\varepsilon
+^{\operatorname*{LEN}n}}_{=\varepsilon^{2\operatorname*{LEN}n}}\cdot
+\det\left(  \left(  Q_{\mathbf{i},\mathbf{j}}\left(  \lambda/\varepsilon
+^{2},1\right)  \right)  _{\substack{\mathbf{i}\in\operatorname*{Seq}%
+\nolimits_{-}E;\ \mathbf{j}\in\operatorname*{Seq}\nolimits_{+}E;\\\deg
+\mathbf{i}=-n;\ \deg\mathbf{j}=n}}\right) \nonumber\\
+&  =\varepsilon^{2\operatorname*{LEN}n}\cdot\det\left(  \left(  Q_{\mathbf{i}%
+,\mathbf{j}}\left(  \lambda/\varepsilon^{2},1\right)  \right)
+_{\substack{\mathbf{i}\in\operatorname*{Seq}\nolimits_{-}E;\ \mathbf{j}%
+\in\operatorname*{Seq}\nolimits_{+}E;\\\deg\mathbf{i}=-n;\ \deg\mathbf{j}%
+=n}}\right)  . \label{pf.invformnondeg.polynomiality5.4}%
+\end{align}
+
+
+On the other hand,%
+\[
+Q_{n}\left(  \lambda/\varepsilon^{2},1\right)  =\det\left(  \left(
+Q_{\mathbf{i},\mathbf{j}}\left(  \lambda/\varepsilon^{2},1\right)  \right)
+_{\substack{\mathbf{i}\in\operatorname*{Seq}\nolimits_{-}E;\ \mathbf{j}%
+\in\operatorname*{Seq}\nolimits_{+}E;\\\deg\mathbf{i}=-n;\ \deg\mathbf{j}%
+=n}}\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }Q_{n}=\det\left(
+\left(  Q_{\mathbf{i},\mathbf{j}}\right)  _{\substack{\mathbf{i}%
+\in\operatorname*{Seq}\nolimits_{-}E;\ \mathbf{j}\in\operatorname*{Seq}%
+\nolimits_{+}E;\\\deg\mathbf{i}=-n;\ \deg\mathbf{j}=n}}\right)  \right)  .
+\]
+Thus, (\ref{pf.invformnondeg.polynomiality5.4}) becomes%
+\begin{align*}
+&  Q_{n}\left(  \lambda,\varepsilon\right) \\
+&  =\varepsilon^{2\operatorname*{LEN}n}\cdot\underbrace{\det\left(  \left(
+Q_{\mathbf{i},\mathbf{j}}\left(  \lambda/\varepsilon^{2},1\right)  \right)
+_{\substack{\mathbf{i}\in\operatorname*{Seq}\nolimits_{-}E;\ \mathbf{j}%
+\in\operatorname*{Seq}\nolimits_{+}E;\\\deg\mathbf{i}=-n;\ \deg\mathbf{j}%
+=n}}\right)  }_{=Q_{n}\left(  \lambda/\varepsilon^{2},1\right)  }%
+=\varepsilon^{2\operatorname*{LEN}n}\cdot Q_{n}\left(  \lambda/\varepsilon
+^{2},1\right)  .
+\end{align*}
+We have thus proven that $Q_{n}\left(  \lambda,\varepsilon\right)
+=\varepsilon^{2\operatorname*{LEN}n}Q_{n}\left(  \lambda/\varepsilon
+^{2},1\right)  $ for every $\lambda\in\mathfrak{h}^{\ast}$ and every nonzero
+$\varepsilon\in\mathbb{C}$. This concludes the proof of Corollary
+\ref{cor.invformnondeg.polynomiality}.
+
+\subsubsection{Proof of Theorem \ref{thm.invformnondeg}: On leading terms of
+pseudo-homogeneous polynomial maps}
+
+Now, an easy lemma:
+
+\begin{lemma}
+\label{lem.invformnondeg.elemen}Let $V$ be a finite-dimensional $\mathbb{C}%
+$-vector space. Let $k\in\mathbb{N}$. Let $\phi:V\times\mathbb{C}%
+\rightarrow\mathbb{C}$ be a polynomial function such that every $\lambda\in V$
+and every nonzero $\varepsilon\in\mathbb{C}$ satisfy%
+\[
+\phi\left(  \lambda,\varepsilon\right)  =\varepsilon^{2k}\phi\left(
+\lambda/\varepsilon^{2},1\right)  .
+\]
+Then:
+
+\textbf{(a)} The polynomial function
+\[
+V\rightarrow\mathbb{C},\ \ \ \ \ \ \ \ \ \ \lambda\mapsto\phi\left(
+\lambda,0\right)
+\]
+is homogeneous of degree $k$.
+
+\textbf{(b)} For every integer $n>k$, the $n$-th homogeneous component of the
+polynomial function%
+\[
+V\rightarrow\mathbb{C},\ \ \ \ \ \ \ \ \ \ \lambda\mapsto\phi\left(
+\lambda,1\right)
+\]
+is zero.
+
+\textbf{(c)} The $k$-th homogeneous component of the polynomial function%
+\[
+V\rightarrow\mathbb{C},\ \ \ \ \ \ \ \ \ \ \lambda\mapsto\phi\left(
+\lambda,1\right)
+\]
+is the polynomial function%
+\[
+V\rightarrow\mathbb{C},\ \ \ \ \ \ \ \ \ \ \lambda\mapsto\phi\left(
+\lambda,0\right)  .
+\]
+
+\end{lemma}
+
+\textit{Proof of Lemma \ref{lem.invformnondeg.elemen}.} \textbf{(a)} Let
+$\left(  v_{1},v_{2},...,v_{n}\right)  $ be a basis of the vector space
+$V^{\ast}$. Let $\pi_{V}:V\times\mathbb{C}\rightarrow V$ and $\pi_{\mathbb{C}%
+}:V\times\mathbb{C}\rightarrow\mathbb{C}$ be the canonical projections. Then,
+$\left(  v_{1}\circ\pi_{V},v_{2}\circ\pi_{V},...,v_{n}\circ\pi_{V}%
+,\pi_{\mathbb{C}}\right)  $ is a basis of the vector space $\left(
+V\times\mathbb{C}\right)  ^{\ast}$.
+
+Since $\phi$ is a polynomial function, there exists a polynomial
+$P\in\mathbb{C}\left[  X_{1},X_{2},...,X_{n},X_{n+1}\right]  $ such that every
+$w\in V\times C$ satisfies%
+\[
+\phi\left(  w\right)  =P\left(  \left(  v_{1}\circ\pi_{1}\right)  \left(
+w\right)  ,\left(  v_{2}\circ\pi_{2}\right)  \left(  w\right)  ,...,\left(
+v_{n}\circ\pi_{n}\right)  \left(  w\right)  ,\pi_{\mathbb{C}}\left(  w\right)
+\right)  .
+\]
+In other words, every $\left(  \lambda,\varepsilon\right)  \in V\times
+\mathbb{C}$ satisfies%
+\begin{equation}
+\phi\left(  \lambda,\varepsilon\right)  =P\left(  v_{1}\left(  \lambda\right)
+,v_{2}\left(  \lambda\right)  ,...,v_{n}\left(  \lambda\right)  ,\varepsilon
+\right)  . \label{pf.invformnondeg.elemen.1}%
+\end{equation}
+
+
+Now, for every $\left(  x_{1},x_{2},...,x_{n}\right)  \in\mathbb{C}^{n}$ and
+nonzero $\varepsilon\in\mathbb{C}$, we have
+\begin{equation}
+P\left(  x_{1},x_{2},...,x_{n},\varepsilon\right)  =\varepsilon^{2k}P\left(
+x_{1}/\varepsilon^{2},x_{2}/\varepsilon^{2},...,x_{n}/\varepsilon
+^{2},1\right)  . \label{pf.invformnondeg.elemen.2}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{pf.invformnondeg.elemen.2}).} Let $\left(
+x_{1},x_{2},...,x_{n}\right)  \in\mathbb{C}^{n}$ be arbitrary, and let
+$\varepsilon\in\mathbb{C}$ be nonzero.
+\par
+Let $\lambda\in V$ be a vector satisfying%
+\[
+v_{i}\left(  \lambda\right)  =x_{i}\ \ \ \ \ \ \ \ \ \ \text{for every }%
+i\in\left\{  1,2,...,n\right\}
+\]
+(such a vector $\lambda$ exists since $\left(  v_{1},v_{2},...,v_{n}\right)  $
+is a basis of $V^{\ast}$). Then,%
+\begin{align*}
+P\left(  x_{1},x_{2},...,x_{n},\varepsilon\right)   &  =P\left(  v_{1}\left(
+\lambda\right)  ,v_{2}\left(  \lambda\right)  ,...,v_{n}\left(  \lambda
+\right)  ,\varepsilon\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }%
+x_{i}=v_{i}\left(  \lambda\right)  \text{ for every }i\in\left\{
+1,2,...,n\right\}  \right) \\
+&  =\phi\left(  \lambda,\varepsilon\right)  \ \ \ \ \ \ \ \ \ \ \left(
+\text{by (\ref{pf.invformnondeg.elemen.1})}\right) \\
+&  =\varepsilon^{2k}\underbrace{\phi\left(  \lambda/\varepsilon^{2},1\right)
+}_{\substack{=P\left(  v_{1}\left(  \lambda/\varepsilon^{2}\right)
+,v_{2}\left(  \lambda/\varepsilon^{2}\right)  ,...,v_{n}\left(  \lambda
+/\varepsilon^{2}\right)  ,1\right)  \\\text{(by
+(\ref{pf.invformnondeg.elemen.1}), applied to }\left(  \lambda/\varepsilon
+^{2},1\right)  \text{ instead of }\left(  \lambda,\varepsilon\right)
+\text{)}}}\\
+&  =\varepsilon^{2k}P\left(  v_{1}\left(  \lambda/\varepsilon^{2}\right)
+,v_{2}\left(  \lambda/\varepsilon^{2}\right)  ,...,v_{n}\left(  \lambda
+/\varepsilon^{2}\right)  ,1\right) \\
+&  =\varepsilon^{2k}P\left(  x_{1}/\varepsilon^{2},x_{2}/\varepsilon
+^{2},...,x_{n}/\varepsilon^{2},1\right) \\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }v_{i}\left(  \lambda
+/\varepsilon^{2}\right)  =\underbrace{v_{i}\left(  \lambda\right)  }_{=x_{i}%
+}/\varepsilon^{2}=x_{i}/\varepsilon^{2}\text{ for every }i\in\left\{
+1,2,...,n\right\}  \right)  .
+\end{align*}
+This proves (\ref{pf.invformnondeg.elemen.2}).}
+
+Now, since $P\in\mathbb{C}\left[  X_{1},X_{2},...,X_{n},X_{n+1}\right]
+\cong\left(  \mathbb{C}\left[  X_{1},X_{2},...,X_{n}\right]  \right)  \left[
+X_{n+1}\right]  $, we can write the polynomial $P$ in the form $P=\sum
+\limits_{i=0}^{d}P_{i}\cdot X_{n+1}^{i}$ for some $d\in\mathbb{N}$ and some
+polynomials $P_{0}$, $P_{1}$, $...$, $P_{d}$ in $\mathbb{C}\left[  X_{1}%
+,X_{2},...,X_{n}\right]  $. Consider this $d$ and these $P_{0}$, $P_{1}$,
+$...$, $P_{d}$.
+
+For every $i\in\left\{  0,1,...,d\right\}  $ and every $j\in\mathbb{N}$, let
+$Q_{i,j}$ be the $j$-th homogeneous components of the polynomial $P_{i}$.
+Then, $P_{i}=\sum\limits_{j\in\mathbb{N}}Q_{i,j}$ for every $i\in\left\{
+0,1,...,d\right\}  $, and each $Q_{i,j}$ is homogeneous of degree $j$.
+
+Hence,%
+\begin{equation}
+P=\sum\limits_{i=0}^{d}\underbrace{P_{i}}_{=\sum\limits_{j\in\mathbb{N}%
+}Q_{i,j}}\cdot X_{n+1}^{i}=\sum\limits_{i=0}^{d}\sum\limits_{j\in\mathbb{N}%
+}Q_{i,j}X_{n+1}^{i}. \label{pf.invformnondeg.elemen.3a}%
+\end{equation}
 
 
 Now,%
+\begin{equation}
+Q_{u,v}=0\ \ \ \ \ \ \ \ \ \ \text{for all }\left(  u,v\right)  \in\left\{
+0,1,...,d\right\}  \times\mathbb{N}\text{ which don't satisfy }%
+u+2v=2k.\label{pf.invformnondeg.elemen.4}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{pf.invformnondeg.elemen.4}).} Let $\left(
+u,v\right)  \in\left\{  0,1,...,d\right\}  \times\mathbb{N}$ be such that
+$u+2v\neq2k$. Let $\left(  x_{1},x_{2},...,x_{n}\right)  \in\mathbb{C}^{n}$
+and $\varepsilon\in\mathbb{C}\diagdown\left\{  0\right\}  $. Then,
+$\varepsilon$ is nonzero, and we have%
 \begin{align*}
-\beta\alpha_{1}\alpha_{2}...\alpha_{m}v_{\lambda}^{+}  &  =\underbrace{\beta
-\alpha_{1}}_{=\alpha_{1}\beta+\left[  \beta,\alpha_{1}\right]  }\alpha
-_{2}\alpha_{3}...\alpha_{m}v_{\lambda}^{+}=\left(  \alpha_{1}\beta+\left[
-\beta,\alpha_{1}\right]  \right)  \alpha_{2}\alpha_{3}...\alpha_{m}v_{\lambda
-}^{+}\\
-&  =\alpha_{1}\underbrace{\beta\alpha_{2}\alpha_{3}...\alpha_{m}v_{\lambda
-}^{+}}_{\substack{=\sum\limits_{p=2}^{m}\lambda\left(  \left[  \beta
-,\alpha_{p}\right]  \right)  \alpha_{2}\alpha_{3}...\alpha_{p-1}\alpha
-_{p+1}\alpha_{p+2}...\alpha_{m}v_{\lambda}^{+}}}+\underbrace{\left[
-\beta,\alpha_{1}\right]  \alpha_{2}\alpha_{3}...\alpha_{m}}_{\substack{=\alpha
-_{2}\alpha_{3}...\alpha_{m}\left[  \beta,\alpha_{1}\right]  \\\text{(since
-}\beta\in\overline{\mathfrak{n}_{+}}\text{ and }\alpha_{1}\in\overline
-{\mathfrak{n}_{-}}\text{, so that}\\\left[  \beta,\alpha_{1}\right]
-\in\left[  \overline{\mathfrak{n}_{+}},\overline{\mathfrak{n}_{-}}\right]
-\subseteq\overline{\mathfrak{h}}\subseteq Z\left(  \mathfrak{g}\right)
-\text{)}}}v_{\lambda}^{+}\\
-&  =\underbrace{\alpha_{1}\sum\limits_{p=2}^{m}\lambda\left(  \left[
-\beta,\alpha_{p}\right]  \right)  \alpha_{2}\alpha_{3}...\alpha_{p-1}%
-\alpha_{p+1}\alpha_{p+2}...\alpha_{m}v_{\lambda}^{+}}_{=\sum\limits_{p=2}%
-^{m}\lambda\left(  \left[  \beta,\alpha_{p}\right]  \right)  \alpha_{1}%
-\alpha_{2}\alpha_{3}...\alpha_{p-1}\alpha_{p+1}\alpha_{p+2}...\alpha
-_{m}v_{\lambda}^{+}}+\alpha_{2}\alpha_{3}...\alpha_{m}\underbrace{\left[
-\beta,\alpha_{1}\right]  v_{\lambda}^{+}}_{=\lambda\left(  \left[
-\beta,\alpha_{1}\right]  \right)  v_{\lambda}^{+}}\\
-&  =\sum\limits_{p=2}^{m}\lambda\left(  \left[  \beta,\alpha_{p}\right]
-\right)  \alpha_{1}\alpha_{2}\alpha_{3}...\alpha_{p-1}\alpha_{p+1}\alpha
-_{p+2}...\alpha_{m}v_{\lambda}^{+}+\lambda\left(  \left[  \beta,\alpha
-_{1}\right]  \right)  \alpha_{2}\alpha_{3}...\alpha_{m}v_{\lambda}^{+}\\
-&  =\sum\limits_{p=1}^{m}\lambda\left(  \left[  \beta,\alpha_{p}\right]
-\right)  \alpha_{1}\alpha_{2}\alpha_{3}...\alpha_{p-1}\alpha_{p+1}\alpha
-_{p+2}...\alpha_{m}v_{\lambda}^{+}\\
-&  =\sum\limits_{p=1}^{m}\lambda\left(  \left[  \beta,\alpha_{p}\right]
-\right)  \alpha_{1}\alpha_{2}...\alpha_{p-1}\alpha_{p+1}\alpha_{p+2}%
-...\alpha_{m}v_{\lambda}^{+}.
+P\left(  x_{1},x_{2},...,x_{n},1/\varepsilon\right)   &  =\sum\limits_{i=0}%
+^{d}\sum\limits_{j\in\mathbb{N}}Q_{i,j}\left(  x_{1},x_{2},...,x_{n}\right)
+\underbrace{\left(  1/\varepsilon\right)  ^{i}}_{=\varepsilon^{d-i}%
+/\varepsilon^{d}}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }P=\sum
+\limits_{i=0}^{d}\sum\limits_{j\in\mathbb{N}}Q_{i,j}X_{n+1}^{i}\right)  \\
+&  =\sum\limits_{i=0}^{d}\sum\limits_{j\in\mathbb{N}}Q_{i,j}\left(
+x_{1},x_{2},...,x_{n}\right)  \varepsilon^{d-i}/\varepsilon^{d}\\
+&  =\dfrac{1}{\varepsilon^{d}}\sum\limits_{i=0}^{d}\sum\limits_{j\in
+\mathbb{N}}Q_{i,j}\left(  x_{1},x_{2},...,x_{n}\right)  \varepsilon^{d-i}%
 \end{align*}
-Thus, (\ref{prop.det.US.pf.3}) holds for $\ell=m$. This completes the
-induction step. Thus, (\ref{prop.det.US.pf.3}) is proven.
-
-[...]
-
-\textit{Proof of Proposition \ref{prop.det.US}.} Consider the $\mathbb{C}%
-\left[  \varepsilon\right]  $-Lie algebra $\mathfrak{g}\left[  \varepsilon
-\right]  $ (this is defined as $\mathfrak{g}\otimes\mathbb{C}\left[
-\varepsilon\right]  $, where $\mathbb{C}\left[  \varepsilon\right]  $ is the
-$\mathbb{C}$-algebra of all polynomials in an indeterminate $\varepsilon$).
-
-Let $\widetilde{\mathfrak{g}}\subseteq\mathfrak{g}\left[  \varepsilon\right]
-$ be the Lie subalgebra $\bigoplus\limits_{i\neq0}\varepsilon\mathfrak{g}%
-_{i}\left[  \varepsilon\right]  \oplus\varepsilon^{2}\mathfrak{g}_{0}\left[
-\varepsilon\right]  $. Note that this $\mathbb{C}\left[  \varepsilon\right]
-$-Lie algebra $\widetilde{\mathfrak{g}}$ is graded (in the obvious way:
-$\widetilde{\mathfrak{g}}\left[  i\right]  =\left\{
+and%
+\begin{align*}
+P\left(  \varepsilon^{2}x_{1},\varepsilon^{2}x_{2},...,\varepsilon^{2}%
+x_{n},1\right)   &  =\sum\limits_{i=0}^{d}\sum\limits_{j\in\mathbb{N}%
+}\underbrace{Q_{i,j}\left(  \varepsilon^{2}x_{1},\varepsilon^{2}%
+x_{2},...,\varepsilon^{2}x_{n}\right)  }_{\substack{=\left(  \varepsilon
+^{2}\right)  ^{j}Q_{i,j}\left(  x_{1},x_{2},...,x_{n}\right)  \\\text{(since
+}Q_{i,j}\text{ is homogeneous of degree }j\text{)}}%
+}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }P=\sum\limits_{i=0}^{d}%
+\sum\limits_{j\in\mathbb{N}}Q_{i,j}X_{n+1}^{i}\right)  \\
+&  =\sum\limits_{i=0}^{d}\sum\limits_{j\in\mathbb{N}}\underbrace{\left(
+\varepsilon^{2}\right)  ^{j}}_{=\varepsilon^{2j}}Q_{i,j}\left(  x_{1}%
+,x_{2},...,x_{n}\right)  =\sum\limits_{i=0}^{d}\sum\limits_{j\in\mathbb{N}%
+}\varepsilon^{2j}Q_{i,j}\left(  x_{1},x_{2},...,x_{n}\right)  .
+\end{align*}
+Now,%
+\begin{align*}
+&  \dfrac{1}{\varepsilon^{d}}\sum\limits_{i=0}^{d}\sum\limits_{j\in\mathbb{N}%
+}Q_{i,j}\left(  x_{1},x_{2},...,x_{n}\right)  \varepsilon^{d-i}\\
+&  =P\left(  x_{1},x_{2},...,x_{n},1/\varepsilon\right)  =\left(
+1/\varepsilon\right)  ^{2k}\underbrace{P\left(  x_{1}/\left(  \dfrac
+{1}{\varepsilon}\right)  ^{2},x_{2}/\left(  \dfrac{1}{\varepsilon}\right)
+^{2},...,x_{n}/\left(  \dfrac{1}{\varepsilon}\right)  ^{2},1\right)
+}_{=P\left(  \varepsilon^{2}x_{1},\varepsilon^{2}x_{2},...,\varepsilon
+^{2}x_{n},1\right)  =\sum\limits_{i=0}^{d}\sum\limits_{j\in\mathbb{N}%
+}\varepsilon^{2j}Q_{i,j}\left(  x_{1},x_{2},...,x_{n}\right)  }\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{pf.invformnondeg.elemen.2}),
+applied to }1/\varepsilon\text{ instead of }\varepsilon\right)  \\
+&  =\left(  1/\varepsilon\right)  ^{2k}\sum\limits_{i=0}^{d}\sum
+\limits_{j\in\mathbb{N}}\varepsilon^{2j}Q_{i,j}\left(  x_{1},x_{2}%
+,...,x_{n}\right)  ,
+\end{align*}
+so that%
+\[
+\varepsilon^{2k}\sum\limits_{i=0}^{d}\sum\limits_{j\in\mathbb{N}}%
+Q_{i,j}\left(  x_{1},x_{2},...,x_{n}\right)  \varepsilon^{d-i}=\varepsilon
+^{d}\sum\limits_{i=0}^{d}\sum\limits_{j\in\mathbb{N}}\varepsilon^{2j}%
+Q_{i,j}\left(  x_{1},x_{2},...,x_{n}\right)  .
+\]
+For fixed $\varepsilon$, this is a polynomial identity in $\left(  x_{1}%
+,x_{2},...,x_{n}\right)  \in\mathbb{C}^{n}$. Since it holds for all $\left(
+x_{1},x_{2},...,x_{n}\right)  \in\mathbb{C}^{n}$ (as we just have shown), it
+thus must hold as a formal identity, i. e., we must have%
+\[
+\varepsilon^{2k}\sum\limits_{i=0}^{d}\sum\limits_{j\in\mathbb{N}}%
+Q_{i,j}\varepsilon^{d-i}=\varepsilon^{d}\sum\limits_{i=0}^{d}\sum
+\limits_{j\in\mathbb{N}}\varepsilon^{2j}Q_{i,j}\ \ \ \ \ \ \ \ \ \ \text{in
+}\mathbb{C}\left[  X_{1},X_{2},...,X_{n}\right]  .
+\]
+Let us take the $v$-th homogeneous components of both sides of this equation.
+Since each $Q_{i,j}$ is homogeneous of degree $j$, this amounts to removing
+all $Q_{i,j}$ with $j\neq v$, and leaving the $Q_{i,j}$ with $j=v$ unchanged.
+Thus, we obtain%
+\begin{equation}
+\varepsilon^{2k}\sum\limits_{i=0}^{d}Q_{i,v}\varepsilon^{d-i}=\varepsilon
+^{d}\sum\limits_{i=0}^{d}\varepsilon^{2v}Q_{i,v}\ \ \ \ \ \ \ \ \ \ \text{in
+}\mathbb{C}\left[  X_{1},X_{2},...,X_{n}\right]
+.\label{pf.invformnondeg.elemen.6}%
+\end{equation}
+\par
+Now, let $\left(  x_{1},x_{2},...,x_{n}\right)  \in\mathbb{C}^{n}$ be
+arbitrary again. Then, evaluating the identity
+(\ref{pf.invformnondeg.elemen.6}) at $\left(  X_{1},X_{2},...,X_{n}\right)
+=\left(  x_{1},x_{2},...,x_{n}\right)  $, we obtain
+\[
+\varepsilon^{2k}\sum\limits_{i=0}^{d}Q_{i,v}\left(  x_{1},x_{2},...,x_{n}%
+\right)  \varepsilon^{d-i}=\varepsilon^{d}\sum\limits_{i=0}^{d}\varepsilon
+^{2v}Q_{i,v}\left(  x_{1},x_{2},...,x_{n}\right)  .
+\]
+For fixed $\left(  x_{1},x_{2},...,x_{n}\right)  $, this is a polynomial
+identity in $\varepsilon$ (since $d-i\geq0$ for all $i\in\left\{
+0,1,...,d\right\}  $). Since it holds for all nonzero $\varepsilon
+\in\mathbb{C}$ (as we just have shown), it thus must hold as a formal identity
+(since any polynomial in one variable which evaluates to zero at all nonzero
+complex numbers must be the zero polynomial). In other words, we must have%
+\[
+E^{2k}\sum\limits_{i=0}^{d}Q_{i,v}\left(  x_{1},x_{2},...,x_{n}\right)
+E^{d-i}=E^{d}\sum\limits_{i=0}^{d}E^{2v}Q_{i,v}\left(  x_{1},x_{2}%
+,...,x_{n}\right)  \ \ \ \ \ \ \ \ \ \ \text{in }\mathbb{C}\left[  E\right]
+\]
+(where $\mathbb{C}\left[  E\right]  $ denotes the polynomial ring over
+$\mathbb{C}$ in one variable $E$). Let us compare the coefficients of
+$E^{2k+d-u}$ on both sides of this equation: The coefficient of $E^{2k+d-u}$
+on the left hand side of this equation is clearly $Q_{u,v}\left(  x_{1}%
+,x_{2},...,x_{n}\right)  $, while the coefficient of $E^{2k+d-u}$ on the right
+hand side is $0$ (in fact, the only coefficient on the right hand side of the
+equation which is not trivially zero is the coefficient of $E^{d+2v}$, but
+$d+2v\neq2k+d-u$ (since $u+2v\neq2k$ and thus $2v\neq2k-u$)). Hence,
+comparison yields $Q_{u,v}\left(  x_{1},x_{2},...,x_{n}\right)  =0$. Since
+this holds for all $\left(  x_{1},x_{2},...,x_{n}\right)  \in\mathbb{C}^{n}$,
+we thus obtain $Q_{u,v}=0$ (because any polynomial which vanishes on the whole
+$\mathbb{C}^{n}$ must be the zero polynomial), qed.} Now,
+(\ref{pf.invformnondeg.elemen.3a}) rewrites as%
+\begin{align*}
+P  & =\sum\limits_{i=0}^{d}\sum\limits_{j\in\mathbb{N}}Q_{i,j}X_{n+1}^{i}%
+=\sum\limits_{u=0}^{d}\sum\limits_{v\in\mathbb{N}}Q_{u,v}X_{n+1}%
+^{u}\ \ \ \ \ \ \ \ \ \ \left(  \text{here, we renamed the indices }i\text{
+and }j\text{ as }u\text{ and }v\right)  \\
+& =\sum\limits_{\left(  u,v\right)  \in\left\{  0,1,...,d\right\}
+\times\mathbb{N}}Q_{u,v}X_{n+1}^{u}=\sum\limits_{\substack{\left(  u,v\right)
+\in\left\{  0,1,...,d\right\}  \times\mathbb{N};\\u+2v=2k}}Q_{u,v}X_{n+1}%
+^{u}\\
+& \ \ \ \ \ \ \ \ \ \ \left(
 \begin{array}
 [c]{c}%
-\varepsilon\mathfrak{g}_{i}\left[  \varepsilon\right]
-,\ \ \ \ \ \ \ \ \ \ \text{if }i\neq0;\\
-\varepsilon^{2}\mathfrak{g}_{0}\left[  \varepsilon\right]
-,\ \ \ \ \ \ \ \ \ \ \text{if }i=0
+\text{here, we removed from our sum all terms for }\left(  u,v\right)
+\in\left\{  0,1,...,d\right\}  \times\mathbb{N}\text{ which}\\
+\text{don't satisfy }u+2v=2k\text{ (because (\ref{pf.invformnondeg.elemen.4})
+shows that these terms}\\
+\text{don't contribute anything to the sum)}%
 \end{array}
-\right.  $), and has the property that each of the $\mathbb{C}\left[
-\varepsilon\right]  $-modules $\widetilde{\mathfrak{g}}_{-}=\bigoplus
-\limits_{i<0}\varepsilon\mathfrak{g}_{i}\left[  \varepsilon\right]  $,
-$\widetilde{\mathfrak{g}}_{0}=\varepsilon^{2}\mathfrak{g}_{0}\left[
-\varepsilon\right]  $ and $\widetilde{\mathfrak{g}}_{+}=\bigoplus
-\limits_{i>0}\varepsilon\mathfrak{g}_{i}\left[  \varepsilon\right]  $ is a
-free $\mathbb{C}\left[  \varepsilon\right]  $-module. Hence, even though
-$\mathbb{C}\left[  \varepsilon\right]  $ is not a field, we can apply our
-previous results to it - most importantly, Proposition \ref{prop.invform}
-(because of Remark \ref{rmk.invform.1}).
-
-For every nonzero $\alpha\in\mathbb{C}$, we have $\widetilde{\mathfrak{g}%
-}\diagup\left(  \varepsilon-\alpha\right)  \cong\mathfrak{g}$%
-\ \ \ \ \footnote{In fact, a Lie algebra isomorphism $\mathfrak{g}%
-\rightarrow\widetilde{\mathfrak{g}}\diagup\left(  \varepsilon-\alpha\right)  $
-is given by $x\mapsto\overline{\dfrac{1}{\alpha^{2}}\varepsilon^{2}x}$.}.
-(Here, $\widetilde{\mathfrak{g}}\diagup J$ means $\widetilde{\mathfrak{g}%
-}\diagup\left(  J\widetilde{\mathfrak{g}}\right)  $ for every ideal $J$ of
-$\mathbb{C}\left[  \varepsilon\right]  $.)
-
-But $\widetilde{\mathfrak{g}}\diagup\left(  \varepsilon\right)  \cong%
-\overline{\mathfrak{g}}$, where the Lie algebra $\overline{\mathfrak{g}}$ has
-the following description: As a vector space, $\overline{\mathfrak{g}%
-}=\mathfrak{g}$, but the bracket on $\overline{\mathfrak{g}}$ is given by%
-\begin{align*}
-\left[  \cdot,\cdot\right]  :\overline{\mathfrak{g}}_{i}\otimes\overline
-{\mathfrak{g}}_{j}\rightarrow\overline{\mathfrak{g}}_{i+j}\text{ }  &
-\text{is }\text{zero if }i+j\neq0\text{,}\\
-&  \text{and is the usual Lie bracket if }i+j=0\text{.}%
+\right)  \\
+& =\sum\limits_{v=0}^{k}Q_{2k-2v,v}X_{n+1}^{2k-2v}\ \ \ \ \ \ \ \ \ \ \left(
+\text{here, we substituted }\left(  2k-2v,v\right)  \text{ for }\left(
+u,v\right)  \text{ in the sum}\right)  .
 \end{align*}
-\footnote{In fact, a Lie algebra isomorphism $\overline{\mathfrak{g}%
-}\rightarrow\widetilde{\mathfrak{g}}\diagup\left(  \varepsilon\right)  $ is
-given by%
+Hence, every $\left(  \lambda,\varepsilon\right)  \in V\times\mathbb{C}$
+satisfies%
+\begin{equation}
+P\left(  v_{1}\left(  \lambda\right)  ,v_{2}\left(  \lambda\right)
+,...,v_{n}\left(  \lambda\right)  ,\varepsilon\right)  =\sum\limits_{v=0}%
+^{k}Q_{2k-2v,v}\left(  v_{1}\left(  \lambda\right)  ,v_{2}\left(
+\lambda\right)  ,...,v_{n}\left(  \lambda\right)  \right)  \varepsilon
+^{2k-2v}.\label{pf.invformnondeg.elemen.5}%
+\end{equation}
+
+
+Now, for every $v\in\left\{  0,1,...,k\right\}  $, let $\psi_{v}%
+:V\rightarrow\mathbb{C}$ be the polynomial map defined by%
+\[
+\psi_{v}\left(  \lambda\right)  =Q_{2k-2v,v}\left(  v_{1}\left(
+\lambda\right)  ,v_{2}\left(  \lambda\right)  ,...,v_{n}\left(  \lambda
+\right)  \right)  \ \ \ \ \ \ \ \ \ \ \text{for every }\lambda\in V.
+\]
+Then, $\psi_{v}$ is homogeneous of degree $v$ (since $Q_{2k-2v,v}$ is
+homogeneous of degree $v$). In particular, this yields that $\psi_{k}$ is
+homogeneous of degree $k$.
+
+Every $\left(  \lambda,\varepsilon\right)  \in V\times\mathbb{C}$ satisfies%
+\begin{align}
+\phi\left(  \lambda,\varepsilon\right)    & =P\left(  v_{1}\left(
+\lambda\right)  ,v_{2}\left(  \lambda\right)  ,...,v_{n}\left(  \lambda
+\right)  ,\varepsilon\right)  \nonumber\\
+& =\sum\limits_{v=0}^{k}\underbrace{Q_{2k-2v,v}\left(  v_{1}\left(
+\lambda\right)  ,v_{2}\left(  \lambda\right)  ,...,v_{n}\left(  \lambda
+\right)  \right)  }_{=\psi_{v}\left(  \lambda\right)  }\varepsilon
+^{2k-2v}\ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{pf.invformnondeg.elemen.5}%
+)}\right)  \nonumber\\
+& =\sum\limits_{v=0}^{k}\psi_{v}\left(  \lambda\right)  \varepsilon
+^{2k-2v}.\label{pf.invformnondeg.elemen.10}%
+\end{align}
+Applied to $\varepsilon=0$, this yields%
+\[
+\phi\left(  \lambda,0\right)  =\sum\limits_{v=0}^{k}\psi_{v}\left(
+\lambda\right)  0^{2k-2v}=\psi_{k}\left(  \lambda\right)
+\ \ \ \ \ \ \ \ \ \ \left(  \text{since }0^{2k-2v}=0\text{ for all
+}v<k\right)
+\]
+for every $\lambda\in V$. Hence, the polynomial function $V\rightarrow
+\mathbb{C},\ \lambda\mapsto\phi\left(  \lambda,0\right)  $ equals the
+polynomial function $\psi_{k}$, and thus is homogeneous of degree $k$ (since
+$\psi_{k}$ is homogeneous of degree $k$). This proves Lemma
+\ref{lem.invformnondeg.elemen} \textbf{(a)}.
+
+Applying (\ref{pf.invformnondeg.elemen.10}) to $\varepsilon=1$, we obtain%
+\[
+\phi\left(  \lambda,1\right)  =\sum\limits_{v=0}^{k}\psi_{v}\left(
+\lambda\right)  \underbrace{1^{2k-2v}}_{=1}=\sum\limits_{v=0}^{k}\psi
+_{v}\left(  \lambda\right)  .
+\]
+Hence, the polynomial function $V\rightarrow\mathbb{C},\ \lambda\mapsto
+\phi\left(  \lambda,1\right)  $ equals the sum $\sum\limits_{v=0}^{k}\psi_{v}%
+$. Since we know that the polynomial function $\psi_{v}$ is homogeneous of
+degree $v$ for every $v\in\left\{  0,1,...,k\right\}  $, this yields that, for
+every integer $n>k$, the $n$-th homogeneous component of the polynomial
+function $V\rightarrow\mathbb{C},\ \lambda\mapsto\phi\left(  \lambda,1\right)
+$is zero. This proves Lemma \ref{lem.invformnondeg.elemen} \textbf{(b)}.
+
+Finally, recall that the polynomial function $V\rightarrow\mathbb{C}%
+,\ \lambda\mapsto\phi\left(  \lambda,1\right)  $ equals the sum $\sum
+\limits_{v=0}^{k}\psi_{v}$, and the polynomial function $\psi_{v}$ is
+homogeneous of degree $v$ for every $v\in\left\{  0,1,...,k\right\}  $. Hence,
+for every $v\in\left\{  0,1,...,k\right\}  $, the $v$-th homogeneous component
+of the polynomial function $V\rightarrow\mathbb{C},\ \lambda\mapsto\phi\left(
+\lambda,1\right)  $ is  $\psi_{v}$. In particular, the $k$-th homogeneous
+component of the polynomial function $V\rightarrow\mathbb{C},\ \lambda
+\mapsto\phi\left(  \lambda,1\right)  $ is $\psi_{k}$. Since $\psi_{k}$ equals
+the function $V\rightarrow\mathbb{C},\ \lambda\mapsto\phi\left(
+\lambda,0\right)  $, this rewrites as follows: The $k$-th homogeneous
+component of the polynomial function $V\rightarrow\mathbb{C},\ \lambda
+\mapsto\phi\left(  \lambda,1\right)  $ is the function $V\rightarrow
+\mathbb{C},\ \lambda\mapsto\phi\left(  \lambda,0\right)  $. This proves Lemma
+\ref{lem.invformnondeg.elemen} \textbf{(c)}.
+
+\subsubsection{Proof of Theorem \ref{thm.invformnondeg}: The Lie algebra
+$\mathfrak{g}^{0}$}
+
+Consider the polynomial function $Q_{n}$ of Corollary
+\ref{cor.invformnondeg.polynomiality}. Due to Corollary
+\ref{cor.invformnondeg.polynomiality}, it satisfies the condition of Lemma
+\ref{lem.invformnondeg.elemen} for $k=\operatorname*{LEN}n$. Hence, Lemma
+\ref{lem.invformnondeg.elemen} suggests that we study the Lie algebra
+$\mathfrak{g}^{0}$, since this will show us what the function $\mathfrak{h}%
+^{\ast}\rightarrow\mathbb{C},$ $\lambda\mapsto Q_{n}\left(  \lambda,0\right)
+$ looks like.
+
+Let us denote the Lie algebra $\mathfrak{g}^{0}$ by $\overline{\mathfrak{g}}$.
+We are now going to work in this Lie algebra for a while. First, let us
+reformulate the definition of $\overline{\mathfrak{g}}=\mathfrak{g}^{0}$ as
+follows: As a vector space, $\overline{\mathfrak{g}}=\mathfrak{g}$, but the
+bracket on $\overline{\mathfrak{g}}$ is given by%
 \begin{align*}
-x  &  \mapsto\overline{\varepsilon x}\ \ \ \ \ \ \ \ \ \ \text{for all }%
-x\in\mathfrak{g}_{i}\text{ with }i\neq0;\\
-x  &  \mapsto\overline{\varepsilon^{2}x}\ \ \ \ \ \ \ \ \ \ \text{for all
-}x\in\mathfrak{g}_{0}.
+\left[  \cdot,\cdot\right]  ^{0}:\overline{\mathfrak{g}}_{i}\otimes
+\overline{\mathfrak{g}}_{j}\rightarrow\overline{\mathfrak{g}}_{i+j}\text{ }
+&  \text{is }\text{zero if }i+j\neq0\text{,}\\
+&  \text{and is the Lie bracket }\left[  \cdot,\cdot\right]  \text{ of
+}\mathfrak{g}\text{ if }i+j=0\text{.}%
 \end{align*}
-This is proven easily (use that $\mathfrak{g}_{0}$ is abelian).}
+We are going to denote this bracket by $\left[  \cdot,\cdot\right]  $ rather
+than by $\left[  \cdot,\cdot\right]  ^{0}$, just for the sake of brevity.
+
+[...]
 
 We denote by $\overline{\mathfrak{n}_{-}}$, $\overline{\mathfrak{n}_{+}}$ and
 $\overline{\mathfrak{h}}$ the vector subspaces $\mathfrak{n}_{-}$,
 $\mathfrak{n}_{+}$ and $\mathfrak{h}$ of $\mathfrak{g}$, considered as
-subspaces of $\overline{\mathfrak{g}}$. So when we speak of $\left[
-\overline{\mathfrak{n}_{-}},\overline{\mathfrak{h}}\right]  $ (for example),
-we mean the Lie bracket in $\overline{\mathfrak{g}}$, not in $\mathfrak{g}$.
+subspaces of $\overline{\mathfrak{g}}$.
 
 It is very easy to see (from the definition of $\overline{\mathfrak{g}}$) that
-$\left[  \overline{\mathfrak{n}_{-}},\overline{\mathfrak{n}_{-}}\right]  =0$,
-$\left[  \overline{\mathfrak{n}_{+}},\overline{\mathfrak{n}_{+}}\right]  =0$,
-$\left[  \overline{\mathfrak{n}_{-}},\overline{\mathfrak{n}_{+}}\right]
-=\left[  \overline{\mathfrak{n}_{+}},\overline{\mathfrak{n}_{-}}\right]
-\subseteq\overline{\mathfrak{h}}$ and that $\overline{\mathfrak{h}}\subseteq
-Z\left(  \overline{\mathfrak{g}}\right)  $.
+$\left[  \overline{\mathfrak{n}_{-}},\overline{\mathfrak{n}_{-}}\right]
+^{0}=0$, $\left[  \overline{\mathfrak{n}_{+}},\overline{\mathfrak{n}_{+}%
+}\right]  ^{0}=0$, $\left[  \overline{\mathfrak{n}_{-}},\overline
+{\mathfrak{n}_{+}}\right]  ^{0}=\left[  \overline{\mathfrak{n}_{+}}%
+,\overline{\mathfrak{n}_{-}}\right]  ^{0}\subseteq\overline{\mathfrak{h}}$ and
+that $\overline{\mathfrak{h}}\subseteq Z\left(  \overline{\mathfrak{g}%
+}\right)  $.
 
 Since $\left[  \overline{\mathfrak{n}_{-}},\overline{\mathfrak{n}_{-}}\right]
 =0$, the Lie algebra $\overline{\mathfrak{n}_{-}}$ is abelian, so that
@@ -5979,7 +7429,7 @@ arithmetic progressions with step $1$.)
 \end{definition}
 
 \begin{proposition}
-Here is an example:%
+\label{prop.chVerma}Here is an example:%
 \[
 \left(  \operatorname*{ch}M_{\lambda}^{+}\right)  \left(  x\right)  =\dfrac
 {1}{\prod\limits_{j>0}\det\nolimits_{\mathfrak{g}\left[  -j\right]  }\left(
@@ -5996,8 +7446,9 @@ where $S^{n}A$ denotes the $n$-th symmetric power of the operator $A$.)
 
 Let us consider some examples:
 
-\textbf{1st Example:} Let $\mathfrak{g}=\mathfrak{sl}_{2}$. We can write this
-Lie algebra in terms of Chevalley generators and Serre relations (this is a
+\begin{example}
+\label{exa.sl2}Let $\mathfrak{g}=\mathfrak{sl}_{2}$. We can write this Lie
+algebra in terms of Chevalley generators and Serre relations (this is a
 particular case of what we did in Proposition \ref{prop.grad.g}). The most
 traditional way to do this is by setting $e=\left(
 \begin{array}
@@ -6086,12 +7537,14 @@ _{2}$, you probably recognize this module $L_{\lambda}^{+}$ as the $\left(
 \dim\lambda\right)  $-th symmetric power of the vector module $\mathbb{C}^{2}$
 (as there is only one irreducible $\mathfrak{sl}_{2}$-module of every
 dimension).}
+\end{example}
 
-\textbf{2nd Example:} Let $\mathfrak{g}=\operatorname*{Vir}$. With the grading
-that we have defined on $\operatorname*{Vir}$, we have $\mathfrak{h}%
-=\mathfrak{g}_{0}=\left\langle L_{0},C\right\rangle $. Thus, linear maps
-$\lambda:\mathfrak{h}\rightarrow\mathbb{C}$ can be uniquely described by the
-images of $L_{0}$ and $C$ under these maps. We thus identify every linear map
+\begin{example}
+\label{exa.Vir}Let $\mathfrak{g}=\operatorname*{Vir}$. With the grading that
+we have defined on $\operatorname*{Vir}$, we have $\mathfrak{h}=\mathfrak{g}%
+_{0}=\left\langle L_{0},C\right\rangle $. Thus, linear maps $\lambda
+:\mathfrak{h}\rightarrow\mathbb{C}$ can be uniquely described by the images of
+$L_{0}$ and $C$ under these maps. We thus identify every linear map
 $\lambda:\mathfrak{h}\rightarrow\mathbb{C}$ with the pair $\left(
 \lambda\left(  L_{0}\right)  ,\lambda\left(  C\right)  \right)  $.
 
@@ -6238,6 +7691,7 @@ $\alpha,\beta\in\mathbb{C}$).
 
 We will later discuss $\det\left(  \left(  \cdot,\cdot\right)  _{n}\right)  $
 for generic $n$ (there is a precise formula for this: Kac determinant formula).
+\end{example}
 
 \subsubsection{Restricted dual modules}
 
