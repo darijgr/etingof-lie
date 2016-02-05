@@ -49,7 +49,7 @@
 \usepackage{hyperref}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Friday, February 05, 2016 15:10:06}
+%TCIDATA{LastRevised=Friday, February 05, 2016 15:13:59}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -313,8 +313,9 @@ all of them used synonymously in this text. Some authors also use the notation
 $a\circ m$ for the image of $m$ under the action of $a$, but we won't use this notation.)
 
 \item If $V$ is a vector space, then the tensor algebra of $V$ will be denoted
-by $T\left( V\right) $; the symmetric algebra of $V$ will be denoted by
-$S\left( V\right) $; the exterior algebra of $V$ will be denoted by $\wedge V$.
+by $T\left(  V\right)  $; the symmetric algebra of $V$ will be denoted by
+$S\left(  V\right)  $; the exterior algebra of $V$ will be denoted by $\wedge
+V$.
 \end{itemize}
 
 \section{The main examples}
@@ -7263,7 +7264,7 @@ one and only one bilinear form $B^{\prime}:V_{G}\times W_{G}\rightarrow
 \begin{equation}
 B^{\prime}\left(  \overline{v},\overline{w}\right)  =B\left(  \Lambda
 v,w\right)  =B\left(  v,\Lambda w\right)  \ \ \ \ \ \ \ \ \ \ \text{for all
-}v\in V\text{ and }w\in W \label{thm.invformnondeg.pf.B'}%
+}v\in V\text{ and }w\in W\label{thm.invformnondeg.pf.B'}%
 \end{equation}
 (where $\overline{v}$ denotes the projection of $v$ onto $V_{G}=V_{S_{k}%
 }=S^{k}\left(  \mathfrak{n}_{-}\right)  $, and $\overline{w}$ denotes the
@@ -7273,24 +7274,24 @@ _{k}\in\mathfrak{n}_{-}$ and $\beta_{1},\beta_{2},...,\beta_{k}\in
 \mathfrak{n}_{+}$ satisfy%
 \begin{align*}
 &  B^{\prime}\left(  \alpha_{1}\alpha_{2}...\alpha_{k},\beta_{1}\beta
-_{2}...\beta_{k}\right) \\
+_{2}...\beta_{k}\right)  \\
 &  =B^{\prime}\left(  \overline{\alpha_{1}\otimes\alpha_{2}\otimes
 ...\otimes\alpha_{k}},\overline{\beta_{1}\otimes\beta_{2}\otimes
-...\otimes\beta_{k}}\right) \\
+...\otimes\beta_{k}}\right)  \\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }\alpha_{1}\alpha_{2}...\alpha
 _{k}=\overline{\alpha_{1}\otimes\alpha_{2}\otimes...\otimes\alpha_{k}}\text{
 and }\beta_{1}\beta_{2}...\beta_{k}=\overline{\beta_{1}\otimes\beta_{2}%
-\otimes...\otimes\beta_{k}}\right) \\
+\otimes...\otimes\beta_{k}}\right)  \\
 &  =B\left(  \alpha_{1}\otimes\alpha_{2}\otimes...\otimes\alpha_{k}%
 ,\Lambda\left(  \beta_{1}\otimes\beta_{2}\otimes...\otimes\beta_{k}\right)
-\right) \\
+\right)  \\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{thm.invformnondeg.pf.B'}),
 applied to }v=\alpha_{1}\otimes\alpha_{2}\otimes...\otimes\alpha_{k}\text{ and
-}w=\beta_{1}\otimes\beta_{2}\otimes...\otimes\beta_{k}\right) \\
+}w=\beta_{1}\otimes\beta_{2}\otimes...\otimes\beta_{k}\right)  \\
 &  =B\left(  \alpha_{1}\otimes\alpha_{2}\otimes...\otimes\alpha_{k}%
 ,\sum\limits_{\sigma\in S_{k}}\beta_{\sigma\left(  1\right)  }\otimes
 \beta_{\sigma\left(  2\right)  }\otimes...\otimes\beta_{\sigma\left(
-k\right)  }\right) \\
+k\right)  }\right)  \\
 &  \ \ \ \ \ \ \ \ \ \ \left(
 \begin{array}
 [c]{c}%
@@ -7304,7 +7305,7 @@ k\right)  }\right) \\
 \beta_{\sigma\left(  2\right)  }\otimes...\otimes\beta_{\sigma\left(
 k\right)  }%
 \end{array}
-\right) \\
+\right)  \\
 &  =\sum\limits_{\sigma\in S_{k}}\underbrace{B\left(  \alpha_{1}\otimes
 \alpha_{2}\otimes...\otimes\alpha_{k},\beta_{\sigma\left(  1\right)  }%
 \otimes\beta_{\sigma\left(  2\right)  }\otimes...\otimes\beta_{\sigma\left(
@@ -7323,10 +7324,10 @@ _{+}\rightarrow\mathbb{C},\ \left(  \alpha,\beta\right)  \mapsto\lambda\left(
 \end{align*}
 Thus, there exists a $\mathbb{C}$-bilinear form $\lambda_{k}:S^{k}\left(
 \mathfrak{n}_{-}\right)  \times S^{k}\left(  \mathfrak{n}_{+}\right)
-\rightarrow\mathbb{C}$ satisfying (\ref{thm.invformnondeg.pf.lambda}). On the
-other hand, there exists \textbf{at most one }$\mathbb{C}$-bilinear form
-$\lambda_{k}:S^{k}\left(  \mathfrak{n}_{-}\right)  \times S^{k}\left(
-\mathfrak{n}_{+}\right)  \rightarrow\mathbb{C}$ satisfying
+\rightarrow\mathbb{C}$ satisfying (\ref{thm.invformnondeg.pf.lambda}) (namely,
+$B^{\prime}$). On the other hand, there exists \textbf{at most one
+}$\mathbb{C}$-bilinear form $\lambda_{k}:S^{k}\left(  \mathfrak{n}_{-}\right)
+\times S^{k}\left(  \mathfrak{n}_{+}\right)  \rightarrow\mathbb{C}$ satisfying
 (\ref{thm.invformnondeg.pf.lambda})\ \ \ \ \footnote{\textit{Proof.} The
 vector space $S^{k}\left(  \mathfrak{n}_{-}\right)  $ is spanned by products
 of the form $\alpha_{1}\alpha_{2}...\alpha_{k}$ with $\alpha_{1},\alpha
@@ -7347,7 +7348,7 @@ $\mathbb{C}$-bilinear form $\lambda_{k}:S^{k}\left(  \mathfrak{n}_{-}\right)
 (\ref{thm.invformnondeg.pf.lambda}). And, moreover,%
 \begin{equation}
 \text{this form }\lambda_{k}\text{ is the form }B^{\prime}\text{ satisfying
-(\ref{thm.invformnondeg.pf.B'}).} \label{thm.invformnondeg.pf.B'=l_k}%
+(\ref{thm.invformnondeg.pf.B'}).}\label{thm.invformnondeg.pf.B'=l_k}%
 \end{equation}
 Proposition \ref{prop.lambda_k} is thus proven.
 
@@ -16077,9 +16078,9 @@ Note that the homogeneous linear maps of degree $0$ are exactly the graded
 linear maps.
 
 \textbf{(b)} Let $V$ and $W$ be two $\mathbb{Z}$-graded vector spaces. For
-every $m\in\mathbb{Z}$, let $\operatorname*{Hom}\nolimits_{\deg=m}\left(
-V,W\right)  $ denote the vector space of all homogeneous linear maps
-$V\rightarrow W$ of degree $m$. This $\operatorname*{Hom}%
+every $m\in\mathbb{Z}$, let $\operatorname*{Hom}\nolimits_{\operatorname{hg}%
+=m}\left(  V,W\right)  $ denote the vector space of all homogeneous linear
+maps $V\rightarrow W$ of degree $m$. This $\operatorname*{Hom}%
 \nolimits_{\operatorname{hg}=m}\left(  V,W\right)  $ is a vector subspace of
 $\operatorname*{Hom}\left(  V,W\right)  $ for every $m\in\mathbb{Z}$.
 Moreover, $\bigoplus\limits_{m\in\mathbb{Z}}\operatorname*{Hom}%
@@ -16184,9 +16185,10 @@ well-defined element of $M\left[  u^{-1}\right]  $ (and not only of $M\left[
 \begin{vershort}
 The proof of this proposition is quick and straightforward. (The only idea is
 that for any fixed $x\in M\left[  u,u^{-1}\right]  $, any sufficiently
-low-degree element of $A$ annihilates $x$ due to the ``concentrated in
-nonnegative degrees'' assumption, but sufficiently low-degree monomials in $f$
-come with sufficiently low-degree coefficients due to $f$ being equigraded).
+low-degree element of $A$ annihilates $x$ due to the \textquotedblleft
+concentrated in nonnegative degrees\textquotedblright\ assumption, but
+sufficiently low-degree monomials in $f$ come with sufficiently low-degree
+coefficients due to $f$ being equigraded.)
 \end{vershort}
 
 \begin{verlong}
@@ -17531,16 +17533,17 @@ map $F_{a}:\wedge^{\dfrac{\infty}{2},m}V\rightarrow\wedge^{\dfrac{\infty}%
 F_{a}\left(  v_{i_{0}}\wedge v_{i_{1}}\wedge v_{i_{2}}\wedge...\right)
 =\sum\limits_{k\geq0}v_{i_{0}}\wedge v_{i_{1}}\wedge...\wedge v_{i_{k-1}%
 }\wedge\left(  a\rightharpoonup v_{i_{k}}\right)  \wedge v_{i_{k+1}}\wedge
-v_{i_{k+2}}\wedge... \label{pf.glinf.glinfact.welldef.pfshort.defFa}%
+v_{i_{k+2}}\wedge...\label{pf.glinf.glinfact.welldef.pfshort.defFa}%
 \end{equation}
 \footnote{The right hand side of
 (\ref{pf.glinf.glinfact.welldef.pfshort.defFa}) is indeed well-defined. This
-follows from applying \ref{prop.glinf.glinfact.welldef}.0 \textbf{(b)} to
-$v_{i_{i}}$ instead of $b_{i}$.}. Thus, we have specified the values of the
-map $F_{a}$ on the basis \newline$\left(  v_{i_{0}}\wedge v_{i_{1}}\wedge
-v_{i_{2}}\wedge...\right)  _{\left(  i_{0},i_{1},i_{2},...\right)  \text{ is
-an }m\text{-degression}}$ of $\wedge^{\dfrac{\infty}{2},m}V$. Therefore, the
-map $F_{a}$ is uniquely determined (and exists) by linearity.
+follows from applying Assertion \ref{prop.glinf.glinfact.welldef}.0
+\textbf{(b)} to $v_{i_{i}}$ instead of $b_{i}$.}. Thus, we have specified the
+values of the map $F_{a}$ on the basis \newline$\left(  v_{i_{0}}\wedge
+v_{i_{1}}\wedge v_{i_{2}}\wedge...\right)  _{\left(  i_{0},i_{1}%
+,i_{2},...\right)  \text{ is an }m\text{-degression}}$ of $\wedge
+^{\dfrac{\infty}{2},m}V$. Therefore, the map $F_{a}$ is uniquely determined
+(and exists) by linearity.
 
 We are going to prove various properties of this map now. First, we will prove
 that the formula (\ref{pf.glinf.glinfact.welldef.pfshort.defFa}) which we used
@@ -21612,9 +21615,9 @@ a\rightharpoonup\left(  v_{i_{0}}\wedge v_{i_{1}}\wedge v_{i_{2}}%
 \textit{Proof of Assertion \ref{prop.glinf.glinfact.welldef}.9:} Let $\rho$ be
 the map
 \begin{align*}
-\mathfrak{gl}_{\infty}  &  \rightarrow\mathfrak{gl}\left(  \wedge
+\mathfrak{gl}_{\infty} &  \rightarrow\mathfrak{gl}\left(  \wedge
 ^{\dfrac{\infty}{2},m}V\right)  ,\\
-c  &  \mapsto F_{c}.
+c &  \mapsto F_{c}.
 \end{align*}
 This map $\rho$ is $\mathbb{C}$-linear (by Assertion
 \ref{prop.glinf.glinfact.welldef}.5) and hence a Lie algebra homomorphism (by
@@ -21635,7 +21638,7 @@ i_{0},i_{1},i_{2},...\right)  $ satisfy%
 \begin{align*}
 &  a\rightharpoonup\left(  v_{i_{0}}\wedge v_{i_{1}}\wedge v_{i_{2}}%
 \wedge...\right)  =F_{a}\left(  v_{i_{0}}\wedge v_{i_{1}}\wedge v_{i_{2}%
-}\wedge...\right) \\
+}\wedge...\right)  \\
 &  =\sum\limits_{k\geq0}v_{i_{0}}\wedge v_{i_{1}}\wedge...\wedge v_{i_{k-1}%
 }\wedge\left(  a\rightharpoonup v_{i_{k}}\right)  \wedge v_{i_{k+1}}\wedge
 v_{i_{k+2}}\wedge...
@@ -21644,16 +21647,14 @@ v_{i_{k+2}}\wedge...
 }\wedge...\right)  $). In other words, all $a\in\mathfrak{gl}_{\infty}$ and
 all $m$-degressions $\left(  i_{0},i_{1},i_{2},...\right)  $ satisfy
 (\ref{pf.glinf.glinfact.welldef.9}).
-\end{vershort}
 
-\begin{verlong}
 We have thus constructed an action of the Lie algebra $\mathfrak{gl}_{\infty}$
 on the vector space $\wedge^{\dfrac{\infty}{2},m}V$ such that all
 $a\in\mathfrak{gl}_{\infty}$ and all $m$-degressions $\left(  i_{0}%
 ,i_{1},i_{2},...\right)  $ satisfy (\ref{pf.glinf.glinfact.welldef.9}).
 Therefore, there exists \textbf{at least} one such action. This proves
 Assertion \ref{prop.glinf.glinfact.welldef}.9.
-\end{verlong}
+\end{vershort}
 
 \begin{verlong}
 \textit{Proof of Assertion \ref{prop.glinf.glinfact.welldef}.9:} Let $\rho$ be
@@ -32099,11 +32100,11 @@ $\operatorname*{Gr}\left(  k,V\right)  $. While we won't ever need the
 existence of this structure, we will need the so-called Pl\"{u}cker embedding
 which is the main ingredient in defining this structure:\footnote{In the
 following definition (and further below), we use the notation $\mathbb{P}%
-\left( W\right) $ for the projective space of a $\mathbb{C}$-vector space $W$.
-This projective space is defined to be the quotient set $\left( W
-\setminus\left\{ 0\right\} \right)  / \sim$, where $\sim$ is the
+\left(  W\right)  $ for the projective space of a $\mathbb{C}$-vector space
+$W$. This projective space is defined to be the quotient set $\left(  W
+\setminus\left\{  0\right\}  \right)  / \sim$, where $\sim$ is the
 proportionality relation (i.e., two vectors $w_{1}$ and $w_{2}$ in $W
-\setminus\left\{ 0\right\} $ satisfy $w_{1} \sim w_{2}$ if and only if they
+\setminus\left\{  0\right\}  $ satisfy $w_{1} \sim w_{2}$ if and only if they
 are linearly dependent).}
 
 \begin{definition}
