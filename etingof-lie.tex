@@ -49,7 +49,7 @@
 \usepackage{hyperref}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Tuesday, February 09, 2016 20:19:10}
+%TCIDATA{LastRevised=Tuesday, February 09, 2016 20:25:19}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -4690,14 +4690,14 @@ $f\cdot u$ (the product of $f$ with $u$) and not as $f\left(  u\right)  $ (the
 Laurent polynomial $f$ applied to $u$).}%
 \begin{equation}
 f\left(  g^{\prime}h\right)  ^{\prime}-g\left(  f^{\prime}h\right)  ^{\prime
-}=q^{\prime}h+qh^{\prime}\label{sol1.1.fgh}%
+}=q^{\prime}h+qh^{\prime} \label{sol1.1.fgh}%
 \end{equation}
 \footnote{\textit{Proof of (\ref{sol1.1.fgh}):} Since $q=fg^{\prime
 }-gf^{\prime}$, we have $qh=\left(  fg^{\prime}-gf^{\prime}\right)
 h=fg^{\prime}h-gf^{\prime}h=f\left(  g^{\prime}h\right)  -g\left(  f^{\prime
 }h\right)  $, so that%
 \begin{align*}
-\left(  qh\right)  ^{\prime} &  =\left(  f\left(  g^{\prime}h\right)
+\left(  qh\right)  ^{\prime}  &  =\left(  f\left(  g^{\prime}h\right)
 -g\left(  f^{\prime}h\right)  \right)  ^{\prime}=\underbrace{\left(  f\left(
 g^{\prime}h\right)  \right)  ^{\prime}}_{\substack{=f^{\prime}\left(
 g^{\prime}h\right)  +f\left(  g^{\prime}h\right)  ^{\prime}\\\text{(by the
@@ -4726,7 +4726,7 @@ rule), this rewrites as $q^{\prime}h+qh^{\prime}=f\left(  g^{\prime}h\right)
 }_{=gf^{\prime}p+gfp^{\prime}=gf^{\prime}p+fgp^{\prime}}\nonumber\\
 &  =fg^{\prime}p+fgp^{\prime}-gf^{\prime}p-fgp^{\prime}=fg^{\prime
 }p-gf^{\prime}p=\underbrace{\left(  fg^{\prime}-gf^{\prime}\right)  }%
-_{=q}p=qp.\label{sol1.1.fgh2}%
+_{=q}p=qp. \label{sol1.1.fgh2}%
 \end{align}
 
 
@@ -4894,22 +4894,6 @@ t^{m-k}\right)  t^{\alpha}\left(  dt\right)  ^{\beta}\\
 \beta\right)  v_{k-m}.
 \end{align*}
 This proves (\ref{ex1.1.2.var}). Proposition \ref{prop.Vab.1} \textbf{(b)} is proven.
-
-\begin{remark}
-\label{rmk.Vab.adj}Consider the $\operatorname*{Vir}$-module
-$\operatorname*{Vir}$ (with the adjoint action). Since $\left\langle
-C\right\rangle $ is a submodule of $\operatorname*{Vir}$, we obtain a
-$\operatorname*{Vir}$-module $\operatorname*{Vir}\diagup\left\langle
-C\right\rangle $. This $\operatorname*{Vir}$-module is isomorphic to
-$V_{1,-1}$ (and thus to $V_{\alpha,-1}$ for every $\alpha\in\mathbb{Z}$). More
-precisely, the $\mathbb{C}$-linear map%
-\begin{align*}
-\operatorname*{Vir}\diagup\left\langle C\right\rangle  &  \rightarrow
-V_{1,-1},\\
-\overline{L_{n}}  &  \mapsto v_{-n}%
-\end{align*}
-is a $\operatorname*{Vir}$-module isomorphism.
-\end{remark}
 
 The representations $V_{\alpha,\beta}$ are not all pairwise non-isomorphic,
 but there are still uncountably many non-isomorphic ones among them. More precisely:
@@ -5177,6 +5161,24 @@ only if $\left(  \alpha\in\mathbb{Z}\text{ and }\beta\in\left\{  0,1\right\}
 
 We will not prove this; the interested reader is referred to Proposition 1.1
 in \S 1.2 of Kac-Raina.
+
+\begin{remark}
+\label{rmk.Vab.adj}Consider the $\operatorname*{Vir}$-module
+$\operatorname*{Vir}$ (with the adjoint action). Since $\left\langle
+C\right\rangle $ is a $\operatorname*{Vir}$-submodule of $\operatorname*{Vir}%
+$, we obtain a $\operatorname*{Vir}$-module $\operatorname*{Vir}%
+\diagup\left\langle C\right\rangle $. This $\operatorname*{Vir}$-module is
+isomorphic to $V_{1,-1}$. More precisely, the $\mathbb{C}$-linear map%
+\begin{align*}
+\operatorname*{Vir}\diagup\left\langle C\right\rangle  &  \rightarrow
+V_{1,-1},\\
+\overline{L_{n}} &  \mapsto v_{-n}%
+\end{align*}
+is a $\operatorname*{Vir}$-module isomorphism. Thus, $\operatorname*{Vir}%
+\diagup\left\langle C\right\rangle \cong V_{1,-1}\cong V_{\alpha,-1}$ as
+$\operatorname*{Vir}$-modules for every $\alpha\in\mathbb{Z}$ (because of
+Proposition \ref{prop.Vab.iso} \textbf{(a)}).
+\end{remark}
 
 \subsection{Some consequences of Poincar\'{e}-Birkhoff-Witt}
 
