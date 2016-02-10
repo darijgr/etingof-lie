@@ -49,7 +49,7 @@
 \usepackage{hyperref}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Tuesday, February 09, 2016 22:31:51}
+%TCIDATA{LastRevised=Wednesday, February 10, 2016 03:17:46}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -1330,8 +1330,8 @@ be a $\mathfrak{g}$-module again. Consider also $k$ as a $\mathfrak{g}$-module
 (with the trivial $\mathfrak{g}$-module structure).
 
 Let $\beta:M\times N\rightarrow k$ be a $k$-bilinear form. Let $B$ be the
-linear map $M\otimes N\rightarrow k$ induced by the $k$-bilinear map $M\times
-N\rightarrow k$ using the universal property of the tensor product.
+linear map $M\otimes N\rightarrow k$ induced by the $k$-bilinear map
+$\beta:M\times N\rightarrow k$ using the universal property of the tensor product.
 
 Then, $\beta$ is $\mathfrak{g}$-invariant if and only if $B$ is a
 $\mathfrak{g}$-module homomorphism.
@@ -1344,7 +1344,7 @@ not already aware of it.
 
 \begin{verlong}
 \textit{Proof of Remark \ref{rmk.g-invar}.} We know that $B$ is the linear map
-$M\otimes N\rightarrow k$ induced by the $k$-bilinear map $M\times
+$M\otimes N\rightarrow k$ induced by the $k$-bilinear map $\beta:M\times
 N\rightarrow k$ using the universal property of the tensor product. Hence, any
 $a\in M$ and $b\in N$ satisfy%
 \begin{equation}
@@ -1433,7 +1433,7 @@ the map $B$ is a $\mathfrak{g}$-module homomorphism. This proves Assertion
 
 \textit{Proof of Assertion \ref{rmk.g-invar}.2:} Assume that $B$ is a
 $\mathfrak{g}$-module homomorphism. Now, let $x\in\mathfrak{g}$, $a\in M$ and
-$b\in N$. By the definition of the $\mathfrak{g}$-module $A\otimes B$, we have%
+$b\in N$. By the definition of the $\mathfrak{g}$-module $M\otimes N$, we have%
 \[
 x\rightharpoonup\left(  a\otimes b\right)  =\left(  x\rightharpoonup a\right)
 \otimes b+a\otimes\left(  x\rightharpoonup b\right)  ,
@@ -1498,21 +1498,21 @@ adjoint one (i. e., the one defined by $x\rightharpoonup a=\left[  x,a\right]
 $ for all $x\in\mathfrak{g}$ and $a\in\mathfrak{g}$).
 \end{Convention}
 
-The notion of $\mathfrak{g}$-invariant forms on $\mathfrak{g}$ itself has the
-following equivalent criteria:
+The following remark provides two equivalent criteria for a bilinear form on
+the Lie algebra $\mathfrak{g}$ itself to be $\mathfrak{g}$-invariant; they
+will often be used tacitly:
 
 \begin{remark}
 \label{rmk.g-invar.g}Let $\mathfrak{g}$ be a Lie algebra over a field $k$. Let
 $\beta:\mathfrak{g}\times\mathfrak{g}\rightarrow k$ be a $k$-bilinear form.
 
 \textbf{(a)} The form $\beta$ is $\mathfrak{g}$-invariant if and only if every
-elements $a$, $b$ and $c$ of $\mathfrak{g}$ satisfy $\left(  \left[
-a,b\right]  ,c\right)  +\left(  b,\left[  a,c\right]  \right)  =0$.
+elements $a$, $b$ and $c$ of $\mathfrak{g}$ satisfy $\beta\left(  \left[
+a,b\right]  ,c\right)  +\beta\left(  b,\left[  a,c\right]  \right)  =0$.
 
-\textbf{(b)} Assume further that the form $\beta$ is symmetric. Then, the form
-$\beta$ is $\mathfrak{g}$-invariant if and only if every elements $a$, $b$ and
-$c$ of $\mathfrak{g}$ satisfy $\beta\left(  \left[  a,b\right]  ,c\right)
-=\beta\left(  a,\left[  b,c\right]  \right)  $.
+\textbf{(b)} The form $\beta$ is $\mathfrak{g}$-invariant if and only if every
+elements $a$, $b$ and $c$ of $\mathfrak{g}$ satisfy $\beta\left(  \left[
+a,b\right]  ,c\right)  =\beta\left(  a,\left[  b,c\right]  \right)  $.
 \end{remark}
 
 \begin{vershort}
@@ -1530,9 +1530,10 @@ x\in\mathfrak{g}\text{ and }a\in\mathfrak{g}. \label{pf.g-invar.g.1}%
 
 \textbf{(a)} By Definition \ref{def.g-invar} (applied to $M=\mathfrak{g}$ and
 $N=\mathfrak{g}$), we know that the form $\beta$ is $\mathfrak{g}$-invariant
-if and only if every $x\in\mathfrak{g}$, $a\in M$ and $b\in N$ satisfy
-$\beta\left(  x\rightharpoonup a,b\right)  +\beta\left(  a,x\rightharpoonup
-b\right)  =0$. Thus, we have the following equivalence of assertions:%
+if and only if every $x\in\mathfrak{g}$, $a\in\mathfrak{g}$ and $b\in
+\mathfrak{g}$ satisfy $\beta\left(  x\rightharpoonup a,b\right)  +\beta\left(
+a,x\rightharpoonup b\right)  =0$. Thus, we have the following equivalence of
+assertions:%
 \begin{align}
 &  \ \left(  \text{the form }\beta\text{ is }\mathfrak{g}\text{-invariant}%
 \right) \nonumber\\
@@ -9066,7 +9067,7 @@ v_{-\lambda/\varepsilon^{2}}^{-\mathfrak{g}}$ for every $y\in U\left(
 \cdot,\cdot\right)  _{\mu}^{\mathfrak{e}}$ depends functorially on a
 $\mathbb{Z}$-graded Lie algebra $\mathfrak{e}$ and a linear form
 $\mu:\mathfrak{e}_{0}\rightarrow\mathbb{C}$, these isomorphisms leave the
-bilinear form invariant, i. e., we have%
+bilinear form unchanged, i. e., we have%
 \[
 \left(  \left(  U\left(  J_{\varepsilon}\right)  \right)  \left(  x\right)
 v_{\lambda/\varepsilon^{2}}^{+\mathfrak{g}},\left(  U\left(  J_{\varepsilon
@@ -11838,8 +11839,8 @@ $\widehat{\omega}$ instead of $\mathfrak{g}$ and $\omega$).
 More generally:
 
 \begin{proposition}
-Let $\mathfrak{g}$ be a Lie algebra with a symmetric bilinear form $\left(
-\cdot,\cdot\right)  $ of degree $0$ invariant under the Lie bracket. Let
+Let $\mathfrak{g}$ be a Lie algebra equipped with a $\mathfrak{g}$-invariant
+symmetric bilinear form $\left(  \cdot,\cdot\right)  $ of degree $0$. Let
 $\widehat{\mathfrak{g}}$ be the Lie algebra defined in Definition
 \ref{def.loop}. Let $K$ denote the element $\left(  0,1\right)  $ of
 $\mathfrak{g}\left[  t,t^{-1}\right]  \oplus\mathbb{C}=\widehat{\mathfrak{g}}$.
@@ -12192,8 +12193,8 @@ Virasoro algebra $\operatorname*{Vir}$.
 \begin{proposition}
 If $\mathfrak{g}$ is a Lie algebra with an antilinear $\mathbb{R}%
 $-antiinvolution $\dag:\mathfrak{g}\rightarrow\mathfrak{g}$ and with a
-symmetric bilinear form $\left(  \cdot,\cdot\right)  $ of degree $0$ invariant
-under the Lie bracket, then we can define an antilinear map $\dag
+symmetric $\mathfrak{g}$-invariant bilinear form $\left(  \cdot,\cdot\right)
+$ of degree $0$, then we can define an antilinear map $\dag
 :\widehat{\mathfrak{g}}\rightarrow\widehat{\mathfrak{g}}$ (where
 $\widehat{\mathfrak{g}}$ is the Lie algebra defined in Definition
 \ref{def.loop}) by $\left(  at^{n}\right)  ^{\dag}=a^{\dag}\cdot t^{-n}$ for
@@ -14260,7 +14261,7 @@ index $m$ renamed as $\ell$), we have $L_{n}=\dfrac{1}{2}\sum\limits_{\ell
 }a_{n+\ell}:\right.  ,L_{m}\right]  }_{=-\left[  L_{m},\left.  :a_{-\ell
 }a_{n+\ell}:\right.  \right]  }\nonumber\\
 &  =-\dfrac{1}{2}\sum\limits_{\ell\in\mathbb{Z}}\left[  L_{m},\left.
-:a_{-\ell}a_{n+\ell}:\right.  \right]  .\label{pf.fockvir.answer2.pf0}%
+:a_{-\ell}a_{n+\ell}:\right.  \right]  . \label{pf.fockvir.answer2.pf0}%
 \end{align}
 
 
@@ -15892,7 +15893,8 @@ _{2}^{k_{2}}\alpha_{3}^{k_{3}}...\operatorname*{Coeff}\nolimits_{\left(
 }\alpha_{3}^{m_{3}}...\operatorname*{Coeff}\nolimits_{\left(
 0,0,0,...\right)  }P.
 \end{align*}
-Dividing this equality by $m_{i}$, we obtain%
+We can divide this equality by $m_{i}$ (since $m_{i}>0$). As a result, we
+obtain%
 \[
 \operatorname*{Coeff}\nolimits_{\left(  m_{1},m_{2},m_{3},...\right)
 }P=\dfrac{1}{m_{1}!m_{2}!m_{3}!...}\alpha_{1}^{m_{1}}\alpha_{2}^{m_{2}}%
@@ -16225,7 +16227,7 @@ u,u^{-1}\right]  }\\
 &  =\sum\limits_{m\geq0}\left(  M\left[  m\right]  \right)  \left[
 u,u^{-1}\right]  .
 \end{align*}
-Hence, we can write the element $m$ in the form $x=\sum\limits_{m\geq0}x_{m}%
+Hence, we can write the element $x$ in the form $x=\sum\limits_{m\geq0}x_{m}%
 $\text{ for some family }$\left(  x_{m}\right)  _{m\in\mathbb{N}}$ of elements
 of $M\left[  u,u^{-1}\right]  $ satisfying $\left(  x_{m}\in\left(  M\left[
 m\right]  \right)  \left[  u,u^{-1}\right]  \text{ for every }m\in
@@ -39551,9 +39553,9 @@ $\mu$-Fock representation $F_{\mu}$ (that was constructed in Proposition
 
 \begin{definition}
 \label{def.sugawara}Let $\mathfrak{g}$ be a finite-dimensional $\mathbb{C}%
-$-Lie algebra with an invariant symmetric bilinear form $\left(  \cdot
-,\cdot\right)  $. (This form needs not be nondegenerate; it is even allowed to
-be $0$.)
+$-Lie algebra equipped with a $\mathfrak{g}$-invariant symmetric bilinear form
+$\left(  \cdot,\cdot\right)  $. (This form needs not be nondegenerate; it is
+even allowed to be $0$.)
 
 Consider the $2$-cocycle $\omega:\mathfrak{g}\left[  t,t^{-1}\right]
 \times\mathfrak{g}\left[  t,t^{-1}\right]  \rightarrow\mathbb{C}$ defined by%
@@ -39595,9 +39597,9 @@ $K\mid_{M}=k\cdot\operatorname*{id}$.
 
 \begin{proposition}
 \label{prop.WtoDerg}Let $\mathfrak{g}$ be a finite-dimensional $\mathbb{C}%
-$-Lie algebra with an invariant symmetric bilinear form $\left(  \cdot
-,\cdot\right)  $. Consider the affine Lie algebra $\widehat{\mathfrak{g}}$
-defined as in Definition \ref{def.sugawara}.
+$-Lie algebra equipped with a $\mathfrak{g}$-invariant symmetric bilinear form
+$\left(  \cdot,\cdot\right)  $. Consider the affine Lie algebra
+$\widehat{\mathfrak{g}}$ defined as in Definition \ref{def.sugawara}.
 
 \textbf{(a)} Then, there is a natural homomorphism $\eta
 _{\widehat{\mathfrak{g}}}:W\rightarrow\operatorname*{Der}\widehat{\mathfrak{g}%
@@ -39730,6 +39732,35 @@ b,p_{i}\right]  ,q_{i}\right]  =\sum\limits_{i=1}^{n}\operatorname*{Kil}%
 \left(  b,p_{i}\right)  q_{i}$ for every $b\in\mathfrak{g}$.
 \end{lemma}
 
+Here, we are using the following notation:
+
+\begin{remark}
+Let $\mathfrak{g}$ be a Lie algebra. An element $m$ of a $\mathfrak{g}$-module
+$M$ is said to be $\mathfrak{g}$\textit{-invariant} if and only if it
+satisfies $\left(  x\rightharpoonup m=0\text{ for every }x\in\mathfrak{g}%
+\right)  $. We regard $\mathfrak{g}$ as a $\mathfrak{g}$-module by means of
+the adjoint action of $\mathfrak{g}$ (that is, we set $x\rightharpoonup
+m=\left[  x,m\right]  $ for every $x\in\mathfrak{g}$ and $m\in\mathfrak{g}$);
+thus, $\mathfrak{g}\otimes\mathfrak{g}$ becomes a $\mathfrak{g}$-module as
+well. Explicitly, the action of $\mathfrak{g}$ on $\mathfrak{g}\otimes
+\mathfrak{g}$ is given by%
+\[
+x\rightharpoonup\left(  \sum\limits_{i=1}^{n}p_{i}\otimes q_{i}\right)
+=\sum\limits_{i=1}^{n}\left[  x,p_{i}\right]  \otimes q_{i}+\sum
+\limits_{i=1}^{n}p_{i}\otimes\left[  x,q_{i}\right]
+\]
+for every tensor $\sum\limits_{i=1}^{n}p_{i}\otimes q_{i}\in\mathfrak{g}%
+\otimes\mathfrak{g}$. Hence, a tensor $\sum\limits_{i=1}^{n}p_{i}\otimes
+q_{i}\in\mathfrak{g}\otimes\mathfrak{g}$ is $\mathfrak{g}$-invariant if and
+only if every $x\in\mathfrak{g}$ satisfies $\sum\limits_{i=1}^{n}\left[
+x,p_{i}\right]  \otimes q_{i}+\sum\limits_{i=1}^{n}p_{i}\otimes\left[
+x,q_{i}\right]  =0$. In other words, a tensor $\sum\limits_{i=1}^{n}%
+p_{i}\otimes q_{i}\in\mathfrak{g}\otimes\mathfrak{g}$ is $\mathfrak{g}%
+$-invariant if and only if every $x\in\mathfrak{g}$ satisfies $\sum
+\limits_{i=1}^{n}\left[  p_{i},x\right]  \otimes q_{i}=-\sum\limits_{i=1}%
+^{n}p_{i}\otimes\left[  q_{i},x\right]  $.
+\end{remark}
+
 \textit{Proof of Lemma \ref{lem.sugawara.Kil}.} Let $\left(  c_{1}%
 ,c_{2},...,c_{m}\right)  $ be a basis of the vector space $\mathfrak{g}$, and
 let $\left(  c_{1}^{\ast},c_{2}^{\ast},...,c_{m}^{\ast}\right)  $ be the dual
@@ -39755,8 +39786,8 @@ b,p_{i}\right]  \right)  \left[  q_{i},c_{j}\right] \\
 &  \ \ \ \ \ \ \ \ \ \ \left(
 \begin{array}
 [c]{c}%
-\text{since }\sum\limits_{i=1}^{n}p_{i}\otimes q_{i}\text{ is }\mathfrak{g}%
-\otimes\mathfrak{g}\text{-invariant, so that}\\
+\text{since }\sum\limits_{i=1}^{n}p_{i}\otimes q_{i}\text{ is } \mathfrak{g}%
+\text{-invariant, so that}\\
 \sum\limits_{i=1}^{n}\left[  p_{i},c_{j}\right]  \otimes q_{i}=-\sum
 \limits_{i=1}^{n}p_{i}\otimes\left[  q_{i},c_{j}\right]  \text{ for every
 }j\in\left\{  1,2,...,m\right\}  \text{, and thus}\\
@@ -39782,10 +39813,10 @@ Here comes another lemma on $\mathfrak{g}$-invariant bilinear forms:
 
 \begin{lemma}
 \label{lem.sugawara.Kil2}Let $\mathfrak{g}$ be a finite-dimensional
-$\mathbb{C}$-Lie algebra with an invariant symmetric bilinear form
-$\left\langle \cdot,\cdot\right\rangle $. Let $B\subseteq\mathfrak{g}$ be a
-basis orthonormal with respect to the form $\left\langle \cdot,\cdot
-\right\rangle $.
+$\mathbb{C}$-Lie algebra equipped with a $\mathfrak{g}$-invariant symmetric
+bilinear form $\left\langle \cdot,\cdot\right\rangle $. Let $B\subseteq
+\mathfrak{g}$ be a basis orthonormal with respect to the form $\left\langle
+\cdot,\cdot\right\rangle $.
 
 \textbf{(a)} Then, the tensor $\sum\limits_{a\in B}a\otimes a$ is
 $\mathfrak{g}$-invariant in $\mathfrak{g}\otimes\mathfrak{g}$.
@@ -39939,11 +39970,11 @@ As a consequence of this lemma, we get:
 
 \begin{lemma}
 \label{lem.sugawara.Kil3}Let $\mathfrak{g}$ be a finite-dimensional
-$\mathbb{C}$-Lie algebra with an invariant symmetric bilinear form $\left(
-\cdot,\cdot\right)  $. Denote by $\operatorname*{Kil}$ the Killing form of
-$\mathfrak{g}$. Let $B\subseteq\mathfrak{g}$ be a basis orthonormal with
-respect to the form $k\left(  \cdot,\cdot\right)  +\dfrac{1}{2}%
-\operatorname*{Kil}$. Let $b\in\mathfrak{g}$.
+$\mathbb{C}$-Lie algebra equipped with a $\mathfrak{g}$-invariant symmetric
+bilinear form $\left(  \cdot,\cdot\right)  $. Denote by $\operatorname*{Kil}$
+the Killing form of $\mathfrak{g}$. Let $B\subseteq\mathfrak{g}$ be a basis
+orthonormal with respect to the form $k\left(  \cdot,\cdot\right)  +\dfrac
+{1}{2}\operatorname*{Kil}$. Let $b\in\mathfrak{g}$.
 
 \textbf{(a)} We have $\sum\limits_{a\in B}\left(  \left[  b,a\right]  \otimes
 a+a\otimes\left[  b,a\right]  \right)  =0$.
@@ -39976,11 +40007,11 @@ the inner product $\left\langle \cdot,\cdot\right\rangle =k\left(  \cdot
 $V=\mathfrak{g}$, we conclude that $b=k\sum\limits_{a\in B}\left(  b,a\right)
 a+\dfrac{1}{2}\sum\limits_{a\in B}\operatorname*{Kil}\left(  b,a\right)  a$.
 
-Now, applying Lemma \ref{lem.sugawara.Kil} to the invariant tensor
-$\sum\limits_{a\in B}a\otimes a$ in lieu of $\sum\limits_{i=1}^{n}p_{i}\otimes
-q_{i}$, we see that $\sum\limits_{a\in B}\left[  \left[  b,a\right]
-,a\right]  =\sum\limits_{a\in B}\operatorname*{Kil}\left(  b,a\right)  a$.
-Hence,%
+Now, applying Lemma \ref{lem.sugawara.Kil} to the $\mathfrak{g}$-invariant
+tensor $\sum\limits_{a\in B}a\otimes a$ in lieu of $\sum\limits_{i=1}^{n}%
+p_{i}\otimes q_{i}$, we see that $\sum\limits_{a\in B}\left[  \left[
+b,a\right]  ,a\right]  =\sum\limits_{a\in B}\operatorname*{Kil}\left(
+b,a\right)  a$. Hence,%
 \[
 b=k\sum\limits_{a\in B}\left(  b,a\right)  a+\dfrac{1}{2}\underbrace{\sum
 \limits_{a\in B}\operatorname*{Kil}\left(  b,a\right)  a}_{=\sum\limits_{a\in
