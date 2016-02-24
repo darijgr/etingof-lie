@@ -49,7 +49,7 @@
 \usepackage{hyperref}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Sunday, February 14, 2016 14:41:49}
+%TCIDATA{LastRevised=Tuesday, February 23, 2016 19:31:56}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -22478,24 +22478,26 @@ The following question poses itself naturally now: Can we extend this
 representation $\rho$ to a representation of $\overline{\mathfrak{a}_{\infty}%
 }$ in a reasonable way?
 
-This question depends on what we means by ``reasonable''. One way to
-concretize this is by noticing that $\overline{\mathfrak{a}_{\infty}%
-}=\bigoplus\limits_{i\in\mathbb{Z}}\overline{\mathfrak{a}_{\infty}^{i}}$,
-where $\overline{\mathfrak{a}_{\infty}^{i}}$ is the space of all matrices with
-nonzero entries only on the $i$-th diagonal. For each $i\in\mathbb{Z}$, the
-vector space $\overline{\mathfrak{a}_{\infty}^{i}}$ can be given the product
-topology (i. e., the topology in which a net $\left(  s_{z}\right)  _{z\in Z}$
-of matrices converges to a matrix $s$ if and only if for any $\left(
-m,n\right)  \in\mathbb{Z}^{2}$ satisfying $n-m=i$, the net of the $\left(
-m,n\right)  $-th entries of the matrices $s_{z}$ converge to the $\left(
-m,n\right)  $-th entry of $s$ in the discrete topology). Then, $\mathfrak{gl}%
-_{\infty}^{i}$ in dense in $\overline{\mathfrak{a}_{\infty}^{i}}$ for every
-$i\in\mathbb{Z}$. We can also make $\wedge^{\dfrac{\infty}{2},m}V$ into a
-topological space by using the discrete topology. Our question can now be
-stated as follows: Can we extend $\rho$ by continuity to a representation of
-$\overline{\mathfrak{a}_{\infty}}$ (where ``continuous'' means ``continuous on
-each $\overline{\mathfrak{a}_{\infty}^{i}}$'', since we have not defined a
-topology on the whole space $\overline{\mathfrak{a}_{\infty}}$) ?
+This question depends on what we mean by \textquotedblleft
+reasonable\textquotedblright. One way to concretize this is by noticing that
+$\overline{\mathfrak{a}_{\infty}}=\bigoplus\limits_{i\in\mathbb{Z}}%
+\overline{\mathfrak{a}_{\infty}^{i}}$, where $\overline{\mathfrak{a}_{\infty
+}^{i}}$ is the space of all matrices with nonzero entries only on the $i$-th
+diagonal. For each $i\in\mathbb{Z}$, the vector space $\overline
+{\mathfrak{a}_{\infty}^{i}}$ can be given the product topology (i. e., the
+topology in which a net $\left(  s_{z}\right)  _{z\in Z}$ of matrices
+converges to a matrix $s$ if and only if for any $\left(  m,n\right)
+\in\mathbb{Z}^{2}$ satisfying $n-m=i$, the net of the $\left(  m,n\right)
+$-th entries of the matrices $s_{z}$ converge to the $\left(  m,n\right)  $-th
+entry of $s$ in the discrete topology). Then, $\mathfrak{gl}_{\infty}^{i}$ in
+dense in $\overline{\mathfrak{a}_{\infty}^{i}}$ for every $i\in\mathbb{Z}$. We
+can also make $\wedge^{\dfrac{\infty}{2},m}V$ into a topological space by
+using the discrete topology. Our question can now be stated as follows: Can we
+extend $\rho$ by continuity to a representation of $\overline{\mathfrak{a}%
+_{\infty}}$ (where \textquotedblleft continuous\textquotedblright\ means
+\textquotedblleft continuous on each $\overline{\mathfrak{a}_{\infty}^{i}}%
+$\textquotedblright, since we have not defined a topology on the whole space
+$\overline{\mathfrak{a}_{\infty}}$) ?
 
 Answer: Almost, but not precisely. We cannot make $\overline{\mathfrak{a}%
 _{\infty}}$ act on $\wedge^{\dfrac{\infty}{2},m}V$ in such a way that its
@@ -23065,7 +23067,46 @@ Corollary \ref{cor.japan} is called the \textit{Japanese cocycle}.
 \end{definition}
 
 The proofs of Theorem \ref{thm.japan} and Corollary \ref{cor.japan} are a
-homework problem.
+homework problem. A few remarks on the Japanese cocycle are in order. It can
+be explicitly computed by the formula%
+\begin{align*}
+&  \alpha\left(  \left(  a_{i,j}\right)  _{\left(  i,j\right)  \in
+\mathbb{Z}^{2}},\left(  b_{i,j}\right)  _{\left(  i,j\right)  \in
+\mathbb{Z}^{2}}\right)  \\
+&  =-\sum_{\substack{i\leq0;\\j>0}}b_{i,j}a_{j,i}+\sum_{\substack{i\leq
+0;\\j>0}}a_{i,j}b_{j,i}=-\sum_{\substack{i>0;\\j\leq0}}a_{i,j}b_{j,i}%
++\sum_{\substack{i\leq0;\\j>0}}a_{i,j}b_{j,i}\\
+&  =\sum_{\left(  i,j\right)  \in\mathbb{Z}^{2}}a_{i,j}b_{j,i}\left(  \left[
+j>0\right]  -\left[  i>0\right]  \right)  \ \ \ \ \ \ \ \ \ \ \text{for every
+}\left(  a_{i,j}\right)  _{\left(  i,j\right)  \in\mathbb{Z}^{2}},\left(
+b_{i,j}\right)  _{\left(  i,j\right)  \in\mathbb{Z}^{2}}\in\overline
+{\mathfrak{a}_{\infty}}%
+\end{align*}
+where we are using the \textit{Iverson bracket notation}\footnote{This is the
+notation $\left[  \mathcal{S}\right]  $ for the truth value of any logical
+statement $\mathcal{S}$ (that is, $\left[  \mathcal{S}\right]  $ denotes the
+integer $%
+\begin{cases}
+1, & \text{if }\mathcal{S}\text{ is true;}\\
+0, & \text{if }\mathcal{S}\text{ is false}%
+\end{cases}
+$).}. The cocycle $\alpha$\ owes its name \textquotedblleft Japanese
+cocycle\textquotedblright\ to the fact that it (first?) appeared in the work
+of the Tokyo mathematical physicists Date, Jimbo, Kashiwara and
+Miwa\footnote{More precisely, it is the skew-symmetric bilinear form $c$ in
+the following paper:
+\par
+\begin{itemize}
+\item Etsuro Date, Michio Jimbo, Masaki Kashiwara, Tetuji Miwa,
+\textit{Transformation Groups for Soliton Equations -- Euclidean Lie Algebras
+and Reduction of the KP Hierarchy}, Publ. RIMS, Kyoto Univ. 18 (1982), pp.
+1077--1110.
+\end{itemize}
+\par
+In this paper, the Lie algebras that we are denoting by $\overline
+{\mathfrak{a}_{\infty}}$ and $\mathfrak{a}_{\infty}$ are called
+$\mathfrak{pgl}\left(  \infty\right)  $ and $\mathfrak{gl}\left(
+\infty\right)  $, respectively.}.
 
 We are going to prove soon (Proposition \ref{prop.japan.nontr} and Corollary
 \ref{cor.japan.triv}) that $\alpha$ is a nontrivial $2$-cocycle, but its
