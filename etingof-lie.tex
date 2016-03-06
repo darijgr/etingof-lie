@@ -49,7 +49,7 @@
 \usepackage{hyperref}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Saturday, February 06, 2016 15:56:57}
+%TCIDATA{LastRevised=Tuesday, February 23, 2016 19:31:56}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -1330,8 +1330,8 @@ be a $\mathfrak{g}$-module again. Consider also $k$ as a $\mathfrak{g}$-module
 (with the trivial $\mathfrak{g}$-module structure).
 
 Let $\beta:M\times N\rightarrow k$ be a $k$-bilinear form. Let $B$ be the
-linear map $M\otimes N\rightarrow k$ induced by the $k$-bilinear map $M\times
-N\rightarrow k$ using the universal property of the tensor product.
+linear map $M\otimes N\rightarrow k$ induced by the $k$-bilinear map
+$\beta:M\times N\rightarrow k$ using the universal property of the tensor product.
 
 Then, $\beta$ is $\mathfrak{g}$-invariant if and only if $B$ is a
 $\mathfrak{g}$-module homomorphism.
@@ -1344,7 +1344,7 @@ not already aware of it.
 
 \begin{verlong}
 \textit{Proof of Remark \ref{rmk.g-invar}.} We know that $B$ is the linear map
-$M\otimes N\rightarrow k$ induced by the $k$-bilinear map $M\times
+$M\otimes N\rightarrow k$ induced by the $k$-bilinear map $\beta:M\times
 N\rightarrow k$ using the universal property of the tensor product. Hence, any
 $a\in M$ and $b\in N$ satisfy%
 \begin{equation}
@@ -1433,7 +1433,7 @@ the map $B$ is a $\mathfrak{g}$-module homomorphism. This proves Assertion
 
 \textit{Proof of Assertion \ref{rmk.g-invar}.2:} Assume that $B$ is a
 $\mathfrak{g}$-module homomorphism. Now, let $x\in\mathfrak{g}$, $a\in M$ and
-$b\in N$. By the definition of the $\mathfrak{g}$-module $A\otimes B$, we have%
+$b\in N$. By the definition of the $\mathfrak{g}$-module $M\otimes N$, we have%
 \[
 x\rightharpoonup\left(  a\otimes b\right)  =\left(  x\rightharpoonup a\right)
 \otimes b+a\otimes\left(  x\rightharpoonup b\right)  ,
@@ -1498,21 +1498,21 @@ adjoint one (i. e., the one defined by $x\rightharpoonup a=\left[  x,a\right]
 $ for all $x\in\mathfrak{g}$ and $a\in\mathfrak{g}$).
 \end{Convention}
 
-The notion of $\mathfrak{g}$-invariant forms on $\mathfrak{g}$ itself has the
-following equivalent criteria:
+The following remark provides two equivalent criteria for a bilinear form on
+the Lie algebra $\mathfrak{g}$ itself to be $\mathfrak{g}$-invariant; they
+will often be used tacitly:
 
 \begin{remark}
 \label{rmk.g-invar.g}Let $\mathfrak{g}$ be a Lie algebra over a field $k$. Let
 $\beta:\mathfrak{g}\times\mathfrak{g}\rightarrow k$ be a $k$-bilinear form.
 
 \textbf{(a)} The form $\beta$ is $\mathfrak{g}$-invariant if and only if every
-elements $a$, $b$ and $c$ of $\mathfrak{g}$ satisfy $\left(  \left[
-a,b\right]  ,c\right)  +\left(  b,\left[  a,c\right]  \right)  =0$.
+elements $a$, $b$ and $c$ of $\mathfrak{g}$ satisfy $\beta\left(  \left[
+a,b\right]  ,c\right)  +\beta\left(  b,\left[  a,c\right]  \right)  =0$.
 
-\textbf{(b)} Assume further that the form $\beta$ is symmetric. Then, the form
-$\beta$ is $\mathfrak{g}$-invariant if and only if every elements $a$, $b$ and
-$c$ of $\mathfrak{g}$ satisfy $\beta\left(  \left[  a,b\right]  ,c\right)
-=\beta\left(  a,\left[  b,c\right]  \right)  $.
+\textbf{(b)} The form $\beta$ is $\mathfrak{g}$-invariant if and only if every
+elements $a$, $b$ and $c$ of $\mathfrak{g}$ satisfy $\beta\left(  \left[
+a,b\right]  ,c\right)  =\beta\left(  a,\left[  b,c\right]  \right)  $.
 \end{remark}
 
 \begin{vershort}
@@ -1530,9 +1530,10 @@ x\in\mathfrak{g}\text{ and }a\in\mathfrak{g}. \label{pf.g-invar.g.1}%
 
 \textbf{(a)} By Definition \ref{def.g-invar} (applied to $M=\mathfrak{g}$ and
 $N=\mathfrak{g}$), we know that the form $\beta$ is $\mathfrak{g}$-invariant
-if and only if every $x\in\mathfrak{g}$, $a\in M$ and $b\in N$ satisfy
-$\beta\left(  x\rightharpoonup a,b\right)  +\beta\left(  a,x\rightharpoonup
-b\right)  =0$. Thus, we have the following equivalence of assertions:%
+if and only if every $x\in\mathfrak{g}$, $a\in\mathfrak{g}$ and $b\in
+\mathfrak{g}$ satisfy $\beta\left(  x\rightharpoonup a,b\right)  +\beta\left(
+a,x\rightharpoonup b\right)  =0$. Thus, we have the following equivalence of
+assertions:%
 \begin{align}
 &  \ \left(  \text{the form }\beta\text{ is }\mathfrak{g}\text{-invariant}%
 \right) \nonumber\\
@@ -4706,10 +4707,10 @@ Leibniz rule)}}}-\underbrace{\left(  g\left(  f^{\prime}h\right)  \right)
 f^{\prime}h\right)  ^{\prime}\\\text{(by the Leibniz rule)}}}\\
 &  =\underbrace{f^{\prime}\left(  g^{\prime}h\right)  }_{=f^{\prime}g^{\prime
 }h}+f\left(  g^{\prime}h\right)  ^{\prime}-\underbrace{g^{\prime}\left(
-f^{\prime}h\right)  }_{=f^{\prime}g^{\prime}h}+g\left(  f^{\prime}h\right)
+f^{\prime}h\right)  }_{=f^{\prime}g^{\prime}h}-g\left(  f^{\prime}h\right)
 ^{\prime}\\
 &  =f^{\prime}g^{\prime}h+f\left(  g^{\prime}h\right)  ^{\prime}-f^{\prime
-}g^{\prime}h+g\left(  f^{\prime}h\right)  ^{\prime}=f\left(  g^{\prime
+}g^{\prime}h-g\left(  f^{\prime}h\right)  ^{\prime}=f\left(  g^{\prime
 }h\right)  ^{\prime}-g\left(  f^{\prime}h\right)  ^{\prime}.
 \end{align*}
 Since $\left(  qh\right)  ^{\prime}=q^{\prime}h+qh^{\prime}$ (by the Leibniz
@@ -4894,22 +4895,6 @@ t^{m-k}\right)  t^{\alpha}\left(  dt\right)  ^{\beta}\\
 \beta\right)  v_{k-m}.
 \end{align*}
 This proves (\ref{ex1.1.2.var}). Proposition \ref{prop.Vab.1} \textbf{(b)} is proven.
-
-\begin{remark}
-\label{rmk.Vab.adj}Consider the $\operatorname*{Vir}$-module
-$\operatorname*{Vir}$ (with the adjoint action). Since $\left\langle
-C\right\rangle $ is a submodule of $\operatorname*{Vir}$, we obtain a
-$\operatorname*{Vir}$-module $\operatorname*{Vir}\diagup\left\langle
-C\right\rangle $. This $\operatorname*{Vir}$-module is isomorphic to
-$V_{1,-1}$ (and thus to $V_{\alpha,-1}$ for every $\alpha\in\mathbb{Z}$). More
-precisely, the $\mathbb{C}$-linear map%
-\begin{align*}
-\operatorname*{Vir}\diagup\left\langle C\right\rangle  &  \rightarrow
-V_{1,-1},\\
-\overline{L_{n}}  &  \mapsto v_{-n}%
-\end{align*}
-is a $\operatorname*{Vir}$-module isomorphism.
-\end{remark}
 
 The representations $V_{\alpha,\beta}$ are not all pairwise non-isomorphic,
 but there are still uncountably many non-isomorphic ones among them. More precisely:
@@ -5101,7 +5086,7 @@ k-m-\alpha-\beta\left(  n+1\right)  \right) \\
 k-\alpha^{\prime}-\beta^{\prime}\left(  m+1\right)  \right)  \cdot\left(
 k-m-\alpha^{\prime}-\beta^{\prime}\left(  n+1\right)  \right)  .
 \end{align*}
-Since $\mathbb{Z}^{3}$ is Zariski-dense in $\mathbb{Z}^{3}$, this yields that
+Since $\mathbb{Z}^{3}$ is Zariski-dense in $\mathbb{C}^{3}$, this yields that
 \begin{align*}
 &  \left(  X-\alpha^{\prime}-\beta^{\prime}\left(  Y+Z+1\right)  \right)
 \cdot\left(  X-\alpha-\beta\left(  Z+1\right)  \right)  \cdot\left(
@@ -5177,6 +5162,24 @@ only if $\left(  \alpha\in\mathbb{Z}\text{ and }\beta\in\left\{  0,1\right\}
 
 We will not prove this; the interested reader is referred to Proposition 1.1
 in \S 1.2 of Kac-Raina.
+
+\begin{remark}
+\label{rmk.Vab.adj}Consider the $\operatorname*{Vir}$-module
+$\operatorname*{Vir}$ (with the adjoint action). Since $\left\langle
+C\right\rangle $ is a $\operatorname*{Vir}$-submodule of $\operatorname*{Vir}%
+$, we obtain a $\operatorname*{Vir}$-module $\operatorname*{Vir}%
+\diagup\left\langle C\right\rangle $. This $\operatorname*{Vir}$-module is
+isomorphic to $V_{1,-1}$. More precisely, the $\mathbb{C}$-linear map%
+\begin{align*}
+\operatorname*{Vir}\diagup\left\langle C\right\rangle  &  \rightarrow
+V_{1,-1},\\
+\overline{L_{n}}  &  \mapsto v_{-n}%
+\end{align*}
+is a $\operatorname*{Vir}$-module isomorphism. Thus, $\operatorname*{Vir}%
+\diagup\left\langle C\right\rangle \cong V_{1,-1}\cong V_{\alpha,-1}$ as
+$\operatorname*{Vir}$-modules for every $\alpha\in\mathbb{Z}$ (because of
+Proposition \ref{prop.Vab.iso} \textbf{(a)}).
+\end{remark}
 
 \subsection{Some consequences of Poincar\'{e}-Birkhoff-Witt}
 
@@ -9064,7 +9067,7 @@ v_{-\lambda/\varepsilon^{2}}^{-\mathfrak{g}}$ for every $y\in U\left(
 \cdot,\cdot\right)  _{\mu}^{\mathfrak{e}}$ depends functorially on a
 $\mathbb{Z}$-graded Lie algebra $\mathfrak{e}$ and a linear form
 $\mu:\mathfrak{e}_{0}\rightarrow\mathbb{C}$, these isomorphisms leave the
-bilinear form invariant, i. e., we have%
+bilinear form unchanged, i. e., we have%
 \[
 \left(  \left(  U\left(  J_{\varepsilon}\right)  \right)  \left(  x\right)
 v_{\lambda/\varepsilon^{2}}^{+\mathfrak{g}},\left(  U\left(  J_{\varepsilon
@@ -11836,8 +11839,8 @@ $\widehat{\omega}$ instead of $\mathfrak{g}$ and $\omega$).
 More generally:
 
 \begin{proposition}
-Let $\mathfrak{g}$ be a Lie algebra with a symmetric bilinear form $\left(
-\cdot,\cdot\right)  $ of degree $0$ invariant under the Lie bracket. Let
+Let $\mathfrak{g}$ be a Lie algebra equipped with a $\mathfrak{g}$-invariant
+symmetric bilinear form $\left(  \cdot,\cdot\right)  $ of degree $0$. Let
 $\widehat{\mathfrak{g}}$ be the Lie algebra defined in Definition
 \ref{def.loop}. Let $K$ denote the element $\left(  0,1\right)  $ of
 $\mathfrak{g}\left[  t,t^{-1}\right]  \oplus\mathbb{C}=\widehat{\mathfrak{g}}$.
@@ -12190,8 +12193,8 @@ Virasoro algebra $\operatorname*{Vir}$.
 \begin{proposition}
 If $\mathfrak{g}$ is a Lie algebra with an antilinear $\mathbb{R}%
 $-antiinvolution $\dag:\mathfrak{g}\rightarrow\mathfrak{g}$ and with a
-symmetric bilinear form $\left(  \cdot,\cdot\right)  $ of degree $0$ invariant
-under the Lie bracket, then we can define an antilinear map $\dag
+symmetric $\mathfrak{g}$-invariant bilinear form $\left(  \cdot,\cdot\right)
+$ of degree $0$, then we can define an antilinear map $\dag
 :\widehat{\mathfrak{g}}\rightarrow\widehat{\mathfrak{g}}$ (where
 $\widehat{\mathfrak{g}}$ is the Lie algebra defined in Definition
 \ref{def.loop}) by $\left(  at^{n}\right)  ^{\dag}=a^{\dag}\cdot t^{-n}$ for
@@ -13571,7 +13574,7 @@ In Case 1, we have $m\neq-n$, so that $\delta_{m,-n}=0$ and thus%
 \[
 a_{m}a_{n}+n\left[  m>0\right]  \underbrace{\delta_{m,-n}}_{=0}K=a_{m}%
 a_{n}=\left.  :a_{m}a_{n}:\right.  \ \ \ \ \ \ \ \ \ \ \left(  \text{by Remark
-\ref{rmk.fockvir.normal.mn})}\right)  .
+\ref{rmk.fockvir.normal.mn}}\right)  .
 \]
 Hence, Remark \ref{rmk.fockvir.normal.K} \textbf{(a)} is proven in Case 1.
 
@@ -14255,7 +14258,7 @@ index $m$ renamed as $\ell$), we have $L_{n}=\dfrac{1}{2}\sum\limits_{\ell
 \left[  L_{n},L_{m}\right]   &  =\left[  \dfrac{1}{2}\sum\limits_{\ell
 \in\mathbb{Z}}\left.  :a_{-\ell}a_{n+\ell}:\right.  ,L_{m}\right]  =\dfrac
 {1}{2}\sum\limits_{\ell\in\mathbb{Z}}\underbrace{\left[  \left.  :a_{-\ell
-}a_{n+\ell}:\right.  ,L_{m}\right]  }_{=-\left[  a_{m},\left.  :a_{-\ell
+}a_{n+\ell}:\right.  ,L_{m}\right]  }_{=-\left[  L_{m},\left.  :a_{-\ell
 }a_{n+\ell}:\right.  \right]  }\nonumber\\
 &  =-\dfrac{1}{2}\sum\limits_{\ell\in\mathbb{Z}}\left[  L_{m},\left.
 :a_{-\ell}a_{n+\ell}:\right.  \right]  . \label{pf.fockvir.answer2.pf0}%
@@ -15205,7 +15208,7 @@ B\otimes\mathbb{C}\left[  z_{1},z_{1}^{-1},z_{2},z_{2}^{-1},...,z_{m}%
 for $B\left[  \left[  z_{1},z_{2},...,z_{m}\right]  \right]  $, $B\left(
 \left(  z_{1},z_{2},...,z_{m}\right)  \right)  $ and $B\left[  \left[
 z_{1},z_{1}^{-1},z_{2},z_{2}^{-1},...,z_{m},z_{m}^{-1}\right]  \right]  $
-unless $B$ is finite-dimensional.
+unless $B$ is finite-dimensional or $m=0$.
 
 There are several obvious injections (analogous to the ones listed in
 Definition \ref{def.qf.powerseries}) which we regard as inclusions. For
@@ -15890,7 +15893,8 @@ _{2}^{k_{2}}\alpha_{3}^{k_{3}}...\operatorname*{Coeff}\nolimits_{\left(
 }\alpha_{3}^{m_{3}}...\operatorname*{Coeff}\nolimits_{\left(
 0,0,0,...\right)  }P.
 \end{align*}
-Dividing this equality by $m_{i}$, we obtain%
+We can divide this equality by $m_{i}$ (since $m_{i}>0$). As a result, we
+obtain%
 \[
 \operatorname*{Coeff}\nolimits_{\left(  m_{1},m_{2},m_{3},...\right)
 }P=\dfrac{1}{m_{1}!m_{2}!m_{3}!...}\alpha_{1}^{m_{1}}\alpha_{2}^{m_{2}}%
@@ -16223,7 +16227,7 @@ u,u^{-1}\right]  }\\
 &  =\sum\limits_{m\geq0}\left(  M\left[  m\right]  \right)  \left[
 u,u^{-1}\right]  .
 \end{align*}
-Hence, we can write the element $m$ in the form $x=\sum\limits_{m\geq0}x_{m}%
+Hence, we can write the element $x$ in the form $x=\sum\limits_{m\geq0}x_{m}%
 $\text{ for some family }$\left(  x_{m}\right)  _{m\in\mathbb{N}}$ of elements
 of $M\left[  u,u^{-1}\right]  $ satisfying $\left(  x_{m}\in\left(  M\left[
 m\right]  \right)  \left[  u,u^{-1}\right]  \text{ for every }m\in
@@ -22474,24 +22478,26 @@ The following question poses itself naturally now: Can we extend this
 representation $\rho$ to a representation of $\overline{\mathfrak{a}_{\infty}%
 }$ in a reasonable way?
 
-This question depends on what we means by ``reasonable''. One way to
-concretize this is by noticing that $\overline{\mathfrak{a}_{\infty}%
-}=\bigoplus\limits_{i\in\mathbb{Z}}\overline{\mathfrak{a}_{\infty}^{i}}$,
-where $\overline{\mathfrak{a}_{\infty}^{i}}$ is the space of all matrices with
-nonzero entries only on the $i$-th diagonal. For each $i\in\mathbb{Z}$, the
-vector space $\overline{\mathfrak{a}_{\infty}^{i}}$ can be given the product
-topology (i. e., the topology in which a net $\left(  s_{z}\right)  _{z\in Z}$
-of matrices converges to a matrix $s$ if and only if for any $\left(
-m,n\right)  \in\mathbb{Z}^{2}$ satisfying $n-m=i$, the net of the $\left(
-m,n\right)  $-th entries of the matrices $s_{z}$ converge to the $\left(
-m,n\right)  $-th entry of $s$ in the discrete topology). Then, $\mathfrak{gl}%
-_{\infty}^{i}$ in dense in $\overline{\mathfrak{a}_{\infty}^{i}}$ for every
-$i\in\mathbb{Z}$. We can also make $\wedge^{\dfrac{\infty}{2},m}V$ into a
-topological space by using the discrete topology. Our question can now be
-stated as follows: Can we extend $\rho$ by continuity to a representation of
-$\overline{\mathfrak{a}_{\infty}}$ (where ``continuous'' means ``continuous on
-each $\overline{\mathfrak{a}_{\infty}^{i}}$'', since we have not defined a
-topology on the whole space $\overline{\mathfrak{a}_{\infty}}$) ?
+This question depends on what we mean by \textquotedblleft
+reasonable\textquotedblright. One way to concretize this is by noticing that
+$\overline{\mathfrak{a}_{\infty}}=\bigoplus\limits_{i\in\mathbb{Z}}%
+\overline{\mathfrak{a}_{\infty}^{i}}$, where $\overline{\mathfrak{a}_{\infty
+}^{i}}$ is the space of all matrices with nonzero entries only on the $i$-th
+diagonal. For each $i\in\mathbb{Z}$, the vector space $\overline
+{\mathfrak{a}_{\infty}^{i}}$ can be given the product topology (i. e., the
+topology in which a net $\left(  s_{z}\right)  _{z\in Z}$ of matrices
+converges to a matrix $s$ if and only if for any $\left(  m,n\right)
+\in\mathbb{Z}^{2}$ satisfying $n-m=i$, the net of the $\left(  m,n\right)
+$-th entries of the matrices $s_{z}$ converge to the $\left(  m,n\right)  $-th
+entry of $s$ in the discrete topology). Then, $\mathfrak{gl}_{\infty}^{i}$ in
+dense in $\overline{\mathfrak{a}_{\infty}^{i}}$ for every $i\in\mathbb{Z}$. We
+can also make $\wedge^{\dfrac{\infty}{2},m}V$ into a topological space by
+using the discrete topology. Our question can now be stated as follows: Can we
+extend $\rho$ by continuity to a representation of $\overline{\mathfrak{a}%
+_{\infty}}$ (where \textquotedblleft continuous\textquotedblright\ means
+\textquotedblleft continuous on each $\overline{\mathfrak{a}_{\infty}^{i}}%
+$\textquotedblright, since we have not defined a topology on the whole space
+$\overline{\mathfrak{a}_{\infty}}$) ?
 
 Answer: Almost, but not precisely. We cannot make $\overline{\mathfrak{a}%
 _{\infty}}$ act on $\wedge^{\dfrac{\infty}{2},m}V$ in such a way that its
@@ -23061,7 +23067,46 @@ Corollary \ref{cor.japan} is called the \textit{Japanese cocycle}.
 \end{definition}
 
 The proofs of Theorem \ref{thm.japan} and Corollary \ref{cor.japan} are a
-homework problem.
+homework problem. A few remarks on the Japanese cocycle are in order. It can
+be explicitly computed by the formula%
+\begin{align*}
+&  \alpha\left(  \left(  a_{i,j}\right)  _{\left(  i,j\right)  \in
+\mathbb{Z}^{2}},\left(  b_{i,j}\right)  _{\left(  i,j\right)  \in
+\mathbb{Z}^{2}}\right)  \\
+&  =-\sum_{\substack{i\leq0;\\j>0}}b_{i,j}a_{j,i}+\sum_{\substack{i\leq
+0;\\j>0}}a_{i,j}b_{j,i}=-\sum_{\substack{i>0;\\j\leq0}}a_{i,j}b_{j,i}%
++\sum_{\substack{i\leq0;\\j>0}}a_{i,j}b_{j,i}\\
+&  =\sum_{\left(  i,j\right)  \in\mathbb{Z}^{2}}a_{i,j}b_{j,i}\left(  \left[
+j>0\right]  -\left[  i>0\right]  \right)  \ \ \ \ \ \ \ \ \ \ \text{for every
+}\left(  a_{i,j}\right)  _{\left(  i,j\right)  \in\mathbb{Z}^{2}},\left(
+b_{i,j}\right)  _{\left(  i,j\right)  \in\mathbb{Z}^{2}}\in\overline
+{\mathfrak{a}_{\infty}}%
+\end{align*}
+where we are using the \textit{Iverson bracket notation}\footnote{This is the
+notation $\left[  \mathcal{S}\right]  $ for the truth value of any logical
+statement $\mathcal{S}$ (that is, $\left[  \mathcal{S}\right]  $ denotes the
+integer $%
+\begin{cases}
+1, & \text{if }\mathcal{S}\text{ is true;}\\
+0, & \text{if }\mathcal{S}\text{ is false}%
+\end{cases}
+$).}. The cocycle $\alpha$\ owes its name \textquotedblleft Japanese
+cocycle\textquotedblright\ to the fact that it (first?) appeared in the work
+of the Tokyo mathematical physicists Date, Jimbo, Kashiwara and
+Miwa\footnote{More precisely, it is the skew-symmetric bilinear form $c$ in
+the following paper:
+\par
+\begin{itemize}
+\item Etsuro Date, Michio Jimbo, Masaki Kashiwara, Tetuji Miwa,
+\textit{Transformation Groups for Soliton Equations -- Euclidean Lie Algebras
+and Reduction of the KP Hierarchy}, Publ. RIMS, Kyoto Univ. 18 (1982), pp.
+1077--1110.
+\end{itemize}
+\par
+In this paper, the Lie algebras that we are denoting by $\overline
+{\mathfrak{a}_{\infty}}$ and $\mathfrak{a}_{\infty}$ are called
+$\mathfrak{pgl}\left(  \infty\right)  $ and $\mathfrak{gl}\left(
+\infty\right)  $, respectively.}.
 
 We are going to prove soon (Proposition \ref{prop.japan.nontr} and Corollary
 \ref{cor.japan.triv}) that $\alpha$ is a nontrivial $2$-cocycle, but its
@@ -27331,7 +27376,7 @@ of $\varrho\left(  A\right)  $.
 \begin{theorem}
 \label{thm.finitary.rhoRho}Let $P$ be a vector space. Let $a\in\mathfrak{gl}%
 \left(  P\right)  $ be a nilpotent linear map. Then, the exponential $\exp a$
-is a well-defined element of $\operatorname*{U}\left(  P\right)  $ and
+is a well-defined element of $\operatorname*{GL}\left(  P\right)  $ and
 satisfies $\wedge^{\ell}\left(  \exp a\right)  =\exp\left(  \rho_{P,\ell
 }\left(  a\right)  \right)  $ in $\operatorname*{End}\left(  \wedge^{\ell
 }P\right)  $ for every $\ell\in\mathbb{N}$.
@@ -30666,7 +30711,7 @@ x\rightharpoonup\left(  R_{\ell,\left]  \alpha,\beta\right]  }\left(
 w\right)  \right)  =R_{\ell,\left]  \alpha,\beta\right]  }\left(
 x\rightharpoonup w\right)  \ \ \ \ \ \ \ \ \ \ \text{for every }%
 x\in\mathcal{A}_{+}\text{ and }w\in\wedge^{\ell}\left(  V_{\left]
-\alpha,\beta\right]  }\right)  .\label{pf.finitary.Valphabeta.R.7}%
+\alpha,\beta\right]  }\right)  . \label{pf.finitary.Valphabeta.R.7}%
 \end{equation}
 \footnote{\textit{Proof of (\ref{pf.finitary.Valphabeta.R.7}):} Let
 $x\in\mathcal{A}_{+}$ and $w\in\wedge^{\ell}\left(  V_{\left]  \alpha
@@ -30701,7 +30746,7 @@ w\right)  \right)   &  =\left(  \sum\limits_{j=1}^{\infty}\lambda_{j}%
 a_{j}\right)  \rightharpoonup\left(  R_{\ell,\left]  \alpha,\beta\right]
 }\left(  \sum\limits_{\beta\geq i_{0}>i_{1}>...>i_{\ell-1}\geq\alpha+1}%
 \alpha_{\left(  i_{0},i_{1},...,i_{\ell-1}\right)  }v_{i_{0}}\wedge v_{i_{1}%
-}\wedge...\wedge v_{i_{\ell-1}}\right)  \right)  \\
+}\wedge...\wedge v_{i_{\ell-1}}\right)  \right) \\
 &  =\sum\limits_{j=1}^{\infty}\lambda_{j}\sum\limits_{\beta\geq i_{0}%
 >i_{1}>...>i_{\ell-1}\geq\alpha+1}\alpha_{\left(  i_{0},i_{1},...,i_{\ell
 -1}\right)  }\underbrace{a_{j}\rightharpoonup\left(  R_{\ell,\left]
@@ -30712,20 +30757,20 @@ v_{i_{\ell-1}}\right)  \right)  }_{\substack{=R_{\ell,\left]  \alpha
 (\ref{pf.finitary.Valphabeta.R.1}))}}}\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{since the action of }\mathcal{A}%
 _{+}\text{ is bilinear, and }R_{\ell,\left]  \alpha,\beta\right]  }\text{ is
-linear}\right)  \\
+linear}\right) \\
 &  =\sum\limits_{j=1}^{\infty}\lambda_{j}\sum\limits_{\beta\geq i_{0}%
 >i_{1}>...>i_{\ell-1}\geq\alpha+1}\alpha_{\left(  i_{0},i_{1},...,i_{\ell
 -1}\right)  }R_{\ell,\left]  \alpha,\beta\right]  }\left(  a_{j}%
 \rightharpoonup\left(  v_{i_{0}}\wedge v_{i_{1}}\wedge...\wedge v_{i_{\ell-1}%
-}\right)  \right)  \\
+}\right)  \right) \\
 &  =R_{\ell,\left]  \alpha,\beta\right]  }\left(  \underbrace{\left(
 \sum\limits_{j=1}^{\infty}\lambda_{j}a_{j}\right)  }_{=x}\rightharpoonup
 \underbrace{\left(  \sum\limits_{\beta\geq i_{0}>i_{1}>...>i_{\ell-1}%
 \geq\alpha+1}\alpha_{\left(  i_{0},i_{1},...,i_{\ell-1}\right)  }v_{i_{0}%
-}\wedge v_{i_{1}}\wedge...\wedge v_{i_{\ell-1}}\right)  }_{=w}\right)  \\
+}\wedge v_{i_{1}}\wedge...\wedge v_{i_{\ell-1}}\right)  }_{=w}\right) \\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{since the action of }\mathcal{A}%
 _{+}\text{ is bilinear, and }R_{\ell,\left]  \alpha,\beta\right]  }\text{ is
-linear}\right)  \\
+linear}\right) \\
 &  =R_{\ell,\left]  \alpha,\beta\right]  }\left(  x\rightharpoonup w\right)  .
 \end{align*}
 This proves (\ref{pf.finitary.Valphabeta.R.7}).} As a consequence,
@@ -39549,9 +39594,9 @@ $\mu$-Fock representation $F_{\mu}$ (that was constructed in Proposition
 
 \begin{definition}
 \label{def.sugawara}Let $\mathfrak{g}$ be a finite-dimensional $\mathbb{C}%
-$-Lie algebra with an invariant symmetric bilinear form $\left(  \cdot
-,\cdot\right)  $. (This form needs not be nondegenerate; it is even allowed to
-be $0$.)
+$-Lie algebra equipped with a $\mathfrak{g}$-invariant symmetric bilinear form
+$\left(  \cdot,\cdot\right)  $. (This form needs not be nondegenerate; it is
+even allowed to be $0$.)
 
 Consider the $2$-cocycle $\omega:\mathfrak{g}\left[  t,t^{-1}\right]
 \times\mathfrak{g}\left[  t,t^{-1}\right]  \rightarrow\mathbb{C}$ defined by%
@@ -39593,9 +39638,9 @@ $K\mid_{M}=k\cdot\operatorname*{id}$.
 
 \begin{proposition}
 \label{prop.WtoDerg}Let $\mathfrak{g}$ be a finite-dimensional $\mathbb{C}%
-$-Lie algebra with an invariant symmetric bilinear form $\left(  \cdot
-,\cdot\right)  $. Consider the affine Lie algebra $\widehat{\mathfrak{g}}$
-defined as in Definition \ref{def.sugawara}.
+$-Lie algebra equipped with a $\mathfrak{g}$-invariant symmetric bilinear form
+$\left(  \cdot,\cdot\right)  $. Consider the affine Lie algebra
+$\widehat{\mathfrak{g}}$ defined as in Definition \ref{def.sugawara}.
 
 \textbf{(a)} Then, there is a natural homomorphism $\eta
 _{\widehat{\mathfrak{g}}}:W\rightarrow\operatorname*{Der}\widehat{\mathfrak{g}%
@@ -39728,6 +39773,35 @@ b,p_{i}\right]  ,q_{i}\right]  =\sum\limits_{i=1}^{n}\operatorname*{Kil}%
 \left(  b,p_{i}\right)  q_{i}$ for every $b\in\mathfrak{g}$.
 \end{lemma}
 
+Here, we are using the following notation:
+
+\begin{remark}
+Let $\mathfrak{g}$ be a Lie algebra. An element $m$ of a $\mathfrak{g}$-module
+$M$ is said to be $\mathfrak{g}$\textit{-invariant} if and only if it
+satisfies $\left(  x\rightharpoonup m=0\text{ for every }x\in\mathfrak{g}%
+\right)  $. We regard $\mathfrak{g}$ as a $\mathfrak{g}$-module by means of
+the adjoint action of $\mathfrak{g}$ (that is, we set $x\rightharpoonup
+m=\left[  x,m\right]  $ for every $x\in\mathfrak{g}$ and $m\in\mathfrak{g}$);
+thus, $\mathfrak{g}\otimes\mathfrak{g}$ becomes a $\mathfrak{g}$-module as
+well. Explicitly, the action of $\mathfrak{g}$ on $\mathfrak{g}\otimes
+\mathfrak{g}$ is given by%
+\[
+x\rightharpoonup\left(  \sum\limits_{i=1}^{n}p_{i}\otimes q_{i}\right)
+=\sum\limits_{i=1}^{n}\left[  x,p_{i}\right]  \otimes q_{i}+\sum
+\limits_{i=1}^{n}p_{i}\otimes\left[  x,q_{i}\right]
+\]
+for every tensor $\sum\limits_{i=1}^{n}p_{i}\otimes q_{i}\in\mathfrak{g}%
+\otimes\mathfrak{g}$. Hence, a tensor $\sum\limits_{i=1}^{n}p_{i}\otimes
+q_{i}\in\mathfrak{g}\otimes\mathfrak{g}$ is $\mathfrak{g}$-invariant if and
+only if every $x\in\mathfrak{g}$ satisfies $\sum\limits_{i=1}^{n}\left[
+x,p_{i}\right]  \otimes q_{i}+\sum\limits_{i=1}^{n}p_{i}\otimes\left[
+x,q_{i}\right]  =0$. In other words, a tensor $\sum\limits_{i=1}^{n}%
+p_{i}\otimes q_{i}\in\mathfrak{g}\otimes\mathfrak{g}$ is $\mathfrak{g}%
+$-invariant if and only if every $x\in\mathfrak{g}$ satisfies $\sum
+\limits_{i=1}^{n}\left[  p_{i},x\right]  \otimes q_{i}=-\sum\limits_{i=1}%
+^{n}p_{i}\otimes\left[  q_{i},x\right]  $.
+\end{remark}
+
 \textit{Proof of Lemma \ref{lem.sugawara.Kil}.} Let $\left(  c_{1}%
 ,c_{2},...,c_{m}\right)  $ be a basis of the vector space $\mathfrak{g}$, and
 let $\left(  c_{1}^{\ast},c_{2}^{\ast},...,c_{m}^{\ast}\right)  $ be the dual
@@ -39753,8 +39827,8 @@ b,p_{i}\right]  \right)  \left[  q_{i},c_{j}\right] \\
 &  \ \ \ \ \ \ \ \ \ \ \left(
 \begin{array}
 [c]{c}%
-\text{since }\sum\limits_{i=1}^{n}p_{i}\otimes q_{i}\text{ is }\mathfrak{g}%
-\otimes\mathfrak{g}\text{-invariant, so that}\\
+\text{since }\sum\limits_{i=1}^{n}p_{i}\otimes q_{i}\text{ is } \mathfrak{g}%
+\text{-invariant, so that}\\
 \sum\limits_{i=1}^{n}\left[  p_{i},c_{j}\right]  \otimes q_{i}=-\sum
 \limits_{i=1}^{n}p_{i}\otimes\left[  q_{i},c_{j}\right]  \text{ for every
 }j\in\left\{  1,2,...,m\right\}  \text{, and thus}\\
@@ -39780,10 +39854,10 @@ Here comes another lemma on $\mathfrak{g}$-invariant bilinear forms:
 
 \begin{lemma}
 \label{lem.sugawara.Kil2}Let $\mathfrak{g}$ be a finite-dimensional
-$\mathbb{C}$-Lie algebra with an invariant symmetric bilinear form
-$\left\langle \cdot,\cdot\right\rangle $. Let $B\subseteq\mathfrak{g}$ be a
-basis orthonormal with respect to the form $\left\langle \cdot,\cdot
-\right\rangle $.
+$\mathbb{C}$-Lie algebra equipped with a $\mathfrak{g}$-invariant symmetric
+bilinear form $\left\langle \cdot,\cdot\right\rangle $. Let $B\subseteq
+\mathfrak{g}$ be a basis orthonormal with respect to the form $\left\langle
+\cdot,\cdot\right\rangle $.
 
 \textbf{(a)} Then, the tensor $\sum\limits_{a\in B}a\otimes a$ is
 $\mathfrak{g}$-invariant in $\mathfrak{g}\otimes\mathfrak{g}$.
@@ -39937,11 +40011,11 @@ As a consequence of this lemma, we get:
 
 \begin{lemma}
 \label{lem.sugawara.Kil3}Let $\mathfrak{g}$ be a finite-dimensional
-$\mathbb{C}$-Lie algebra with an invariant symmetric bilinear form $\left(
-\cdot,\cdot\right)  $. Denote by $\operatorname*{Kil}$ the Killing form of
-$\mathfrak{g}$. Let $B\subseteq\mathfrak{g}$ be a basis orthonormal with
-respect to the form $k\left(  \cdot,\cdot\right)  +\dfrac{1}{2}%
-\operatorname*{Kil}$. Let $b\in\mathfrak{g}$.
+$\mathbb{C}$-Lie algebra equipped with a $\mathfrak{g}$-invariant symmetric
+bilinear form $\left(  \cdot,\cdot\right)  $. Denote by $\operatorname*{Kil}$
+the Killing form of $\mathfrak{g}$. Let $B\subseteq\mathfrak{g}$ be a basis
+orthonormal with respect to the form $k\left(  \cdot,\cdot\right)  +\dfrac
+{1}{2}\operatorname*{Kil}$. Let $b\in\mathfrak{g}$.
 
 \textbf{(a)} We have $\sum\limits_{a\in B}\left(  \left[  b,a\right]  \otimes
 a+a\otimes\left[  b,a\right]  \right)  =0$.
@@ -39974,11 +40048,11 @@ the inner product $\left\langle \cdot,\cdot\right\rangle =k\left(  \cdot
 $V=\mathfrak{g}$, we conclude that $b=k\sum\limits_{a\in B}\left(  b,a\right)
 a+\dfrac{1}{2}\sum\limits_{a\in B}\operatorname*{Kil}\left(  b,a\right)  a$.
 
-Now, applying Lemma \ref{lem.sugawara.Kil} to the invariant tensor
-$\sum\limits_{a\in B}a\otimes a$ in lieu of $\sum\limits_{i=1}^{n}p_{i}\otimes
-q_{i}$, we see that $\sum\limits_{a\in B}\left[  \left[  b,a\right]
-,a\right]  =\sum\limits_{a\in B}\operatorname*{Kil}\left(  b,a\right)  a$.
-Hence,%
+Now, applying Lemma \ref{lem.sugawara.Kil} to the $\mathfrak{g}$-invariant
+tensor $\sum\limits_{a\in B}a\otimes a$ in lieu of $\sum\limits_{i=1}^{n}%
+p_{i}\otimes q_{i}$, we see that $\sum\limits_{a\in B}\left[  \left[
+b,a\right]  ,a\right]  =\sum\limits_{a\in B}\operatorname*{Kil}\left(
+b,a\right)  a$. Hence,%
 \[
 b=k\sum\limits_{a\in B}\left(  b,a\right)  a+\dfrac{1}{2}\underbrace{\sum
 \limits_{a\in B}\operatorname*{Kil}\left(  b,a\right)  a}_{=\sum\limits_{a\in
@@ -40183,7 +40257,7 @@ x,y\right]  _{n+m}+K\omega\left(  x_{n},y_{m}\right)  .
 \end{align*}
 }.
 
-\textbf{(a)} Let $n\in\mathbb{N}$ and $v\in M$. We must prove that for every
+\textbf{(a)} Let $n\in\mathbb{Z}$ and $v\in M$. We must prove that for every
 $a\in B$, the sum $\sum\limits_{m\in\mathbb{Z}}\left.  :a_{m}a_{n-m}:\right.
 v$ converges in the discrete topology. We will prove a slightly more general
 statement: We will prove that for every $x\in\mathfrak{g}$, the sum
@@ -40230,9 +40304,9 @@ but finitely many addends of the sum $\sum\limits_{m\in\mathbb{Z}}\left.
 topology. This proves Theorem \ref{thm.sugawara} \textbf{(a)}.
 
 Note that, during the proof of Theorem \ref{thm.sugawara} \textbf{(a)}, we
-have shown that for every $n\in\mathbb{N}$, $x\in\mathfrak{g}$ and $v\in M$,
+have shown that for every $n\in\mathbb{Z}$, $x\in\mathfrak{g}$ and $v\in M$,
 the sum $\sum\limits_{m\in\mathbb{Z}}\left.  :x_{m}x_{n-m}:\right.  v$
-converges in the discrete topology. In other words, for every $n\in\mathbb{N}$
+converges in the discrete topology. In other words, for every $n\in\mathbb{Z}$
 and $x\in\mathfrak{g}$, the sum $\sum\limits_{m\in\mathbb{Z}}\left.
 :x_{m}x_{n-m}:\right.  $ converges in the topology which we defined on
 $\operatorname*{End}M$.
