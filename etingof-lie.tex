@@ -49,7 +49,7 @@
 \usepackage{hyperref}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Tuesday, February 23, 2016 19:31:56}
+%TCIDATA{LastRevised=Thursday, June 09, 2016 23:26:41}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -127,7 +127,7 @@
 \begin{document}
 
 \title{18.747: Infinite-dimensional Lie algebras (Spring term 2012 at MIT)}
-\author{Pavel Etingof\\Scribed by Darij Grinberg\\ with edits by Raeez Lorgat}
+\author{Pavel Etingof\\Scribed by Darij Grinberg\\with edits by Raeez Lorgat}
 \date{Version 0.44 (\today) (not proofread!)}
 \maketitle
 \tableofcontents
@@ -10170,12 +10170,12 @@ Now, back to proving $\left(  av_{\lambda}^{+\mathfrak{g}^{0}},bv_{-\lambda
 a,b\right)  _{\lambda}^{\circ}$. Applying (\ref{prop.det.US.pf.2}) to $\ell
 =u$, $\alpha_{i}=a_{i}$ and $\beta_{i}=b_{i}$, we obtain%
 \[
-b_{u}b_{u-1}...b_{1}a_{1}a_{2}...a_{u}v_{\lambda}^{+\mathfrak{g}^{0}}%
-= \left(-1\right)^u
-\sum\limits_{\sigma\in S_{u}}\lambda\left(  \left[  a_{1},b_{\sigma\left(
-1\right)  }\right]  \right)  \lambda\left(  \left[  a_{2},b_{\sigma\left(
-2\right)  }\right]  \right)  ...\lambda\left(  \left[  a_{u},b_{\sigma\left(
-u\right)  }\right]  \right)  v_{\lambda}^{+\mathfrak{g}^{0}}.
+b_{u}b_{u-1}...b_{1}a_{1}a_{2}...a_{u}v_{\lambda}^{+\mathfrak{g}^{0}}= \left(
+-1\right) ^{u} \sum\limits_{\sigma\in S_{u}}\lambda\left(  \left[
+a_{1},b_{\sigma\left(  1\right)  }\right]  \right)  \lambda\left(  \left[
+a_{2},b_{\sigma\left(  2\right)  }\right]  \right)  ...\lambda\left(  \left[
+a_{u},b_{\sigma\left(  u\right)  }\right]  \right)  v_{\lambda}^{+\mathfrak{g}%
+^{0}}.
 \]
 Hence, if $v>u$, then%
 \begin{align*}
@@ -13219,7 +13219,7 @@ exponential, we have $\exp\left[  \alpha,\beta\right]  =\sum\limits_{k\in
 =\sum\limits_{i\in\mathbb{N}}\dfrac{\beta^{i}}{i!}$. Multiplying the last two
 of these three equalities, we obtain%
 \begin{align*}
-&  \left(  \exp\alpha\right)  \cdot\left(  \exp\beta\right) \\
+&  \left(  \exp\alpha\right)  \cdot\left(  \exp\beta\right)  \\
 &  =\left(  \sum\limits_{j\in\mathbb{N}}\dfrac{\alpha^{j}}{j!}\right)
 \cdot\left(  \sum\limits_{i\in\mathbb{N}}\dfrac{\beta^{i}}{i!}\right)
 =\sum\limits_{i\in\mathbb{N}}\sum\limits_{j\in\mathbb{N}}\dfrac{\alpha^{j}%
@@ -13231,8 +13231,8 @@ j}}k!\dbinom{i}{k}\dbinom{j}{k}\beta^{i-k}\alpha^{j-k}\left[  \alpha
 &  =\sum\limits_{i\in\mathbb{N}}\sum\limits_{j\in\mathbb{N}}\dfrac{1}%
 {i!j!}\sum\limits_{\substack{k\in\mathbb{N};\\k\leq i;\ k\leq j}}k!\dbinom
 {i}{k}\dbinom{j}{k}\beta^{i-k}\alpha^{j-k}\left[  \alpha,\beta\right]  ^{k}\\
-&  =\underbrace{\sum\limits_{\substack{k\in\mathbb{N};\\k\leq i;\ k\leq
-j}}\sum\limits_{i\in\mathbb{N}}\sum\limits_{j\in\mathbb{N}}}_{=\sum
+&  =\underbrace{\sum\limits_{i\in\mathbb{N}}\sum\limits_{j\in\mathbb{N}}%
+\sum\limits_{\substack{k\in\mathbb{N};\\k\leq i;\ k\leq j}}}_{=\sum
 \limits_{k\in\mathbb{N}}\sum\limits_{\substack{i\in\mathbb{N};\\k\leq i}%
 }\sum\limits_{\substack{j\in\mathbb{N};\\k\leq j}}}\underbrace{\dfrac{1}%
 {i!j!}k!\dbinom{i}{k}\dbinom{j}{k}}_{\substack{=\dfrac{1}{\left(  i-k\right)
@@ -13250,7 +13250,7 @@ i-k\right)  !\left(  j-k\right)  !k!}\beta^{i-k}\alpha^{j-k}\left[
 \text{here, we substituted }i\text{ for }i-k\text{ in the second sum,}\\
 \text{and we substituted }j\text{ for }j-k\text{ in the third sum}%
 \end{array}
-\right) \\
+\right)  \\
 &  =\sum\limits_{i\in\mathbb{N}}\sum\limits_{j\in\mathbb{N}}\sum
 \limits_{k\in\mathbb{N}}\dfrac{\beta^{i}}{i!}\cdot\dfrac{\alpha^{j}}{j!}%
 \cdot\dfrac{\left[  \alpha,\beta\right]  ^{k}}{k!}=\underbrace{\left(
@@ -15369,9 +15369,9 @@ For example, in $\mathcal{A}$, let us set $a\left(  z\right)  =\sum
 sum $\sum\limits_{n\in\mathbb{Z}}a_{n}z^{-n-1}$ is a formal sum which is
 infinite in both directions, so it is not an element of any of the rings
 $U\left(  \mathcal{A}\right)  \left[  \left[  z\right]  \right]  $ or
-$U\left(  \mathcal{A}\right)  \left( \left(  z \right) \right)$, but
-only an element of $U\left(  \mathcal{A}\right)  \left[  \left[
-z,z^{-1}\right]  \right]  $.
+$U\left(  \mathcal{A}\right)  \left(  \left(  z \right)  \right) $, but only
+an element of $U\left(  \mathcal{A}\right)  \left[  \left[  z,z^{-1}\right]
+\right]  $.
 
 As we said, the vector space $U\left(  \mathcal{A}\right)  \left[  \left[
 z,z^{-1}\right]  \right]  $ is \textbf{not} a ring (even though $U\left(
@@ -15388,14 +15388,14 @@ a_{n}z^{-n-1}\right)  \left(  v\right)  $. Here, the variable $z$ is decreed
 to commute with everything else, so that $\left(  a_{n}z^{-n-1}\right)
 \left(  v\right)  $ means $z^{-n-1}a_{n}v$.}), then we get a sum
 $\sum\limits_{n\in\mathbb{Z}}z^{-n-1}a_{n}v$ which evaluates to an element of
-$F_{\mu}\left( \left (  z \right) \right)  $ (because every
-sufficiently large $n\in\mathbb{Z}$ satisfies $z^{-n-1}\underbrace{a_{n}%
-v}_{=0}=0$). As a consequence, $a\left(  z\right)  $ ``acts'' on $F_{\mu}$. I
-am saying ``acts'' in quotation marks, since this ``action'' is not a map
-$F_{\mu}\rightarrow F_{\mu}$ but a map $F_{\mu}\rightarrow F_{\mu}\left( \left(
-  z \right) \right)  $, and since $a\left(  z\right)  $ does not
-lie in a ring (as I said, $U\left(  \mathcal{A}\right)  \left[  \left[
-z,z^{-1}\right]  \right]  $ is \textbf{not} a ring).
+$F_{\mu}\left(  \left(  z \right)  \right)  $ (because every sufficiently
+large $n\in\mathbb{Z}$ satisfies $z^{-n-1}\underbrace{a_{n}v}_{=0}=0$). As a
+consequence, $a\left(  z\right)  $ ``acts'' on $F_{\mu}$. I am saying ``acts''
+in quotation marks, since this ``action'' is not a map $F_{\mu}\rightarrow
+F_{\mu}$ but a map $F_{\mu}\rightarrow F_{\mu}\left(  \left(   z \right)
+\right)  $, and since $a\left(  z\right)  $ does not lie in a ring (as I said,
+$U\left(  \mathcal{A}\right)  \left[  \left[  z,z^{-1}\right]  \right]  $ is
+\textbf{not} a ring).
 
 Physicists call $a\left(  z\right)  $ a \textit{quantum field} (more
 precisely, a free bosonic field).
@@ -23073,7 +23073,7 @@ be explicitly computed by the formula%
 \begin{align*}
 &  \alpha\left(  \left(  a_{i,j}\right)  _{\left(  i,j\right)  \in
 \mathbb{Z}^{2}},\left(  b_{i,j}\right)  _{\left(  i,j\right)  \in
-\mathbb{Z}^{2}}\right)  \\
+\mathbb{Z}^{2}}\right) \\
 &  =-\sum_{\substack{i\leq0;\\j>0}}b_{i,j}a_{j,i}+\sum_{\substack{i\leq
 0;\\j>0}}a_{i,j}b_{j,i}=-\sum_{\substack{i>0;\\j\leq0}}a_{i,j}b_{j,i}%
 +\sum_{\substack{i\leq0;\\j>0}}a_{i,j}b_{j,i}\\
