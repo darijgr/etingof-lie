@@ -1,4 +1,10 @@
-## 0.45.pre (in progress)
+## 0.46 (in progress)
+
+Bugfixes:
+
+  - Various errors suggested by GPT-5.5 corrected.
+
+## 0.45
 
 Bugfixes:
 

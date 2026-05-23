@@ -1,5 +1,5 @@
 Lecture notes from Pavel Etingof's class on infinite-dimensional Lie algebras in Spring 2012.
 
-These will likely be updated with the 2016 iteration of this class.
+Significant parts of the content are missing, since it was my first encounter with the topic and I was unable to keep up with the pace of the class. Lots of material is messier than it should be.
 
-See also https://sites.google.com/site/darijgrinberg/lie for compiled versions (but not necessarily up-to-date).
+See also https://darijgrinberg.gitlab.io/algebra/etingof-lie.pdf for a compiled version.
