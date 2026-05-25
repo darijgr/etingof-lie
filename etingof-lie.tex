@@ -49,7 +49,7 @@
 \usepackage{hyperref}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Monday, May 25, 2026 23:46:26}
+%TCIDATA{LastRevised=Tuesday, May 26, 2026 00:25:45}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -29577,7 +29577,7 @@ R\left(  0\right)  =\left(
 \begin{array}
 [c]{c}%
 \text{the }\left(  v_{0}\wedge v_{-1}\wedge v_{-2}\wedge...\right)
-\text{-coordinate of }\sigma\left(  R\right)  \\
+\text{-coordinate of }\sigma\left(  R\right) \\
 \text{with respect to the basis }\left(  v_{j_{0}}\wedge v_{j_{1}}\wedge
 v_{j_{2}}\wedge...\right)  _{\left(  j_{0},j_{1},j_{2},...\right)  \text{ a
 }0\text{-degression}}\text{ of }\mathcal{F}^{\left(  0\right)  }%
@@ -29644,7 +29644,7 @@ R\left(  0\right)  =\kappa=\left(
 \begin{array}
 [c]{c}%
 \text{the }\left(  v_{0}\wedge v_{-1}\wedge v_{-2}\wedge...\right)
-\text{-coordinate of }\sigma\left(  R\right)  \\
+\text{-coordinate of }\sigma\left(  R\right) \\
 \text{with respect to the basis }\left(  v_{j_{0}}\wedge v_{j_{1}}\wedge
 v_{j_{2}}\wedge...\right)  _{\left(  j_{0},j_{1},j_{2},...\right)  \text{ a
 }0\text{-degression}}\text{ of }\mathcal{F}^{\left(  0\right)  }%
@@ -29660,7 +29660,7 @@ R\left(  0\right)  =\left(
 \begin{array}
 [c]{c}%
 \text{the }\left(  v_{0}\wedge v_{-1}\wedge v_{-2}\wedge...\right)
-\text{-coordinate of }\sigma_{\mathbf{R}}\left(  R\right)  \\
+\text{-coordinate of }\sigma_{\mathbf{R}}\left(  R\right) \\
 \text{with respect to the basis }\left(  v_{j_{0}}\wedge v_{j_{1}}\wedge
 v_{j_{2}}\wedge...\right)  _{\left(  j_{0},j_{1},j_{2},...\right)  \text{ a
 }0\text{-degression}}\text{ of }\mathcal{F}_{\mathbf{R}}^{\left(  0\right)  }%
@@ -33203,7 +33203,7 @@ S\left(  \tau\otimes\tau\right)   &  =\sum\limits_{i=1}^{m}%
 \underbrace{\overset{\vee}{e_{i}^{\ast}}\tau}_{\substack{=0\\\text{(since
 }i\in\left\{  r+1,r+2,...,n\right\}  \text{)}}}\nonumber\\
 &  =\sum\limits_{i=m+1}^{r}\widehat{e_{i}}\tau\otimes\overset{\vee
-}{e_{i}^{\ast}}\tau.\label{pf.thm.plu.Stt}%
+}{e_{i}^{\ast}}\tau. \label{pf.thm.plu.Stt}%
 \end{align}
 
 
@@ -33875,53 +33875,39 @@ $b$ are nonzero. In other words, only finitely many $\left(  u,v\right)
 \in\mathbb{Z}^{2}$ satisfy $b_{u,v}\neq0$ (since $\left(  \left(  u,v\right)
 \text{-th entry of }b\right)  =b_{u,v}$). In other words, the set $\left\{
 \max\left\{  \left\vert u\right\vert ,\left\vert v\right\vert \right\}
-\ \mid\ \left(  u,v\right)  \in\mathbb{Z}^{2};\ b_{u,v}\neq0\right\}  $ is finite.
-
-Let
-\[
-N=\max\left\{  \max\left\{  \left\vert u\right\vert ,\left\vert v\right\vert
-\right\}  \ \mid\ \left(  u,v\right)  \in\mathbb{Z}^{2};\ b_{u,v}%
-\neq0\right\}  .
-\]
-\footnote{Here, we set $\max\left\{  \max\left\{  \left\vert u\right\vert
-,\left\vert v\right\vert \right\}  \ \mid\ \left(  u,v\right)  \in
-\mathbb{Z}^{2};\ b_{u,v}\neq0\right\}  $ to be $0$ if the set $\left\{
-\max\left\{  \left\vert u\right\vert ,\left\vert v\right\vert \right\}
 \ \mid\ \left(  u,v\right)  \in\mathbb{Z}^{2};\ b_{u,v}\neq0\right\}  $ is
-empty.} This $N$ is a well-defined nonnegative integer (since the set
-$\left\{  \max\left\{  \left\vert u\right\vert ,\left\vert v\right\vert
-\right\}  \ \mid\ \left(  u,v\right)  \in\mathbb{Z}^{2};\ b_{u,v}%
-\neq0\right\}  $ is finite).
+finite. Hence, this set has an upper bound -- i.e., there exists an integer
+that is larger than or equal to each element of this set.
+
+Let $N$ be this upper bound. Thus,
+\[
+N\geq m\text{ for each }m\in\left\{  \max\left\{  \left\vert u\right\vert
+,\left\vert v\right\vert \right\}  \ \mid\ \left(  u,v\right)  \in
+\mathbb{Z}^{2};\ b_{u,v}\neq0\right\}  .
+\]
+In other words,
+\begin{equation}
+N\geq\max\left\{  \left\vert u\right\vert ,\left\vert v\right\vert \right\}
+\text{ for each }\left(  u,v\right)  \in\mathbb{Z}^{2}\text{ satisfying
+}b_{u,v}\neq0.\ \ \ \ \ \ \ \ \ \ \label{pf.rmk.plu.inf.iN.c.Nmax}%
+\end{equation}
+
 
 Let $\left(  i,j\right)  \in\mathbb{Z}^{2}\diagdown\left\{
 -N,-N+1,...,N\right\}  ^{2}$. Then, $\left(  i,j\right)  \notin\left\{
 -N,-N+1,...,N\right\}  ^{2}$. We are now going to show that $b_{i,j}=0$.
 
 In fact, assume (for the sake of contradiction) that $b_{i,j}\neq0$. Thus,
-$\left(  i,j\right)  \in\left\{  \left(  u,v\right)  \in\mathbb{Z}^{2}%
-\ \mid\ b_{u,v}\neq0\right\}  $. Hence,%
-\[
-\max\left\{  \left\vert i\right\vert ,\left\vert j\right\vert \right\}
-\in\left\{  \max\left\{  \left\vert u\right\vert ,\left\vert v\right\vert
-\right\}  \ \mid\ \left(  u,v\right)  \in\mathbb{Z}^{2};\ b_{u,v}%
-\neq0\right\}  .
-\]
-Since any element of a finite set is less or equal to the maximum of the set,
-this yields%
-\[
-\max\left\{  \left\vert i\right\vert ,\left\vert j\right\vert \right\}
-\leq\max\left\{  \max\left\{  \left\vert u\right\vert ,\left\vert v\right\vert
-\right\}  \ \mid\ \left(  u,v\right)  \in\mathbb{Z}^{2};\ b_{u,v}%
-\neq0\right\}  =N.
-\]
-Thus, $\left\vert i\right\vert \leq\max\left\{  \left\vert i\right\vert
-,\left\vert j\right\vert \right\}  \leq N$, so that $i\in\left\{
--N,-N+1,...,N\right\}  $ and similarly $j\in\left\{  -N,-N+1,...,N\right\}  $.
-Hence, $\left(  i,j\right)  \in\left\{  -N,-N+1,...,N\right\}  ^{2}$ (because
-$i\in\left\{  -N,-N+1,...,N\right\}  $ and $j\in\left\{
--N,-N+1,...,N\right\}  $), which contradicts $\left(  i,j\right)
-\notin\left\{  -N,-N+1,...,N\right\}  ^{2}$. This contradiction shows that our
-assumption (that $b_{i,j}\neq0$) was wrong. We thus have $b_{i,j}=0$.
+(\ref{pf.rmk.plu.inf.iN.c.Nmax}) (applied to $\left(  u,v\right)  =\left(
+i,j\right)  $) yields $N\geq\max\left\{  \left\vert i\right\vert ,\left\vert
+j\right\vert \right\}  \geq\left\vert i\right\vert $. Thus, $\left\vert
+i\right\vert \leq N$, so that $i\in\left\{  -N,-N+1,...,N\right\}  $ and
+similarly $j\in\left\{  -N,-N+1,...,N\right\}  $. Hence, $\left(  i,j\right)
+\in\left\{  -N,-N+1,...,N\right\}  ^{2}$ (because $i\in\left\{
+-N,-N+1,...,N\right\}  $ and $j\in\left\{  -N,-N+1,...,N\right\}  $), which
+contradicts $\left(  i,j\right)  \notin\left\{  -N,-N+1,...,N\right\}  ^{2}$.
+This contradiction shows that our assumption (that $b_{i,j}\neq0$) was wrong.
+We thus have $b_{i,j}=0$.
 
 Since $B=\operatorname*{id}+b$, we have:%
 \[
@@ -33970,7 +33956,7 @@ i_{N}\left(  \operatorname*{M}\left(  V_{N}\right)  \right)  $. Remark
 \begin{definition}
 \label{def.plu.inf.jmN}Let $N\in\mathbb{N}$ and $m\in\mathbb{Z}$. We define a
 linear map $j_{N}^{\left(  m\right)  }:\wedge^{N+m+1}\left(  V_{N}\right)
-\rightarrow\mathcal{F}^{\left(  m\right)  }$ by setting%
+\rightarrow\mathcal{F}^{\left(  m\right)  }$ by setting\footnotemark%
 \[
 \left(
 \begin{array}
@@ -33995,7 +33981,9 @@ i_{0},i_{1},i_{2},...\right)  \text{ is an }m\text{-degression}}$ of
 $\mathcal{F}^{\left(  m\right)  }$).
 \end{definition}
 
-In the terminology of Definition \ref{def.finitary.Valphabeta}, the map
+\footnotetext{Note: If $N+m+1$ is negative, then $\wedge^{N+m+1}\left(
+V_{N}\right)  =0$, and thus $j_{N}^{\left(  m\right)  }$ is the zero map.}In
+the terminology of Definition \ref{def.finitary.Valphabeta}, the map
 $j_{N}^{\left(  m\right)  }$ that we have just defined is the map
 $R_{N+m+1,\left]  -N-1,N\right]  }$.
 
@@ -34684,7 +34672,7 @@ we needed to prove in order to complete the proof of
 
 \textbf{b)} Let us next show that%
 \begin{equation}
-j_{N}^{\left(  m+1\right)  }\circ\overset{\vee}{v_{i}^{\left(  N\right)  }%
+j_{N}^{\left(  m-1\right)  }\circ\overset{\vee}{v_{i}^{\left(  N\right)  }%
 }=\overset{\vee}{v_{i}}\circ j_{N}^{\left(  m\right)  }%
 \ \ \ \ \ \ \ \ \ \ \text{for every }i\in\left\{  N,N-1,...,-N\right\}  .
 \label{pf.plu.inf.S.comp.b}%
@@ -34693,13 +34681,13 @@ j_{N}^{\left(  m+1\right)  }\circ\overset{\vee}{v_{i}^{\left(  N\right)  }%
 
 \textit{Proof of (\ref{pf.plu.inf.S.comp.b}):} Let $i\in\left\{
 N,N-1,...,-N\right\}  $. In order to prove (\ref{pf.plu.inf.S.comp.b}), it is
-clearly enough to show that $\left(  j_{N}^{\left(  m+1\right)  }%
+clearly enough to show that $\left(  j_{N}^{\left(  m-1\right)  }%
 \circ\overset{\vee}{v_{i}^{\left(  N\right)  }}\right)  \left(  u\right)
 =\left(  \overset{\vee}{v_{i}}\circ j_{N}^{\left(  m\right)  }\right)  \left(
 u\right)  $ for every $u\in\wedge^{N+m+1}\left(  V_{N}\right)  $.
 
 So let $u$ be any element of $\wedge^{N+m+1}\left(  V_{N}\right)  $. We must
-prove the equality $\left(  j_{N}^{\left(  m+1\right)  }\circ\overset{\vee
+prove the equality $\left(  j_{N}^{\left(  m-1\right)  }\circ\overset{\vee
 }{v_{i}^{\left(  N\right)  }}\right)  \left(  u\right)  =\left(
 \overset{\vee}{v_{i}}\circ j_{N}^{\left(  m\right)  }\right)  \left(
 u\right)  $. Since this equality is linear in $u$, we can WLOG assume that $u$
@@ -34809,15 +34797,15 @@ u\right)  =0.
 \]
 Compared with%
 \[
-\left(  j_{N}^{\left(  m+1\right)  }\circ\overset{\vee}{v_{i}^{\left(
-N\right)  }}\right)  \left(  u\right)  =j_{N}^{\left(  m+1\right)
+\left(  j_{N}^{\left(  m-1\right)  }\circ\overset{\vee}{v_{i}^{\left(
+N\right)  }}\right)  \left(  u\right)  =j_{N}^{\left(  m-1\right)
 }\underbrace{\left(  \overset{\vee}{v_{i}^{\left(  N\right)  }}\left(
 u\right)  \right)  }_{=0}=0,
 \]
-this yields $\left(  j_{N}^{\left(  m+1\right)  }\circ\overset{\vee
+this yields $\left(  j_{N}^{\left(  m-1\right)  }\circ\overset{\vee
 }{v_{i}^{\left(  N\right)  }}\right)  \left(  u\right)  =\left(
 \overset{\vee}{v_{i}}\circ j_{N}^{\left(  m\right)  }\right)  \left(
-u\right)  $. We have thus proven $\left(  j_{N}^{\left(  m+1\right)  }%
+u\right)  $. We have thus proven $\left(  j_{N}^{\left(  m-1\right)  }%
 \circ\overset{\vee}{v_{i}^{\left(  N\right)  }}\right)  \left(  u\right)
 =\left(  \overset{\vee}{v_{i}}\circ j_{N}^{\left(  m\right)  }\right)  \left(
 u\right)  $ in Case 1.
@@ -34888,21 +34876,21 @@ v_{i_{N+m}}%
 \end{align*}
 (since $\left(  \kappa+1\right)  -1=\kappa$). Thus,%
 \begin{align}
-&  \left(  j_{N}^{\left(  m+1\right)  }\circ\overset{\vee}{v_{i}^{\left(
+&  \left(  j_{N}^{\left(  m-1\right)  }\circ\overset{\vee}{v_{i}^{\left(
 N\right)  }}\right)  \left(  u\right) \nonumber\\
-&  =j_{N}^{\left(  m+1\right)  }\left(  \underbrace{\overset{\vee
+&  =j_{N}^{\left(  m-1\right)  }\left(  \underbrace{\overset{\vee
 }{v_{i}^{\left(  N\right)  }}\left(  u\right)  }_{=\left(  -1\right)
 ^{\kappa}v_{i_{0}}\wedge v_{i_{1}}\wedge...\wedge v_{i_{\kappa-1}}\wedge
 v_{i_{\kappa+1}}\wedge v_{i_{\kappa+2}}\wedge...\wedge v_{i_{N+m}}}\right)
 \nonumber\\
-&  =j_{N}^{\left(  m+1\right)  }\left(  \left(  -1\right)  ^{\kappa}v_{i_{0}%
+&  =j_{N}^{\left(  m-1\right)  }\left(  \left(  -1\right)  ^{\kappa}v_{i_{0}%
 }\wedge v_{i_{1}}\wedge...\wedge v_{i_{\kappa-1}}\wedge v_{i_{\kappa+1}}\wedge
 v_{i_{\kappa+2}}\wedge...\wedge v_{i_{N+m}}\right) \nonumber\\
 &  =\left(  -1\right)  ^{\kappa}v_{i_{0}}\wedge v_{i_{1}}\wedge...\wedge
 v_{i_{\kappa-1}}\wedge v_{i_{\kappa+1}}\wedge v_{i_{\kappa+2}}\wedge...\wedge
 v_{i_{N+m}}\wedge v_{-N-1}\wedge v_{-N-2}\wedge v_{-N-3}\wedge...\nonumber\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }j_{N}^{\left(
-m+1\right)  }\right) \nonumber\\
+m-1\right)  }\right) \nonumber\\
 &  =\left(  -1\right)  ^{\kappa}v_{j_{0}}\wedge v_{j_{1}}\wedge v_{j_{2}%
 }\wedge...\wedge v_{j_{\kappa-1}}\wedge v_{j_{\kappa+1}}\wedge v_{j_{\kappa
 +2}}\wedge...\label{pf.plu.inf.S.comp.b.2}\\
@@ -34920,16 +34908,16 @@ m+1\right)  }\right) \nonumber\\
 
 On the other hand,
 \begin{align*}
-i  &  \in\left\{  i_{0},i_{1},...,i_{N+m}\right\}  \subseteq\left\{
+i &  \in\left\{  i_{0},i_{1},...,i_{N+m}\right\}  \subseteq\left\{
 i_{0},i_{1},...,i_{N+m},-N-1,-N-2,-N-3,...\right\}  =\left\{  j_{0}%
-,j_{1},j_{2},...\right\} \\
+,j_{1},j_{2},...\right\}  \\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }\left(  i_{0},i_{1},...,i_{N+m}%
 ,-N-1,-N-2,-N-3,...\right)  =\left(  j_{0},j_{1},j_{2},...\right)  \right)  .
 \end{align*}
 Moreover, the integer $k$ satisfying $j_{k}=i$ is $\kappa$%
 \ \ \ \ \footnote{because%
 \begin{align*}
-j_{\kappa}  &  =i_{\kappa}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }\left(
+j_{\kappa} &  =i_{\kappa}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }\left(
 i_{0},i_{1},...,i_{N+m},-N-1,-N-2,-N-3,...\right)  =\left(  j_{0},j_{1}%
 ,j_{2},...\right)  \text{ and }\kappa\in\left\{  0,1,...,N+m\right\}  \right)
 \\
@@ -34940,10 +34928,10 @@ i_{0},i_{1},...,i_{N+m},-N-1,-N-2,-N-3,...\right)  =\left(  j_{0},j_{1}%
 \left(  \overset{\vee}{v_{i}}\circ j_{N}^{\left(  m\right)  }\right)  \left(
 u\right)   &  =\overset{\vee}{v_{i}}\left(  j_{N}^{\left(  m\right)  }\left(
 u\right)  \right)  =\overset{\vee}{v_{i}}\left(  v_{j_{0}}\wedge v_{j_{1}%
-}\wedge v_{j_{2}}\wedge...\right) \\
+}\wedge v_{j_{2}}\wedge...\right)  \\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }j_{N}^{\left(  m\right)  }\left(
 u\right)  =v_{j_{0}}\wedge v_{j_{1}}\wedge v_{j_{2}}\wedge...\text{ by
-(\ref{pf.plu.inf.S.comp.b.0})}\right) \\
+(\ref{pf.plu.inf.S.comp.b.0})}\right)  \\
 &  =\left\{
 \begin{array}
 [c]{l}%
@@ -34953,7 +34941,7 @@ u\right)  =v_{j_{0}}\wedge v_{j_{1}}\wedge v_{j_{2}}\wedge...\text{ by
 \wedge...\wedge v_{j_{j-1}}\wedge v_{j_{j+1}}\wedge v_{j_{j+2}}\wedge
 ...,\ \ \ \ \ \ \ \ \ \ \text{if }i\in\left\{  j_{0},j_{1},j_{2},...\right\}
 \end{array}
-\right. \\
+\right.  \\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }\overset{\vee
 }{v_{i}}\right)  ,
 \end{align*}
@@ -34974,11 +34962,11 @@ v_{j_{2}}\wedge...\wedge v_{j_{\kappa-1}}\wedge v_{j_{\kappa+1}}\wedge
 v_{j_{\kappa+2}}\wedge....
 \]
 Compared with (\ref{pf.plu.inf.S.comp.b.2}), this yields $\left(
-j_{N}^{\left(  m+1\right)  }\circ\widehat{v_{i}^{\left(  N\right)  }}\right)
-\left(  u\right)  =\left(  \widehat{v_{i}}\circ j_{N}^{\left(  m\right)
-}\right)  \left(  u\right)  $. This is exactly what we needed to prove in
-order to complete the proof of (\ref{pf.plu.inf.S.comp.b}). The proof of
-(\ref{pf.plu.inf.S.comp.b}) is thus finished.
+j_{N}^{\left(  m-1\right)  }\circ\overset{\vee}{v_{i}^{\left(  N\right)  }%
+}\right)  \left(  u\right)  =\left(  \overset{\vee}{v_{i}}\circ j_{N}^{\left(
+m\right)  }\right)  \left(  u\right)  $. This is exactly what we needed to
+prove in order to complete the proof of (\ref{pf.plu.inf.S.comp.b}). The proof
+of (\ref{pf.plu.inf.S.comp.b}) is thus finished.
 
 \textbf{c)} Let us next show that%
 \begin{equation}
@@ -35042,7 +35030,7 @@ This is exactly what we needed to prove in order to complete the proof of
 
 
 \textit{Proof of (\ref{pf.plu.inf.S.comp.d}):} Let $i\in\left\{
-N+1,N+2,N+3,...\right\}  $. In order to prove (\ref{pf.plu.inf.S.comp.b}), it
+N+1,N+2,N+3,...\right\}  $. In order to prove (\ref{pf.plu.inf.S.comp.d}), it
 is clearly enough to show that $\left(  \overset{\vee}{v_{i}}\circ
 j_{N}^{\left(  m\right)  }\right)  \left(  u\right)  =0$ for every $u\in
 \wedge^{N+m+1}\left(  V_{N}\right)  $.
@@ -35138,7 +35126,7 @@ j_{N}^{\left(  m\right)  }\right)  =\sum\limits_{i\in\mathbb{Z}}%
 }\\
 &  =\sum\limits_{i\in\mathbb{Z}}\left(  \widehat{v_{i}}\circ j_{N}^{\left(
 m\right)  }\right)  \otimes\left(  \overset{\vee}{v_{i}}\circ j_{N}^{\left(
-m\right)  }\right) \\
+m\right)  }\right)  \\
 &  =\sum\limits_{i=-\infty}^{-N-1}\underbrace{\left(  \widehat{v_{i}}\circ
 j_{N}^{\left(  m\right)  }\right)  }_{\substack{=0\\\text{(by
 (\ref{pf.plu.inf.S.comp.c}))}}}\otimes\left(  \overset{\vee}{v_{i}}\circ
@@ -35147,7 +35135,7 @@ j_{N}^{\left(  m\right)  }\right)  +\sum\limits_{i=-N}^{N}\underbrace{\left(
 ^{\left(  m+1\right)  }\circ\widehat{v_{i}^{\left(  N\right)  }}\\\text{(by
 (\ref{pf.plu.inf.S.comp.a}))}}}\otimes\underbrace{\left(  \overset{\vee
 }{v_{i}}\circ j_{N}^{\left(  m\right)  }\right)  }_{\substack{=j_{N}^{\left(
-m+1\right)  }\circ\overset{\vee}{v_{i}^{\left(  N\right)  }}\\\text{(by
+m-1\right)  }\circ\overset{\vee}{v_{i}^{\left(  N\right)  }}\\\text{(by
 (\ref{pf.plu.inf.S.comp.b}))}}}+\sum\limits_{i=N+1}^{\infty}\left(
 \widehat{v_{i}}\circ j_{N}^{\left(  m\right)  }\right)  \otimes
 \underbrace{\left(  \overset{\vee}{v_{i}}\circ j_{N}^{\left(  m\right)
@@ -35155,7 +35143,7 @@ m+1\right)  }\circ\overset{\vee}{v_{i}^{\left(  N\right)  }}\\\text{(by
 &  =\underbrace{\sum\limits_{i=-\infty}^{-N-1}0\otimes\left(  \overset{\vee
 }{v_{i}}\circ j_{N}^{\left(  m\right)  }\right)  }_{=0}+\sum\limits_{i=-N}%
 ^{N}\underbrace{\left(  j_{N}^{\left(  m+1\right)  }\circ\widehat{v_{i}%
-^{\left(  N\right)  }}\right)  \otimes\left(  j_{N}^{\left(  m+1\right)
+^{\left(  N\right)  }}\right)  \otimes\left(  j_{N}^{\left(  m-1\right)
 }\circ\overset{\vee}{v_{i}^{\left(  N\right)  }}\right)  }_{=\left(
 j_{N}^{\left(  m+1\right)  }\otimes j_{N}^{\left(  m-1\right)  }\right)
 \circ\left(  \widehat{v_{i}^{\left(  N\right)  }}\otimes\overset{\vee
