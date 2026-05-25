@@ -49,7 +49,7 @@
 \usepackage{hyperref}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Monday, May 25, 2026 10:24:21}
+%TCIDATA{LastRevised=Monday, May 25, 2026 23:46:26}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -2283,8 +2283,8 @@ $D=\mathbb{C}$, and this is exactly what we wanted to show. Lemma
 Note that Lemma \ref{lem.dix} is a general fact, not particular to Lie
 algebras; however, it is not as general as it seems: It really makes use of
 the uncountability of $\mathbb{C}$, not just of the fact that $\mathbb{C}$ is
-an algebraically closed field of characteristic $0$. It would be wrong if we
-would replace $\mathbb{C}$ by (for instance) the algebraic closure of
+an algebraically closed field of characteristic $0$. It would become false if
+we replaced $\mathbb{C}$ by (for instance) the algebraic closure of
 $\mathbb{Q}$.
 
 \begin{remark}
@@ -6300,7 +6300,7 @@ tautology. In fact, the analogous assertion about filtered vector spaces (i.
 e., the assertion that if a vector space isomorphism between filtered vector
 spaces is at the same time a morphism in the category of filtered vector
 spaces, then it must be an \textit{isomorphism} in the category of filtered
-vector spaces) is wrong.}). Altogether, $\rho$ is an isomorphism of graded
+vector spaces) is false.}). Altogether, $\rho$ is an isomorphism of graded
 filtered vector spaces, of left $U\left(  \mathfrak{n}_{-}\right)  $-modules
 and of right $U\left(  \mathfrak{h}\oplus\mathfrak{n}_{+}\right)  $-modules.
 Hence,%
@@ -6734,8 +6734,8 @@ $\lambda$). (Later we will also denote this form by $\left(  \cdot
 $\lambda$ and $\mathfrak{g}$.)
 \end{definition}
 
-To prove Proposition \ref{prop.invform}, we recall two facts about modules
-over Lie algebras:
+To prove Proposition \ref{prop.invform}, we will need two general facts about
+modules over Lie algebras:
 
 \begin{lemma}
 \label{lem.pushpull}Let $\mathfrak{a}$ be a Lie algebra, and let
@@ -6748,8 +6748,8 @@ $\mathfrak{b}$-module, and $W$ be an $\mathfrak{a}$-module. Then,
 \text{-modules}%
 \]
 (where the $W$ on the right hand side is to be understood as
-$\operatorname*{Res}\nolimits_{\mathfrak{b}}^{\mathfrak{a}}W$). More
-precisely, there exists a canonical $\mathfrak{a}$-module isomorphism $\left(
+$\operatorname*{Res}\nolimits_{\mathfrak{b}}^{\mathfrak{a}}W$). To be more
+specific: there exists a canonical $\mathfrak{a}$-module isomorphism $\left(
 \operatorname*{Ind}\nolimits_{\mathfrak{b}}^{\mathfrak{a}}V\right)  \otimes
 W\rightarrow\operatorname*{Ind}\nolimits_{\mathfrak{b}}^{\mathfrak{a}}\left(
 V\otimes W\right)  $ which maps $\left(  1\otimes_{U\left(  \mathfrak{b}%
@@ -6761,8 +6761,10 @@ V\otimes W\right)  $ which maps $\left(  1\otimes_{U\left(  \mathfrak{b}%
 \label{lem.IndRes}Let $\mathfrak{c}$ be a Lie algebra. Let $\mathfrak{a}$ and
 $\mathfrak{b}$ be two Lie subalgebras of $\mathfrak{c}$ such that
 $\mathfrak{a}+\mathfrak{b}=\mathfrak{c}$. Notice that $\mathfrak{a}%
-\cap\mathfrak{b}$ is also a Lie subalgebra of $\mathfrak{c}$. Let $N$ be a
-$\mathfrak{b}$-module. Then,
+\cap\mathfrak{b}$ is also a Lie subalgebra of $\mathfrak{c}$. Then:
+
+\begin{enumerate}
+\item[\textbf{(a)}] For any $\mathfrak{b}$-module $N$, we have%
 \[
 \operatorname*{Ind}\nolimits_{\mathfrak{a}\cap\mathfrak{b}}^{\mathfrak{a}%
 }\left(  \operatorname*{Res}\nolimits_{\mathfrak{a}\cap\mathfrak{b}%
@@ -6771,41 +6773,92 @@ $\mathfrak{b}$-module. Then,
 }^{\mathfrak{c}}N\right)  \ \ \ \ \ \ \ \ \ \ \text{as }\mathfrak{a}%
 \text{-modules}.
 \]
+To be more specific: there is a canonical $\mathfrak{a}$-module isomorphism
+$\operatorname*{Ind}\nolimits_{\mathfrak{a}\cap\mathfrak{b}}^{\mathfrak{a}%
+}\left(  \operatorname*{Res}\nolimits_{\mathfrak{a}\cap\mathfrak{b}%
+}^{\mathfrak{b}}N\right)  \rightarrow\operatorname*{Res}%
+\nolimits_{\mathfrak{a}}^{\mathfrak{c}}\left(  \operatorname*{Ind}%
+\nolimits_{\mathfrak{b}}^{\mathfrak{c}}N\right)  $ which maps $\alpha
+\otimes_{U\left(  \mathfrak{a}\cap\mathfrak{b}\right)  }n$ to $\alpha
+\otimes_{U\left(  \mathfrak{b}\right)  }n$ for all $\alpha\in U\left(
+\mathfrak{a}\right)  $ and $n\in N$.
 
+\item[\textbf{(b)}] For any $\mathfrak{a}$-module $U$ and any $\mathfrak{b}%
+$-module $V$, we have%
+\[
+\operatorname*{Ind}\nolimits_{\mathfrak{a}\cap\mathfrak{b}}^{\mathfrak{c}%
+}\left(  \left(  \operatorname*{Res}\nolimits_{\mathfrak{a}\cap\mathfrak{b}%
+}^{\mathfrak{a}}U\right)  \otimes\left(  \operatorname*{Res}%
+\nolimits_{\mathfrak{a}\cap\mathfrak{b}}^{\mathfrak{b}}V\right)  \right)
+\cong\left(  \operatorname*{Ind}\nolimits_{\mathfrak{a}}^{\mathfrak{c}%
+}U\right)  \otimes\left(  \operatorname*{Ind}\nolimits_{\mathfrak{b}%
+}^{\mathfrak{c}}V\right)
+\]
+as $\mathfrak{c}$-modules. To be more specific: there is a canonical
+$\mathfrak{c}$-module isomorphism $\operatorname*{Ind}\nolimits_{\mathfrak{a}%
+\cap\mathfrak{b}}^{\mathfrak{c}}\left(  \left(  \operatorname*{Res}%
+\nolimits_{\mathfrak{a}\cap\mathfrak{b}}^{\mathfrak{a}}U\right)
+\otimes\left(  \operatorname*{Res}\nolimits_{\mathfrak{a}\cap\mathfrak{b}%
+}^{\mathfrak{b}}V\right)  \right)  \rightarrow\left(  \operatorname*{Ind}%
+\nolimits_{\mathfrak{a}}^{\mathfrak{c}}U\right)  \otimes\left(
+\operatorname*{Ind}\nolimits_{\mathfrak{b}}^{\mathfrak{c}}V\right)  $ which
+maps $1\otimes_{U\left(  \mathfrak{a}\cap\mathfrak{b}\right)  }\left(
+u\otimes v\right)  $ to $\left(  1\otimes_{U\left(  \mathfrak{a}\right)
+}u\right)  \otimes\left(  1\otimes_{U\left(  \mathfrak{b}\right)  }v\right)  $
+for all $u\in U$ and $v\in V$.
+\end{enumerate}
 \end{lemma}
 
 We will give two proofs of Lemma \ref{lem.pushpull}: one which is direct and
 uses Hopf algebras; the other which is more elementary but less direct.
+Afterwards we will prove Lemma \ref{lem.IndRes}.
 
 \textit{First proof of Lemma \ref{lem.pushpull}.} Remember that $U\left(
 \mathfrak{a}\right)  $ is a Hopf algebra (a cocommutative one, actually; but
-we won't use this). Let us denote its antipode by $S$ and use sumfree Sweedler notation.
+we won't use this). Let us denote its antipode by $S$ and use sumfree Sweedler
+notation for its comultiplication $\Delta$.
 
 Recalling that $\operatorname*{Ind}\nolimits_{\mathfrak{b}}^{\mathfrak{a}%
 }V=U\left(  \mathfrak{a}\right)  \otimes_{U\left(  \mathfrak{b}\right)  }V$
 and $\operatorname*{Ind}\nolimits_{\mathfrak{b}}^{\mathfrak{a}}\left(
 V\otimes W\right)  =U\left(  \mathfrak{a}\right)  \otimes_{U\left(
-\mathfrak{b}\right)  }\left(  V\otimes W\right)  $, we define a $\mathbb{C}%
-$-linear map $\phi:\left(  \operatorname*{Ind}\nolimits_{\mathfrak{b}%
-}^{\mathfrak{a}}V\right)  \otimes W\rightarrow\operatorname*{Ind}%
-\nolimits_{\mathfrak{b}}^{\mathfrak{a}}\left(  V\otimes W\right)  $ by
-$\left(  \alpha\otimes_{U\left(  \mathfrak{b}\right)  }v\right)  \otimes
-w\mapsto\alpha_{\left(  1\right)  }\otimes_{U\left(  \mathfrak{b}\right)
-}\left(  v\otimes S\left(  \alpha_{\left(  2\right)  }\right)  w\right)  $.
-This map is easily checked to be well-defined and $\mathfrak{a}$-linear. Also,
-we define a $\mathbb{C}$-linear map $\psi:\operatorname*{Ind}%
-\nolimits_{\mathfrak{b}}^{\mathfrak{a}}\left(  V\otimes W\right)
+\mathfrak{b}\right)  }\left(  V\otimes W\right)  $, we define%
+\begin{align*}
+\text{a }\mathbb{C}\text{-linear map }\phi:\left(  \operatorname*{Ind}%
+\nolimits_{\mathfrak{b}}^{\mathfrak{a}}V\right)  \otimes W  &  \rightarrow
+\operatorname*{Ind}\nolimits_{\mathfrak{b}}^{\mathfrak{a}}\left(  V\otimes
+W\right) \\
+\text{by }\left(  \alpha\otimes_{U\left(  \mathfrak{b}\right)  }v\right)
+\otimes w  &  \mapsto\alpha_{\left(  1\right)  }\otimes_{U\left(
+\mathfrak{b}\right)  }\left(  v\otimes S\left(  \alpha_{\left(  2\right)
+}\right)  w\right)
+\end{align*}
+(where we use sumfree Sweedler notation, so that \textquotedblleft%
+$\alpha_{\left(  1\right)  }\otimes_{U\left(  \mathfrak{b}\right)  }\left(
+v\otimes S\left(  \alpha_{\left(  2\right)  }\right)  w\right)  $%
+\textquotedblright\ is short for \textquotedblleft$\sum_{i\in I}\alpha
+_{1,i}\otimes_{U\left(  \mathfrak{b}\right)  }\left(  v\otimes S\left(
+\alpha_{2,i}\right)  w\right)  $, where $\sum_{i\in I}\alpha_{1,i}%
+\otimes\alpha_{2,i}$ is the tensor $\Delta\left(  \alpha\right)  \in U\left(
+\mathfrak{a}\right)  \otimes U\left(  \mathfrak{a}\right)  $\textquotedblright%
+). This map $\phi$ is easily checked to be well-defined and $\mathfrak{a}%
+$-linear. Also, we define%
+\begin{align*}
+\text{a }\mathbb{C}\text{-linear map }\psi:\operatorname*{Ind}%
+\nolimits_{\mathfrak{b}}^{\mathfrak{a}}\left(  V\otimes W\right)   &
 \rightarrow\left(  \operatorname*{Ind}\nolimits_{\mathfrak{b}}^{\mathfrak{a}%
-}V\right)  \otimes W$ by $\alpha\otimes_{U\left(  \mathfrak{b}\right)
-}\left(  v\otimes w\right)  \mapsto\left(  \alpha_{\left(  1\right)  }%
-\otimes_{U\left(  \mathfrak{b}\right)  }v\right)  \otimes\alpha_{\left(
-2\right)  }w$. This map is easily checked to be well-defined. It is also easy
-to see that $\phi\circ\psi=\operatorname*{id}$ and $\psi\circ\phi
-=\operatorname*{id}$. Hence, $\phi$ and $\psi$ are mutually inverse
-isomorphisms between the $\mathfrak{a}$-modules $\left(  \operatorname*{Ind}%
-\nolimits_{\mathfrak{b}}^{\mathfrak{a}}V\right)  \otimes W$ and
-$\operatorname*{Ind}\nolimits_{\mathfrak{b}}^{\mathfrak{a}}\left(  V\otimes
-W\right)  $. This proves that $\left(  \operatorname*{Ind}%
+}V\right)  \otimes W\\
+\text{by }\alpha\otimes_{U\left(  \mathfrak{b}\right)  }\left(  v\otimes
+w\right)   &  \mapsto\left(  \alpha_{\left(  1\right)  }\otimes_{U\left(
+\mathfrak{b}\right)  }v\right)  \otimes\alpha_{\left(  2\right)  }w
+\end{align*}
+(again using sumfree Sweedler notation). This map is easily checked to be
+well-defined. It is also easy to see that $\phi\circ\psi=\operatorname*{id}$
+and $\psi\circ\phi=\operatorname*{id}$. Hence, $\phi$ and $\psi$ are mutually
+inverse isomorphisms between the $\mathfrak{a}$-modules $\left(
+\operatorname*{Ind}\nolimits_{\mathfrak{b}}^{\mathfrak{a}}V\right)  \otimes W$
+and $\operatorname*{Ind}\nolimits_{\mathfrak{b}}^{\mathfrak{a}}\left(
+V\otimes W\right)  $. This proves that $\left(  \operatorname*{Ind}%
 \nolimits_{\mathfrak{b}}^{\mathfrak{a}}V\right)  \otimes W\cong%
 \operatorname*{Ind}\nolimits_{\mathfrak{b}}^{\mathfrak{a}}\left(  V\otimes
 W\right)  $ as $\mathfrak{a}$-modules. Moreover, the isomorphism $\phi:\left(
@@ -6894,10 +6947,10 @@ V\otimes W\right)  $. Checking that this maps $\left(  1\otimes_{U\left(
 W$ is a matter of routine now, and left to the reader. Lemma
 \ref{lem.pushpull} is thus proven.
 
-\textit{Proof of Lemma \ref{lem.IndRes}.} Let $\rho:U\left(  \mathfrak{a}%
-\right)  \otimes_{U\left(  \mathfrak{a}\cap\mathfrak{b}\right)  }U\left(
-\mathfrak{b}\right)  \rightarrow U\left(  \mathfrak{c}\right)  $ be the
-$\mathbb{C}$-vector space homomorphism defined by%
+\textit{Proof of Lemma \ref{lem.IndRes}.} \textbf{(a)} Let $\rho:U\left(
+\mathfrak{a}\right)  \otimes_{U\left(  \mathfrak{a}\cap\mathfrak{b}\right)
+}U\left(  \mathfrak{b}\right)  \rightarrow U\left(  \mathfrak{c}\right)  $ be
+the $\mathbb{C}$-vector space homomorphism defined by%
 \[
 \rho\left(  \alpha\otimes_{U\left(  \mathfrak{a}\cap\mathfrak{b}\right)
 }\beta\right)  =\alpha\beta\ \ \ \ \ \ \ \ \ \ \text{for all }\alpha\in
@@ -6909,24 +6962,31 @@ $\rho$ is an isomorphism of left $U\left(  \mathfrak{a}\right)  $-modules and
 of right $U\left(  \mathfrak{b}\right)  $-modules. Hence, $U\left(
 \mathfrak{a}\right)  \otimes_{U\left(  \mathfrak{a}\cap\mathfrak{b}\right)
 }U\left(  \mathfrak{b}\right)  \cong U\left(  \mathfrak{c}\right)  $ as left
-$U\left(  \mathfrak{a}\right)  $-modules and simultaneously right $U\left(
-\mathfrak{b}\right)  $-modules. Now,%
+$U\left(  \mathfrak{a}\right)  $-modules and simultaneously as right $U\left(
+\mathfrak{b}\right)  $-modules.
+
+Now, let $N$ be a $\mathfrak{b}$-module. Then,%
+\begin{align*}
+\operatorname*{Res}\nolimits_{\mathfrak{a}\cap\mathfrak{b}}^{\mathfrak{b}%
+}\underbrace{N}_{\cong U\left(  \mathfrak{b}\right)  \otimes_{U\left(
+\mathfrak{b}\right)  }N}  &  \cong\operatorname*{Res}\nolimits_{\mathfrak{a}%
+\cap\mathfrak{b}}^{\mathfrak{b}}\left(  U\left(  \mathfrak{b}\right)
+\otimes_{U\left(  \mathfrak{b}\right)  }N\right) \\
+&  =U\left(  \mathfrak{b}\right)  \otimes_{U\left(  \mathfrak{b}\right)
+}N\ \ \ \ \ \ \ \ \ \ \left(  \text{as a }U\left(  \mathfrak{a}\cap
+\mathfrak{b}\right)  \text{-module}\right)  .
+\end{align*}
+Hence,%
 \begin{align*}
 \operatorname*{Ind}\nolimits_{\mathfrak{a}\cap\mathfrak{b}}^{\mathfrak{a}%
-}\left(  \operatorname*{Res}\nolimits_{\mathfrak{a}\cap\mathfrak{b}%
-}^{\mathfrak{b}}\underbrace{N}_{\cong U\left(  \mathfrak{b}\right)
-\otimes_{U\left(  \mathfrak{b}\right)  }N}\right)   &  \cong%
-\operatorname*{Ind}\nolimits_{\mathfrak{a}\cap\mathfrak{b}}^{\mathfrak{a}%
-}\left(  \underbrace{\operatorname*{Res}\nolimits_{\mathfrak{a}\cap
-\mathfrak{b}}^{\mathfrak{b}}\left(  U\left(  \mathfrak{b}\right)
-\otimes_{U\left(  \mathfrak{b}\right)  }N\right)  }_{\substack{=U\left(
-\mathfrak{b}\right)  \otimes_{U\left(  \mathfrak{b}\right)  }N\\\text{(as a
-}U\left(  \mathfrak{a}\cap\mathfrak{b}\right)  \text{-module)}}}\right) \\
-&  =\operatorname*{Ind}\nolimits_{\mathfrak{a}\cap\mathfrak{b}}^{\mathfrak{a}%
-}\left(  U\left(  \mathfrak{b}\right)  \otimes_{U\left(  \mathfrak{b}\right)
-}N\right)  =U\left(  \mathfrak{a}\right)  \otimes_{U\left(  \mathfrak{a}%
-\cap\mathfrak{b}\right)  }\left(  U\left(  \mathfrak{b}\right)  \otimes
-_{U\left(  \mathfrak{b}\right)  }N\right) \\
+}\underbrace{\left(  \operatorname*{Res}\nolimits_{\mathfrak{a}\cap
+\mathfrak{b}}^{\mathfrak{b}}N\right)  }_{\cong U\left(  \mathfrak{b}\right)
+\otimes_{U\left(  \mathfrak{b}\right)  }N}  &  \cong\operatorname*{Ind}%
+\nolimits_{\mathfrak{a}\cap\mathfrak{b}}^{\mathfrak{a}}\left(  U\left(
+\mathfrak{b}\right)  \otimes_{U\left(  \mathfrak{b}\right)  }N\right)
+=U\left(  \mathfrak{a}\right)  \otimes_{U\left(  \mathfrak{a}\cap
+\mathfrak{b}\right)  }\left(  U\left(  \mathfrak{b}\right)  \otimes_{U\left(
+\mathfrak{b}\right)  }N\right) \\
 &  \cong\underbrace{\left(  U\left(  \mathfrak{a}\right)  \otimes_{U\left(
 \mathfrak{a}\cap\mathfrak{b}\right)  }U\left(  \mathfrak{b}\right)  \right)
 }_{\cong U\left(  \mathfrak{c}\right)  }\otimes_{U\left(  \mathfrak{b}\right)
@@ -6937,98 +6997,207 @@ N=\operatorname*{Res}\nolimits_{\mathfrak{a}}^{\mathfrak{c}}\left(
 \operatorname*{Ind}\nolimits_{\mathfrak{b}}^{\mathfrak{c}}N\right)
 \ \ \ \ \ \ \ \ \ \ \text{as }\mathfrak{a}\text{-modules.}%
 \end{align*}
-This proves Lemma \ref{lem.IndRes}.
+This isomorphism can be easily described explicitly: It maps $\alpha
+\otimes_{U\left(  \mathfrak{a}\cap\mathfrak{b}\right)  }n$ to $\alpha
+\otimes_{U\left(  \mathfrak{b}\right)  }n$ for all $\alpha\in U\left(
+\mathfrak{a}\right)  $ and $n\in N$. Thus, Lemma \ref{lem.IndRes} \textbf{(a)}
+is proved.
 
-\textit{Proof of Proposition \ref{prop.invform}.} We have $M_{\lambda}%
-^{+}=U\left(  \mathfrak{g}\right)  \otimes_{U\left(  \mathfrak{h}%
-\oplus\mathfrak{n}_{+}\right)  }\mathbb{C}_{\lambda}=\operatorname*{Ind}%
-\nolimits_{\mathfrak{h}\oplus\mathfrak{n}_{+}}^{\mathfrak{g}}\mathbb{C}%
-_{\lambda}$. Thus,%
+\textbf{(b)} Let $U$ be an $\mathfrak{a}$-module, and let $V$ be a
+$\mathfrak{b}$-module. We shall denote the $\mathfrak{a}\cap\mathfrak{b}%
+$-modules $\operatorname*{Res}\nolimits_{\mathfrak{a}\cap\mathfrak{b}%
+}^{\mathfrak{a}}U$ and $\operatorname*{Res}\nolimits_{\mathfrak{a}%
+\cap\mathfrak{b}}^{\mathfrak{b}}V$ by $U_{\cap}$ and $V_{\cap}$, respectively.
+
+Lemma \ref{lem.pushpull} (applied to $\mathfrak{c}$, $\mathfrak{a}$, $U$ and
+$\operatorname*{Ind}\nolimits_{\mathfrak{b}}^{\mathfrak{c}}V$ instead of
+$\mathfrak{a}$, $\mathfrak{b}$, $V$ and $W$) yields%
+\begin{equation}
+\left(  \operatorname*{Ind}\nolimits_{\mathfrak{a}}^{\mathfrak{c}}U\right)
+\otimes\left(  \operatorname*{Ind}\nolimits_{\mathfrak{b}}^{\mathfrak{c}%
+}V\right)  \cong\operatorname*{Ind}\nolimits_{\mathfrak{a}}^{\mathfrak{c}%
+}\left(  U\otimes\left(  \operatorname*{Res}\nolimits_{\mathfrak{a}%
+}^{\mathfrak{c}}\operatorname*{Ind}\nolimits_{\mathfrak{b}}^{\mathfrak{c}%
+}V\right)  \right)  \ \ \ \ \ \ \ \ \ \ \text{as }\mathfrak{c}\text{-modules.}
+\label{pf.lem.IndRes.b.1}%
+\end{equation}
+(We recall that the $W$ on the right hand side of Lemma \ref{lem.pushpull} was
+a shorthand for $\operatorname*{Res}\nolimits_{\mathfrak{b}}^{\mathfrak{a}}W$;
+but now we are no longer using that shorthand.)
+
+Furthermore, Lemma \ref{lem.pushpull} (applied to $\mathfrak{a}$,
+$\mathfrak{a}\cap\mathfrak{b}$, $V_{\cap}$ and $U$ instead of $\mathfrak{a}$,
+$\mathfrak{b}$, $V$ and $W$) yields%
+\[
+\left(  \operatorname*{Ind}\nolimits_{\mathfrak{a}\cap\mathfrak{b}%
+}^{\mathfrak{a}}V_{\cap}\right)  \otimes U\cong\operatorname*{Ind}%
+\nolimits_{\mathfrak{a}\cap\mathfrak{b}}^{\mathfrak{a}}\left(  V_{\cap}%
+\otimes\underbrace{\operatorname*{Res}\nolimits_{\mathfrak{a}\cap\mathfrak{b}%
+}^{\mathfrak{a}}U}_{=U_{\cap}}\right)  =\operatorname*{Ind}%
+\nolimits_{\mathfrak{a}\cap\mathfrak{b}}^{\mathfrak{a}}\left(  V_{\cap}\otimes
+U_{\cap}\right)  \ \ \ \ \ \ \ \ \ \ \text{as }\mathfrak{a}\text{-modules.}%
+\]
+Since the tensor product of $\mathfrak{a}$-modules is commutative (up to
+isomorphism), we thus have%
+\begin{align}
+U\otimes\left(  \operatorname*{Ind}\nolimits_{\mathfrak{a}\cap\mathfrak{b}%
+}^{\mathfrak{a}}V_{\cap}\right)   &  \cong\left(  \operatorname*{Ind}%
+\nolimits_{\mathfrak{a}\cap\mathfrak{b}}^{\mathfrak{a}}V_{\cap}\right)
+\otimes U\cong\operatorname*{Ind}\nolimits_{\mathfrak{a}\cap\mathfrak{b}%
+}^{\mathfrak{a}}\underbrace{\left(  V_{\cap}\otimes U_{\cap}\right)  }_{\cong
+U_{\cap}\otimes V_{\cap}}\nonumber\\
+&  \cong\operatorname*{Ind}\nolimits_{\mathfrak{a}\cap\mathfrak{b}%
+}^{\mathfrak{a}}\left(  U_{\cap}\otimes V_{\cap}\right)
+\label{pf.lem.IndRes.b.2}%
+\end{align}
+as $\mathfrak{a}$-modules.
+
+Lemma \ref{lem.IndRes} \textbf{(a)} (applied to $N=V$) yields
+$\operatorname*{Ind}\nolimits_{\mathfrak{a}\cap\mathfrak{b}}^{\mathfrak{a}%
+}\left(  \operatorname*{Res}\nolimits_{\mathfrak{a}\cap\mathfrak{b}%
+}^{\mathfrak{b}}V\right)  \cong\operatorname*{Res}\nolimits_{\mathfrak{a}%
+}^{\mathfrak{c}}\left(  \operatorname*{Ind}\nolimits_{\mathfrak{b}%
+}^{\mathfrak{c}}V\right)  $ as $\mathfrak{a}$-modules. In other words,%
+\begin{equation}
+\operatorname*{Ind}\nolimits_{\mathfrak{a}\cap\mathfrak{b}}^{\mathfrak{a}%
+}V_{\cap}\cong\operatorname*{Res}\nolimits_{\mathfrak{a}}^{\mathfrak{c}%
+}\left(  \operatorname*{Ind}\nolimits_{\mathfrak{b}}^{\mathfrak{c}}V\right)
+\ \ \ \ \ \ \ \ \ \ \text{as }\mathfrak{a}\text{-modules}
+\label{pf.lem.IndRes.b.3}%
+\end{equation}
+(since $\operatorname*{Res}\nolimits_{\mathfrak{a}\cap\mathfrak{b}%
+}^{\mathfrak{b}}V=V_{\cap}$).
+
+By the transitivity of induction (i.e., the fact that $\operatorname*{Ind}%
+\nolimits_{\mathfrak{x}}^{\mathfrak{z}}M\cong\operatorname*{Ind}%
+\nolimits_{\mathfrak{y}}^{\mathfrak{z}}\left(  \operatorname*{Ind}%
+\nolimits_{\mathfrak{x}}^{\mathfrak{y}}M\right)  $ whenever $\mathfrak{x}%
+\subseteq\mathfrak{y}\subseteq\mathfrak{z}$ are three Lie algebras and $M$ is
+an $\mathfrak{x}$-module), we have%
 \begin{align*}
-&  \operatorname*{Hom}\nolimits_{\mathfrak{g}}\left(  M_{\lambda}^{+}\otimes
-M_{-\lambda}^{-},\mathbb{C}\right) \\
-&  =\operatorname*{Hom}\nolimits_{\mathfrak{g}}\left(  \underbrace{\left(
-\operatorname*{Ind}\nolimits_{\mathfrak{h}\oplus\mathfrak{n}_{+}%
-}^{\mathfrak{g}}\mathbb{C}_{\lambda}\right)  \otimes M_{-\lambda}^{-}%
-}_{\substack{\cong\operatorname*{Ind}\nolimits_{\mathfrak{h}\oplus
-\mathfrak{n}_{+}}^{\mathfrak{g}}\left(  \mathbb{C}_{\lambda}\otimes
-M_{-\lambda}^{-}\right)  \\\text{(by Lemma \ref{lem.pushpull})}}%
-},\mathbb{C}\right)  \cong\operatorname*{Hom}\nolimits_{\mathfrak{g}}\left(
-\operatorname*{Ind}\nolimits_{\mathfrak{h}\oplus\mathfrak{n}_{+}%
-}^{\mathfrak{g}}\left(  \mathbb{C}_{\lambda}\otimes M_{-\lambda}^{-}\right)
-,\mathbb{C}\right) \\
-&  \cong\operatorname*{Hom}\nolimits_{\mathfrak{h}\oplus\mathfrak{n}_{+}%
-}\left(  \mathbb{C}_{\lambda}\otimes\underbrace{M_{-\lambda}^{-}%
-}_{\substack{=U\left(  \mathfrak{g}\right)  \otimes_{U\left(  \mathfrak{h}%
-\oplus\mathfrak{n}_{-}\right)  }\mathbb{C}_{-\lambda}\\=\operatorname*{Ind}%
-\nolimits_{\mathfrak{h}\oplus\mathfrak{n}_{-}}^{\mathfrak{g}}\mathbb{C}%
-_{-\lambda}}},\mathbb{C}\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{by
-Frobenius reciprocity}\right) \\
-&  =\operatorname*{Hom}\nolimits_{\mathfrak{h}\oplus\mathfrak{n}_{+}}\left(
-\underbrace{\mathbb{C}_{\lambda}\otimes\left(  \operatorname*{Ind}%
-\nolimits_{\mathfrak{h}\oplus\mathfrak{n}_{-}}^{\mathfrak{g}}\mathbb{C}%
-_{-\lambda}\right)  }_{\substack{\cong\operatorname*{Ind}%
-\nolimits_{\mathfrak{h}\oplus\mathfrak{n}_{-}}^{\mathfrak{g}}\left(
-\mathbb{C}_{\lambda}\otimes\mathbb{C}_{-\lambda}\right)  \\\text{(by Lemma
-\ref{lem.pushpull})}}},\mathbb{C}\right) \\
-&  \cong\operatorname*{Hom}\nolimits_{\mathfrak{h}\oplus\mathfrak{n}_{+}%
-}\left(  \operatorname*{Ind}\nolimits_{\mathfrak{h}\oplus\mathfrak{n}_{-}%
-}^{\mathfrak{g}}\left(  \mathbb{C}_{\lambda}\otimes\mathbb{C}_{-\lambda
-}\right)  ,\mathbb{C}\right)  .
+\operatorname*{Ind}\nolimits_{\mathfrak{a}\cap\mathfrak{b}}^{\mathfrak{c}%
+}\left(  U_{\cap}\otimes V_{\cap}\right)   &  \cong\operatorname*{Ind}%
+\nolimits_{\mathfrak{a}}^{\mathfrak{c}}\underbrace{\left(  \operatorname*{Ind}%
+\nolimits_{\mathfrak{a}\cap\mathfrak{b}}^{\mathfrak{a}}\left(  U_{\cap}\otimes
+V_{\cap}\right)  \right)  }_{\substack{\cong U\otimes\left(
+\operatorname*{Ind}\nolimits_{\mathfrak{a}\cap\mathfrak{b}}^{\mathfrak{a}%
+}V_{\cap}\right)  \\\text{(by (\ref{pf.lem.IndRes.b.2}))}}}\cong%
+\operatorname*{Ind}\nolimits_{\mathfrak{a}}^{\mathfrak{c}}\left(
+U\otimes\underbrace{\left(  \operatorname*{Ind}\nolimits_{\mathfrak{a}%
+\cap\mathfrak{b}}^{\mathfrak{a}}V_{\cap}\right)  }_{\substack{\cong%
+\operatorname*{Res}\nolimits_{\mathfrak{a}}^{\mathfrak{c}}\left(
+\operatorname*{Ind}\nolimits_{\mathfrak{b}}^{\mathfrak{c}}V\right)
+\\\text{(by (\ref{pf.lem.IndRes.b.3}))}}}\right) \\
+&  \cong\operatorname*{Ind}\nolimits_{\mathfrak{a}}^{\mathfrak{c}}\left(
+U\otimes\operatorname*{Res}\nolimits_{\mathfrak{a}}^{\mathfrak{c}}\left(
+\operatorname*{Ind}\nolimits_{\mathfrak{b}}^{\mathfrak{c}}V\right)  \right)
+\cong\left(  \operatorname*{Ind}\nolimits_{\mathfrak{a}}^{\mathfrak{c}%
+}U\right)  \otimes\left(  \operatorname*{Ind}\nolimits_{\mathfrak{b}%
+}^{\mathfrak{c}}V\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{by
+(\ref{pf.lem.IndRes.b.1})}\right)
 \end{align*}
+as $\mathfrak{c}$-modules. In other words,%
+\[
+\operatorname*{Ind}\nolimits_{\mathfrak{a}\cap\mathfrak{b}}^{\mathfrak{c}%
+}\left(  \left(  \operatorname*{Res}\nolimits_{\mathfrak{a}\cap\mathfrak{b}%
+}^{\mathfrak{a}}U\right)  \otimes\left(  \operatorname*{Res}%
+\nolimits_{\mathfrak{a}\cap\mathfrak{b}}^{\mathfrak{b}}V\right)  \right)
+\cong\left(  \operatorname*{Ind}\nolimits_{\mathfrak{a}}^{\mathfrak{c}%
+}U\right)  \otimes\left(  \operatorname*{Ind}\nolimits_{\mathfrak{b}%
+}^{\mathfrak{c}}V\right)
+\]
+as $\mathfrak{c}$-modules (since $U_{\cap}=\operatorname*{Res}%
+\nolimits_{\mathfrak{a}\cap\mathfrak{b}}^{\mathfrak{a}}U$ and $V_{\cap
+}=\operatorname*{Res}\nolimits_{\mathfrak{a}\cap\mathfrak{b}}^{\mathfrak{b}}%
+V$). It is easy to see that this isomorphism maps $1\otimes_{U\left(
+\mathfrak{a}\cap\mathfrak{b}\right)  }\left(  u\otimes v\right)  $ to $\left(
+1\otimes_{U\left(  \mathfrak{a}\right)  }u\right)  \otimes\left(
+1\otimes_{U\left(  \mathfrak{b}\right)  }v\right)  $ for all $u\in U$ and
+$v\in V$. Thus, Lemma \ref{lem.IndRes} \textbf{(b)} is proved.
+
+\textit{Proof of Proposition \ref{prop.invform}.} We have
+\begin{align}
+M_{\lambda}^{+}  &  =U\left(  \mathfrak{g}\right)  \otimes_{U\left(
+\mathfrak{h}\oplus\mathfrak{n}_{+}\right)  }\mathbb{C}_{\lambda}%
+=\operatorname*{Ind}\nolimits_{\mathfrak{h}\oplus\mathfrak{n}_{+}%
+}^{\mathfrak{g}}\mathbb{C}_{\lambda}\ \ \ \ \ \ \ \ \ \ \text{and}%
+\label{pf.prop.invform.1a}\\
+M_{-\lambda}^{-}  &  =U\left(  \mathfrak{g}\right)  \otimes_{U\left(
+\mathfrak{h}\oplus\mathfrak{n}_{-}\right)  }\mathbb{C}_{-\lambda
+}=\operatorname*{Ind}\nolimits_{\mathfrak{h}\oplus\mathfrak{n}_{-}%
+}^{\mathfrak{g}}\mathbb{C}_{-\lambda}. \label{pf.prop.invform.1b}%
+\end{align}
 
 
-However, Lemma \ref{lem.IndRes} (applied to $\mathfrak{c}=\mathfrak{g}$,
-$\mathfrak{a}=\mathfrak{h}\oplus\mathfrak{n}_{+}$, $\mathfrak{b}%
-=\mathfrak{h}\oplus\mathfrak{n}_{-}$ and $N=\mathbb{C}_{\lambda}%
-\otimes\mathbb{C}_{-\lambda}$) yields
+However, $\mathfrak{h}\oplus\mathfrak{n}_{+}$ and $\mathfrak{h}\oplus
+\mathfrak{n}_{-}$ are two Lie subalgebras of $\mathfrak{g}$ satisfying
+$\left(  \mathfrak{h}\oplus\mathfrak{n}_{+}\right)  +\left(  \mathfrak{h}%
+\oplus\mathfrak{n}_{-}\right)  =\mathfrak{g}$ and $\left(  \mathfrak{h}%
+\oplus\mathfrak{n}_{+}\right)  \cap\left(  \mathfrak{h}\oplus\mathfrak{n}%
+_{-}\right)  =\mathfrak{h}$. Therefore, Lemma \ref{lem.IndRes} \textbf{(b)}
+(applied to $\mathfrak{c}=\mathfrak{g}$, $\mathfrak{a}=\mathfrak{h}%
+\oplus\mathfrak{n}_{+}$, $\mathfrak{b}=\mathfrak{h}\oplus\mathfrak{n}_{-}$,
+$U=\mathbb{C}_{\lambda}$ and $V=\mathbb{C}_{-\lambda}$) yields
 \[
-\operatorname*{Ind}\nolimits_{\mathfrak{h}}^{\mathfrak{h}\oplus\mathfrak{n}%
-_{+}}\left(  \operatorname*{Res}\nolimits_{\mathfrak{h}}^{\mathfrak{h}%
-\oplus\mathfrak{n}_{-}}\left(  \mathbb{C}_{\lambda}\otimes\mathbb{C}%
-_{-\lambda}\right)  \right)  \cong\operatorname*{Res}\nolimits_{\mathfrak{h}%
-\oplus\mathfrak{n}_{+}}^{\mathfrak{g}}\left(  \operatorname*{Ind}%
-\nolimits_{\mathfrak{h}\oplus\mathfrak{n}_{-}}^{\mathfrak{g}}\left(
-\mathbb{C}_{\lambda}\otimes\mathbb{C}_{-\lambda}\right)  \right)  .
+\operatorname*{Ind}\nolimits_{\mathfrak{h}}^{\mathfrak{g}}\left(  \left(
+\operatorname*{Res}\nolimits_{\mathfrak{h}}^{\mathfrak{h}\oplus\mathfrak{n}%
+_{+}}\mathbb{C}_{\lambda}\right)  \otimes\left(  \operatorname*{Res}%
+\nolimits_{\mathfrak{h}}^{\mathfrak{h}\oplus\mathfrak{n}_{-}}\mathbb{C}%
+_{-\lambda}\right)  \right)  \cong\left(  \operatorname*{Ind}%
+\nolimits_{\mathfrak{h}\oplus\mathfrak{n}_{+}}^{\mathfrak{g}}\mathbb{C}%
+_{\lambda}\right)  \otimes\left(  \operatorname*{Ind}\nolimits_{\mathfrak{h}%
+\oplus\mathfrak{n}_{-}}^{\mathfrak{g}}\mathbb{C}_{-\lambda}\right)
 \]
-This rewrites as
+as $\mathfrak{g}$-modules. Using (\ref{pf.prop.invform.1a}) and
+(\ref{pf.prop.invform.1b}), we can rewrite this as%
+\begin{equation}
+\operatorname*{Ind}\nolimits_{\mathfrak{h}}^{\mathfrak{g}}\left(  \left(
+\operatorname*{Res}\nolimits_{\mathfrak{h}}^{\mathfrak{h}\oplus\mathfrak{n}%
+_{+}}\mathbb{C}_{\lambda}\right)  \otimes\left(  \operatorname*{Res}%
+\nolimits_{\mathfrak{h}}^{\mathfrak{h}\oplus\mathfrak{n}_{-}}\mathbb{C}%
+_{-\lambda}\right)  \right)  \cong M_{\lambda}^{+}\otimes M_{-\lambda}^{-}.
+\label{pf.prop.invform.2}%
+\end{equation}
+
+
+However, the $\mathfrak{h}$-module $\left(  \operatorname*{Res}%
+\nolimits_{\mathfrak{h}}^{\mathfrak{h}\oplus\mathfrak{n}_{+}}\mathbb{C}%
+_{\lambda}\right)  \otimes\left(  \operatorname*{Res}\nolimits_{\mathfrak{h}%
+}^{\mathfrak{h}\oplus\mathfrak{n}_{-}}\mathbb{C}_{-\lambda}\right)  $ is
+isomorphic to the trivial $\mathfrak{h}$-module $\mathbb{C}$ (since each
+$h\in\mathfrak{h}$ sends the basis vector $v_{\lambda}^{+}\otimes v_{-\lambda
+}^{-}$ of $\left(  \operatorname*{Res}\nolimits_{\mathfrak{h}}^{\mathfrak{h}%
+\oplus\mathfrak{n}_{+}}\mathbb{C}_{\lambda}\right)  \otimes\left(
+\operatorname*{Res}\nolimits_{\mathfrak{h}}^{\mathfrak{h}\oplus\mathfrak{n}%
+_{-}}\mathbb{C}_{-\lambda}\right)  $ to%
 \[
-\operatorname*{Ind}\nolimits_{\mathfrak{h}}^{\mathfrak{h}\oplus\mathfrak{n}%
-_{+}}\left(  \mathbb{C}_{\lambda}\otimes\mathbb{C}_{-\lambda}\right)
-\cong\operatorname*{Ind}\nolimits_{\mathfrak{h}\oplus\mathfrak{n}_{-}%
-}^{\mathfrak{g}}\left(  \mathbb{C}_{\lambda}\otimes\mathbb{C}_{-\lambda
-}\right)
+\underbrace{hv_{\lambda}^{+}}_{=\lambda\left(  h\right)  v_{\lambda}^{+}%
+}\otimes\,v_{-\lambda}^{-}+v_{\lambda}^{+}\otimes\underbrace{hv_{-\lambda}%
+^{-}}_{=-\lambda\left(  h\right)  v_{-\lambda}^{-}}=\lambda\left(  h\right)
+v_{\lambda}^{+}\otimes v_{-\lambda}^{-}-\lambda\left(  h\right)  v_{\lambda
+}^{+}\otimes v_{-\lambda}^{-}=0,
 \]
-(since we are suppressing the $\operatorname*{Res}$ functors), so that
+so that each $h\in\mathfrak{h}$ acts as $0$ on $\left(  \operatorname*{Res}%
+\nolimits_{\mathfrak{h}}^{\mathfrak{h}\oplus\mathfrak{n}_{+}}\mathbb{C}%
+_{\lambda}\right)  \otimes\left(  \operatorname*{Res}\nolimits_{\mathfrak{h}%
+}^{\mathfrak{h}\oplus\mathfrak{n}_{-}}\mathbb{C}_{-\lambda}\right)  $, which
+is precisely how $h$ acts on $\mathbb{C}$). Thus, we can rewrite
+(\ref{pf.prop.invform.2}) as
 \[
-\operatorname*{Ind}\nolimits_{\mathfrak{h}\oplus\mathfrak{n}_{-}%
-}^{\mathfrak{g}}\left(  \mathbb{C}_{\lambda}\otimes\mathbb{C}_{-\lambda
-}\right)  \cong\operatorname*{Ind}\nolimits_{\mathfrak{h}}^{\mathfrak{h}%
-\oplus\mathfrak{n}_{+}}\left(  \mathbb{C}_{\lambda}\otimes\mathbb{C}%
-_{-\lambda}\right)
+\operatorname*{Ind}\nolimits_{\mathfrak{h}}^{\mathfrak{g}}\mathbb{C}\cong
+M_{\lambda}^{+}\otimes M_{-\lambda}^{-}.
 \]
-(as $\left(  \mathfrak{h}\oplus\mathfrak{n}_{+}\right)  $-modules)). Thus, we
-can continue our calculation above as follows:%
+Hence, $M_{\lambda}^{+}\otimes M_{-\lambda}^{-}\cong\operatorname*{Ind}%
+\nolimits_{\mathfrak{h}}^{\mathfrak{g}}\mathbb{C}$, so that
 \begin{align*}
-&  \operatorname*{Hom}\nolimits_{\mathfrak{g}}\left(  M_{\lambda}^{+}\otimes
-M_{-\lambda}^{-},\mathbb{C}\right) \\
-&  \cong\operatorname*{Hom}\nolimits_{\mathfrak{h}\oplus\mathfrak{n}_{+}%
-}\left(  \underbrace{\operatorname*{Ind}\nolimits_{\mathfrak{h}\oplus
-\mathfrak{n}_{-}}^{\mathfrak{g}}\left(  \mathbb{C}_{\lambda}\otimes
-\mathbb{C}_{-\lambda}\right)  }_{\cong\operatorname*{Ind}%
-\nolimits_{\mathfrak{h}}^{\mathfrak{h}\oplus\mathfrak{n}_{+}}\left(
-\mathbb{C}_{\lambda}\otimes\mathbb{C}_{-\lambda}\right)  },\mathbb{C}\right)
-\\
-&  \cong\operatorname*{Hom}\nolimits_{\mathfrak{h}\oplus\mathfrak{n}_{+}%
-}\left(  \operatorname*{Ind}\nolimits_{\mathfrak{h}}^{\mathfrak{h}%
-\oplus\mathfrak{n}_{+}}\left(  \mathbb{C}_{\lambda}\otimes\mathbb{C}%
-_{-\lambda}\right)  ,\mathbb{C}\right) \\
+\operatorname*{Hom}\nolimits_{\mathfrak{g}}\left(  M_{\lambda}^{+}\otimes
+M_{-\lambda}^{-},\mathbb{C}\right)   &  \cong\operatorname*{Hom}%
+\nolimits_{\mathfrak{g}}\left(  \operatorname*{Ind}\nolimits_{\mathfrak{h}%
+}^{\mathfrak{g}}\mathbb{C},\mathbb{C}\right) \\
 &  \cong\operatorname*{Hom}\nolimits_{\mathfrak{h}}\left(  \mathbb{C}%
-_{\lambda}\otimes\mathbb{C}_{-\lambda},\mathbb{C}\right)
-\ \ \ \ \ \ \ \ \ \ \left(  \text{by Frobenius reciprocity}\right) \\
-&  \cong\mathbb{C}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }\mathbb{C}%
-_{\lambda}\otimes\mathbb{C}_{-\lambda}\cong\mathbb{C}\text{ as }%
-\mathfrak{h}\text{-modules (this is easy to see)}\right)  .
+,\mathbb{C}\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{by Frobenius
+reciprocity}\right) \\
+&  \cong\mathbb{C}.
 \end{align*}
 This isomorphism $\operatorname*{Hom}\nolimits_{\mathfrak{g}}\left(
 M_{\lambda}^{+}\otimes M_{-\lambda}^{-},\mathbb{C}\right)  \rightarrow
@@ -7045,7 +7214,7 @@ $M_{\lambda}^{+}\times M_{-\lambda}^{-}\rightarrow\mathbb{C}$ must be a scalar
 multiple of this one. This proves Proposition \ref{prop.invform} \textbf{(a)}
 and \textbf{(c)}.
 
-Now, for the proof of \textbf{(b)}: Denote by $\left(  \cdot,\cdot\right)  $
+Now let us prove part \textbf{(b)}: Denote by $\left(  \cdot,\cdot\right)  $
 the unique $\mathfrak{g}$-invariant bilinear form $M_{\lambda}^{+}\times
 M_{-\lambda}^{-}\rightarrow\mathbb{C}$ satisfying $\left(  v_{\lambda}%
 ^{+},v_{-\lambda}^{-}\right)  =1$. Let us now prove that this bilinear form is
@@ -11237,7 +11406,7 @@ satisfies }W\left[  m\right]  \subseteq Aw\text{)}}}\subseteq-\sum_{k=0}%
 \end{align*}
 so that $u\in\underbrace{a_{n+d}}_{\in A}w+Aw\subseteq Aw+Aw=Aw$. But this
 contradicts $u\notin Aw$. This contradiction shows that our assumption was
-false. Hence, $Aw_{d}\neq W$ is proved. Thus, there exists a nonzero
+wrong. Hence, $Aw_{d}\neq W$ is proved. Thus, there exists a nonzero
 \textit{homogeneous} $v\in W$ such that $Av\neq W$ (namely, $v=w_{d}$). This
 proves Claim 0.]
 
@@ -15317,9 +15486,9 @@ B^{\mathbb{Z}}$ such that only finitely many $n\in\mathbb{Z}$ satisfy
 $b_{n}\neq0$. (A \textit{two-sided sequence} means a sequence indexed by
 integers, not just nonnegative integers.) Such a sequence $\left(
 b_{n}\right)  _{n\in\mathbb{Z}}$ is denoted by $\sum\limits_{n\in\mathbb{Z}%
-}b_{n}z^{n}$. The elements of $B\left[  z,z^{-1}\right]  $ are called\textit{
-Laurent polynomials in the indeterminate }$z$ \textit{over }$B$ (even when $B$
-is not a ring).
+}b_{n}z^{n}$. The elements of $B\left[  z,z^{-1}\right]  $ are called
+\textit{Laurent polynomials in the indeterminate }$z$ \textit{over }$B$ (even
+when $B$ is not a ring).
 
 \item[\textbf{(d)}] We denote by $B\left(  \left(  z\right)  \right)  $ the
 vector space of all two-sided sequences $\left(  b_{n}\right)  _{n\in
@@ -15495,7 +15664,7 @@ n_{1},n_{2},...,n_{m}\right)  \in\mathbb{Z}^{m}}$ is denoted by $\sum
 \limits_{\left(  n_{1},n_{2},...,n_{m}\right)  \in\mathbb{Z}^{m}}b_{\left(
 n_{1},n_{2},...,n_{m}\right)  }z_{1}^{n_{1}}z_{2}^{n_{2}}...z_{m}^{n_{m}}$.
 The elements of $B\left[  z_{1},z_{1}^{-1},z_{2},z_{2}^{-1},...,z_{m}%
-,z_{m}^{-1}\right]  $ are called\textit{ Laurent polynomials in the
+,z_{m}^{-1}\right]  $ are called \textit{Laurent polynomials in the
 indeterminates }$z_{1},z_{2},...,z_{m}$ \textit{over }$B$ (even when $B$ is
 not a ring).
 
@@ -15511,7 +15680,7 @@ b_{\left(  n_{1},n_{2},...,n_{m}\right)  }\right)  _{\left(  n_{1}%
 \limits_{\left(  n_{1},n_{2},...,n_{m}\right)  \in\mathbb{Z}^{m}}b_{\left(
 n_{1},n_{2},...,n_{m}\right)  }z_{1}^{n_{1}}z_{2}^{n_{2}}...z_{m}^{n_{m}}$.
 The elements of $B\left(  \left(  z_{1},z_{2},...,z_{m}\right)  \right)  $ are
-called\textit{ formal Laurent series in the indeterminates }$z_{1}%
+called \textit{formal Laurent series in the indeterminates }$z_{1}%
 ,z_{2},...,z_{m}$ \textit{over }$B$ (even when $B$ is not a ring).
 
 \item[\textbf{(e)}] We denote by $B\left[  \left[  z_{1},z_{1}^{-1}%
@@ -15912,17 +16081,18 @@ what we would get if we tried to define $a\left(  z\right)  ^{2}%
 $).\ \ \ \ \footnote{For the same reason, the product $a\left(  z\right)
 a\left(  w\right)  $ (without normal ordering) is well-defined.} But it is
 more interesting that (although we cannot define $a\left(  z\right)  ^{2}$) we
-can define a ``normal ordered'' square $\left.  :a\left(  z\right)
-^{2}:\right.  $ (or, what is the same, $\left.  :a\left(  z\right)  a\left(
-z\right)  :\right.  $), although it will not be an element of $U\left(
-\mathcal{A}\right)  \left[  \left[  z,z^{-1}\right]  \right]  $ but rather of
-a suitable completion. We are not going to do elaborate on how to choose this
-completion here; but for us it will be enough to notice that, if we
-reinterpret the $a_{n}$ as endomorphisms of $F_{\mu}$ (using the action of
-$\mathcal{A}$ on $F_{\mu}$) rather than elements of $U\left(  \mathcal{A}%
-\right)  $, then the ``normal ordered'' square $\left.  :a\left(  z\right)
-^{2}:\right.  $ is a well-defined element of $\left(  \operatorname*{End}%
-F_{\mu}\right)  \left[  \left[  z,z^{-1}\right]  \right]  $. Namely:%
+can define a \textquotedblleft normal ordered\textquotedblright\ square
+$\left.  :a\left(  z\right)  ^{2}:\right.  $ (or, what is the same, $\left.
+:a\left(  z\right)  a\left(  z\right)  :\right.  $), although it will not be
+an element of $U\left(  \mathcal{A}\right)  \left[  \left[  z,z^{-1}\right]
+\right]  $ but rather of a suitable completion. We are not going to elaborate
+on how to choose this completion here; but for us it will be enough to notice
+that, if we reinterpret the $a_{n}$ as endomorphisms of $F_{\mu}$ (using the
+action of $\mathcal{A}$ on $F_{\mu}$) rather than elements of $U\left(
+\mathcal{A}\right)  $, then the \textquotedblleft normal
+ordered\textquotedblright\ square $\left.  :a\left(  z\right)  ^{2}:\right.  $
+is a well-defined element of $\left(  \operatorname*{End}F_{\mu}\right)
+\left[  \left[  z,z^{-1}\right]  \right]  $. Namely:%
 \begin{align*}
 &  \left.  :a\left(  z\right)  ^{2}:\right. \\
 &  =\sum\limits_{\left(  n,m\right)  \in\mathbb{Z}^{2}}\left.  :a_{n}%
@@ -15958,8 +16128,9 @@ are well-defined for all $n\in\mathbb{Z}$ (by Lemma \ref{lem.fockvir.welldef}
 $L_{n}\in\operatorname*{Vir}$ as endomorphisms of $F_{\mu}$ (using the action
 of $\operatorname*{Vir}$ on $F_{\mu}$ that was introduced in Proposition
 \ref{prop.fockvir.answer2}) rather than elements of $U\left(
-\operatorname*{Vir}\right)  $. In fact, the ``series'' $T\left(  z\right)
-=\sum\limits_{n\in\mathbb{Z}}L_{n}z^{-n-2}$ then becomes%
+\operatorname*{Vir}\right)  $. In fact, the \textquotedblleft
+series\textquotedblright\ $T\left(  z\right)  =\sum\limits_{n\in\mathbb{Z}%
+}L_{n}z^{-n-2}$ then becomes%
 \begin{align*}
 T\left(  z\right)   &  =\sum\limits_{n\in\mathbb{Z}}L_{n}z^{-n-2}%
 =\sum\limits_{n\in\mathbb{Z}}\dfrac{1}{2}\left(  \sum\limits_{m\in\mathbb{Z}%
@@ -20163,7 +20334,7 @@ Here, whenever $\mathcal{A}$ is an assertion, we denote by $\left[
 \begin{array}
 [c]{l}%
 1,\text{ if }\mathcal{A}\text{ is true;}\\
-0,\text{ if }\mathcal{A}\text{ is wrong}%
+0,\text{ if }\mathcal{A}\text{ is false}%
 \end{array}
 \right.  $.
 \end{statement}
@@ -25813,7 +25984,7 @@ _{2},...,\beta_{N}\right)  $, the term%
 \lambda_{\alpha_{1},\alpha_{2},...,\alpha_{N}}\widetilde{P}_{1}^{\alpha_{1}%
 }\widetilde{P}_{2}^{\alpha_{2}}...\widetilde{P}_{N}^{\alpha_{N}}\text{ is a
 }\mathbb{C}\text{-linear combination of monomials smaller than }T_{1}%
-^{\beta_{1}}T_{2}^{\beta_{2}}...T_{N}^{\beta_{N}}.\label{pf.schur.algind.5}%
+^{\beta_{1}}T_{2}^{\beta_{2}}...T_{N}^{\beta_{N}}. \label{pf.schur.algind.5}%
 \end{equation}
 \footnote{\textit{Proof of (\ref{pf.schur.algind.5}).} Let $\left(  \alpha
 _{1},\alpha_{2},...,\alpha_{N}\right)  \in\mathbb{N}^{N}$ satisfy $\left(
@@ -27048,7 +27219,7 @@ denote the integer $\left\{
 \begin{array}
 [c]{l}%
 1,\text{ if }\mathcal{A}\text{ is true;}\\
-0,\text{ if }\mathcal{A}\text{ is wrong}%
+0,\text{ if }\mathcal{A}\text{ is false}%
 \end{array}
 \right.  $.
 \end{itemize}
@@ -29377,7 +29548,7 @@ F\rightarrow\mathbb{C}$ defined in Proposition \ref{prop.A.contravariantform}.
 Since $F=\widetilde{F}=\mathcal{B}^{\left(  0\right)  }$ (as vector spaces),
 this form $\left(  \cdot,\cdot\right)  $ is a $\mathbb{C}$-bilinear form
 $\mathcal{B}^{\left(  0\right)  }\times\mathcal{B}^{\left(  0\right)
-}\rightarrow\mathbb{C}$. Since the definition of the form did not depend of
+}\rightarrow\mathbb{C}$. Since the definition of the form did not depend on
 the ground ring, we can analogously define an $\mathbf{R}$-bilinear form
 $\left(  \cdot,\cdot\right)  :\mathcal{B}_{\mathbf{R}}^{\left(  0\right)
 }\times\mathcal{B}_{\mathbf{R}}^{\left(  0\right)  }\rightarrow\mathbf{R}$.
@@ -29406,7 +29577,7 @@ R\left(  0\right)  =\left(
 \begin{array}
 [c]{c}%
 \text{the }\left(  v_{0}\wedge v_{-1}\wedge v_{-2}\wedge...\right)
-\text{-coordinate of }\sigma\left(  R\right) \\
+\text{-coordinate of }\sigma\left(  R\right)  \\
 \text{with respect to the basis }\left(  v_{j_{0}}\wedge v_{j_{1}}\wedge
 v_{j_{2}}\wedge...\right)  _{\left(  j_{0},j_{1},j_{2},...\right)  \text{ a
 }0\text{-degression}}\text{ of }\mathcal{F}^{\left(  0\right)  }%
@@ -29430,7 +29601,7 @@ $p_{0,\mathcal{B}}\left(  R\right)  =R\left(  0\right)  \cdot1$ (since
 $\mathcal{B}=\widetilde{F}=\mathbb{C}\left[  x_{1},x_{2},x_{3},...\right]  $),
 and thus $\left(  \sigma_{0}\circ p_{0,\mathcal{B}}\right)  \left(  R\right)
 =\sigma_{0}\left(  \underbrace{p_{0,\mathcal{B}}\left(  R\right)  }_{=R\left(
-1\right)  \cdot1}\right)  =\sigma_{0}\left(  R\left(  0\right)  \cdot1\right)
+0\right)  \cdot1}\right)  =\sigma_{0}\left(  R\left(  0\right)  \cdot1\right)
 =R\left(  0\right)  \cdot\underbrace{\sigma_{0}\left(  1\right)  }_{=\psi_{0}%
 }=R\left(  0\right)  \psi_{0}$.
 \par
@@ -29473,7 +29644,7 @@ R\left(  0\right)  =\kappa=\left(
 \begin{array}
 [c]{c}%
 \text{the }\left(  v_{0}\wedge v_{-1}\wedge v_{-2}\wedge...\right)
-\text{-coordinate of }\sigma\left(  R\right) \\
+\text{-coordinate of }\sigma\left(  R\right)  \\
 \text{with respect to the basis }\left(  v_{j_{0}}\wedge v_{j_{1}}\wedge
 v_{j_{2}}\wedge...\right)  _{\left(  j_{0},j_{1},j_{2},...\right)  \text{ a
 }0\text{-degression}}\text{ of }\mathcal{F}^{\left(  0\right)  }%
@@ -29489,15 +29660,17 @@ R\left(  0\right)  =\left(
 \begin{array}
 [c]{c}%
 \text{the }\left(  v_{0}\wedge v_{-1}\wedge v_{-2}\wedge...\right)
-\text{-coordinate of }\sigma_{\mathbf{R}}\left(  R\right) \\
+\text{-coordinate of }\sigma_{\mathbf{R}}\left(  R\right)  \\
 \text{with respect to the basis }\left(  v_{j_{0}}\wedge v_{j_{1}}\wedge
 v_{j_{2}}\wedge...\right)  _{\left(  j_{0},j_{1},j_{2},...\right)  \text{ a
 }0\text{-degression}}\text{ of }\mathcal{F}_{\mathbf{R}}^{\left(  0\right)  }%
 \end{array}
 \right)  \label{pf.schur.1R}%
 \end{equation}
-\footnote{Of course, ``basis'' means ``$\mathbf{R}$-module basis'' and no
-longer ``$\mathbb{C}$-vector space basis'' in this statement.}.
+\footnote{Of course, \textquotedblleft basis\textquotedblright\ means
+\textquotedblleft$\mathbf{R}$-module basis\textquotedblright\ and no longer
+\textquotedblleft$\mathbb{C}$-vector space basis\textquotedblright\ in this
+statement.}.
 
 On the other hand, for every polynomial $R\in\mathcal{B}^{\left(  0\right)  }%
 $, we can view $R=R\left(  x\right)  $ as an element of $\mathcal{B}%
@@ -32616,9 +32789,10 @@ $\wedge^{k}V$ is a representation of $\operatorname*{GL}\left(  V\right)  $
 with a highest-weight vector $v_{1}\wedge v_{2}\wedge...\wedge v_{k}$.
 
 Let $\Omega$ denote the orbit of $v_{1}\wedge v_{2}\wedge...\wedge v_{k}$
-under $\operatorname*{GL}\left(  V\right)  $. (Little exception: If $k=0$,
-then $\Omega$ should not be the orbit of the single vector $1$ but rather the
-whole space $\Lambda^{0}\mathbb{C}^{n}\cong\mathbb{C}$.)
+under $\operatorname*{GL}\left(  V\right)  $. (With one little exception: If
+$k=0$, then $\Omega$ should not be the orbit of the single vector $1$ but
+rather the set of all nonzero vectors in $\Lambda^{0}\mathbb{C}^{n}%
+\cong\mathbb{C}$.)
 \end{definition}
 
 \begin{proposition}
@@ -32946,34 +33120,39 @@ Since $S$ is basis-independent, it is clear that $S$ is $\operatorname*{GL}%
 \left(  V\right)  $ transforms $S$ into the same operator $S$ but constructed
 for a different basis; but since $S$ is basis-independent, this other $S$ must
 be the $S$ that we started with). This proves Theorem \ref{thm.plu}
-\textbf{(a)}.
+\textbf{(a)}. \medskip
 
 \textbf{(b)} Let $\tau\in\Omega$ be nonzero. We WLOG assume that $k>0$, since
-the $k=0$ case is trivial (in this case, $S=0$).
+the $k=0$ case is trivial (in this case, $S=0$). We shall prove two claims:
 
-\textbf{1)} First let us show that if $\tau\in\Omega$, then $S\left(
-\tau\otimes\tau\right)  =0$.
+\begin{statement}
+\textit{Claim 1:} If $\tau\in\Omega$, then $S\left(  \tau\otimes\tau\right)
+=0$.
+\end{statement}
 
-In order to show this, it is enough to prove that $S\left(  \tau\otimes
-\tau\right)  =0$ holds in the case $\tau=v_{1}\wedge v_{2}\wedge...\wedge
-v_{k}$ (since $S$ is $\operatorname*{GL}\left(  V\right)  $-invariant, and
-$\Omega$ is the $\operatorname*{GL}\left(  V\right)  $-orbit of $v_{1}\wedge
-v_{2}\wedge...\wedge v_{k}$).
+\textit{Proof of Claim 1.} In order to show this, it is enough to prove that
+$S\left(  \tau\otimes\tau\right)  =0$ holds in the case $\tau=v_{1}\wedge
+v_{2}\wedge...\wedge v_{k}$ (since $S$ is $\operatorname*{GL}\left(  V\right)
+$-invariant, and $\Omega$ is the $\operatorname*{GL}\left(  V\right)  $-orbit
+of $v_{1}\wedge v_{2}\wedge...\wedge v_{k}$).
 
 But this is obvious, because for every $i\in\left\{  1,2,...,n\right\}  $,
 either $\widehat{v_{i}}$ or $\overset{\vee}{v_{i}}$ annihilates $v_{1}\wedge
-v_{2}\wedge...\wedge v_{k}$.
+v_{2}\wedge...\wedge v_{k}$. Thus, Claim 1 is proved.
 
-\textbf{2)} Let us now (conversely) prove that if $S\left(  \tau\otimes
-\tau\right)  =0$, then $\tau\in\Omega$.
+\begin{statement}
+\textit{Claim 2:} If $S\left(  \tau\otimes\tau\right)  =0$, then $\tau
+\in\Omega$.
+\end{statement}
 
 (There is a combinatorial proof of this in the infinite setting in the
 Kac-Raina book, but we will give a different proof here.)
 
-Define $E\subseteq V$ to be the set $\left\{  v\in V\ \mid\ \widehat{v}%
-\tau=0\right\}  $. Define $E^{\prime}\subseteq V^{\ast}$ to be the set
-$\left\{  f\in V^{\ast}\ \mid\ \overset{\vee}{f}\tau=0\right\}  $. Clearly,
-$E$ is a subspace of $V$, and $E^{\prime}$ is a subspace of $V^{\ast}$.
+\textit{Proof of Claim 2.} Define $E\subseteq V$ to be the set $\left\{  v\in
+V\ \mid\ \widehat{v}\tau=0\right\}  $. Define $E^{\prime}\subseteq V^{\ast}$
+to be the set $\left\{  f\in V^{\ast}\ \mid\ \overset{\vee}{f}\tau=0\right\}
+$. Clearly, $E$ is a subspace of $V$, and $E^{\prime}$ is a subspace of
+$V^{\ast}$.
 
 We know that all $v\in E$ and $f\in E^{\prime}$ satisfy $\left(
 \overset{\vee}{f}\widehat{v}+\widehat{v}\overset{\vee}{f}\right)  \tau=0$
@@ -33015,32 +33194,34 @@ by the formula $S=\sum\limits_{i=1}^{n}\widehat{v_{i}}\otimes\overset{\vee
 define it using the basis $\left(  e_{1},e_{2},...,e_{n}\right)  $. Thus, we
 have $S=\sum\limits_{i=1}^{n}\widehat{e_{i}}\otimes\overset{\vee}{e_{i}}$.
 Hence,%
-\begin{align*}
+\begin{align}
 S\left(  \tau\otimes\tau\right)   &  =\sum\limits_{i=1}^{m}%
 \underbrace{\widehat{e_{i}}\tau}_{\substack{=0\\\text{(since }i\in\left\{
-1,2,...,m\right\}  \text{)}}}\otimes\overset{\vee}{e_{i}^{\ast}}\tau
+1,2,...,m\right\}  \text{)}}}\otimes\,\overset{\vee}{e_{i}^{\ast}}\tau
 +\sum\limits_{i=m+1}^{r}\widehat{e_{i}}\tau\otimes\overset{\vee}{e_{i}^{\ast}%
 }\tau+\sum\limits_{i=r+1}^{n}\widehat{e_{i}}\tau\otimes
 \underbrace{\overset{\vee}{e_{i}^{\ast}}\tau}_{\substack{=0\\\text{(since
-}i\in\left\{  r+1,r+2,...,n\right\}  \text{)}}}\\
+}i\in\left\{  r+1,r+2,...,n\right\}  \text{)}}}\nonumber\\
 &  =\sum\limits_{i=m+1}^{r}\widehat{e_{i}}\tau\otimes\overset{\vee
-}{e_{i}^{\ast}}\tau.
-\end{align*}
-Thus, $S\left(  \tau\otimes\tau\right)  =0$ rewrites as $\sum\limits_{i=m+1}%
-^{r}\widehat{e_{i}}\tau\otimes\overset{\vee}{e_{i}^{\ast}}\tau=0$. But since
-the vectors $\widehat{e_{i}}\tau$ for $i\in\left\{  m+1,m+2,...,r\right\}  $
-are linearly independent, this yields that $\overset{\vee}{e_{i}^{\ast}}%
-\tau=0$ for any $i\in\left\{  m+1,m+2,...,r\right\}  $. Thus, for every
-$i\in\left\{  m+1,m+2,...,r\right\}  $, we have $e_{i}^{\ast}\in\left\{  f\in
-V^{\ast}\ \mid\ \overset{\vee}{f}\tau=0\right\}  =E^{\prime}$, so that
-$e_{i}^{\ast}\left(  E^{\prime\perp}\right)  =0$. But on the other hand, for
-every $i\in\left\{  m+1,m+2,...,r\right\}  $, we have $e_{i}\in E^{\prime
-\perp}$ (since $\left(  e_{1},e_{2},...,e_{r}\right)  $ is a basis of
-$E^{\prime\perp}$, and since $i\leq r$). Thus, for every $i\in\left\{
-m+1,m+2,...,r\right\}  $, we have $1=e_{i}^{\ast}\left(  \underbrace{e_{i}%
-}_{\in E^{\prime\perp}}\right)  \in e_{i}^{\ast}\left(  E^{\prime\perp
-}\right)  =0$. This is a contradiction unless there are no $i\in\left\{
-m+1,m+2,...,r\right\}  $ at all.
+}{e_{i}^{\ast}}\tau.\label{pf.thm.plu.Stt}%
+\end{align}
+
+
+Now, assume that $S\left(  \tau\otimes\tau\right)  =0$. Using
+(\ref{pf.thm.plu.Stt}), this rewrites as $\sum\limits_{i=m+1}^{r}%
+\widehat{e_{i}}\tau\otimes\overset{\vee}{e_{i}^{\ast}}\tau=0$. But since the
+vectors $\widehat{e_{i}}\tau$ for $i\in\left\{  m+1,m+2,...,r\right\}  $ are
+linearly independent, this yields that $\overset{\vee}{e_{i}^{\ast}}\tau=0$
+for any $i\in\left\{  m+1,m+2,...,r\right\}  $. Thus, for every $i\in\left\{
+m+1,m+2,...,r\right\}  $, we have $e_{i}^{\ast}\in\left\{  f\in V^{\ast}%
+\ \mid\ \overset{\vee}{f}\tau=0\right\}  =E^{\prime}$, so that $e_{i}^{\ast
+}\left(  E^{\prime\perp}\right)  =0$. But on the other hand, for every
+$i\in\left\{  m+1,m+2,...,r\right\}  $, we have $e_{i}\in E^{\prime\perp}$
+(since $\left(  e_{1},e_{2},...,e_{r}\right)  $ is a basis of $E^{\prime\perp
+}$, and since $i\leq r$). Thus, for every $i\in\left\{  m+1,m+2,...,r\right\}
+$, we have $1=e_{i}^{\ast}\left(  \underbrace{e_{i}}_{\in E^{\prime\perp}%
+}\right)  \in e_{i}^{\ast}\left(  E^{\prime\perp}\right)  =0$. This is a
+contradiction unless there are no $i\in\left\{  m+1,m+2,...,r\right\}  $ at all.
 
 So we conclude that there are no $i\in\left\{  m+1,m+2,...,r\right\}  $ at
 all. In other words, $m=r$. Thus, $\dim E=m=r=\dim\left(  E^{\prime\perp
@@ -33169,11 +33350,11 @@ $v_{1}\wedge v_{2}\wedge...\wedge v_{k}$ to $\left(  \lambda_{1,2,...,m}%
 e_{1}\right)  \wedge e_{2}\wedge e_{3}\wedge...\wedge e_{k}=\tau$. Hence,
 $\tau$ lies in the $\operatorname*{GL}\left(  V\right)  $-orbit of
 $v_{1}\wedge v_{2}\wedge...\wedge v_{k}$. Since this orbit was called $\Omega
-$, this becomes $\tau\in\Omega$.
+$, this becomes $\tau\in\Omega$. This proves Claim 2.
 
-We thus have shown that if $S\left(  \tau\otimes\tau\right)  =0$, then
-$\tau\in\Omega$. This completes the proof of Theorem \ref{thm.plu}
-\textbf{(b)}.
+Combining Claim 1 with Claim 2, we see that $\tau\in\Omega$ if and only if
+$S\left(  \tau\otimes\tau\right)  =0$. This completes the proof of Theorem
+\ref{thm.plu} \textbf{(b)}. \medskip
 
 \textbf{(c)} We know from Theorem \ref{thm.plu} \textbf{(a)} that $S$ is
 $\operatorname*{GL}\left(  V\right)  $-invariant. Since $\operatorname*{GL}%
@@ -34284,8 +34465,8 @@ j_{1}^{\left(  m\right)  }\left(  \wedge^{1+m+1}\left(  V_{1}\right)  \right)
 V_{2}\right)  \right)  \subseteq...$. Thus, Lemma
 \ref{lem.plu.inf.cover.tensor} (applied to $W=\mathcal{F}^{\left(  m\right)
 }$, $W_{i}=j_{i}^{\left(  m\right)  }\left(  \wedge^{i+m+1}\left(
-V_{1}\right)  \right)  $, $U=\mathcal{F}^{\left(  m\right)  }$ and
-$U_{i}=j_{i}^{\left(  m\right)  }\left(  \wedge^{i+m+1}\left(  V_{1}\right)
+V_{i}\right)  \right)  $, $U=\mathcal{F}^{\left(  m\right)  }$ and
+$U_{i}=j_{i}^{\left(  m\right)  }\left(  \wedge^{i+m+1}\left(  V_{i}\right)
 \right)  $) yields $\mathcal{F}^{\left(  m\right)  }\otimes\mathcal{F}%
 ^{\left(  m\right)  }=\bigcup\limits_{N\in\mathbb{N}}\left(  j_{N}^{\left(
 m\right)  }\left(  \wedge^{N+m+1}\left(  V_{N}\right)  \right)  \otimes
@@ -46068,8 +46249,9 @@ respecting the generators $e_{1}$, $e_{2}$, $...$, $e_{n}$, $f_{1}$, $f_{2}$,
 $...$, $f_{n}$, $h_{1}$, $h_{2}$, $...$, $h_{n}$) contragredient Lie algebra
 $\mathfrak{g}$ corresponding to $A$.
 
-\item[\textbf{(b)}] If $A$ is a Cartan matrix, then the contragredient Lie
-algebra $\mathfrak{g}$ corresponding to $A$ is finite-dimensional and simple.
+\item[\textbf{(b)}] If $A$ is the Cartan matrix of a simple finite-dimensional
+Lie algebra $\mathfrak{a}$, then the contragredient Lie algebra $\mathfrak{g}$
+corresponding to $A$ is $\mathfrak{a}$ (up to isomorphism).
 \end{enumerate}
 \end{theorem}
 
@@ -46494,11 +46676,11 @@ x\right)  }_{=e_{i}}\right)  =\omega\left(  e_{i}\right)  =f_{i}%
 =x=\operatorname*{id}\left(  x\right)  $. Thus, $\omega^{2}\left(  x\right)
 =\operatorname*{id}\left(  x\right)  $ is proven in Case 2.
 \par
-Let us first consider Case 3. In this case, $x\in\left\{  h_{1},h_{2}%
-,...,h_{n}\right\}  $. Thus, there exists an $i\in\left\{  1,2,...,n\right\}
-$ such that $x=h_{i}$. Consider this $i$. From $x=h_{i}$, we obtain
-$\omega\left(  x\right)  =\omega\left(  h_{i}\right)  =-h_{i}$ and thus
-$\omega^{2}\left(  x\right)  =\omega\left(  \underbrace{\omega\left(
+Let us finally consider Case 3. In this case, $x\in\left\{  h_{1}%
+,h_{2},...,h_{n}\right\}  $. Thus, there exists an $i\in\left\{
+1,2,...,n\right\}  $ such that $x=h_{i}$. Consider this $i$. From $x=h_{i}$,
+we obtain $\omega\left(  x\right)  =\omega\left(  h_{i}\right)  =-h_{i}$ and
+thus $\omega^{2}\left(  x\right)  =\omega\left(  \underbrace{\omega\left(
 x\right)  }_{=-h_{i}}\right)  =\omega\left(  -h_{i}\right)
 =-\underbrace{\omega\left(  h_{i}\right)  }_{=-h_{i}}=-\left(  -h_{i}\right)
 =h_{i}=x=\operatorname*{id}\left(  x\right)  $. Thus, $\omega^{2}\left(
@@ -47082,8 +47264,8 @@ Now, using the relation $\left[  \widetilde{\mathfrak{h}},U\left(
 \widetilde{\mathfrak{n}}_{-}\right)  $, it is easy to check that $\zeta
 _{i}\left(  U\left(  \widetilde{\mathfrak{n}}_{-}\right)  \right)  \subseteq
 U\left(  \widetilde{\mathfrak{n}}_{-}\right)  $%
-\ \ \ \ \footnote{\textit{Proof.} Every $u\in U\left(  \widetilde{\mathfrak{h}%
-}\ltimes\widetilde{\mathfrak{n}}_{-}\right)  $ satisfies%
+\ \ \ \ \footnote{\textit{Proof.} Every $u\in U\left(  \widetilde{\mathfrak{n}%
+}_{-}\right)  $ satisfies%
 \[
 \zeta_{i}\left(  u\right)  =\left[  \underbrace{h_{i}}_{\in
 \widetilde{\mathfrak{h}}},\underbrace{u}_{\in U\left(  \widetilde{\mathfrak{n}%
@@ -49701,13 +49883,13 @@ zero intersection with }\iota_{0}\left(  \widetilde{\mathfrak{h}}\right)
 Now let $y\in J$ be arbitrary. Since $y\in J\subseteq\mathfrak{g}%
 =\widetilde{\mathfrak{g}}\diagup I$, there exists a $y^{\prime}\in
 \widetilde{\mathfrak{g}}$ such that $y=\operatorname*{proj}\left(  y^{\prime
-}\right)  $. Consider this $y$. Since $\operatorname*{proj}\left(  y^{\prime
-}\right)  =y\in J$, we have $y^{\prime}\in\operatorname*{proj}\nolimits^{-1}%
-\left(  J\right)  \subseteq I=\operatorname*{Ker}\operatorname*{proj}$, so
-that $\operatorname*{proj}\left(  y^{\prime}\right)  =0$. Thus,
-$y=\operatorname*{proj}\left(  y^{\prime}\right)  =0$. Now, forget that we
-fixed $y$. We thus have proven that every $y\in J$ satisfies $y=0$. Thus,
-$J=0$, contradicting the fact that $J$ is nonzero.
+}\right)  $. Consider this $y^{\prime}$. Since $\operatorname*{proj}\left(
+y^{\prime}\right)  =y\in J$, we have $y^{\prime}\in\operatorname*{proj}%
+\nolimits^{-1}\left(  J\right)  \subseteq I=\operatorname*{Ker}%
+\operatorname*{proj}$, so that $\operatorname*{proj}\left(  y^{\prime}\right)
+=0$. Thus, $y=\operatorname*{proj}\left(  y^{\prime}\right)  =0$. Now, forget
+that we fixed $y$. We thus have proven that every $y\in J$ satisfies $y=0$.
+Thus, $J=0$, contradicting the fact that $J$ is nonzero.
 
 This contradiction shows that our assumption (that $J\cap\left(
 \mathfrak{g}\left[  0\right]  \right)  =0$) was wrong. In other words,
@@ -49850,7 +50032,7 @@ f_{i}\right)  =-\alpha_{i}\ \ \ \ \ \ \ \ \ \ \text{and }\deg\left(
 h_{i}\right)  =0\ \ \ \ \ \ \ \ \ \ \text{for all }i\in\left\{
 1,2,...,n\right\}
 \]
-holding in $\widetilde{\mathfrak{g}}$, the subspace $T$ is of
+holding in $\widetilde{\mathfrak{g}}$, the subspace $T$ of
 $\widetilde{\mathfrak{g}}$ is $Q$-graded, and its homogeneous components are%
 \[
 T\left[  \alpha\right]  =\left\{
@@ -50009,15 +50191,15 @@ $, $...$, $h_{n}$ of $\mathfrak{g}^{\prime}$. This completes the proof of
 Theorem \ref{thm.g(A).exuni} \textbf{(a)}.
 
 \textbf{(b)} Let $A$ be the Cartan matrix of a simple finite-dimensional Lie
-algebra. Clearly it is enough to prove that this Lie algebra is a
-contragredient Lie algebra corresponding to $A$, that is, is generated by
-$e_{1}$, $e_{2}$, $...$, $e_{n}$, $f_{1}$, $f_{2}$, $...$, $f_{n}$, $h_{1}$,
-$h_{2}$, $...$, $h_{n}$ as a Lie algebra and satisfies the conditions
-\textbf{(1)}, \textbf{(2)} and \textbf{(3)} of Definition
+algebra $\mathfrak{a}$. Clearly it is enough to prove that this Lie algebra
+$\mathfrak{a}$ is a contragredient Lie algebra corresponding to $A$, that is,
+is generated by $e_{1}$, $e_{2}$, $...$, $e_{n}$, $f_{1}$, $f_{2}$, $...$,
+$f_{n}$, $h_{1}$, $h_{2}$, $...$, $h_{n}$ as a Lie algebra and satisfies the
+conditions \textbf{(1)}, \textbf{(2)} and \textbf{(3)} of Definition
 \ref{def.contragredient}. But this follows from the standard theory of roots
 of simple finite-dimensional Lie algebras\footnote{For instance, condition
-\textbf{(3)} follows from the fact that the Lie algebra in question is simple
-and thus contains no ideals other than $0$ and itself.}. Theorem
+\textbf{(3)} follows from the fact that the Lie algebra $\mathfrak{a}$ is
+simple and thus contains no ideals other than $0$ and itself.}. Theorem
 \ref{thm.g(A).exuni} \textbf{(b)} is thus proven.
 
 \begin{remark}
@@ -50039,8 +50221,8 @@ of the Serre relations.)
 this will later be used for the bilinear form. $\widetilde{\mathfrak{g}%
 }\left[  \operatorname*{tot}0\right]  =\widetilde{\mathfrak{g}}\left[
 0\right]  =\widetilde{\mathfrak{h}}$, $\widetilde{\mathfrak{g}}\left[
-\operatorname*{tot}<0\right]  ...$, $\widetilde{\mathfrak{g}}\left[  1\right]
-=...$]
+\operatorname*{tot}<0\right]  =...$, $\widetilde{\mathfrak{g}}\left[
+1\right]  =...$]
 
 \begin{remark}
 \label{rmk.g(A+A)}Let $A_{1}$ and $A_{2}$ be two square complex matrices. As
@@ -50416,10 +50598,10 @@ Consider the case of $A_{n-1}=\mathfrak{sl}_{n}$. Then, $\theta=\left(
 1,0,0,...,0,-1\right)  $. Also, $\alpha_{1}=\left(  1,-1,0,0,...,0\right)  $,
 $\alpha_{2}=\left(  0,1,-1,0,0,...,0\right)  $, $...$, $\alpha_{n-1}=\left(
 0,0,...,0,1,-1\right)  $. Also, $\alpha=\alpha^{\vee}$ for all simple roots
-$\alpha$. We thus have $\left(  \theta,\alpha_{i}\right)  =1$ if $\alpha
-\in\left\{  1,n-1\right\}  $ and $=0$ otherwise. The Dynkin diagram of
-$\widehat{A_{n-1}}=A_{n-1}^{1}=\widehat{\mathfrak{sl}_{n}}$ (these are just
-three notations for one and the same thing) is thus $%
+$\alpha$. We thus have $\left(  \theta,\alpha_{i}\right)  =1$ if $i\in\left\{
+1,n-1\right\}  $ and $=0$ otherwise. The Dynkin diagram of $\widehat{A_{n-1}%
+}=A_{n-1}^{1}=\widehat{\mathfrak{sl}_{n}}$ (these are just three notations for
+one and the same thing) is thus $%
 %TCIMACRO{\TeXButton{x}{\xymatrix{
 %\circ\ar@{-}[r] & \circ\ar@{-}[r] & \circ\ar@{}[r]|-{...} & \circ\ar@
 %{-}[r] & \circ\ar@{-}[r] & \circ}}}%
@@ -50483,13 +50665,14 @@ different from the one we defined above. In future, we will use only the new def
 \label{def.O}The objects of \textit{category }$\mathcal{O}$ will be
 $\mathfrak{g}$-modules $M$ such that:
 
-\textbf{1)} The module $M$ is $\mathfrak{h}$-diagonalizable. By this we mean
-that $M=\bigoplus\limits_{\mu\in\mathfrak{h}^{\ast}}M\left[  \mu\right]  $
-(where $M\left[  \mu\right]  $ means the $\mu$-weight space of $M$), and every
-$\mu\in\mathfrak{h}^{\ast}$ satisfies $\dim\left(  M\left[  \mu\right]
+\begin{enumerate}
+\item[\textbf{1)}] The module $M$ is $\mathfrak{h}$-diagonalizable. By this we
+mean that $M=\bigoplus\limits_{\mu\in\mathfrak{h}^{\ast}}M\left[  \mu\right]
+$ (where $M\left[  \mu\right]  $ means the $\mu$-weight space of $M$), and
+every $\mu\in\mathfrak{h}^{\ast}$ satisfies $\dim\left(  M\left[  \mu\right]
 \right)  <\infty$.
 
-\textbf{2)} Let $\operatorname*{Supp}M$ denote the set of all $\mu
+\item[\textbf{2)}] Let $\operatorname*{Supp}M$ denote the set of all $\mu
 \in\mathfrak{h}^{\ast}$ such that $M\left[  \mu\right]  \neq0$. Then, there
 exist finitely many $\lambda_{1},\lambda_{2},...,\lambda_{n}\in\mathfrak{h}%
 ^{\ast}$ such that $\operatorname*{Supp}M\subseteq D\left(  \lambda
@@ -50502,6 +50685,7 @@ denote by $D\left(  \lambda\right)  $ the subset%
 \ \ \ \ \ \ \ \ \ \ \text{of }\mathfrak{h}^{\ast}.
 \]
 
+\end{enumerate}
 
 The \textit{morphisms of category }$\mathcal{O}$ will be $\mathfrak{g}$-module homomorphisms.
 \end{definition}
@@ -50509,7 +50693,7 @@ The \textit{morphisms of category }$\mathcal{O}$ will be $\mathfrak{g}$-module h
 Examples of modules in Category $\mathcal{O}$ are Verma modules $M_{\lambda
 }=M_{\lambda}^{+}$ and their irreducible quotients $L_{\lambda}$ (and all of
 their quotients). Category $\mathcal{O}$ is an abelian category (in our case,
-this simply means it is closed under taking subquotients and direct sums).
+this simply means it is closed under taking subquotients and finite direct sums).
 
 \begin{definition}
 Let $M\in\mathcal{O}$ be a $\mathfrak{g}$-module. Then, the \textit{formal
