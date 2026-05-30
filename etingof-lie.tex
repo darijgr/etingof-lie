@@ -49,7 +49,7 @@
 \usepackage{hyperref}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Tuesday, May 26, 2026 00:25:45}
+%TCIDATA{LastRevised=Saturday, May 30, 2026 01:20:15}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -22753,13 +22753,20 @@ Also, $\psi_{m}$ generates the $\mathfrak{gl}_{\infty}$-module $\wedge
 highest-weight representation with highest weight $\omega_{m}$ (and
 highest-weight vector $\psi_{m}$).
 
-Next let us prove that it is unitary. This will yield that it is
-irreducible.\footnote{We could also show the irreducibility more directly, by
-showing that every sum of wedges can be used to get back $\psi_{m}$.}
-
-The unitarity is because the form in which the wedges are orthonormal is
-$\dag$-invariant. Thus, irreducible. (We used Lemma \ref{lem.unitrick}.)
-Proposition \ref{prop.Lomegam} is proven.
+Next, we observe that the $\mathfrak{gl}_{\infty}$-module $\wedge
+^{\dfrac{\infty}{2},m}V$ is unitary: Indeed, consider the Hermitian form on
+$\wedge^{\dfrac{\infty}{2},m}V$ with respect to which the basis $\left(
+v_{i_{0}}\wedge v_{i_{1}}\wedge v_{i_{2}}\wedge...\right)  _{\left(
+i_{0},i_{1},i_{2},...\right)  \text{ is an }m\text{-degression}}$ of
+$\wedge^{\dfrac{\infty}{2},m}V$ is orthonormal. This form is clearly positive
+definite, hence nondegenerate, and is easily seen to satisfy $\left(
+av,w\right)  =\left(  v,a^{\dag}w\right)  $ for all $a\in\mathfrak{gl}%
+_{\infty}$ and $v,w\in\wedge^{\dfrac{\infty}{2},m}V$. Thus, the $\mathfrak{gl}%
+_{\infty}$-module $\wedge^{\dfrac{\infty}{2},m}V$ is unitary, and hence
+irreducible by Lemma \ref{lem.unitrick} (since it is a highest-weight
+representation). (Alternatively, we could show the irreducibility more
+directly, by showing that every sum of wedges can be used to get back
+$\psi_{m}$.) Proposition \ref{prop.Lomegam} is proven.
 
 \begin{corollary}
 \label{cor.lomegam.unit}For every finite sum $\sum\limits_{i\in\mathbb{Z}%
@@ -23855,7 +23862,7 @@ are going to do, so let us give it a formal definition:
 \label{def.ainf.A}The map%
 \[
 \overline{\mathcal{A}}\rightarrow\overline{\mathfrak{a}_{\infty}%
-},\ \ \ \ \ \ \ \ \ \ a_{j}\mapsto T^{j}%
+},\ \ \ \ \ \ \ \ \ \ \overline{a_{j}}\mapsto T^{j}%
 \]
 (where $\overline{\mathcal{A}}$ is the quotient of the Heisenberg algebra
 $\mathcal{A}$ by its central subalgebra $\left\langle K\right\rangle $) is an
@@ -25160,20 +25167,20 @@ proven similarly.
 Theorem \ref{thm.euler} is proven.
 
 \begin{corollary}
-\label{cor.euler}Let $m\in\mathbb{Z}$. On $\mathcal{B}^{\left(  m\right)  }$,
+\label{cor.euler}Let $m\in\mathbb{Z}$. On $\mathcal{F}^{\left(  m\right)  }$,
 we have%
 \[
-\rho\left(  \sum\limits_{\left(  i,j\right)  \in\mathbb{Z}^{2}}u^{i}%
-v^{-j}E_{i,j}\right)  =\sum\limits_{\left(  i,j\right)  \in\mathbb{Z}^{2}%
-}u^{i}v^{-j}\xi_{i}\xi_{j}^{\ast}=X\left(  u\right)  X^{\ast}\left(  v\right)
-,
+\sum\limits_{\left(  i,j\right)  \in\mathbb{Z}^{2}}u^{i}v^{-j}\rho\left(
+E_{i,j}\right)  =\sum\limits_{\left(  i,j\right)  \in\mathbb{Z}^{2}}%
+u^{i}v^{-j}\xi_{i}\xi_{j}^{\ast}=X\left(  u\right)  X^{\ast}\left(  v\right)
+.
 \]
-thus%
+Thus,%
 \begin{align*}
-&  \sigma^{-1}\circ\rho\left(  \sum\limits_{\left(  i,j\right)  \in
-\mathbb{Z}^{2}}u^{i}v^{-j}E_{i,j}\right)  \circ\sigma\\
+&  \sigma^{-1}\circ\left(  \sum\limits_{\left(  i,j\right)  \in\mathbb{Z}^{2}%
+}u^{i}v^{-j}\rho\left(  E_{i,j}\right)  \right)  \circ\sigma\\
 &  =\sigma^{-1}\circ X\left(  u\right)  X^{\ast}\left(  v\right)  \circ
-\sigma=\Gamma\left(  u\right)  \Gamma^{\ast}\left(  v\right) \\
+\sigma=\Gamma\left(  u\right)  \Gamma^{\ast}\left(  v\right)  \\
 &  =\dfrac{1}{1-\dfrac{v}{u}}\cdot\left(  \dfrac{u}{v}\right)  ^{m}\exp\left(
 \sum\limits_{j>0}\dfrac{u^{j}-v^{j}}{j}a_{-j}\right)  \exp\left(
 -\sum\limits_{j>0}\dfrac{u^{-j}-v^{-j}}{j}a_{j}\right)
@@ -25209,35 +25216,35 @@ when it is, the quotient is unique.
 The importance of Corollary \ref{cor.euler} lies in the fact that it gives an
 easy way to compute the $\rho$-action of $\mathfrak{gl}_{\infty}$ on
 $\mathcal{B}^{\left(  m\right)  }$: In fact, for any $p\in\mathbb{Z}$ and
-$q\in\mathbb{Z}$, the coefficient of $\sigma^{-1}\circ\rho\left(
-\sum\limits_{i,j}u^{i}v^{-j}E_{i,j}\right)  \circ\sigma\in\left(
-\operatorname*{End}\left(  \mathcal{B}^{\left(  m\right)  }\right)  \right)
-\left[  \left[  u,u^{-1},v,v^{-1}\right]  \right]  $ before $u^{p}v^{-q}$ is
-$\sigma^{-1}\circ\rho\left(  E_{p,q}\right)  \circ\sigma$, and this is exactly
-the action of $E_{p,q}$ on $\mathcal{B}^{\left(  m\right)  }$ obtained by
-transferring the action $\rho$ of $\mathfrak{gl}_{\infty}$ on $\mathcal{F}%
-^{\left(  m\right)  }$ to $\mathcal{B}^{\left(  m\right)  }$.
+$q\in\mathbb{Z}$, the coefficient of $\sigma^{-1}\circ\left(  \sum
+\limits_{\left(  i,j\right)  \in\mathbb{Z}^{2}}u^{i}v^{-j}\rho\left(
+E_{i,j}\right)  \right)  \circ\sigma\in\left(  \operatorname*{End}\left(
+\mathcal{B}^{\left(  m\right)  }\right)  \right)  \left[  \left[
+u,u^{-1},v,v^{-1}\right]  \right]  $ before $u^{p}v^{-q}$ is $\sigma^{-1}%
+\circ\rho\left(  E_{p,q}\right)  \circ\sigma$, and this is exactly the action
+of $E_{p,q}$ on $\mathcal{B}^{\left(  m\right)  }$ obtained by transferring
+the action $\rho$ of $\mathfrak{gl}_{\infty}$ on $\mathcal{F}^{\left(
+m\right)  }$ to $\mathcal{B}^{\left(  m\right)  }$.
 
 \textit{Proof of Corollary \ref{cor.euler}.} First of all, we clearly have%
 \begin{align*}
-\rho\left(  \sum\limits_{\left(  i,j\right)  \in\mathbb{Z}^{2}}u^{i}%
-v^{-j}E_{i,j}\right)   &  =\sum\limits_{\left(  i,j\right)  \in\mathbb{Z}^{2}%
-}u^{i}v^{-j}\underbrace{\rho\left(  E_{i,j}\right)  }_{=\xi_{i}\xi_{j}^{\ast}%
-}=\sum\limits_{\left(  i,j\right)  \in\mathbb{Z}^{2}}u^{i}v^{-j}\xi_{i}\xi
-_{j}^{\ast}\\
-&  =\underbrace{\left(  \sum\limits_{i\in\mathbb{Z}}\xi_{i}u^{i}\right)
-}_{=\sum\limits_{n\in\mathbb{Z}}\xi_{n}u^{n}=X\left(  u\right)  }%
-\underbrace{\sum\limits_{j\in\mathbb{Z}}\xi_{j}^{\ast}v^{-j}}_{=\sum
-\limits_{n\in\mathbb{Z}}\xi_{n}^{\ast}v^{-n}=X^{\ast}\left(  v\right)
-}=X\left(  u\right)  X^{\ast}\left(  v\right)  ,
+\sum\limits_{\left(  i,j\right)  \in\mathbb{Z}^{2}}u^{i}v^{-j}\underbrace{\rho
+\left(  E_{i,j}\right)  }_{=\xi_{i}\xi_{j}^{\ast}}  & =\sum\limits_{\left(
+i,j\right)  \in\mathbb{Z}^{2}}u^{i}v^{-j}\xi_{i}\xi_{j}^{\ast}%
+=\underbrace{\left(  \sum\limits_{i\in\mathbb{Z}}\xi_{i}u^{i}\right)  }%
+_{=\sum\limits_{n\in\mathbb{Z}}\xi_{n}u^{n}=X\left(  u\right)  }%
+\ \ \underbrace{\sum\limits_{j\in\mathbb{Z}}\xi_{j}^{\ast}v^{-j}}%
+_{=\sum\limits_{n\in\mathbb{Z}}\xi_{n}^{\ast}v^{-n}=X^{\ast}\left(  v\right)
+}\\
+& =X\left(  u\right)  X^{\ast}\left(  v\right)  ,
 \end{align*}
 so that%
-\begin{align*}
-&  \sigma^{-1}\circ\rho\left(  \sum\limits_{\left(  i,j\right)  \in
-\mathbb{Z}^{2}}u^{i}v^{-j}E_{i,j}\right)  \circ\sigma\\
-&  =\sigma^{-1}\circ X\left(  u\right)  X^{\ast}\left(  v\right)  \circ
-\sigma=\Gamma\left(  u\right)  \Gamma^{\ast}\left(  v\right)  .
-\end{align*}
+\[
+\sigma^{-1}\circ\left(  \sum\limits_{\left(  i,j\right)  \in\mathbb{Z}^{2}%
+}u^{i}v^{-j}\rho\left(  E_{i,j}\right)  \right)  \circ\sigma=\sigma^{-1}\circ
+X\left(  u\right)  X^{\ast}\left(  v\right)  \circ\sigma=\Gamma\left(
+u\right)  \Gamma^{\ast}\left(  v\right)  .
+\]
 It thus only remains to prove that%
 \[
 \Gamma\left(  u\right)  \Gamma^{\ast}\left(  v\right)  =\dfrac{1}{1-\dfrac
@@ -32736,17 +32743,20 @@ equation }u_{t}=\dfrac{3}{2}uu_{x}+\dfrac{1}{4}u_{xxx}\right) \\
 We will discuss several interesting solutions of this equation. Here is the
 most basic family of solutions:%
 \[
-u\left(  t\right)  =\dfrac{2a^{2}}{\cosh^{2}\left(  a\left(  x+a^{2}t\right)
-\right)  }\ \ \ \ \ \ \ \ \ \ \left(  \text{for }a\text{ being arbitrary but
-fixed}\right)  .
+u\left(  t,x\right)  =\dfrac{2a^{2}}{\cosh^{2}\left(  a\left(  x+a^{2}%
+t\right)  \right)  }\ \ \ \ \ \ \ \ \ \ \left(  \text{for }a\text{ being
+arbitrary but fixed}\right)  .
 \]
-These are so-called ``traveling wave solutions''. It is a peculiar kind of
-wave: it has only one bump; it is therefore called a \textit{soliton} (or
-\textit{solitary wave}). Such waves never occur in linear systems. Note that
-when we speak of ``wave'', we are imagining a time-dependent 2-dimensional
-graph with the x-axis showing $t$, the y-axis showing $u\left(  t\right)  $,
-and the time parameter being $x$. So when we speak of ``traveling wave'', we
-mean that it is a wave for any fixed time $x$ and ``travels'' when $x$ moves.
+These are so-called \textquotedblleft traveling wave
+solutions\textquotedblright. It is a peculiar kind of wave: it has only one
+bump; it is therefore called a \textit{soliton} (or \textit{solitary wave}).
+Such waves never occur in linear systems. Note that when we speak of
+\textquotedblleft wave\textquotedblright, we are imagining a time-dependent
+2-dimensional graph with the x-axis showing $x$, the y-axis showing $u\left(
+t,x\right)  $, and the time parameter being $t$. So when we speak of
+\textquotedblleft traveling wave\textquotedblright, we mean that it is a wave
+for any fixed time $t$ and \textquotedblleft travels\textquotedblright\ when
+$t$ moves.
 
 The first to study this kind of waves was J. S. Russell in 1834, describing
 the motion of water in a shallow canal (tsunami waves are similar). The first
@@ -34908,16 +34918,16 @@ m-1\right)  }\right) \nonumber\\
 
 On the other hand,
 \begin{align*}
-i &  \in\left\{  i_{0},i_{1},...,i_{N+m}\right\}  \subseteq\left\{
+i  &  \in\left\{  i_{0},i_{1},...,i_{N+m}\right\}  \subseteq\left\{
 i_{0},i_{1},...,i_{N+m},-N-1,-N-2,-N-3,...\right\}  =\left\{  j_{0}%
-,j_{1},j_{2},...\right\}  \\
+,j_{1},j_{2},...\right\} \\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }\left(  i_{0},i_{1},...,i_{N+m}%
 ,-N-1,-N-2,-N-3,...\right)  =\left(  j_{0},j_{1},j_{2},...\right)  \right)  .
 \end{align*}
 Moreover, the integer $k$ satisfying $j_{k}=i$ is $\kappa$%
 \ \ \ \ \footnote{because%
 \begin{align*}
-j_{\kappa} &  =i_{\kappa}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }\left(
+j_{\kappa}  &  =i_{\kappa}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }\left(
 i_{0},i_{1},...,i_{N+m},-N-1,-N-2,-N-3,...\right)  =\left(  j_{0},j_{1}%
 ,j_{2},...\right)  \text{ and }\kappa\in\left\{  0,1,...,N+m\right\}  \right)
 \\
@@ -34928,10 +34938,10 @@ i_{0},i_{1},...,i_{N+m},-N-1,-N-2,-N-3,...\right)  =\left(  j_{0},j_{1}%
 \left(  \overset{\vee}{v_{i}}\circ j_{N}^{\left(  m\right)  }\right)  \left(
 u\right)   &  =\overset{\vee}{v_{i}}\left(  j_{N}^{\left(  m\right)  }\left(
 u\right)  \right)  =\overset{\vee}{v_{i}}\left(  v_{j_{0}}\wedge v_{j_{1}%
-}\wedge v_{j_{2}}\wedge...\right)  \\
+}\wedge v_{j_{2}}\wedge...\right) \\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }j_{N}^{\left(  m\right)  }\left(
 u\right)  =v_{j_{0}}\wedge v_{j_{1}}\wedge v_{j_{2}}\wedge...\text{ by
-(\ref{pf.plu.inf.S.comp.b.0})}\right)  \\
+(\ref{pf.plu.inf.S.comp.b.0})}\right) \\
 &  =\left\{
 \begin{array}
 [c]{l}%
@@ -34941,7 +34951,7 @@ u\right)  =v_{j_{0}}\wedge v_{j_{1}}\wedge v_{j_{2}}\wedge...\text{ by
 \wedge...\wedge v_{j_{j-1}}\wedge v_{j_{j+1}}\wedge v_{j_{j+2}}\wedge
 ...,\ \ \ \ \ \ \ \ \ \ \text{if }i\in\left\{  j_{0},j_{1},j_{2},...\right\}
 \end{array}
-\right.  \\
+\right. \\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }\overset{\vee
 }{v_{i}}\right)  ,
 \end{align*}
@@ -35126,7 +35136,7 @@ j_{N}^{\left(  m\right)  }\right)  =\sum\limits_{i\in\mathbb{Z}}%
 }\\
 &  =\sum\limits_{i\in\mathbb{Z}}\left(  \widehat{v_{i}}\circ j_{N}^{\left(
 m\right)  }\right)  \otimes\left(  \overset{\vee}{v_{i}}\circ j_{N}^{\left(
-m\right)  }\right)  \\
+m\right)  }\right) \\
 &  =\sum\limits_{i=-\infty}^{-N-1}\underbrace{\left(  \widehat{v_{i}}\circ
 j_{N}^{\left(  m\right)  }\right)  }_{\substack{=0\\\text{(by
 (\ref{pf.plu.inf.S.comp.c}))}}}\otimes\left(  \overset{\vee}{v_{i}}\circ
@@ -35253,7 +35263,7 @@ such that $M=i_{P}\left(  A\right)  $. Consider this $A$.
 
 In the following, we will write the action of $\operatorname*{M}\left(
 \infty\right)  $ on $\mathcal{F}$ as a left action. In other words, we will
-abbreviate $\left(  \varrho\left(  N\right)  \right)  u$ by $Nu$, wherever
+abbreviate $\left(  \varrho\left(  N\right)  \right)  u$ by $Nu$ whenever
 $N\in\operatorname*{M}\left(  \infty\right)  $ and $u\in\mathcal{F}$.
 Similarly, we will write the action of $\operatorname*{M}\left(
 \infty\right)  $ on $\mathcal{F}\otimes\mathcal{F}$ (this action is obtained
@@ -35262,11 +35272,11 @@ $\mathcal{F}$ with itself); this action satisfies $\varrho^{\prime}\left(
 A\right)  =\varrho\left(  A\right)  \otimes\varrho\left(  A\right)  $.
 
 Let us also denote by $\varrho$ the action of the monoid $\operatorname*{M}%
-\left(  V_{N}\right)  $ on $\wedge\left(  V_{N}\right)  $. Moreover, let us
+\left(  V_{P}\right)  $ on $\wedge\left(  V_{P}\right)  $. Moreover, let us
 denote by $\varrho^{\prime}$ the action of the monoid $\operatorname*{M}%
-\left(  V_{N}\right)  $ on $\wedge\left(  V_{N}\right)  \otimes\wedge\left(
-V_{N}\right)  $ (this action is obtained by tensoring the $\operatorname*{M}%
-\left(  V_{N}\right)  $-module $\wedge\left(  V_{N}\right)  $ with itself).
+\left(  V_{P}\right)  $ on $\wedge\left(  V_{P}\right)  \otimes\wedge\left(
+V_{P}\right)  $ (this action is obtained by tensoring the $\operatorname*{M}%
+\left(  V_{P}\right)  $-module $\wedge\left(  V_{P}\right)  $ with itself).
 
 We notice that every $\ell\in\mathbb{Z}$ satisfies%
 \begin{equation}
@@ -35275,12 +35285,12 @@ We notice that every $\ell\in\mathbb{Z}$ satisfies%
 . \label{pf.plu.inf.-10}%
 \end{equation}
 \footnote{\textit{Proof of (\ref{pf.plu.inf.-10}):} Let $\ell\in\mathbb{Z}$.
-Every $u\in\mathcal{F}^{\left(  \ell\right)  }$ satisfies%
+Every $u\in\wedge^{P+\ell+1}\left(  V_{P}\right)  $ satisfies%
 \begin{align*}
 \left(  \left(  \varrho\left(  M\right)  \right)  \circ j_{P}^{\left(
 \ell\right)  }\right)  \left(  u\right)   &  =\left(  \varrho\left(  M\right)
 \right)  \left(  j_{P}^{\left(  \ell\right)  }\left(  u\right)  \right)
-=\underbrace{M}_{=i_{P}\left(  A\right)  }\cdot j_{P}^{\left(  \ell\right)
+=\underbrace{M}_{=i_{P}\left(  A\right)  }\cdot\,j_{P}^{\left(  \ell\right)
 }\left(  u\right)  =i_{P}\left(  A\right)  \cdot j_{P}^{\left(  \ell\right)
 }u=j_{P}^{\left(  \ell\right)  }\underbrace{\left(  Au\right)  }_{=\left(
 \varrho\left(  A\right)  \right)  u}\\
@@ -35303,7 +35313,7 @@ m\right)  }\otimes j_{P}^{\left(  m\right)  }\right)  . \label{pf.plu.inf.1}%
 
 
 On the other hand, the map $S_{P}^{\left(  P+m+1\right)  }$ is
-$\operatorname*{M}\left(  \infty\right)  $-invariant (by Lemma
+$\operatorname*{M}\left(  V_{P}\right)  $-invariant (by Lemma
 \ref{lem.plu.inf.plu} \textbf{(c)}, applied to $N=P$ and $k=P+m+1$), so that%
 \[
 S_{P}^{\left(  P+m+1\right)  }\circ\left(  \varrho^{\prime}\left(  A\right)
@@ -35754,9 +35764,10 @@ necessary and sufficient condition for a polynomial $\tau\in\mathcal{B}%
 Recall the power series $X\left(  u\right)  =\sum\limits_{i\in\mathbb{Z}}%
 \xi_{i}u^{i}$ and $X^{\ast}\left(  u\right)  =\sum\limits_{i\in\mathbb{Z}}%
 \xi_{i}^{\ast}u^{-i}$ defined in Definition \ref{def.euler.XGamma}. These
-power series ``act'' on the fermionic space $\mathcal{F}$. The word ``act''
-has been put in inverted commas here because it is not the power series but
-their coefficients which really act on $\mathcal{F}$, whereas the power series
+power series \textquotedblleft act\textquotedblright\ on the fermionic space
+$\mathcal{F}$. The word \textquotedblleft act\textquotedblright\ has been put
+in inverted commas here because it is not the power series but their
+coefficients which really act on $\mathcal{F}$, whereas the power series
 themselves only map elements of $\mathcal{F}$ to elements of $\mathcal{F}%
 \left(  \left(  u\right)  \right)  $. This, actually, is an important
 observation:%
@@ -35773,10 +35784,10 @@ $X\left(  u\right)  \omega=\sum\limits_{i\in\mathbb{Z}}\xi_{i}\left(
 because every sufficiently small $i\in\mathbb{Z}$ satisfies $\xi_{i}\left(
 \omega\right)  =0$ (this is easy to see). On the other hand, since $X^{\ast
 }\left(  u\right)  =\sum\limits_{i\in\mathbb{Z}}\xi_{i}^{\ast}u^{-i}$, we have
-$X^{\ast}\left(  u\right)  =\sum\limits_{i\in\mathbb{Z}}\xi_{i}^{\ast}\left(
-\omega\right)  u^{-i}\in\mathcal{F}\left(  \left(  u\right)  \right)  $, since
-every sufficiently high $i\in\mathbb{Z}$ satisfies $\xi_{i}^{\ast}\left(
-\omega\right)  =0$ (this, again, is easy to see). This proves
+$X^{\ast}\left(  u\right)  \omega=\sum\limits_{i\in\mathbb{Z}}\xi_{i}^{\ast
+}\left(  \omega\right)  u^{-i}\in\mathcal{F}\left(  \left(  u\right)  \right)
+$, since every sufficiently high $i\in\mathbb{Z}$ satisfies $\xi_{i}^{\ast
+}\left(  \omega\right)  =0$ (this, again, is easy to see). This proves
 (\ref{KdV.F((u))}).}
 
 Let $\tau\in\mathcal{B}^{\left(  0\right)  }$ be arbitrary. We want to find an
@@ -35845,7 +35856,7 @@ $\sum\limits_{i\in\mathbb{Z}}a_{i}u^{i}\in A\left(  \left(  u\right)  \right)
 $ (where all $a_{i}$ lie in $A$) to $a_{0}\in A$. The image of a Laurent
 series $\alpha$ under $\operatorname*{CT}\nolimits_{u}$ will be called the
 \textbf{constant term} of $\alpha$. The map $\operatorname*{CT}\nolimits_{u}$
-is clearly $A$-linear.
+is clearly $\mathbb{C}$-linear. If $A$ is a ring, then this map is also $A$-linear.
 \end{definition}
 
 This notion of ``constant term'' we have thus defined for Laurent series is,
@@ -36567,7 +36578,7 @@ indeterminates. Denote by $x$ the family $\left(  x_{1},x_{2},x_{3}%
 ,x_{3},...,z_{1},z_{2},z_{3},...\right]  $, let $r\mid_{z=0}$ denote the
 polynomial in $K\left[  x_{1},x_{2},x_{3},...\right]  $ obtained by
 substituting $\left(  0,0,0,...\right)  $ for $\left(  z_{1},z_{2}%
-,z_{3},...\right)  $ in $P$.
+,z_{3},...\right)  $ in $r$.
 
 \item[\textbf{(b)}] Consider the differential operators $\dfrac{\partial
 }{\partial z_{1}},\dfrac{\partial}{\partial z_{2}},\dfrac{\partial}{\partial
@@ -36801,29 +36812,28 @@ But it is easy to see that%
 y+z\right)  \right)  =0. \label{pf.hirota.y+z.1}%
 \end{equation}
 \footnote{\textit{Proof of (\ref{pf.hirota.y+z.1}):} Let $i$ be a positive
-integer. Let us identify $\mathbb{C}\left[  w_{1},w_{2},w_{3},...\right]  $
-with $\left(  \mathbb{C}\left[  w_{1},w_{2},...,w_{i-1},w_{i+1},w_{i+2}%
-,...\right]  \right)  \left[  w_{i}\right]  $. Then, $P\in\mathbb{C}\left[
-w_{1},w_{2},w_{3},...\right]  =\left(  \mathbb{C}\left[  w_{1},w_{2}%
-,...,w_{i-1},w_{i+1},w_{i+2},...\right]  \right)  \left[  w_{i}\right]  $, so
-that we can write $P$ as a polynomial in the variable $w_{i}$ over the ring
-$\mathbb{C}\left[  w_{1},w_{2},...,w_{i-1},w_{i+1},w_{i+2},...\right]  $. In
-other words, we can write $P$ in the form $P=\sum\limits_{n\in\mathbb{N}}%
-p_{n}w_{i}^{n}$, where every $n\in\mathbb{N}$ satisfies $p_{n}\in
-\mathbb{C}\left[  w_{1},w_{2},...,w_{i-1},w_{i+1},w_{i+2},...\right]  $ and
-all but finitely many $n\in\mathbb{N}$ satisfy $p_{n}=0$. Consider these
-$p_{n}$.
+integer. Let us identify $K\left[  w_{1},w_{2},w_{3},...\right]  $ with
+$\left(  K\left[  w_{1},w_{2},...,w_{i-1},w_{i+1},w_{i+2},...\right]  \right)
+\left[  w_{i}\right]  $. Then, $P\in K\left[  w_{1},w_{2},w_{3},...\right]
+=\left(  K\left[  w_{1},w_{2},...,w_{i-1},w_{i+1},w_{i+2},...\right]  \right)
+\left[  w_{i}\right]  $, so that we can write $P$ as a polynomial in the
+variable $w_{i}$ over the ring $K\left[  w_{1},w_{2},...,w_{i-1}%
+,w_{i+1},w_{i+2},...\right]  $. In other words, we can write $P$ in the form
+$P=\sum\limits_{n\in\mathbb{N}}p_{n}w_{i}^{n}$, where every $n\in\mathbb{N}$
+satisfies $p_{n}\in K\left[  w_{1},w_{2},...,w_{i-1},w_{i+1},w_{i+2}%
+,...\right]  $ and all but finitely many $n\in\mathbb{N}$ satisfy $p_{n}=0$.
+Consider these $p_{n}$.
 \par
-Let $n\in\mathbb{N}$ be arbitrary. Consider $p_{n}\in\mathbb{C}\left[
-w_{1},w_{2},...,w_{i-1},w_{i+1},w_{i+2},...\right]  $ as an element of
-$\mathbb{C}\left[  w_{1},w_{2},w_{3},...\right]  $ (by means of the canonical
-embedding $\mathbb{C}\left[  w_{1},w_{2},...,w_{i-1},w_{i+1},w_{i+2}%
-,...\right]  \subseteq\mathbb{C}\left[  w_{1},w_{2},w_{3},...\right]  $).
-Then, $p_{n}$ is a polynomial in which the variable $w_{i}$ does not occur.
-Hence, $p_{n}\left(  y+z\right)  $ is a polynomial in which neither of the
-variables $y_{i}$ and $z_{i}$ occur. Thus, $\dfrac{\partial}{\partial y_{i}%
-}\left(  p_{n}\left(  y+z\right)  \right)  =0$ and $\dfrac{\partial}{\partial
-z_{i}}\left(  p_{n}\left(  y+z\right)  \right)  =0$.
+Let $n\in\mathbb{N}$ be arbitrary. Consider $p_{n}\in K\left[  w_{1}%
+,w_{2},...,w_{i-1},w_{i+1},w_{i+2},...\right]  $ as an element of $K\left[
+w_{1},w_{2},w_{3},...\right]  $ (by means of the canonical embedding $K\left[
+w_{1},w_{2},...,w_{i-1},w_{i+1},w_{i+2},...\right]  \subseteq K\left[
+w_{1},w_{2},w_{3},...\right]  $). Then, $p_{n}$ is a polynomial in which the
+variable $w_{i}$ does not occur. Hence, $p_{n}\left(  y+z\right)  $ is a
+polynomial in which neither of the variables $y_{i}$ and $z_{i}$ occur. Thus,
+$\dfrac{\partial}{\partial y_{i}}\left(  p_{n}\left(  y+z\right)  \right)  =0$
+and $\dfrac{\partial}{\partial z_{i}}\left(  p_{n}\left(  y+z\right)  \right)
+=0$.
 \par
 On the other hand, it is very easy to check that $\dfrac{\partial}{\partial
 y_{i}}\left(  y_{i}+z_{i}\right)  ^{n}=\dfrac{\partial}{\partial z_{i}}\left(
@@ -42409,8 +42419,7 @@ N+1\right)  +1\right)  }_{=\lambda\left(  \lambda-1\right)  ...\left(
 Thus, (\ref{pf.serre-gen.sl2.3}) holds for $n=N+1$ as well. This completes the
 induction step. The induction proof of (\ref{pf.serre-gen.sl2.3}) is thus complete.
 
-Lemma \ref{lem.serre-gen.sl2} \textbf{(a)} immediately follows from
-(\ref{pf.serre-gen.sl2.3}).
+Lemma \ref{lem.serre-gen.sl2} \textbf{(a)} immediately follows from (\ref{pf.serre-gen.sl2.3}).
 
 \textbf{(b)} The proof of Lemma \ref{lem.serre-gen.sl2} \textbf{(b)} is
 analogous to the proof of Lemma \ref{lem.serre-gen.sl2} \textbf{(a)}.
